@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Эта сторка нужна чтобы страница правильно оторажалась на мобильных устройствах-->
@@ -7,39 +7,36 @@
     
     <!-- Урок 1.5. решение задания -->
     
-    <link rel="stylesheet" href="css/style.css"> <!--Элемент link устанавливает связь с внешним документом вроде файла со стилями или со шрифтами. Элемент <link> (от англ. link — ссылка) обычно размещается внутри контейнера <head> и не создаёт ссылку, в отличие от элемента <a>. href - Путь к связываемому файлу. rel - Определяет отношения между текущим документом и файлом, на который делается ссылка.Это необходимо, чтобы браузер знал, как использовать подключаемый документ. stylesheet - Определяет, что подключаемый файл хранит таблицу стилей (CSS).-->
+    <link rel="stylesheet" href="css/style.css"> <!--Элемент link устанавливает связь с внешним документом вроде файла со стилями или со шрифтами. Элемент <link> (от англ. link — связь, соединение) обычно размещается внутри контейнера <head> и не создаёт ссылку, в отличие от элемента <a>. href - путь к связываемому файлу. rel (relation - отношение, соотношение) - определяет отношения между текущим документом и файлом, на который делается ссылка.Это необходимо, чтобы браузер знал, как использовать подключаемый документ. stylesheet - Определяет, что подключаемый файл хранит таблицу стилей (CSS).-->
     <link rel="stylesheet" href="css/css2/main.css">
 </head>
 <body>
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus itaque voluptatibus velit quod quaerat ratione?</p> 
-    <img src="img/main/logo.png" alt="логотип" width="300">
-    <script src="js/lib.js"></script>
-    <script src="js/scripts/main.js"></script>   
-    <!-- <img src="img/logo.png" alt="" width="300"> -->
-    <!-- <script src="js/main.js"></script> -->
-
+    <img src="img/main/logo.png" alt="логотип" width="300"> <!-- width="300" говорит браузеру чтобы он сжал/растянул изображение до 300 пикселей сохранив при этом исходные пропорции -->
+    <script src="js/lib.js"></script> <!-- Какой-то скрипт в пустом файле в рамках обучения создавать тэг скрипта -->
+    <script src="js/scripts/main.js"></script>  <!-- скрипт помещенный в дополнительную папку и имеющий другое навание файла -->
+       
     <!-- Конец решеня задания -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quas nulla impedit recusandae quidem et repudiandae! Corporis perferendis voluptatibus fugiat nesciunt excepturi, impedit quaerat dolores earum, dolor laudantium illo officiis.</p>
+    <p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quas nulla impedit recusandae quidem et repudiandae! Corporis perferendis voluptatibus fugiat nesciunt excepturi, impedit quaerat dolores earum, dolor laudantium illo officiis.</p>
     
-    <p><h1 id="imph1">Важные сочетания клавиш Visual Studio Code:</h1></p>
+    <p><h1 id="h1keyboard">Важные сочетания клавиш Visual Studio Code:</h1></p>
     
-    <div class="implist">
+    <div class="keyboard">
     <ol>
-        <li><kbd class="kbd1">CTRL+/</kbd>(рядом с правым шифтом) - закомментить/раскоментить текущую строку на которой установлен курсор</li>
-        <li><kbd class="kbd1">shift+alt+a</kbd> - закомментировать выделенный текст</li>
-        <li><kbd class="kbd1">CTRL+Space</kbd> - показать доступные варианты кода</li>
-        <li>Набрать любой тег, например p, и нажать TAB - и Studio поставит все нужные скобки и закрет тег. <br>
-        Например набираем script, видим 3 варианта, нажимаем стрелку низ 2 раза, нажимаем интер либо таб</li>
-        <li>Набрать lorem и нажать ентер - сгененрировать текст на латыни (по умолчанию текст из 30 слов) <br>
+        <li><b>Закомментировать выделенный текст:</b> <kbd>ALT+SHIFT+A</kbd>.</li>
+        <li><b>Закомментировать/раскоментить текущую строку на которой установлен курсор:</b> <kbd>CTRL+/</kbd>(рядом с правым шифтом).</li>
+        <li><b>Создать несколько курсоров:</b> <kbd>ALT+Shift</kbd> (зажать) на клаве и щелкнуть и тянуть ЛК мышки вверх/вниз. В результате создаются несколько курсоров в нескольких строках чтобы редактировать текст одновременно вертикальным блоком. В добавок так можно вставить из буфера обмена слова в несколько строк одновременно.</li>
+        <li><b>Копирование строки кода VS Code:</b> <kbd>ALT+SHIFT+&darr;</kbd> нажать находясь в VS Code на строке кода, в результате текущая строка кода скопируется вниз.</li>
+        <li><b>Копирование строк списка (для li):</b> <kbd>ALT+SHIFT+&darr;</kbd>. Кодируя список находясь строке li нажать сочетание, в результате внизу появится дополнительная строка и туда скопируется исходная строка (это работает если в строке был набран простой текст без всяких хитрений и переносов, ещё лучше когда в строке вообще ничего не набрано)</li>
+        <li><b>Перенос по словам в Studio Code:</b> <kbd>ALT + Z</kbd>. <br>
+               Если вместо него срабатывает оверлей GEFORCE, то правой кнопкой на geforce experience -&gt; Общие -&gt; Внутриигровой оверлей -&gt; выключть пипку.</li>
+        <li><b>lorem ipsum (текст-рыба)</b>: набрать <kbd>Lorem</kbd> и нажать <kbd>ENTER</kbd> - в результате сгененрируется текст на латыни (по умолчанию текст из 30 слов).<br>
         Если набрать lorem5 и затем интер - сгененрируется текст из 5 слов.</li>
-        <li>Перенос по словам : <kbd class="kbd1">ALT + Z</kbd>. <br>
-            Если вмсето него срабатывает оерлей GEFORCE, то правой кнопкой на geforce experience -&gt; Общие -&gt; Внутриигровой оверлей -&gt; выключть пипку.
-        </li>
-        <li>Кодируя список находясь  строке li нажать <kbd class="kbd1">alt+shift+&darr;</kbd> - и внизу появится дополнительная строка и туда скопируется так где были (это работает если  строке была набран простой текст без всяких хитрений и переносов, ещё лучше когда в строке вообще ничего не набрано)</li>
-        <li>Кодируя текст нажать <kbd class="kbd1">CTRL+alt+&darr;/&uarr; </kbd>- создать несколько курсоров на нескольких строках чтобы редактировать текст в нескольких строках одновременно.</li>
-        <li>Зажать <kbd class="kbd1">Shift+alt</kbd> на клаве и щелкнуть и тянуть ЛК мышки вверх/вниз - создать несколько курсоров на нескольких строках чтобы редактировать текст в нескольких строках одновременно. Например можно так вставить из буфера обмена слова в несколько строк одновременно.</li>
+        <li><b>Показать доступные варианты кода:</b> <kbd>CTRL+Space</kbd>.</li>
+        <li><b>Автозаполнение кода</b>: <kbd>ENTER</kbd>, либо <kbd>TAB</kbd>, либо ЛКМ. Набрать любой тег, например p, и нажать клавиши - в результате Studio Code поставит все нужные скобки и закрет тег.<br>
+        Например набираем script, видим 3 варианта, нажимаем стрелку низ 2 раза, нажимаем интер либо таб, получаем головый код скрипта <code>&lt;script src=""&gt;&lt;/script&gt;</code>.
+    </li>
     </ol>
-
     </div>
 
     <div title="Расширения">
@@ -87,6 +84,7 @@
             Это чтобы визуально было видно GIT. <br>
         </li>
         <li>
+            <span> <!-- Выделил аоследнюю строку списка отдельно для закрашивания позади текста (пометил цветным маркером текст) -->
             Имя: HTMLHint <br>
             Идентификатор: HTMLHint.vscode-htmlhint <br>
             Описание: VS Code integration for HTMLHint - A Static Code Analysis Tool for HTML <br>
@@ -94,9 +92,29 @@
             Издатель: HTMLHint <br>
             Ссылка на Visual Studio Marketplace: https://marketplace.visualstudio.com/items?itemName=HTMLHint.vscode-htmlhint <br>
             Это проверка правильности кода HTML. <br>
-        </li>
+            </span>
+         </li>
     </ol>
     </div>
+
+    <hr>
+
+    <div>
+    <p>Div без title не окрашен стилем css "div[title]"? зато окрашен стилем для общего элемента div.</p>
+    </div>
+
+    <div title>
+    <p>Div с title окрашен сначала стилем для общего элемента div, а затем стилем css "div[title]", в итоге покрашен последним. Это потому что в CSS покраска по стилям идёт сверху вниз по порядку.</p>
+    </div>
     
+    <div title="text1">
+    <p>Div с title text1 окрашен сначала стилем css "div[title text1]", а затем стилем css "div[title]", в итоге покрашен последним.</p>
+    </div>
+
+    <div class="logo">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias asperiores facilis voluptate incidunt quae? Quia inventore provident architecto a. Pariatur sint culpa quis. Quis consectetur adipisci quibusdam velit laborum neque!</p>
+    </div>
+
+
 </body>
 </html>
