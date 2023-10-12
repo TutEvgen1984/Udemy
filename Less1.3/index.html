@@ -13,12 +13,21 @@
         <div class="conteiner">
             <div class="row">
                 <div class="col-12">1</div>
-                <div class="col-6">2</div>
-                <div class="col-6">3</div>
-                <div class="col-3">4</div>
-                <div class="col-3">5</div>
-                <div class="col-3">6</div>
-                <div class="col-3">7</div>
+                <div class="col-6 col-sm-12">2</div> <!-- При разрешении выше 992px применяется класс col-6, а ниже 576px и до 0px применяется класс col-sm-12 поверх предыдущего -->
+                <div class="col-6 col-sm-12">3</div>
+                <div class="col-3 col-Lg-4 col-md-6 col-sm-12">4</div> 
+                <div class="col-3 col-Lg-4 col-md-6 col-sm-12">5</div>
+                <div class="col-3 col-Lg-4 col-md-6 col-sm-12">6</div>
+                <div class="col-3 col-Lg-6 col-md-6 col-sm-12">7</div> <!-- col-md-6 тут можно не писать, потому что они создают одинаковые размеры блоков -->
+                <div class="col-4 col-Lg-6 col-md-6 col-sm-12">8</div>
+                <div class="col-4 col-Lg-6 col-md-6 col-sm-12">9</div>
+                <div class="col-4 col-Lg-6 col-md-12 col-sm-12">10</div>
+                <!-- 
+                    - Блок изначально занимает 4 виртуальные колонки. 
+                    - При разрешении Large (ниже 992) применится col-Lg-6 и блок займет ширину 50% доступной.
+                    - При разрешении Medium (ниже 768) применится col-md-12 и будет занимать все 12 колонок - всю ширину 100% досупной.
+                    - При разрешении Small (ниже 576) рименится col-sm-12 и будет занимать все 12 колонок - всю ширину 100% досупной. Кстати это можно было не писать потому что этот класс и предыдущий по размеру одинаковые.
+                 -->
             </div>
         </div>
     </div>
