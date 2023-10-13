@@ -1,0 +1,143 @@
+:root {
+    --gutter: 15px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; /* наследие от html */
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 18pt;
+}
+
+body,h1,h2,h3,ol,ul {
+    margin: 0;
+    padding: 0; /*  сбросили отступы */
+}
+
+.header {
+    background-color: darkolivegreen;
+}
+
+.conteiner {
+    max-width: 1200px;
+    background-color: white;
+    margin: 0 auto; /* центрируем */
+    padding: 0 15px; /* внутренние отступы */
+}
+
+.row {
+display: flex; /* вывели блоки в ряд */
+flex-wrap: wrap; /* перенос когда не влазиют */
+}
+
+.row div {
+    padding: 15px; /* дополнительные внешние размеры блоков */
+    margin: 0 auto; /* блоки будут рисоваться равномерно от центра, а не от левого края */
+    background-color: wheat;
+    border: 1px solid grey;
+}
+
+.col-1 {
+    width: calc((100%*1/12) - var(--gutter));
+}
+
+.col-2 {
+    width: calc((100%*2/12) - var(--gutter));
+}
+
+.col-3 {
+    width: calc((100%*3/12) - var(--gutter));
+}
+
+.col-4 {
+    width: calc((100%*4/12) - var(--gutter));
+}
+
+.col-5 {
+    width: calc((100%*5/12) - var(--gutter));
+}
+
+.col-6 {
+    width: calc((100%*6/12) - var(--gutter));
+}
+
+.col-7 {
+    width: calc((100%*7/12) - var(--gutter));
+}
+
+.col-8 {
+    width: calc((100%*8/12) - var(--gutter));
+}
+
+.col-9 {
+    width: calc((100%*9/12) - var(--gutter));
+}
+
+.col-10 {
+    width: calc((100%*10/12) - var(--gutter));
+}
+
+.col-11 {
+    width: calc((100%*11/12) - var(--gutter));
+}
+
+.col-12 {
+    width: calc((100%*12/12) - var(--gutter));
+}
+
+@media screen and (max-width: 992px) {
+
+body {
+    background-color: blue;
+}
+
+.col-lg-1 {
+    width: calc((100%*1/12) - var(--gutter));
+}
+
+.col-lg-2 {
+    width: calc((100%*2/12) - var(--gutter));
+}
+
+.col-lg-3 {
+    width: calc((100%*3/12) - var(--gutter));
+}
+
+.col-lg-4 {
+    width: calc((100%*4/12) - var(--gutter));
+}
+
+.col-lg-5 {
+    width: calc((100%*5/12) - var(--gutter));
+}
+
+.col-lg-6 {
+    width: calc((100%*6/12) - var(--gutter));
+}
+
+.col-lg-7 {
+    width: calc((100%*7/12) - var(--gutter));
+}
+
+.col-lg-8 {
+    width: calc((100%*8/12) - var(--gutter));
+}
+
+.col-lg-9 {
+    width: calc((100%*9/12) - var(--gutter));
+}
+
+.col-lg-10 {
+    width: calc((100%*10/12) - var(--gutter));
+}
+
+.col-lg-11 {
+    width: calc((100%*11/12) - var(--gutter));
+}
+
+.col-lg-12 {
+    width: calc((100%*12/12) - var(--gutter));
+}
+}
