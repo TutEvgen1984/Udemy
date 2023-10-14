@@ -1,0 +1,16 @@
+@font-face { /* правило для подключения шрифтов */
+    font-family: Caveat;
+    src: url(font/Caveat.ttf);
+}
+
+[alt] {
+    border: 10px solid red;
+}
+
+[alt="Изображение 1"] {
+    border: 10px solid darkblue;
+}
+
+body {
+    font: 40pt Caveat, cursive;
+}
