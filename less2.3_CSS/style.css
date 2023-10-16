@@ -1,6 +1,6 @@
 @font-face { /* правило для подключения шрифтов */
-    font-family: Caveat;
-    src: url(font/Caveat.ttf);
+    font-family: Caveat; /* Имя шрифта */
+    src: url(font/Caveat.ttf); /* Путь к файлу со шрифтом */
 }
 
 [alt] {
@@ -11,7 +11,10 @@
     border: 10px solid darkblue;
 }
 
-body {
-    font: 40pt Caveat, cursive;
-    
+.caveat {
+font: 40pt Caveat, cursive; /* Название шрифта должно совпадать с указанным в font-family, если не совпадет, то применится только размер шрифта, а шрифт и курсивный наклон нет */
 }
+
+/* body {
+    font: 40pt Caveat, cursive;    
+} */
