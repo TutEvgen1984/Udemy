@@ -11,10 +11,50 @@
     border: 10px solid darkblue;
 }
 
-.caveat {
-font: 40pt Caveat, cursive; /* Название шрифта должно совпадать с указанным в font-family, если не совпадет, то применится только размер шрифта, а шрифт и курсивный наклон нет */
+h1 {
+font: 30pt Caveat, cursive; /* Название шрифта должно совпадать с указанным в font-family, если не совпадет, то применится только размер шрифта, а шрифт и курсивный наклон - нет */
 }
 
-/* body {
-    font: 40pt Caveat, cursive;    
-} */
+/* .img1hover {
+    opacity: 1;
+}  Это - лишняя запись. не нужно писать изначальное состояние которое и так есть по умолчанию */
+
+.img1hover:hover {
+    opacity: .5;
+} 
+
+/* .img1hovertransition {
+    opacity: 1; 
+} Это - лищняя запись */
+
+.img1hovertransition:hover {
+    opacity: .5;
+    transition: opacity 1s; /* Пришем transition (переход) и потом свойство которе хотим замедлить, в нашем случае opacity который находится выше, и затем скорость перехода в секундах */
+}
+
+div.bg {
+    height: 200px;
+    width: 600px;
+	background-image: url(img/Nvidia-logo-01.png), url(img/zelenaya-trava-22.jpg);
+    background-size: 300px;
+	background-position: left top, left top; 
+	background-repeat: no-repeat, no-repeat;
+}
+
+div.background-origin {
+    height: 250px;
+    width: 350px;
+    border: 20px solid black;
+    padding: 10px;
+    background-image: url(img/img04.png);
+    background-repeat: no-repeat;
+
+    background-origin: padding-box; /* (по умолчанию) - граница картинки прилипает к границе div'а */
+
+    /* background-origin: border-box; Левый верхний угол картинки совпадает с левой верхней точкой внешней границы border'а, в итоге border перекрыл картинку частично */
+}
+
+.rotate:hover {
+transform: rotate(15deg);
+transition: transform 1s;
+}

@@ -18,8 +18,8 @@
 
     <hr>
 
-    <p class="caveat">Question 2: Как вы пути файла указать выход на один уровень выше</p>
-    <p class="caveat">Ответ: ../</p>
+    <p>Question 2: Как в пути файла указать выход на один уровень выше</p>
+    <p>Ответ: "../"</p>
 
     <hr>
 
@@ -39,7 +39,7 @@
     <hr>
 
     <p>Question 6: С помощью какой конструкции создается адаптивный дизайн</p>
-    <p>Ответ: @media</p>
+    <p>Ответ: правило @media (media queries)</p>
 
     <hr>
 
@@ -56,19 +56,57 @@
     <hr>
 
     <p>Question 3: Изменение какого свойства возможно сделать плавным с помощью transition?</p>
-    <p>Ответ: opacity</p>
+    <p>Ответ: opacity. https://doka.guide/css/transition/</p>
+
+    <p>transition - переход</p>
+
+    <p>Свойство opacity принимает дробные или целые значения от 0 до 1 включительно. 0 будет означать полную прозрачность, а 1 полную непрозрачность (значение по умолчанию). В дробных значениях можно опустить первый ноль: opacity: .5. И всё равно будет работать.</p>
+
+    <p>Переход БЕЗ transition:</p>
+    <img class="img1hover" src="img/img01.png" alt="Изображение001">
+
+    <p>Переход с transition:</p>
+    <img class="img1hovertransition" src="img/img01.png" alt="Изображение001">
+
+    <hr>
 
     <p>Question 4: Возможно ли установить больше одной картинки на фон элемента с помощью CSS?</p>
     <p>Ответ: да. https://snipp.ru/html-css/multiple-backgrounds</p>
 
-    <p>Question 5: Rаково изначальное значение CSS свойства background-origin?</p>
+    <div class="bg">
+
+    </div>
+
+    <hr>
+
+    <p>Question 5: Каково изначальное значение CSS свойства background-origin?</p>
     <p>Ответ: padding-box. https://webref.ru/css/background-origin</p>
+
+    <p>Свойство определяет исходное положение (origin position)</p>
+
+    <div class="background-origin">
+
+    </div>
+
+    <hr>
 
     <p>Question 6: Выберете некорректное значение свойства transform:</p>
     <p>Ответ: rotate(30degrees) неправильная запись, должно быть rotate(30deg). scale(200%) правильно, rotate(0.5turn) правильно, matrix(1,2,3,4,5,6) правильно. https://webref.ru/css/transform, https://webref.ru/css/value/rotate</p>
 
+    <p>Тransform - трансформация, изменение формы.</p>
+
+    <img class="rotate" src="img/img04.png" alt="Монстры_поворачивающиеся">
+
+    <hr>
+
     <p>Question 7: Как размыть изображение?</p>
     <p>Ответ: filter: blur(4px). https://webref.ru/css/value/blur</p>
+
+    <p>Функция blur() задаёт размытие по Гауссу изображений, фоновых картинок или текста.</p>
+
+    <img class="gauss" src="img/img04.png" alt="Монстры_размытие_Гаусс">
+
+    <hr>
 
     <p>Question 8: Если свойство z-index не определено, какой элемент будет находиться визуально наверху?</p>
     <p>Ответ: тот, который расположен в коде позже. https://webref.ru/css/z-index</p>
