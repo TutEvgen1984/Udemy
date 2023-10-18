@@ -104,30 +104,54 @@
 
     <p>Функция blur() задаёт размытие по Гауссу изображений, фоновых картинок или текста.</p>
 
-    <img class="gauss" src="img/img04.png" alt="Монстры_размытие_Гаусс">
+    <img src="img/winnie-the-pooh.png" alt="Винни_Пух" width="300px">
+
+    <p>Винни Пух размытие 1 px:</p>
+    <img class="gauss" src="img/winnie-the-pooh.png" alt="Винни_Пух_размытие_Гаусс" width="300px">
 
     <hr>
 
     <p>Question 8: Если свойство z-index не определено, какой элемент будет находиться визуально наверху?</p>
     <p>Ответ: тот, который расположен в коде позже. https://webref.ru/css/z-index</p>
 
+    <hr>
+
     <p>Question 9: Какое свойство является сокращением для свойств flex-direction и flex-wrap?</p>
-    <p>Ответ: flex-flow. https://webref.ru/css/flex-flow</p>
+    <p>Ответ: flex-flow. https://doka.guide/css/flex-flow/</p>
+
+    <hr>
 
     <p>Question 10: Какое количество значений принимает и корректно обрабатывает свойство border-style?</p>
-    <p>Ответ: 1-4. https://webref.ru/css/border-style</p>
+    <p>Ответ: 1-4 (поочередно устанавливается стиль верхней, правой, нижней и левой границ.). https://webref.ru/css/border-style</p>
+    <p>Значения border-style: [none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset]</p>
+
+    <hr>
 
     <p>Question 11: Какое CSS свойство не может быть установлено с помощью сокращенного свойства background?</p>
     <p>Ответ: bacground-blend-mode. https://doka.guide/css/background/</p>
+    <p>https://webref.ru/css/background-blend-mode</p>
+
+    <hr>
 
     <p>Question 12: Возможно ли указать font-weight, font-style и font-size, используя только одно CSS свойство?</p>
     <p>Ответ: Да (font). https://doka.guide/css/font/</p>
 
-    <p>Question 13: Какое свойство используется для обтекания изображения текстом?</p>
+    <hr>
+
+    
+    <p><img class="imgleft" src="img/img02.png" alt="">
+    Question 13: Какое свойство используется для обтекания изображения текстом?</p>
     <p>Ответ: float. https://webref.ru/recipe/2329 </p>
+
+    <p>Если текста первого абзаца не хватит на обтекание первой картинки снизу, то заголовок и текст второго абзаца будут обтекать первую картинку справа. Чтобы этого не было применяется к следующему абзацу, который наезжает туда куда не надо div style="clear:left"</p>
+
+    <div class="clear-left"> <!--  clear: left;Отменяет действие float с указанной стороны для вышестоящих элементов. То есть текст перестаёт обтекать картинку выше. https://webref.ru/css/clear -->
+    
+    <hr>
 
     <p>Question 14: Какого значения свойства display не существует?</p>
     <p>Ответ: inline-inherit. А существуют: inline-grid, inline-table.</p>
+    </div>
 
     <p>Question 15: Какое наименьшее возможное значение специфичности селектора?</p>
     <p>Ответ: 0. https://habr.com/ru/articles/436610/</p>
