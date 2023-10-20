@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.place {
+    border: 1px;
+}
+
+.container {
+    width: 1170px;
+    border: 1px red;
+    background-color: rgb(44, 44, 61);
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bundle {
+    text-align: center;
+    font-weight: bold;
+}
+
+.quantity {
+    font-size: 75pt;
+    color: chocolate;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+    }
+
+.description {
+    color: azure;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-size: 25pt;
+}
