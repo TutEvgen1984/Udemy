@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+width: 1170px;
+margin: 0 auto;
+border: 2px solid red;
+}
+
+.box {
+    
+    background: rgb(2,0,36); /* Если в каком-то раузере не будет работать градиент, то вместо него будет монолитный цвет bacground */
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(107,61,0,1) 100%); /* этот backgroun перекрашивает предыдущий фон */
+    /* https://cssgradient.io/ */
+}
+
+.box_inner {
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid pink;
+    
+}
+
+.item {
+    text-align: center;    
+}
+.number {
+    color: white;
+    font-size: 50pt;
+}
+.text {
+    color: rgb(207, 119, 55);
+    font-size: 20pt;
+    font-family: sans-serif;
+}
+.line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 0 auto;
+}
