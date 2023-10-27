@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>less3.2 - практическое занятие №2</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css"> <!-- Нужен именно такой порядок подключения, если другой, то мы не сможем переопределять свои стили -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,26 +12,32 @@
         <div class="container">
             <div class="box_inner">
                 <div class="item">
+                    <i class="fa fa-user" aria-hidden="true"></i> <!-- иконка с сайта http://fontawesome.ru . Но без специальной папки fonts вместо иконок будут квадраты -->
+                    <!-- Используйте aria-hidden, когда элемент надо скрыть только от пользователей вспомогательных технологий. Типичные ситуации: декоративный контент — иконочный шрифт или Unicode-символы в элементах управления; -->
                     <div class="number">3587</div>
                     <div class="text">Satisfied clients</div>
                     <div class="line"></div>
                 </div>
                 <div class="item">
+                    <i class="fa fa-coffee" aria-hidden="true"></i>
                     <div class="number">207</div>
                     <div class="text">Cups of coffee</div>
                     <div class="line"></div>
                 </div>
                 <div class="item">
+                    <i class="fa fa-comment-o" aria-hidden="true"></i>
                     <div class="number">2500</div>
                     <div class="text">Blog posts</div>
                     <div class="line"></div>
                 </div>
                 <div class="item">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
                     <div class="number">873</div>
                     <div class="text">Likes</div>
                     <div class="line"></div>
                 </div>
                 <div class="item">
+                    <i class="fa fa-cutlery" aria-hidden="true"></i>
                     <div class="number">900</div>
                     <div class="text">We launched</div>
                     <div class="line"></div>
