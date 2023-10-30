@@ -1,15 +1,50 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
 
 .box {
+    background-color: #10c9c3;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,201,195,1) 100%);
 }
 .conteiner {
+    width: 1170px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
 }
+
 .content_inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 200px;
 }
+
 .item_row {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid black; */
+    margin: auto 0; /* выровняли вертикально, по другому не получается */
+    color: white;
 }
+
+i.fa {
+    margin: auto 0; /* выровняли вертикально внутри текстового блока */
+    padding-right: 15px;
+    font-size: 30pt;
+}
+
 .bundle_column {
+    display: flex;
+    flex-direction: column;
 }
+
 .number {
+    font-size: 20pt;
+    font-weight: bold; 
 }
+
 .text {
+    text-transform: uppercase;
+    font-weight: bold;
 }
