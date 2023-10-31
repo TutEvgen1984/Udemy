@@ -1,50 +1,38 @@
 * {
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: #fff;
+}
+.box {
+    background: rgb(13, 199, 190);
 }
 
-.box {
-    background-color: #10c9c3;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,201,195,1) 100%);
-}
-.conteiner {
+.container {
     width: 1170px;
     margin: 0 auto;
-    /* border: 1px solid red; */
 }
 
-.content_inner {
+.box__inner {
+    height: 300px;
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    height: 200px;
+    align-items: center; /* Выравнивание по вертикали всего содержимого посередине 300 пикс */
 }
-
-.item_row {
+.item {
     display: flex;
-    flex-direction: row;
-    /* border: 1px solid black; */
-    margin: auto 0; /* выровняли вертикально, по другому не получается */
-    color: white;
+    align-items: center; /* Вертикальное выравнивание всех 3-х элементов посередине относительно центра в рамках блочка "иконка + цифры и текст справа" */
+    border: 1px solid red;
 }
-
-i.fa {
-    margin: auto 0; /* выровняли вертикально внутри текстового блока */
-    padding-right: 15px;
-    font-size: 30pt;
+.item__content {
+    padding: 20px; /* внутренний отступ вокруг содержимого "число+текст" */
 }
-
-.bundle_column {
-    display: flex;
-    flex-direction: column;
-}
-
 .number {
-    font-size: 20pt;
-    font-weight: bold; 
+    font-size: 30px;
 }
-
 .text {
+    font-size: 15px;
     text-transform: uppercase;
-    font-weight: bold;
+}
+i.fa {
+    font-size: 50px;
 }
