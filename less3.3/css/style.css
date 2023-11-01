@@ -3,7 +3,39 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.box {
+    border: 1px solid red;
+}
+
 .conteiner {
     width: 1170px;
     margin: 0 auto;
+}
+
+.box_inner {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 80px;
+    max-width: 750px;
+    margin: 80px auto 30px;
+    line-height: 45px; /* высота строки */
+    font-weight: normal; /* Убрали жирность шрифта */
+}
+
+p {
+    max-width: 900px; /* ограничили текст по ширине */
+    margin: 0 auto 60px; /* выровняли по центру */
+    line-height: 30px;
+}
+
+.icon_box {
+    margin-bottom: 60px;
+}
+
+i.fa {
+    color: cadetblue;
+    font-size: 80px; /* размер шрифта не приментися если писать только i, надо написать более точно i.fa. Можно ещё написать .icon_box i - и это будет работать  */
+    margin: 0 50px; /* раздвинули иконки */
 }

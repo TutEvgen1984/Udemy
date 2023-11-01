@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+.conteiner {
+    width: 1170px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+
+.box_inner {
+    display: flex;
+}
+
