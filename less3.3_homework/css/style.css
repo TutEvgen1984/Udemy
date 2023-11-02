@@ -1,14 +1,45 @@
 * {
     box-sizing: border-box;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
-
-.conteiner {
+.container {
     width: 1170px;
     margin: 0 auto;
+}
+img {
+    width: 250px;
+}
+h2, p {
+    color: #5e5e5e;
+    line-height: 30px;
+}
+.box__inner {
+    display: flex;
+    align-items: center;
     border: 1px solid red;
 }
-
-.box_inner {
-    display: flex;
+.content {
+    max-width: 500px; /* уменьшение размера абзаца */
+    margin-right: 40px; /* отодвинули текст от иконок справа */
 }
-
+.icons > div /* в каждом диве своя иконка, див делаем с границей, преобразуем из квадрата в круг, и красим */
+{
+    width: 50px; /* ширина дива */
+    height: 50px; /* высота дива */
+    border: 2px solid #30a740; /* цвет границы */
+    border-radius: 50%;/* преобразовали квадрат в круг */
+    background-color: transparent; /* прозрачный цвет */
+    font-size: 25px; /* размер иконок */
+    color: #30a740; /* цвет иконок */
+ 
+    display: flex; /* если не написать, то не будет работать центрирование */
+    justify-content: center; /* центирование иконок по горизонтали */
+    align-items: center; /* центрирование иконок по вертикали */
+    transition: 0.2s; /* скорость изменения состояния hover */
+    cursor: pointer; /* указатель в виде руки */
+    margin: 15px 0; /* раздвигание иконок и дивов между собой вверх-вниз */
+}
+.icons > div:hover {
+    background-color: #30a740; /* цвет появляещегося заднего фона взамен прозрачного */
+    color: #fff; /* красится иконка в другой цвет иначе она становится не видна */
+}

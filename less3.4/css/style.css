@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+}
+
+.team {
+    background-color: #f3f3f3;
+}
+.conteiner {
+    width: 900px;
+    margin: 0 auto;
+}
