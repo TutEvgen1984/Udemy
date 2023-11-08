@@ -34,7 +34,7 @@ body,p,h3 {
     font-size: 30px;
     font-family: "Gotham";
     color: rgb(48, 48, 48);
-    /* font-weight: bold; нет неоходимости - он и так жирный */
+    /* font-weight: bold; нет необходимости - он и так жирный */
     text-transform: uppercase;
     line-height: 30px;
     padding-top: 50px;
