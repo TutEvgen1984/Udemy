@@ -1,0 +1,29 @@
+http://bg.siteorigin.com/ - генератор паттернов фона
+http://www.heropatterns.com/ - готовые паттерны фона
+https://image.online-convert.com/ru - конвертер изображений
+https://fonts.google.com/ - шрифты
+
+http://fontawesome.io/icons/ - иконки
+https://www.flaticon.com/ - иконки
+https://materializecss.com/icons.html - иконки Material дизайн
+http://fontello.com/ - иконки
+
+https://codepen.io/ - писать код онлайн
+https://www.materialpalette.com/ - палитра цветов
+http://ianlunn.github.io/Hover/ - готовые эффекты для кнопок
+http://apps.eky.hk/css-triangle-generator/ - генератор треугольников
+
+https://www.colorzilla.com/gradient-editor/ - генератор градиентов
+https://www.calltoidea.com/ - идеи для элементов сайта
+https://turbologo.ru/ - генератор логотипа
+https://morphismail.github.io/myInstruments/index.html - мои инструменты для теней
+
+https://htmlweb.ru/html/symbols.php - спецсимволы
+https://html5book.ru/specsimvoly-html/ - спецсимволы
+https://csscolor.ru/ - палитра цветов
+https://gist.github.com/yeromin/5d525c294132e58ef8feeccd5eab4a39 - 30 css селекторов
+
+https://html5book.ru/ - веб справочник
+https://webref.ru/ - веб справочник
+https://html5book.ru/css3-flexbox/ - флексбоксы
+https://yoksel.github.io/flex-cheatsheet/ - интерактивный флексбокс
