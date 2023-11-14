@@ -13,6 +13,11 @@
     src: url(../fonts/PTSerif-Regular.ttf);
 }
 
+@font-face {
+    font-family: "Couture";
+    src: url(../fonts/couture-bold.otf);
+}
+
 * { /* обнуляем маржины и паддинги для всего чтобы в разных браузерах было всё видно одинаково */
     margin: 0;
     padding: 0;
@@ -84,10 +89,10 @@ p,ul,body {
 }
 
 .header_body {
-    height: 555px;
+    height: 547px;
     border: 1px solid black;
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: middle; /* Вертикальное центрирование разного текста (несколько абзацев) находящихся в диве */
 }
 
 
@@ -110,11 +115,93 @@ p,ul,body {
     font-size: 20px;
     font-family: "PTSerif-Regular";
     color: rgb(255, 255, 255); 
-    padding-top: 50px;
+    padding-top: 45px;
     max-width: 475px;
     width: 100%;    
 }
 
+.section_our_services {
+    background-color: #fff;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;         
+}
 
+.Our_services {
+    font-size: 50px;
+    font-family: "Couture";
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 95px;
+    border: 1px solid black;
+}
+.our {
+    color: rgb(198, 35, 20);
+}
 
+.services {
+    color: #130e27;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid black;
+    text-align: center;
+    width: 180px;
+    margin-bottom: 70px;
+}
+
+.text_icons {
+    font-size: 20px;
+    font-family: "PTSerif-Regular";
+    color: rgb(22, 22, 22);
+    line-height: 28px;
+  }
+  
+.section_our_story {
+    background-color: #130e27;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.story_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+}
+
+.story_text {
+    font-size: 20px;
+    font-family: "PTSerif-Regular";
+    color: rgb(255, 255, 255);
+    line-height: 28pt;
+    max-width: 630px; 
+}
+
+.story_button {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-family: "Montserrat-Regular";
+    color: rgb(255, 255, 255);
+    width: 270px;
+    height: 65px; 
+    background-color: #c62314;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 65px; /* хитрое вертикальное выравнивание текста с помощью высоты линии равной высоте границ */
+}
+
+.story_button:hover {
+    color: black;
+}
 
