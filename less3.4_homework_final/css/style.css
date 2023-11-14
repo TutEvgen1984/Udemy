@@ -39,10 +39,8 @@ p,ul,body {
 }
 
 .header {
-    /* background-color: #dd2211; */
     max-width: 1200px;
     width: 100%;
-    /* max-height: ; */
     height: 688px;
     margin: 0 auto;
     background-image: url(../img/img_header.png);
@@ -53,7 +51,7 @@ p,ul,body {
     padding: 0 15px; /* при уменьшении экрана текст начнет прилипать к границам, чтобы этого не было ставят паддинг по бокам */
     width: 100%; /* в адаптивной верстве нельзя писать жестко заданную ширину потому что иначе при уменьшении экрана оно не будет уменьшаться */
     margin: 0 auto;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .header_top {
@@ -61,7 +59,7 @@ p,ul,body {
     justify-content: space-between;
     align-items: center;
     margin-top: 40px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .navigation {
@@ -90,7 +88,7 @@ p,ul,body {
 
 .header_body {
     height: 547px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: table-cell;
     vertical-align: middle; /* Вертикальное центрирование разного текста (несколько абзацев) находящихся в диве */
 }
@@ -134,7 +132,7 @@ p,ul,body {
     font-weight: bold;
     padding-top: 30px;
     padding-bottom: 95px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 .our {
     color: rgb(198, 35, 20);
@@ -152,7 +150,7 @@ p,ul,body {
 .item {
     display: table-cell;
     vertical-align: middle;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: center;
     width: 180px;
     margin-bottom: 70px;
@@ -202,6 +200,7 @@ p,ul,body {
 }
 
 .story_button:hover {
-    color: black;
+    background-color: black;
+    /* border: 4px solid white; */
 }
 
