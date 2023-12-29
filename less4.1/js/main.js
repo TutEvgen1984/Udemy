@@ -728,7 +728,25 @@ let obj = {
 console.log(obj)
 // Получили {color: 'Tomato', numbers: Array(2), checked: true}
 
-console.log('obj["color"]: ')
+console.log('\n obj["color"]: ')
 
-console.log(obj["color"]) /* Получили: Tomato */
+console.log(obj["color"]) /* Вызвали с помощью квадратных скобок из объекта цвет. Получили: Tomato */
+
+console.log('\n obj.color: ')
+console.log(obj.color) /* Вызвали с помощью точки из объекта цвет. Получили то же самое: Tomato */
+
+console.log('\n obj.numbers[1]: ')
+console.log(obj.numbers[1]) /* Вызвали с помощью точки из объекта массив чисел и из него число индексом 1. Получили: 777 */
+
+console.log('\n obj["numbers"][1]: ')
+console.log(obj["numbers"][1]) /* Вызвали с помощью квадратных скобок из объекта массив чисел и из него число индексом 1. Получили то же самое: 777 */
+
+// Чтобы узнать какие существуют ключи у объекта, существует следующая конструкция:
+
+console.log('\n Object.keys(obj): ')
+
+console.log(Object.keys(obj)) /* то есть пишем Object.keys и в скобках имя нашего объекта */
+// Получили: (3) ['color', 'numbers', 'checked']
+
+
 
