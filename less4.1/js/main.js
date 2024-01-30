@@ -2012,7 +2012,7 @@ class Moderator2 extends UserClass2 {
     }
     myInfo () { 
         super.myInfo() // Если мы хотим существующий метод не изменить, а выполнить и еще что-то дополнить, то выполняем с помощью ключевого слова super. В итоге выполнится метод myInfo() от родителя, 
-        console.log("Я модератор"); // После выполнения родительского метода myInfo() мы дополняем его  текущей строкой
+        console.log("Я модератор"); // После выполнения родительского метода myInfo() мы дополняем его текущей строкой
         }
 }
 
@@ -2028,25 +2028,95 @@ m2.myInfo()
 console.log("\n Переопределение конструктора в классе:");
 
 class Moderator3 extends UserClass2 { 
-    constructor (name, age, admin=false, moder=true) { // добавли , moder=true
-        super (name, age, admin=false ) // всё что в скобках скопировали из оригинального конструктора
-        this.name = name
-        this.age = age
-        this.admin = admin 
-        this.moder = moder // добавили строку
+    constructor (name, age, admin=false, moder=true) { // добавли ", moder=true"
+        super (name, age, admin /* =false */ ) // всё что в скобках скопировали из оригинального конструктора, только из admin=false надо убрать false иначе всегда будем получать false даже если руками ввели true
+        // this.name = name
+        // this.age = age
+        // this.admin = admin // исключили эти 3 строки так как они есть в родительском конструкторе
+        this.moder = moder // добавили новое свойство
     } 
 // Если не написать вызов super родительского конструктора, и попытаться объявить переменную на основе этого класса, то получим ошибку:
 // Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
 //   at new Moderator3 (main.js:2032:9)
 //   at main.js:2046:10
-
-    addPost() {
+    static addPost() { // дописали перед этим методом static, после чего он перестанер работать для переменных
         console.log("New Post");
     }
+
+    static master = true // дописали новое статическое свойство 
+
     myInfo () { 
-        super.myInfo() // Если мы хотим существующий метод не изменить, а выполнить и еще что-то дополнить, то выполняем с помощью ключевого слова super. В итоге выполнится метод myInfo() от родителя, 
-        console.log("Я модератор"); // После выполнения родительского метода myInfo() мы дополняем его  текущей строкой
+        super.myInfo() 
+        console.log("Я модератор");
         }
 }
 
 let m3 = new Moderator3("Ivan", 22, true, false)
+console.log(m3);
+// Получили раскрывающийся объект: Moderator3 {name: 'Ivan', age: 22, admin: true, moder: false}
+
+let m4 = new Moderator3("Ivan", 22) // по умолчанию должны присвоиться admin=false, moder=true
+console.log(m4);
+// Получили раскрывающийся объект: Moderator3 {name: 'Ivan', age: 22, admin: false, moder: true}
+
+// m3.addPost()
+// Получили Uncaught TypeError: m3.addPost is not a function    at main.js:2059:4
+// Это потому что напсиали static и теперь такой метод недоступен у конкретного объекта, но доступен у самого класса.
+
+Moderator3.addPost()
+// Получили: New Post        main.js:2043
+// Из-за static метод доступен только у самого класса.
+
+// То есть статические методы позволяют делать что-то не с конкретным объектом, а в общем какой-то функционал который доступен из класса.
+// Это похоже на библиотеку Math.sqrt(), у которой есть свои методы и они делают что-то конкретное. Math это класс, и через точку можно вызвать какие-то его методы. Вот примерно такой же аналог мы сейчас создали с помошью статического метода в виде класса Moderator3.
+
+console.log(Moderator3.master); // так как это свойство обвчное, то круглых скобок не надо
+// Получили: true
+
+// console.log(m4.master)
+// Получили: undefined потому что это свойство статическое, и у переменных, которые делаются на основе класса, оно отсутствует
+// Так же как и методы, стаические свойства работают с самим классом, а не с его дочерними объектами. И это так же может быть полезно и можно использовать в определенных ситуациях
+
+// --- Практика с классами:
+// К классам можно писать документацию JSDoc
+
+class People {
+    /**
+     * Класс человек 
+     * @param {String} fio по формату "Фамилия Имя Отчество"
+     * @param {String} birthday день рождения по формату "24.11.1984"
+     * @param {String} numbers "номер", если больше 2 номеров, то по формату "номер1, номер2"
+     * @param {Number} room комната
+     */
+    constructor(fio, birthday, numbers, room) { // конструктор создается для того чтобы было удобно создавать объекты на основе класса
+        let name = fio.toLowerCase().split(" ") // делаем маленькими буквами и разделяем на массив по пробелу
+        this.name = {} // Создали пустой объект для имени (не массив!)
+        this.name.f = name[0][0].toUpperCase() + name[0].slice(1) // В первом слове, первую букву делаем большой, затем прибавляем из первого слова оставшиеся буквы начиная с 1-го индекса
+        this.name.i = name[1][0].toUpperCase() + name[1].slice(1)
+        this.name.o = name[2][0].toUpperCase() + name[2].slice(1)
+        // В итоге мы фамилию имя и отчество привели в нормальный вид и с помощью точки (.) поместили по отдельности как свойства объекта name
+        
+        let date = birthday.split(".") // разделили на массив по точке
+        this.date = {}
+        this.date.d = +date[0] // + для преобразования из строки в число. День
+        this.date.m = +date[1] // месяц
+        this.date.y = +date[2] // год
+        
+        // Телефоны:
+        this.numbers = numbers.split(", ")
+
+        // Телефоны, способ №2 дурацкий:
+        // let phone = number.split(", ")
+        // this.numbers = [] // создали переменную хранящую номера телефонов в виде массива, а не объектом, потому что номера телефонов нам удобнее будет хранить просто под индексами
+        // for(let i = 0; i<phone.length; i++) {
+            // this.numbers.push(phone[i])  }
+
+        this.room = +room
+    } // конец конструктора
+}
+
+let people1 = new People ("тЮтИкоВ Евгений Владимирович", "25.11.1984", "9984, 8847, 5478", 548)
+console.log(people1);
+// Получили:
+// разворачивающийся объект: People {name: {…}, date: {…}, numbers: Array(3)}
+// 
