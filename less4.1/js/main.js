@@ -2088,7 +2088,7 @@ class People {
      * @param {String} numbers "номер", если больше 2 номеров, то по формату "номер1, номер2"
      * @param {Number} room комната
      */
-    constructor(fio, birthday, numbers, room) { // конструктор создается для того чтобы было удобно создавать объекты на основе класса
+    constructor(fio, birthday, numbers="", room="") { // конструктор создается для того, чтобы было удобно создавать объекты на основе класса. numbers="", room="" сделали по умолчанию пустыми, этим мы сделали их не обязательными для ввода, если мы их не введём, то подставится пустая строка
         let name = fio.toLowerCase().split(" ") // делаем маленькими буквами и разделяем на массив по пробелу
         this.name = {} // Создали пустой объект для имени (не массив!)
         this.name.f = name[0][0].toUpperCase() + name[0].slice(1) // В первом слове, первую букву делаем большой, затем прибавляем из первого слова оставшиеся буквы начиная с 1-го индекса
@@ -2113,10 +2113,156 @@ class People {
 
         this.room = +room
     } // конец конструктора
+
+    static month = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]; // Это - статическое свойство для класса, это месяца в массиве в правильном склонении
+    
+    /**
+     * Вывести ФИО
+     * @return {String} Строка формата "Фамилия Имя Отчество"
+     */
+    getFio() { // Создадим собственный метод для вывода ФИО
+        return `${this.name.f} ${this.name.i} ${this.name.o}`
+    }
+
+    /**
+     * Вывести день рождения
+     * @return {String} Строка формата "24 июля 1997"
+     */
+    getBirthday () {
+        return `${this.date.d} ${People.month[this.date.m-1]} ${this.date.y}` // People.month: Статическое свойство указывается с предварительным указанием названия класса без всяких this.month[] и просто month[] которые дают ошибку
+    }
+
+    /**
+     * Вывести Фамилия Имя Отчество.расширение 
+     * @param {String} extension расширение, например "jpg" или "png"
+     * @return {String} для названия изображения
+     */
+    getImgSrc(extension) {
+        return `${this.name.f}_${this.name.i}_${this.name.o}.${extension}` // Если напишем extension без ${}, то получим слово, а не переменную
+    }
+
+    /**
+     * Вывести все номера телефона или только первый номер
+     * @param {Boolean} allNumbers если true то все номера, если false - только первый номер
+     * @return {String} Строка формата: "89006660099, 89009996699"
+     */
+    getNumberList(allNumbers) {
+        if (this.numbers.length == 0 || this.numbers[0].length == 0) { 
+            return console.log(`undefined + this.numbers= ${this.numbers}, this.numbers.length=${this.numbers.length}, this.numbers[0].length = ${this.numbers[0].length}`);
+        }
+
+        if (allNumbers) { // условие allNumbers=true не обязательно писать, можно просто allNumbers что воспринимается языком как true
+            return this.numbers.join(", ") // объединяем через ", " и получим то же что было при входе: все номера склеятся через запятая-пробел. 
+        } else {
+            return this.numbers[0] // то есть если false, то получим только первый номер телефона из нескольких
+        }
+    }
 }
 
 let people1 = new People ("тЮтИкоВ Евгений Владимирович", "25.11.1984", "9984, 8847, 5478", 548)
 console.log(people1);
 // Получили:
-// разворачивающийся объект: People {name: {…}, date: {…}, numbers: Array(3)}
-// 
+// People {name: {…}, date: {…}, numbers: Array(3), room: 548}
+// - разворачивающийся объект: date:{d: 25, m: 11, y: 1984}
+// - разворачивающийся объект: name: {f: 'Тютиков', i: 'Евгений', o: 'Владимирович'}
+// - разворачивающийся массив: numbers: (3) ['9984', '8847', '5478']
+// - room: 548
+// - [[Prototype]]: Object
+// -- constructor: class People
+
+console.log(people1.getFio());
+// Получили: Тютиков Евгений Владимирович
+
+let people2 = new People ("Иванов Иван иванович", "20.12.1984", "5487", 522)
+console.log(people2); // Получили полный объект для Иванов Иван иванович
+console.log(people2.getFio());
+// Получили: Иванов Иван Иванович. Метод вернул уже исправленные конструктором класса ФИО
+
+// В итоге видим что метод getFio() для каждого человека возвращает свой собственный результат
+
+console.log(people1.getBirthday());
+// Получили 25 ноября 1984
+
+console.log(people2.getBirthday());
+// Получили 20 декабря 1984
+
+// В итоге мы пишем методы и они не просто выводят, а выполнив действи немного преобразовав
+
+console.log(people1.getImgSrc("png")); // png нужно преедавать самостоятельно и обязательно в кавычках, иначе будет ошибка
+// Получили: Тютиков_Евгений_Владимирович.png
+
+console.log(people2.getImgSrc("pdf"));
+// Получили: Иванов_Иван_Иванович.pdf
+
+// И теперь для любого объекта мы можем получать изображение зная конкретный формат.
+
+console.log(people1.getNumberList(true));
+// Получили: 9984, 8847, 5478
+
+console.log(people1.getNumberList());
+// Получили: 9984
+
+console.log(people2.getNumberList(true));
+// Получили: 5487
+
+let people3 = new People ("Иванов Иван иванович", "20.12.1984")
+console.log(people3.getNumberList(true));
+// undefined + this.numbers= , this.numbers.length=1, this.numbers[0].length = 0
+
+
+// Дополнительная литература:
+// Статические свойства и методы:
+// https://learn.javascript.ru/static-properties-methods
+
+// Вопросы:
+// Какое ключевое слово позволяет обратиться к своим полям и методам класса?
+// Ответ: this
+
+// --- 9.12 ECMAScript 2015 (ES6)
+console.log("\n --- 9.12 ECMAScript 2015 (ES6)");
+
+// https://babeljs.io/
+
+// Создадим простенький класс на 6 строк
+class A {
+    a = 5 // пременная а имеет значение 5
+    sum(b) { // метод который нао будет вызывать отдельно sum(b), который потребует ввод в скобки числа вернёт свойство а плюс b
+        return this.a + b
+    }
+}
+// Этот код написан на ECMAScript6
+// Скопируем его в https://babeljs.io/ -> Try it out
+
+// Получили справа в окне преобразованный код в скрипт предыдущего поколения ECMAScript5 как сказал Исмаил Хусейнов, но у меня стоит галочка React и результат отличный от его, результат следующий:
+// function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+// function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : String(i); }
+// function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+// class A {
+//   constructor() {
+//     _defineProperty(this, "a", 5);
+//   }
+//   // пременная а имеет значение 5
+//   sum(b) {
+//     // метод который нао будет вызывать отдельно sum(b), который потребует ввод в скобки числа вернёт свойство а плюс b
+//     return this.a + b;
+//   }
+// }
+
+// В результате такой код длиньше, но зато он будет поддерживаться в большем количестве браузеров, получится максимальная поддержка в других браузерах и устрйоствах. 
+
+//  --- Дополнительные возможноси, которые появились в стандарте ES6: ------------------------
+
+// Ключевое слово const:
+// С помощью let мы создавали переменную ,которую потом изменяли. Если мы хотим создавть неизменяемую переменную, то используем const
+
+const a_const = 3.5
+
+console.log(a_const);
+// Получили: 3.5
+
+// a_const = 1
+// Получили в консоли: Uncaught TypeError: Assignment to constant variable.    at main.js:2263:9
+// Получили ошибку потому что это константа и её никак нельзя изменять самостоятельно
+
+
+
