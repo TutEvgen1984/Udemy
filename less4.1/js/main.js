@@ -2509,3 +2509,748 @@ console.log(...entries); // Получили 3 горизонтально рас
 console.log(...keys); // Получили: 0 1 2. Возвращаются индексы 
 console.log(...values); // Получили: a b c. Возвращаются значения
 
+// ---------------------------------------------------------------
+console.log("\n - Множества new Set()")
+
+// Множества похожи на массив, но это строка с фигурными скобками вместо квадратных, и в них не могут повторяться элементы.
+// Множество это вроде бы и не массив, и не объект, но реалзуется он по таким технологиям, просто с ним удобнее работать в некоторых ситуациях.
+
+let set = new Set()
+set.add(1) // С помощью add мы добавляем значение
+set.add(2)
+set.add(5)
+set.add(1) // Так как единица в множестве уже есть, то она не добавится второй раз
+console.log(set); // Получили: Set(3) {1, 2, 5} в котором нет дубликатов
+console.log(set.has("4")); // Получили: false. Метод has это проверка имеется ли элемент в этом множестве. Значения 4 нет, поэтому мы получили false 
+console.log((set.size)); // Получили: 3. Метод size возвращает размер множества
+set.delete(5) // Удалить элемент 5. Именно элемент с конкретным значением (не индекс)
+console.log(set); // Получили: Set(2) {1, 2}
+set.clear() // Метод clear очищает множество
+console.log(set); // Получили: Set(0) {size: 0}. Множество очистилось
+
+// Уловка: 
+// Имеется массив с числами, в котором имеются дубликаты. Необходимо убрать дубликаты.
+
+let arr_for_set = [1,5,4,7,8,91,1,4,5]
+let arr_no_dubl = [...new Set (arr_for_set)]
+// Такая конструкция позволяет удалить все дубликаты из массива.
+// Мы сначала превращаем массив в множество, а затем с помощью трех точек и квадратных скобок превращаем наше множество обратно в массив так как нам в результате нужен именно массив, чтобы с ним раюотать как с обычнм массивом а не как смножеством. Три точки в начале квадратных скобок это команда заполнить массив получившимся множеством.
+
+console.log(arr_no_dubl); // Получили: (6) [1, 5, 4, 7, 8, 91]. Получили масив без дубликатов.
+
+// Если три точки и квадратные скобки убрать, то получим множество так же без дубликатов 
+let arr_no_dubl2 = new Set (arr_for_set)
+console.log(arr_no_dubl2); // Set(6) {1, 5, 4, 7, 8, …}
+// Но с этим множеством нельзя работать теми методами, которые предназначены для массивов
+
+// Вопрос:
+// Какие методы мы рассмотрели в этом уроке?
+// isNaN - Да 
+// fill - Да
+// add - Да
+// keys - Да
+// includes - Да
+
+// ---------------------------------------------------------------
+console.log("\n - 9.13 Задачи на JS, Часть 1")
+
+// Общее по задачам:
+// let a = Number(require('fs').readFileSync(0, 'utf8'))
+
+// На платформе Stepik есть 3 окна: 
+// 1) Первое большое окно для нашего кода. 
+// 2) Второе маленькое с названием "Test input:" куда автоматически платформой записывается первое тестовое число/ строка. Мы можем вручную стелеть это число и напечатать любое своё число и нажать "Запустить код"
+// 3) Третье "Test output:" это выходное окно после рассчетов, как console.log у нас
+
+// Внутри слатформы есть какой-то файл куда записываются входные тестовые данные которые мы видим в окошке "Test input:"
+// для взятия числа, надо написать let a = Number(require('fs').readFileSync(0, 'utf8')), такой текст обычно там уже по умолчанию. Number впереди сранной строки указывает на то что мы берём число. (require('fs').readFileSync(0, 'utf8')) означает что система Stepik берет данные с помощью синхронизации с фнутренним файлом, чтение идет в формате кодировки utf8
+// для того чтобы взять от туда текстовую строку текста, надо удалить Number перед странной строкой, получится так: let a = (require('fs').readFileSync(0, 'utf8')), то есть 
+
+// Sample Input 1: 4
+// Sample Output 1: 16
+// Эта запись означает, что входное значение для теста будет 4, затем платформа запустит наш код в котором есть "console.log(P)", который означает что результат нашего кода должен появиться в console.log, но появится в 3-ем окне "Test output:". Коротко говоря console.log(P) = "Test output:" в которое выведется значение P.
+
+// ---------------------------------------------------------------
+console.log("\n - Задача №1 (решено самим Stepik'ом как пример)")
+
+// Дана сторона квадрата a. Найти его периметр P=4*a
+// Категория: Ввод и вывод данных, оператор присваивания 
+// Можно указать любое число, программа должна работать универсально
+
+// Sample Input 1: 4    // Тест №1
+// Sample Output 1: 16
+
+// Sample Input 2: 5    // Тест №2
+// Sample Output 2: 20
+
+// Sample Input 3: 3    // Тест №3
+// Sample Output 3: 12
+
+// Решение (верное):
+// let a = Number(require('fs').readFileSync(0, 'utf8'))
+// let P = 4 * a
+// console.log(P)
+
+console.log("\n - Задача №2 (решено самим Stepik'ом как пример)")
+// Дана сторона квадрата a. Найти его периметр P=4*a
+// Категория: Ввод и вывод данных, оператор присваивания 
+// Можно указать любое число, программа должна работать универсально
+// Sample Input 1:
+
+// Sample Input 1: 5
+// Sample Output 1: 20
+
+// Sample Input 2: 6
+// Sample Output 2: 24
+
+// Sample Input 3: 3
+// Sample Output 3: 12
+
+// Sample Input 4: 4
+// Sample Output 4: 16
+
+// Sample Input 5: 7
+// Sample Output 5: 28
+
+// Решение (верное):
+// process.stdin.resume();
+// process.stdin.setEncoding("utf-8");
+// var stdin_input = "";
+
+// process.stdin.on("data", function (input) {
+//     stdin_input += input;
+// });
+
+// process.stdin.on("end", function () {
+//    main(stdin_input);
+// });
+
+// const main = (inp) => { // inp это входное тестовое число
+//    const P = inp*4 // это формула для рассчета P 
+//    return console.log(P);
+// };
+
+console.log("\n - Задача №3 (есть жирная подсказка в задании)")
+
+// Дана сторона квадрата a. Найти его площадь S=a^2
+// Категория: Ввод и вывод данных, оператор присваивания
+// Подсказка:
+// Возвести число в квадрат можно умножив его на себя или воспользовавшись функцией pow, которая возводит указанное число в любую степень
+// let S = Math.pow(a, 2)
+// Так же в некоторых языках программирования существует специальный оператор возведения числа в степень
+// let S = a ** 2
+
+// Sample Input 1: 3
+// Sample Output 1: 9
+
+// Sample Input 2: 2
+// Sample Output 2: 4
+
+// Sample Input 3: 1
+// Sample Output 3: 1
+
+// Sample Input 4: 4
+// Sample Output 4: 16
+
+// Sample Input 5: 0
+// Sample Output 5: 0
+
+// Решение:
+// let a = Number(require('fs').readFileSync(0, 'utf8'))
+// let S = Math.pow(a, 2)
+// console.log(S)
+
+console.log("\n - Задача №4")
+
+// Дано расстояние L в сантиметрах. Используя операцию деления нацело, найти количество полных метров в нем (1 метр = 100 см)
+// Категория: Целые числа
+// Подсказка:
+
+// let L = 299 // в 299 сантиметрах только 2 полных метра
+// let M = L / 100 // в ходе деления получится дробное число, в данном примере 2,99
+// let result = Math.trunc(M) // Math.trunc отбрасывает дробную часть числа, в результате останется 2 (для данного примера)
+
+// Sample Input 1: 299
+// Sample Output 1: 2
+
+// Sample Input 2: 101
+// Sample Output 2: 1
+
+// Sample Input 3: 54
+// Sample Output 3: 0
+
+// Решение:
+// let L = Number(require('fs').readFileSync(0, 'utf8'))
+
+// let M = L / 100 // в ходе деления получится дробное число, в например 2,99 при входном тестовом значении 299 см
+// let result = Math.trunc(M) // Math.trunc отбрасывает дробную часть числа, в результате останется 2 (для данного примера)
+// console.log(result)
+
+
+console.log("\n - Задача №5")
+// Дано целое число A. Проверить истинность высказывания: «Число A является положительным»
+// Категория: Логические выражения
+
+// Sample Input 1: 10
+// Sample Output 1: true
+
+// Sample Input 2: 0
+// Sample Output 2: false
+
+// Sample Input 3: -6
+// Sample Output 3: false
+
+// Решение (моё, верное):
+// let A = Number(require('fs').readFileSync(0, 'utf8'))
+// let positive = undefined
+// if (Math.sign(A) > 0) {
+//     positive=true
+//     } else {
+//     positive=false
+//     }
+// console.log(positive)
+
+console.log("\n - Задача №6")
+
+// Даны два целых числа: A, B. Проверить истинность высказывания: «Справедливы неравенства A > 2 и B ≤ 3»
+
+// Категория: Логические выражения
+
+// Входные данные всегда передаются в виде строки. Если требуется передать два входных параметра, то мы передаем их в одной строке через пробел в той последовательности как указано в условиях задачи.
+
+// Например, Вход: 5 10 означает что A=5, B=10
+
+// let data = require('fs').readFileSync(0, 'utf8') // сейчас data="5 10" - это строка
+// let data = require('fs').readFileSync(0, 'utf8').split(" ") // разделяет строку на массив строк, в таком случае data=['5', '10'] - массив строк, элемент под индексом 0 это строка 5 - не число!, data[1]='10'
+// let A = +data[0], B = +data[1] // унарный плюс превращает строку из элементов массива в число
+// // теперь в переменной A число 5, в переменной B число 10. УЖЕ НЕ СТРОКИ, А ЧИСЛА!
+// console.log(A > 2 && B <=3) // и далее работаем с этими числами A и B так как угодно и решаем задачу выводя результат в консоль
+
+// Sample Input 1: 1 2
+// Sample Output 1: false
+
+// Sample Input 2: 2 3
+// Sample Output 2: false
+
+// Sample Input 3: 3 4
+// Sample Output 3: false
+
+// Sample Input 4: 4 3
+// Sample Output 4: true
+
+// Sample Input 5: 5 2
+// Sample Output 5: true
+
+// Решение:
+// let data = require('fs').readFileSync(0, 'utf8').split(" ")
+// let A = +data[0], B = +data[1]
+// console.log(A > 2 && B <=3)
+
+console.log("\n - Задача №7")
+// Дано целое число. Если оно является положительным, то прибавить к нему 1; в противном случае не изменять его. Вывести полученное число
+// Категория: Условный оператор
+// Подсказка:
+// n++ так можно увеличить число на 1 (инкрементировать его), работает во многих языках программирования
+// можно указать и по другому, например: n = n + 1 или n += 1 или ++n
+
+// Sample Input 1: 53
+// Sample Output 1: 54
+
+// Sample Input 2: 0
+// Sample Output 2: 0
+
+// Sample Input 3: -6
+// Sample Output 3: -6
+
+// Sample Input 4: 1
+// Sample Output 4: 2
+
+// Решение:
+// let n = Number(require('fs').readFileSync(0, 'utf8'))
+// if (n>0) {n++}
+// console.log (n)
+
+console.log("\n - Задача №8")
+// Даны три целых числа. Найти количество положительных и количество отрицательных чисел в исходном наборе
+// Категория: Условный оператор
+
+// Sample Input 1: 8 11 0
+// Sample Output 1: Положительных чисел: 2, Отрицательных чисел: 0
+
+// Sample Input 2: 5 3 -5
+// Sample Output 2: Положительных чисел: 2, Отрицательных чисел: 1
+
+// Sample Input 3: -3 0 1
+// Sample Output 3: Положительных чисел: 1, Отрицательных чисел: 1
+
+// Решение:
+// let data = require('fs').readFileSync(0, 'utf8').split(" ")
+// let a = +data[0], b = +data[1], c = +data[2]
+// let positive = 0, negative = 0
+// if (a>0) positive++ 
+// if (a<0) negative++
+// if (b>0) positive++ 
+// if (b<0) negative++
+// if (c>0) positive++ 
+// if (c<0) negative++
+// console.log(`Положительных чисел: ${positive}, Отрицательных чисел: ${negative}`)
+
+console.log("\n - Задача №9")
+// Дано целое число в диапазоне 1–7. Вывести строку — название дня недели, соответствующее данному числу (1 — «Понедельник», 2 — «Вторник» и т. д., для других чисел вывести значение - «Неизвестно»)
+// Категория: Оператор выбора
+
+// Sample Input 1: 1
+// Sample Output 1: Понедельник
+
+// Sample Input 2: 2
+// Sample Output 2: Вторник
+
+// Sample Input 3: 3
+// Sample Output 3: Среда
+
+// Sample Input 4: 4
+// Sample Output 4: Четверг
+
+// Sample Input 5: 5
+// Sample Output 5: Пятница
+
+// Sample Input 6: 6
+// Sample Output 6: Суббота
+
+// Sample Input 7: 7
+// Sample Output 7: Воскресенье
+
+// Sample Input 8: 0
+// Sample Output 8: Неизвестно
+
+// Sample Input 9: 8
+// Sample Output 9: Неизвестно
+
+// Sample Input 10: -1
+// Sample Output 10: Неизвестно
+
+// Решение:
+// let day = Number(require('fs').readFileSync(0, 'utf8'))
+// let day_arr = ["Неизвестно", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"] // "" обязательны, иначе ошибка
+// if (day >0 && day<=7) {
+// console.log(day_arr[day])
+// } else {console.log(day_arr[0])}
+
+console.log("\n - Задача №10")
+// Даны целые числа K и N. Вывести N раз число K
+// Категория: Цикл с параметром
+
+// Sample Input 1: -5 4
+// Sample Output 1: -5-5-5-5
+
+// Sample Input 2: 3 0
+// Sample Output 2: Ошибка
+
+// Sample Input 3: 0 1
+// Sample Output 3: 0
+
+// Sample Input 4: 2 3
+// Sample Output 4: 222
+
+// Sample Input 5: 6 -1
+// Sample Output 5: Ошибка
+
+// Решение:
+// let data = require('fs').readFileSync(0, 'utf8').split(" ")
+// let K=+data[0], N=+data[1]
+// if (N>0) { 
+//     console.log(`${K}`.repeat(N)) 
+// } else console.log("Ошибка")
+
+console.log("\n - Задача №11")
+// Даны положительные числа A и B (A >= B). На отрезке длины A размещено максимально возможное количество отрезков длины B (без наложений). Не используя операции умножения и деления, найти длину незанятой части отрезка A.
+
+// Нужно использовать цикл while
+
+// Категория: Цикл с условием
+
+// Sample Input 1: 11 3
+// Sample Output 1: Длина незанятой части отрезка A: 2
+
+// Sample Input 2: 7 2
+// Sample Output 2: Длина незанятой части отрезка A: 1
+
+// Sample Input 3: 3 3
+// Sample Output 3: Длина незанятой части отрезка A: 0
+
+// Sample Input 4: 1 3
+// Sample Output 4: Ошибка
+
+// Решение:
+// let data = require('fs').readFileSync(0, 'utf8').split(" ")
+// let A=+data[0], B=+data[1]
+// if (A>=B) {
+//     let nezanato = A
+//     while (nezanato>=B) {
+//         nezanato-=B
+//     }
+//     console.log(`Длина незанятой части отрезка A: ${nezanato}`)
+// } else console.log("Ошибка")
+
+console.log("\n - Задача №12")
+
+// Дано целое число K. Вывести строку-описание оценки, соответствующей числу K (1 — «Плохо», 2 — «Неудовлетворительно», 3 — «Удовлетворительно», 4 — «Хорошо», 5 — «Отлично»). Если K не лежит в диапазоне 1–5, то вывести строку «Ошибка»
+// Категория: Оператор выбора
+
+// Sample Input 1: 1
+// Sample Output 1: Плохо
+
+// Sample Input 2: 2
+// Sample Output 2: Неудовлетворительно
+
+// Sample Input 3: 3
+// Sample Output 3: Удовлетворительно
+
+// Sample Input 4: 4
+// Sample Output 4: Хорошо
+
+// Sample Input 5: 5
+// Sample Output 5: Отлично
+
+// Sample Input 6: 0
+// Sample Output 6: Ошибка
+
+// let K = Number(require('fs').readFileSync(0, 'utf8'))
+// if (K>=1 && K<=5) {
+//      let ozenka = {1: 'Плохо', 2: 'Неудовлетворительно', 3: 'Удовлетворительно', 4: 'Хорошо', 5: 'Отлично'};
+//      console.log(ozenka[K])
+// } else console.log("Ошибка")
+
+console.log("\n - Задача №13")
+
+// Даны два целых числа A и B. Вывести в порядке возрастания все целые числа, расположенные между A и B (включая сами числа A и B), а также количество N этих чисел
+// Категория: Цикл с параметром
+
+// Sample Input 1: 2 4
+// Sample Output 1:
+// 2
+// 3
+// 4
+// Всего чисел: 3
+
+// Sample Input 2: 1 3
+// Sample Output 2:
+// 1
+// 2
+// 3
+// Всего чисел: 3
+
+// Sample Input 3: 4 1
+// Sample Output 3:
+// Ошибка
+
+// Решение:
+// let data = require('fs').readFileSync(0, 'utf8').split(" ")
+// let A = +data[0], B = +data[1]
+// if (A<=B) {
+//     kolichestvo = 0
+//     for (i=A; i<=B; i++) {
+//     console.log(i)
+//     kolichestvo++
+//     }
+//     console.log(`Всего чисел: ${kolichestvo}`)
+// } else console.log("Ошибка")
+
+console.log("\n - Задача №13")
+// Дано целое число. Если оно является положительным, то прибавить к нему 1; в противном случае вычесть из него 2. Вывести полученное число
+// Категория: Условный оператор
+
+// Sample Input 1: 1
+// Sample Output 1: 2
+
+// Sample Input 2: 0
+// Sample Output 2: -2
+
+// Sample Input 3: -3
+// Sample Output 3: -5
+
+// Решение:
+// let d = Number(require('fs').readFileSync(0, 'utf8'))
+// let result = d
+// if (d>0) result+=1
+// else result-=2
+// console.log(result)
+
+console.log("\n - 9.14 Задачи на JS, Часть 2")
+
+console.log("\n - Задача №14")
+// Дано целое число A. Проверить истинность высказывания: «Число A является нечетным»
+// Категория: Логические выражения
+
+// Sample Input 1: 8
+// Sample Output 1: false
+
+// Sample Input 2: -5
+// Sample Output 2: true
+
+// Sample Input 3: 3
+// Sample Output 3: true
+
+// Sample Input 4: 0
+// Sample Output 4: false
+
+// Решение:
+// let A = Number(require('fs').readFileSync(0, 'utf8'))
+// console.log(A%2 == 0 ? false : true)
+
+console.log("\n - Задача №15")
+
+// Дана масса M в килограммах. Используя операцию деления нацело, найти количество полных тонн в ней (1 тонна = 1000 кг)
+// Категория: Целые числа
+
+// Sample Input 1: 25001
+// Sample Output 1: 25
+
+// Sample Input 2: 6999
+// Sample Output 2: 6
+
+// Sample Input 3: -5800
+// Sample Output 3: Число должно быть больше чем 0
+
+// Sample Input 4: 0
+// Sample Output 4: Число должно быть больше чем 0
+
+// Решение:
+// let K = Number(require('fs').readFileSync(0, 'utf8'))
+// console.log(K>0 ? Math.floor(K/1000) : "Число должно быть больше чем 0")
+
+console.log("\n - Задача №16")
+
+// Даны стороны прямоугольника a и b. Найти его площадь S=a*b и периметр P=2*(a+b)
+// Категория: Ввод и вывод данных, оператор присваивания
+
+// Sample Input 1: 5 8
+// Sample Output 1:
+// S = 40
+// P = 26
+
+// Sample Input 2: 3 4
+// Sample Output 2:
+// S = 12
+// P = 14
+
+// Sample Input 3: 1 3
+// Sample Output 3:
+// S = 3
+// P = 8
+
+// Решение:
+// let data = require('fs').readFileSync(0, 'utf8').split(" ")
+// let A = +data[0], B = +data[1]
+// let S = A*B // Площадь прямоугольника
+// let P = 2*(A+B) // Периметр прямоугольника
+// console.log("S = " + S)
+// console.log("P = " + P)
+
+console.log("\n - Задача №16")
+
+// Дан размер файла в байтах. Используя операцию деления нацело, найти количество полных килобайтов, которые занимает данный файл (1 килобайт = 1024 байта)
+// Категория: Целые числа
+
+// Sample Input 1: 7000
+// Sample Output 1: 6
+
+// Sample Input 2: 2048
+// Sample Output 2: 2
+
+// Sample Input 3: 4096
+// Sample Output 3: 4
+
+// Решение:
+// let b = Number(require('fs').readFileSync(0, 'utf8'))
+// console.log(Math.trunc(b/1024))
+
+// Доп. арианты решения: 
+
+// console.log(~~(b/1024)) символ ~~() аналогичен Math.trunc() - убирает дробную часть
+
+// console.log(Math.floor(b / 1024))  можно и так, округление в нижнюю сторону
+
+console.log("\n - Задача №17")
+
+// Дано целое число A. Проверить истинность высказывания: «Число A является четным»
+// Категория: Логические выражения
+
+// Sample Input 1: 6
+// Sample Output 1: true
+
+// Sample Input 2: 0
+// Sample Output 2: true
+
+// Sample Input 3: -3
+// Sample Output 3: false
+
+// Sample Input 4: -6
+// Sample Output 4: true
+
+// Sample Input 5: 3
+// Sample Output 5: false
+
+// Sample Input 6: 8
+// Sample Output 6: true
+
+// Решение:
+// let A = Number(require('fs').readFileSync(0, 'utf8'))
+// if (A%2 == 0) even=true
+// else even=false
+// console.log(even)
+
+// Доп. арианты решения: 
+
+// console.log(A % 2 == 0)
+
+// let result = A % 2;
+// console.log(result === 0); 
+
+console.log("\n - Задача №18")
+
+// Даны десять вещественных чисел. Найти их сумму
+// Категория: Последовательности
+
+// Sample Input 1: 9 5 1 4 14 2 0 6 32 111
+// Sample Output 1: 184
+
+// Sample Input 2: 0 0 0 1 1 1 1 0 2 2
+// Sample Output 2: 8
+
+// Sample Input 3: -5 0 -2 4 3 1 -7 0 2 1
+// Sample Output 3: -3
+
+// Решение:
+// let A = require('fs').readFileSync(0, 'utf8').split(' ') // split превращает строку в массив
+// // console.log(A) // массив строк
+
+// let numberArray = [] // пустой массив
+// for (var i = 0; i < A.length; i++) {
+//     numberArray.push(parseInt(A[i])) // преобразовать строку в число и добавить в новый массив
+// }
+// // console.log(numberArray) // на выходе получаем массив чисел, с ним уже можно работать
+
+// let summa = 0
+// for (let i=0; i<numberArray.length; i++) {
+//     summa += numberArray[i]
+// }
+// console.log(summa)
+
+// Другие ваианты:
+// Метод массива reduce() https://doka.guide/js/array-reduce/
+// let A = require('fs').readFileSync(0, 'utf8').split(' ') // split превращает строку в массив
+
+// let numberArray = [] // пустой массив
+// for (var i = 0; i < A.length; i++) {
+//     numberArray.push(parseInt(A[i])) // преобразовать строку в число и добавить в новый массив
+// }
+// const sum = numberArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+// console.log(sum)
+
+// Здесь 0 это начальное значение аккумулятора. accumulator это дополнительный аргумент — это текущее аккумулируемое значение.
+// currentValue - элемент массива в текущей итерации
+// Главной особенностью reduce(), которую важно запомнить, является наличие аккумулятора. Аккумулятор — это и есть то новое вычисляемое значение. Во время выполнения функции-колбэка нужно обязательно возвращать его значение, поскольку оно попадает в следующую итерацию, где будет использоваться для дальнейших вычислений. Мы можем представить аккумулятор как переменную, значение которой можно поменять в каждой новой итерации. С помощью второго аргумента в reduce() эта переменная получает своё начальное значение.
+// Метод reduce() крайне полезен, когда мы хотим с помощью манипуляции значениями массива вычислить какое-то новое значение. Такую операцию называют агрегацией. Это мощный инструмент для обработки данных: например, его можно использовать для нахождения суммы величин в массиве или группировки в другие типы данных.
+
+// Вариант for-of
+// let sum = null;
+// for (let numStr of A) {
+//      sum += +numStr;
+// }
+// console.log(sum) 
+
+// Высчитывание суммы сразу псле преобразования
+// let A = require('fs').readFileSync(0, 'utf8').split(' ') // split превращает строку в массив
+// let sum = 0
+
+// let numberArray = [] // пустой массив
+// for (var i = 0; i < A.length; i++) {
+//     numberArray.push(parseInt(A[i])) // преобразовать строку в число и добавить в новый массив
+//     sum += numberArray[i]
+    
+// }
+// console.log(sum) // на выходе получаем массив чисел, с ним уже можно работать
+
+// Без преобразования в новый массив:
+// let A = require('fs').readFileSync(0, 'utf8').split(' ') // split превращает строку в массив
+// let sum = 0 
+// for(i of A){sum += +i} // плюс для преобразования в число
+// console.log(sum)
+
+console.log("\n - Задача №19")
+
+// Описать процедуру PowerA3(A, B), вычисляющую третью степень (куб) числа A и возвращающую ее в переменной B (A — входной, B — выходной параметр; оба параметра являются вещественными). С помощью этой процедуры найти третьи степени пяти любых чисел
+// Категория: Процедуры и функции
+
+// Sample Input 1: 5 3 1 2 6
+// Sample Output 1:
+// Число 5 в кубе = 125
+// Число 3 в кубе = 27
+// Число 1 в кубе = 1
+// Число 2 в кубе = 8
+// Число 6 в кубе = 216
+
+// Sample Input 2: 0 -3 3 4 12
+// Sample Output 2:
+// Число 0 в кубе = 0
+// Число -3 в кубе = -27
+// Число 3 в кубе = 27
+// Число 4 в кубе = 64
+// Число 12 в кубе = 1728
+
+// Решение:
+// let A = require('fs').readFileSync(0, 'utf8').split(' ') // split превращает строку в массив
+// let numberArray = [] // пустой массив
+// for (var i = 0; i < A.length; i++) {
+//     numberArray.push(parseInt(A[i])) // преобразовать строку в число и добавить в новый массив
+// } // на выходе получаем массив чисел, с ним уже можно работать
+// function PowerA3(a) {
+// return Math.pow(a,3)
+// }
+
+// for (let item of numberArray) {
+// console.log(`Число ${item} в кубе = ${PowerA3(item)}`)
+// }
+
+// Вариант где в функции второй параметр становится результатом
+// function PowerA3 (A,B){
+//     B = Math.pow(A,3)
+//     return B    
+// }
+
+// for (i=0;i<A.length;i++){
+//     console.log(`Число ${A[i]} в кубе = ${PowerA3(A[i])}`)  // Но здесь в вызове функции мы не вводим параметр И. Что-то здесь не то  
+// }
+
+// Вариант
+// let A = require('fs').readFileSync(0, 'utf8').split(' ') // split превращает строку в массив
+// let numberArray = []
+// for (var i = 0; i < A.length; i++) {
+//     console.log(`Число ${A[i]} в кубе = ${power3(A[i])}`)
+// } 
+
+// function power3(A){
+//     A = A**3 // две звездочки это возведение в степень
+//     return A
+// }
+
+// Вариант без функции
+// let A = require('fs').readFileSync(0, 'utf8').split(' ') // split превращает строку в массив
+// let numberArray = [] // пустой массив
+// for (var i = 0; i < A.length; i++) {
+//     numberArray.push(parseInt(A[i])) // преобразовать строку в число и добавить в новый массив
+//     console.log(`Число ${A[i]} в кубе = ${A[i]**3}`);
+// } // на выходе получаем массив чисел, с ним уже можно работать
+
+// Вариант стрелочная функция
+// const powerA3 = (arr)=>{ // вместо arr мы подчтавим потом наш массив numberArray
+//     for(let i of arr){
+//     console.log(`Число ${i} в кубе = ${Math.pow(i, 3)}`);
+//     }
+// }
+// powerA3(numberArray)
+
+// Вариант метод forEach и стрелочная функция
+// numberArray.forEach(i => console.log(`Число ${i} в кубе = ${Math.pow(i, 3)}`))
+
