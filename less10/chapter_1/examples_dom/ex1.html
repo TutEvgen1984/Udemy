@@ -6,13 +6,18 @@
   <title>Пример 1</title>
 </head>
 <body>
-  
+
   <div id="element">
     <div>Элемент</div>
+    <div>Элемент2</div>
   </div>
+
+  <!-- DOM (Document Object Model) - объектная модель документа/ Это все наши элементы html. Каждый элемент является элементом DOM. И всё устроено в древовидной структуре.   -->
 
   <script>
     let element = document.getElementById("element") // И теперь в эту переменную поместился DIV с id="element"
+    // document это специальный глобальный объект. 
+    // getElementById - метод получить элемент по идентификатору. В скобках в кавычках указываем id из html.
     element.style.background = 'tomato' // Цвет блока div изменися на томатный. Мы изменили html тэг указав css стиль
   </script>
 </body>
