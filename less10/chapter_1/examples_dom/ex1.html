@@ -14,13 +14,27 @@
 
   <!-- DOM (Document Object Model) - объектная модель документа. Это все наши элементы html. Каждый элемент является элементом DOM. И всё устроено в древовидной структуре. 
   DOM это специальная древовидная структура, которая позволяет управлять HTML-разметкой из JavaScript-кода.
-  https://doka.guide/js/dom/   -->
+  https://doka.guide/js/dom/   
+  Браузер создаёт DOM при загрузке страницы, складывает его в переменную document и сообщает, что DOM создан, с помощью события DOMContentLoaded. 
+  document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOM готов!')
+  })
+  Объект document содержит большое количество свойств и методов, которые позволяют работать с HTML. Чаще всего используются методы, позволяющие найти элементы страницы.
+  С переменной document начинается любая работа с HTML-разметкой в JavaScript.  -->
 
   <script>
     let element = document.getElementById("element") // И теперь в эту переменную поместился элемент DOM - DIV с id="element" содержащий в себе еще 2 Div'a
     // document это специальный глобальный объект. 
     // getElementById - метод получить элемент по идентификатору. В скобках в кавычках указываем id из html.
-    element.style.background = 'tomato' // Цвет блока div изменися на томатный. Мы изменили html тэг указав css стиль с помощью свойства style и второго свойства background
+    element.style.background = 'tomato' // Цвет блока div изменися на томатный. С помощью JavaScript мы изменили html тэг указав css стиль с помощью свойства style и второго свойства background
+    // Получили в консоли в разделе Элементы: 
+    // <div id="element" style="background: tomato;">...</div> добавилась часть style="background: tomato;" которой раньше не было
   </script>
+  <!-- "Методы":
+      getElementById — поиск элемента по идентификатору;
+      getElementsByClassName — поиск элементов по названию класса;
+      getElementsByTagName — поиск элементов по названию тега;
+      querySelector — поиск первого элемента, подходящего под CSS-селектор;
+      querySelectorAll — поиск всех элементов подходящих под CSS-селектор. -->
 </body>
 </html>
