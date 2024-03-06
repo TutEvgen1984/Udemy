@@ -12,7 +12,13 @@
   <a href="http://mail.ru">Ссылка 3</a><br>
 
   <script>
-
+    // Если написать в консоли document.body.children и нажать интер, то получим коллекцию DOM узлов в виде массива:
+    // HTMLCollection(8) [a, br, a, br, a, br, script, script] раскрывающийся массив
+    
+    for(let element of document.body.children) { // Проходимся по всем дочерним элементам тела body
+      if (element.matches("a[href$='.ru']")) // Метод .matches позволяет проверить, удовлетворяет ли элемент указанному CSS селектору.https://code.mu/ru/javascript/manual/dom/matches/. Наша запись означает что наш селектор заканчивается на .ru
+    }
+    
   </script>
 </body>
 </html>
