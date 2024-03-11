@@ -16,7 +16,8 @@
     // HTMLCollection(8) [a, br, a, br, a, br, script, script] раскрывающийся массив
     
     for(let element of document.body.children) { // Проходимся по всем дочерним элементам тела body
-      if (element.matches("a[href$='.ru']")) // Метод .matches позволяет проверить, удовлетворяет ли элемент указанному CSS селектору.https://code.mu/ru/javascript/manual/dom/matches/. Наша запись означает что наш селектор заканчивается на .ru
+      if (element.matches("a[href$='.ru']")) // Метод Element.matches() вернёт true или false, в зависимости от того, соответствует ли элемент указанному css-селектору. https://developer.mozilla.org/ru/docs/Web/API/Element/matches. https://code.mu/ru/javascript/manual/dom/matches/. Наша запись означает что наш селектор заканчивается на ".ru" https://htmlbook.ru/css/selector/attr4
+      // [attr$=value] Обозначает элемент с именем атрибута attr чьё значение заканчивается на "value" https://developer.mozilla.org/ru/docs/Web/CSS/Attribute_selectors
     }
     
   </script>
