@@ -16,8 +16,10 @@
 
   <script>
     const element = document.querySelector('ul > li')
-    element.innerHTML = "<a href='#'>Ссылка</a>" // получили ссылку вместо Пункт 1
-    element = document.querySelector('ul') // Ошибка: Uncaught TypeError: Assignment to constant variable.
+    element.innerHTML = "<a href='#'>Ссылка</a>" // Получили ссылку вместо Пункт 1. 
+    // Здесь мы изменили свойство константы элемента, а не сам элемент, поэтому всё изменилось без каких-либо ошибок. в свойстве innerHTML можно указывать не только ТЕКСТ, но ещё и тэги, и здесь мы поместили внутрь <li>Пункт 1</li> ссылку и получили <li><a href='#'>Ссылка</a></li> 
+    
+    // element = document.querySelector('ul') // попытка изменить element приводит к появлению ошибки в консоли: "Ошибка: Uncaught TypeError: Assignment to constant variable."
     
     // метод поиска querySelector выбирает первый элемент и на этом сразу же останавливается в отличии от querySelectorAll, который работает дольше и ищет все элементы, которые подходят селектору. querySelector находит первый и прекращает свою работу. Поэтому если нам нужно найти какой-то один элемент, то лучше использовать querySelector потому что он работает намного быстрее.
 

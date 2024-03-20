@@ -7,19 +7,28 @@
 </head>
 <body>
   
-  <a href="http://google.com">Ссылка 1</a><br>
-  <a href="http://yeandex.ru">Ссылка 2</a><br>
-  <a href="http://mail.ru">Ссылка 3</a><br>
+  <a href="http://google.com">Ссылка 1</a><br> <!-- Этот пункт без изменений так как ссылка заканчивается на .com, а не на .ru -->
+  <a href="http://yandex.ru">Ссылка 2</a><br> <!-- Сайт в зоне .ru. Способ №2 (вместо Ссылка 2) -->
+  <a href="http://mail.ru">Ссылка 3</a><br> <!-- Сайт в зоне .ru. Способ №2 (вместо Ссылка 3) -->
 
   <script>
     // Если написать в консоли document.body.children и нажать интер, то получим коллекцию DOM узлов в виде массива:
     // HTMLCollection(8) [a, br, a, br, a, br, script, script] раскрывающийся массив
     
+    // Способ №1 с условием:
     for(let element of document.body.children) { // Проходимся по всем дочерним элементам тела body
       if (element.matches("a[href$='.ru']")) // Метод Element.matches() вернёт true или false, в зависимости от того, соответствует ли элемент указанному css-селектору. https://developer.mozilla.org/ru/docs/Web/API/Element/matches. https://code.mu/ru/javascript/manual/dom/matches/. Наша запись означает что наш селектор заканчивается на ".ru" https://htmlbook.ru/css/selector/attr4
-      // [attr$=value] Обозначает элемент с именем атрибута attr чьё значение заканчивается на "value" https://developer.mozilla.org/ru/docs/Web/CSS/Attribute_selectors
+      // [attr$=value] Обозначает элемент с именем атрибута attr, чьё значение заканчивается на "value" https://developer.mozilla.org/ru/docs/Web/CSS/Attribute_selectors
+      {
+        element.innerHTML = "Сайт в зоне .ru. Способ №1" // В случае если ссылка будет оканчиваться на '.ru', с помощью метода innerHTML мы заменим внутреннее содержимое на "Сайт в зоне .ru"
+        console.log('Способ 1. Замена') // В консоли: (2) Способ 1. Замена
+      }
     }
-    
+      // Способ №2 через querySelecrorAll:
+      for(let element of document.querySelectorAll("a[href$='.ru']")) { // Проходимся по всем ссылкам через CSS селектор. Здесь мы проходимся только по тем элементам которые нам нужны
+        element.innerHTML = "Сайт в зоне .ru. Способ №2"
+        console.log('Способ 2. Замена') // В консоли: (2) Способ 2. Замена. Что означает что хоть замена внутреннего соержимого и произошла способом №1, но атрибуты так и остались с окончанием .ru, поэтому способ 2 сработал и переписал всё ещё раз 
+    }
   </script>
 </body>
 </html>
