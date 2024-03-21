@@ -3,17 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Пример 6</title>
+  <title>Пример 6 - Метод contains</title>
 </head>
 <body>
-  
+  <h1>10.2 Атрибуты, Элементы</h1>
+
+  <h2>Метод .contains() позволяет проверить, содержит ли один элемент внутри себя другой</h2>
+
   <ul class="list">
     <li class="item">Пункт 1</li>
     <li class="item">Пункт 2</li>
   </ul>
 
   <script>
+    let list = document.querySelector('.list')
+    console.log(list);
+    // Получили: 
+    // <ul class="list">
+    // <li class="item">Пункт 1</li>
+    // <li class="item">Пункт 2</li>
+    // </ul>
 
+    let item = document.querySelector('.item')
+    console.log(item);
+    // Получили:
+    // <li class="item">Пункт 1</li>
+
+    // https://code.mu/ru/javascript/manual/dom/contains/
+    console.log(list.contains(item))
+    // Получили: true потому что внутри ul с классом list находится наш li с классом item . Мы можем получить либо true либо false
+
+    console.log(item.contains(list))
+    // Получили: false потому что внутри li с классом .item нет ul с классом .list
+
+    // метод .contains() удобно использовать в условии if так как он возвращает true/false  
   </script>
 </body>
 </html>

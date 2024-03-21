@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Пример 2</title>
+  <title>Пример 2 - в списке смена цвета шрифта и замена текста</title>
 </head>
 <body>
   
@@ -26,6 +26,8 @@
 
   <script>
     let elements = document.querySelectorAll('ul > li:first-child') // query = англ. запрос. querySelectorAll() — поиск всех дочерних элементов подходящих под CSS-селектор. Здесь мы в документе хотим получить ВСЕ элементы по CSS селектору, а не по идентификатору. Поместили в переменную из всего документа из каждого немаркированного списка(ul) элемент, но только первый (li:first-child) за счет псевдо-класса first-child. https://doka.guide/js/query-selector-all/
+
+    console.log(elements);
     // ввели в консоль elements, получили "NodeList(4) [li, li, li, li]" который если открыть то видим:
     // 0: li
     // 1: li

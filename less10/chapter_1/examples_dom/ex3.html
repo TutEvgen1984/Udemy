@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Пример 3</title>
+  <title>Пример 3 - в списке замена текста на ссылку</title>
 </head>
 <body>
   
   <ul>
-    <li>Пункт 1</li>
-    <li>Пункт 2</li>
-    <li>Пункт 3</li>
+    <li>Пункт 1</li> <!-- Получили: <li><a href='#'>Ссылка</a></li> -->
+    <li>Пункт 2</li> <!-- без изменений -->
+    <li>Пункт 3</li> <!-- без изменений -->
   </ul>
   
 
   <script>
-    const element = document.querySelector('ul > li')
+    const element = document.querySelector('ul > li') /* выберется только один первый пункт li */
     element.innerHTML = "<a href='#'>Ссылка</a>" // Получили ссылку вместо Пункт 1. 
     // Здесь мы изменили свойство константы элемента, а не сам элемент, поэтому всё изменилось без каких-либо ошибок. в свойстве innerHTML можно указывать не только ТЕКСТ, но ещё и тэги, и здесь мы поместили внутрь <li>Пункт 1</li> ссылку и получили <li><a href='#'>Ссылка</a></li> 
     
