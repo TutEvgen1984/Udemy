@@ -3,13 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Пример 9</title>
+  <title>Пример 9 - свойство hidden, функция setInterval</title>
 </head>
 <body>
   
-  <p>Абзац текста</p>
+  <p>Абзац текста 1</p>
+  <p>Абзац текста 2</p>
 
   <script>
+
+    let elem1 = document.querySelector('p') // Выбрали абзац
+    console.log(elem1)
+    // Получили: <p hidden>Абзац текста 1</p>
+    // Почему-то ещё не присвоив свойство hidden мы его уже здесь видим
+
+    elem1.hidden = true // У dom-элемента 'p' вместе с его содержимым изменили свойство hidden на true. Если кратко, то это мы скрыли наш элемент
+    // В результате на странице перестало быть видно текст
+
+    console.log(elem1)
+    // Получили: <p hidden>Абзац текста 1</p>
+
+    let elem2 = document.querySelector('p:nth-child(2)')
+    console.log(elem2)
+    // <p>Абзац текста 2</p>
+
+    setInterval(() => elem2.hidden = !elem2.hidden,1000)
+    // Функция setInterval() позволяет вызывать функцию РЕГУЛЯРНО, повторяя вызов через определённый интервал времени. Отличие этого метода от setTimeout в том, что функция запускается не один раз, а периодически через указанный интервал времени
+    // setTimeout позволяет вызвать функцию ОДИН РАЗ через определённый интервал времени.
+    // Функция, в которой значение свойства hidden элемента elem2 инвертируется (с помощью знака !) с интервалом 1000 миллисекунд
+    // У переменной elem2 свойство hidden если стояло true то станет false, если было false то станет true
+    // ,1000 означает время интервала выполнения функции равное 1000 миллисекунд
+    // https://learn.javascript.ru/settimeout-setinterval
+    // https://doka.guide/js/setinterval/
 
   </script>
 </body>
