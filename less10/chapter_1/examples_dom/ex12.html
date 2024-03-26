@@ -4,12 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 12</title>
+  <title>Пример 12 - создание элементов, методы createElement, append, </title>
 </head>
 <body>
+
   <p>Разделитель</p>
   <hr>
+
   <script>
+    // Создадим элемент div
+    let divElement = document.createElement('div') // В переменной div создали html-элемент div располагающийся в глобальном объекте document с помощью метода createElement()
+    divElement.className = 'alert' // Для переменной div с помощью свойства className установили класс с названием alert
+    divElement.innerHTML = '<p>Важное сообщение!</p>' // С помощью свойства innerHTML установили html-содержимое переменной div
+    // Обновили страницу и этот созданный div не появился потому что мы этот элемент не добавили в наш документ
+
+    // Статья про комплексное изменение документа с помощью модификации DOM:
+    // https://learn.javascript.ru/modifying-document  
+
+    document.body.append(divElement) // с помощью метода append (англ. добавлять, прибавлять) вставили переменную divElement в конец тела body
+    // Результат на странице: появилось "Важное сообщение!"" в блоке div с зелёной заливкой ВНИЗУ под чертой  
+    // Синтаксис: родитель.append(элемент или строка);
+    
+    // Метод append позволяет вставить в конец какого-либо элемента другой элемент. Параметром метод принимает элемент, как правило созданный через createElement, либо строку. Можно добавить сразу несколько элементов или строк, перечислив их через запятую.
+    // https://code.mu/ru/javascript/manual/dom/append/
+
+    // Зеленая заливка потому что к старнице подключен CSS в котором прописан класс alert и соответствующая заливка
+    // Этот элемент добавился в самый низ body, даже ниже тега script потому что метод append добавляет элемент в конец того элемента, у которого мы его вызываем, в нашем случае мы его вызвали у элемента body. Это можно увидеть в струтуре html-страницы (Исследовать элемент -> Элементы)
+
+    // Для того, чтобы вставить новый добавляемый элемент не в конец, а в начало, существует метод prepend
+
+    // document.body.prepend(divElement)
+    // Получили блок div ВВЕРХУ над словом "Разделитель"
+    
+    // Вот методы для различных вариантов вставки:
+    // node.append(...nodes or strings) – добавляет узлы или строки В КОНЕЦ node,
+    // node.prepend(...nodes or strings) – вставляет узлы или строки В НАЧАЛО node,
+    // node.before(...nodes or strings) –- вставляет узлы или строки ДО node,
+    // node.after(...nodes or strings) –- вставляет узлы или строки ПОСЛЕ node,
+    // node.replaceWith(...nodes or strings) –- ЗАМЕНЯЕТ node заданными узлами или строками.
+
+    // document.body.before(divElement) // добавили divElement ПЕРЕД body
+    // Получили блок div над словом "Разделитель" и по струтуре он находится выше body но ниже head, то есть между ними, это некорректно потому что элемент должен находиться в body
+
+    // document.body.after(divElement) // Добавили divElement ПОСЛЕ body
+    // Получили блок div после body перед последним закрывающим тегом html 
+
+    // document.querySelector('hr').after(divElement) // Вместо body сделали выбранным основным элементом тег hr
+    // Получили div после hr
+
+    let divElement2 = document.createElement('div') // создали переменную 2 с блоком div
+    divElement2.className = 'alert'
+    let pElement = document.createElement('p') // создали отдельную переменную с параграфом р
+    pElement.textContent = 'Важное сообщение 2!' // в переменную pElement с помощью свойства textContent вписали текст
+    divElement2.append(pElement, document.createElement('hr'), '<p>Тэги в такой записи не работают - находятся в виде текста</p>') // в переменную 2 в которой содержится блок div в конец добавили переменную pElement в которой уже добавлен текст + плюс добавили с помощью запятой еще один hr создав его на лету с помощью метода createElement без предварительного присвоения переменной
+   
+    document.body.append(divElement2)
+    // Получили 'Важное сообщение 2!' и hr внизу страницы
+
+    // При этом элемент нельзя вставлять в несколько мест, в таком случае он пойдем в последнее место куда его послали потому что он не копируется, он перемещается в единственном экземпляре , то есть если написать divElement2.append(pElement, document.createElement('hr'), pElement), то сначала вставиться pElement, потом hr, потом идет команда еще раз вставить pElement, и pElement переместится за hr, а перед hr исчезнет
+
+
 
   </script>
 </body>

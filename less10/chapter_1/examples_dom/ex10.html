@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Пример 10 - метод has/get/set/removeAttribute()</title>
+  <title>Пример 10 - метод has/get/set/removeAttribute() и dir()</title>
 </head>
 <body>
   
@@ -11,29 +11,30 @@
 
   <script>
 
+    let elem = document.querySelector('p') // Привязали к переменной html-абзац
+    
     // --- Метод hasAttribute(): ---
-
-    let elem = document.querySelector('p')
+    // Метод .hasAttribute() позволяет проверить существует ли атрибут title у нашего html-элемента elem. Метод возвращает значение true, если указанный атрибут существует, в противном случае он возвращает значение false.
+    
     console.log(elem.hasAttribute('title'));
     // Получили: true
-
-    // Метод .hasAttribute() позволяет проверить существует ли атрибут title у нашего html-элемента elem. Метод возвращает значение true, если указанный атрибут существует, в противном случае он возвращает значение false.
-
+ 
     console.log(elem.hasAttribute('href'));
     // Получили: false . Это потому что не существует такого атрибута 
 
     // С помощью этого метода можно проверять наличие любого атрибута у какого-то html-элемента
 
+
     // --- Метод getAttribute(): ---
-    
-    console.log(elem.getAttribute('href'));
-    // Получили: null . Это потому что не существует такого атрибута 
+    // Метод getAttribute позволяет получить значение указанного атрибута у HTML-элемента. Если атрибута нет, то метод вернёт null.
+    // https://doka.guide/js/element-getattribute/
 
     console.log(elem.getAttribute('title'));
     // Получили: Подсказка
 
-    // Метод getAttribute позволяет получить значение указанного атрибута у HTML-элемента. Если атрибута нет, то метод вернёт null.
-    //https://doka.guide/js/element-getattribute/
+    console.log(elem.getAttribute('href'));
+    // Получили: null . Это потому что не существует такого атрибута 
+
 
     // --- Метод setAttribute(): ---
 
@@ -41,20 +42,23 @@
     // https://code.mu/ru/javascript/manual/dom/setAttribute/
     // Синтаксис: элемент.setAttribute(имя атрибута, новое значение);
 
-    elem.setAttribute('class', 'new_text')
+    elem.setAttribute('class', 'new_text new_text2')
     // Результат: В "Исследовать элемент" появилось: <p title="Подсказка" class="new_text">Абзац текста</p>
-    // Изначально было: class="text". Теперь стало class="new_text". Это значит что мы переписали название класса у элемента.
+    // Изначально было: class="text". Теперь стало class="new_text new_text2". Это значит что мы переписали название класса у элемента.
+    // Если мы хотим установить 2 класса, то нужно написать elem.setAttribute('class', 'new_text new_text2'), то есть между классами должен быть пробел по правилам разметки html
+    // и получим <p title="Подсказка" class="new_text new_text2">Абзац текста</p>
 
     elem.setAttribute('id', 'new_id') // Добавим идентификатор, при этом идентификатора раньше не было
-    // Получили: <p title="Подсказка" class="new_text" id="new_id">Абзац текста</p>
+    // Синтаксис .setAttribute('name', 'value')
+    // Получили: <p title="Подсказка" class="new_text new_text2" id="new_id">Абзац текста</p>
 
     // Далее пройдемся по атрибутам циклом:
-    for(let attr of elem.attributes) { // у любого элемента есть свойство attributes, содержащее все аттрибуты
+    for(let attr of elem.attributes) { // у любого элемента есть свойство attributes, содержащее все аттрибуты в виде массива (поэтому используется for of), в котором каждый элемент массива это объект с парами ключ-значение name=Имя и value=Значение
       console.log(`${attr.name} = ${attr.value}`); // у каждого атрибута есть свойство имя(name) и свойство значение (value)
     }
     // Получили в консоли: 
     // title = Подсказка
-    // class = new_text
+    // class = new_text new_text2
     // id = new_id
 
     // --- Метод removeAttribute(): ---
@@ -63,20 +67,32 @@
 
     elem.removeAttribute('title')
     // Получили:
-    // <p class="new_text" id="new_id">Абзац текста</p>
+    // <p class="new_text new_text2" id="new_id">Абзац текста</p>
 
     console.log('Удалили атрибут title');
+
     // Далее пройдемся по атрибутам циклом:
     for(let attr of elem.attributes) { 
       console.log(`${attr.name} = ${attr.value}`);
     }
     // Получили в консоли: 
-    // class = new_text
+    // class = new_text new_text2
     // id = new_id
-    // Строка title = Подсказка исчезла
+    // Строка "title = Подсказка" исчезла
 
+    // --- Статистический метод dir(): ---
     console.dir(elem);
-    // Получили в консоли: p#new_id.new_text (раскрывающийся)
+    // console.dir() — это метод, который отображает любой объект в виде иерархического дерева. Полезно, когда нужно посмотреть или быстро вспомнить какие есть свойства у dom-объекта (если мы их забыи например) или провести анализ прототипов. И уже в дальнейшем использовать: выбрать, изменить, достичь нужного результата. 
+    // https://doka.guide/js/objects-objects-everywhere/
+    // Статический метод console.dir() отображает интерактивный список свойств указанного JavaScript объекта. Вывод представлен в виде иерархического списка с возможностью просмотра содержимого дочерних объектов.
+    // Другими словами, console.dir() предоставляет возможность увидеть в консоли все свойства JavaScript объекта.
+    // https://developer.mozilla.org/ru/docs/Web/API/console/dir_static
+
+    // Получили в консоли: p#new_id.new_text.new_text2 (раскрывающийся)
+    // в котором например есть attributes, innerHTML, hidden
+
+    // В свойстве style есть куча разных вариантов (color, background). Все названия которые были в CSS и писались через дефис теперь записываются здесь в соответствии с Верблюжей записью (Camel Stle) - то есть каждое слово начинается с заглавной буквы и все дефисы удаляются. 
+
   </script>
 </body>
 </html>
