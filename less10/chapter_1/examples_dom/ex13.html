@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 13</title>
+  <title>Пример 13 - метод insertAdjacentHTML</title>
 </head>
 <body>
 
@@ -14,6 +14,28 @@
   </ul>
 
   <script>
+    // В уроке ex12 чтобы вставить что-то на страницу нам было необходимо предварительно создавать элемент с помощью createElement
+    // Существует специальный метод insertAdjacentHTML, который вставляет html сразу куда нам нужно, только предварительно нужно выбрать какой-нибудь уже существующий элемент на странице как опорную точку относительно которого и будем вставлять до/после
+    // Метод insertAdjacentHTML позволяет вставить строку HTML кода в любое место страницы. Код вставляется относительно опорного элемента. Можно сделать вставку перед опорным элементом (способ вставки 'beforeBegin'), после него (способ вставки 'afterEnd'), а также в начало (способ вставки 'afterBegin') или в конец (способ вставки 'beforeEnd') опорного элемента.
+    // https://learn.javascript.ru/modifying-document#insertadjacenthtml-text-element
+    // https://code.mu/ru/javascript/manual/dom/insertAdjacentHTML/
+    
+    // Синтаксис elem.insertAdjacentHTML(where, html)
+    // Первый параметр – это специальное слово, указывающее, куда по отношению к elem производить вставку. Значение должно быть одним из следующих:
+    // "beforebegin" – вставить html непосредственно перед elem,
+    // "afterbegin" – вставить html в начало elem,
+    // "beforeend" – вставить html в конец elem,
+    // "afterend" – вставить html непосредственно после elem.
+
+    // Второй параметр – это HTML-строка, которая будет вставлена именно «как HTML».
+
+    let ulElement = document.querySelector('ul')
+    ulElement.insertAdjacentHTML('beforebegin', '<p>html-текст обрамленный в тэг р, с использованием begorebegin</p>') // Adjacent (англ. соседний, близлежащий, смежный)
+    // Результат: по Исследованию элемента видно, что новый html-код вставился ПЕРЕД НАЧАЛОМ ul
+
+    ulElement.insertAdjacentHTML('afterend', '<p>html-код + afterend</p>')
+    // Результат: 
+
 
   </script>
 </body>

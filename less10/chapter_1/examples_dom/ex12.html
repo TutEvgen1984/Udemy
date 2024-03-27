@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 12 - создание элементов, методы createElement, append, </title>
+  <title>Пример 12 - методы createElement, append, prepend, after, before, replaceWith</title>
 </head>
 <body>
 
@@ -13,16 +13,16 @@
 
   <script>
     // Создадим элемент div
-    let divElement = document.createElement('div') // В переменной div создали html-элемент div располагающийся в глобальном объекте document с помощью метода createElement()
+    let divElement = document.createElement('div') // В переменной №1 div создали html-элемент div располагающийся в глобальном объекте document с помощью метода createElement()
     divElement.className = 'alert' // Для переменной div с помощью свойства className установили класс с названием alert
-    divElement.innerHTML = '<p>Важное сообщение!</p>' // С помощью свойства innerHTML установили html-содержимое переменной div
+    divElement.innerHTML = '<p>Блок div №1</p>' // С помощью свойства innerHTML установили html-содержимое переменной div
     // Обновили страницу и этот созданный div не появился потому что мы этот элемент не добавили в наш документ
 
     // Статья про комплексное изменение документа с помощью модификации DOM:
     // https://learn.javascript.ru/modifying-document  
 
-    document.body.append(divElement) // с помощью метода append (англ. добавлять, прибавлять) вставили переменную divElement в конец тела body
-    // Результат на странице: появилось "Важное сообщение!"" в блоке div с зелёной заливкой ВНИЗУ под чертой  
+    document.body.append(divElement) // с помощью метода append (англ. добавлять, прибавлять) вставили переменную divElement внутрь в конец тела body
+    // Результат на странице: появилось "Блок div №1" в блоке div с зелёной заливкой ВНИЗУ под чертой hr (см. строка 12)  
     // Синтаксис: родитель.append(элемент или строка);
     
     // Метод append позволяет вставить в конец какого-либо элемента другой элемент. Параметром метод принимает элемент, как правило созданный через createElement, либо строку. Можно добавить сразу несколько элементов или строк, перечислив их через запятую.
@@ -33,7 +33,7 @@
 
     // Для того, чтобы вставить новый добавляемый элемент не в конец, а в начало, существует метод prepend
 
-    // document.body.prepend(divElement)
+    // document.body.prepend(divElement) // prepend (англ. синоним add - добавлять)
     // Получили блок div ВВЕРХУ над словом "Разделитель"
     
     // Вот методы для различных вариантов вставки:
@@ -52,19 +52,33 @@
     // document.querySelector('hr').after(divElement) // Вместо body сделали выбранным основным элементом тег hr
     // Получили div после hr
 
-    let divElement2 = document.createElement('div') // создали переменную 2 с блоком div
+    let divElement2 = document.createElement('div') // создали переменную №2 с блоком div
     divElement2.className = 'alert'
     let pElement = document.createElement('p') // создали отдельную переменную с параграфом р
-    pElement.textContent = 'Важное сообщение 2!' // в переменную pElement с помощью свойства textContent вписали текст
-    divElement2.append(pElement, document.createElement('hr'), '<p>Тэги в такой записи не работают - находятся в виде текста</p>') // в переменную 2 в которой содержится блок div в конец добавили переменную pElement в которой уже добавлен текст + плюс добавили с помощью запятой еще один hr создав его на лету с помощью метода createElement без предварительного присвоения переменной
+    pElement.textContent = 'Блок div №2' // в переменную pElement с помощью свойства textContent вписали текст
+    divElement2.append(pElement, document.createElement('hr'), '<p>Тэги в такой записи не работают - находятся в виде текста</p>') // в переменную 2 в которой содержится блок div в конец добавили переменную pElement в которой уже добавлен текст + плюс добавили с помощью запятой еще один hr создав его на лету с помощью метода createElement без предварительного присвоения переменной + добавлили текст с html-тэгами, но  
    
     document.body.append(divElement2)
     // Получили 'Важное сообщение 2!' и hr внизу страницы
 
-    // При этом элемент нельзя вставлять в несколько мест, в таком случае он пойдем в последнее место куда его послали потому что он не копируется, он перемещается в единственном экземпляре , то есть если написать divElement2.append(pElement, document.createElement('hr'), pElement), то сначала вставиться pElement, потом hr, потом идет команда еще раз вставить pElement, и pElement переместится за hr, а перед hr исчезнет
+    // При этом элемент нельзя вставлять в несколько мест, в таком случае он пойдем в последнее место куда его послали потому что он не копируется, он перемещается в единственном экземпляре, то есть если написать divElement2.append(pElement, document.createElement('hr'), pElement), то сначала вставиться pElement, потом hr, потом идет команда еще раз вставить pElement, и pElement стоявший ДО hr исчезнет и переместится ПОСЛЕ hr
 
+    let divElement3 = document.createElement('div') // Создали переменную №3 с блоком div
+    divElement3.className = 'alert'
+    divElement3.innerHTML = '<p>Блок div №3></p>'
+    document.querySelector('hr').before(divElement3) // Вставили divElement3 ПЕРЕД hr
 
+    let pElement3 = document.createElement('p')
+    pElement3.textContent = "Текст, находящийся в html-теге <p>, который заменит div 'Блок div №3'"
 
+    divElement3.replaceWith(pElement3)
+    // В результате зелёный div 'Блок div №3' исчез, а на его месте появился абзац с тегом р "Текст, находящийся в html-теге <p>, который заменит div 'Блок div №3'"
+    // Данный метод тоже может быть полезен 
+
+    // ---------------------------------------------------------------------------------
+    // Вопрос: Как выбирать элементы DOM дерева?
+    // Ответ: querySelector, querySelectorAll
+    
   </script>
 </body>
 </html>
