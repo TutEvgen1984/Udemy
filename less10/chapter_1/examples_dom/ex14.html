@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 14</title>
+  <title>Пример 14 - методы setTimeout, перемещение с помощью after</title>
 </head>
 <body>
 
@@ -16,6 +16,17 @@
   <div id="two">Два</div>
 
   <script>
+    let divElement1 = document.querySelector('div') // поцепились к первому div
+    setTimeout(() => {
+      divElement1.remove() // метод remove удаляет элемент
+      two.after(one) // вместо getElementByID мы можем просто написать название id, а дальше через точку метод after. 
+      // Расшифровка: элемент два.вставить после него (элемент 1)
+    }, 2000)
+    // Результат: 
+    // через 2 секунды первый div удалился со страницы
+    // Два (остается на месте)
+    // Один (стоял до пункта Два, теперь стал после него - переместился)
+    // то есть на стринице можно перемещать элементы с помощью метода after before 
 
   </script>
 </body>
