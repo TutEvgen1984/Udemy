@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 15 - копирование с помощью cloneNode</title>
+  <title>Пример 15 - Метод cloneNode клонирование</title>
 </head>
 <body>
 
@@ -15,10 +15,10 @@
   <script>
     let divElement1 = document.querySelector('div') // подцепились к div для того, чтобы на его основе сделать клон
 
-    let divElement2 = divElement1.cloneNode(true) // в скобках у cloneNode стоит true, это значит что все что находится внутри этого элемента - все дочерние элементы, тоже будут клонироваться
-    // Вызов elem.cloneNode(true) создаёт «глубокий» клон элемента – со всеми атрибутами и дочерними элементами. Если мы вызовем elem.cloneNode(false), тогда клон будет без дочерних элементов.
+    let divElement2 = divElement1.cloneNode(true) // Склонировали. В скобках у cloneNode стоит true, это значит что все что находится внутри этого элемента - все дочерние элементы, тоже будут клонироваться
+    // Вызов elem.cloneNode(true) создаёт «глубокий» клон элемента – со всеми атрибутами и дочерними элементами. Если мы вызовем elem.cloneNode(false), тогда клон будет без дочерних элементов. Не забываем, что этот клон в дальнейшем ещё нужно куда-то поместить, иначе его не будет видно
     divElement2.querySelector('p').textContent = 'Еще одно особщение divElement2, созданное с помощью cloneNode' // С помощью querySelector ищем тег р внутри элемента (а не внутри document, как это мы раньше делали) для более быстрого и точного нахождения, далее применили свойство textContent чтобы заменить внутри текст на новый (старый сотрется), если это не написать, то получим точно такое же сообщение изначальное как в html-коде (Сообщение №1) 
-    divElement1.after(divElement2) // после divElement1 вставили клонированный ранее элемент divElement2
+    divElement1.after(divElement2) // после divElement1 вставили клонированный ранее элемент divElement2 (без этого наш лон остался бы невидимым как бы в памяти)
     // Получили оригинальный div, а ниже сразу второй div склонированный и с другим текстом
   </script>
 </body>

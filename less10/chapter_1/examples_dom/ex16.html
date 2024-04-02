@@ -10,7 +10,18 @@
 
 
   <script>
+    let ulElement = document.createElement('ul') // создали элемент ul в памяти 
+    document.body.append(ulElement) // поместили в конец body 
+    // Получили: пустой ul в котором ничего нет <ul></ul>
 
+    // создадим бесконеный цикл
+    while(true) {
+      let data = prompt("Введите текст для элемента списка", "") // через запятую указали параметр по умолчанию, в нашем случае это пустая строка
+      if (!data) { // if(data) означает проверку условия, что есть какие-то данные, if(!data) означает проверку условия, что нет данных
+      break // break это просто выйти из цикла, цикл прервется и не станет выполняться
+      } 
+      let liElement = document.createElement('li')
+    }
   </script>
 </body>
 </html>
