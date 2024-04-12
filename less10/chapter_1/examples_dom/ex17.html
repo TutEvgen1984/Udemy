@@ -41,6 +41,11 @@
     console.log(!isNaN(data["Овощи"])); // Сейчас получили false. Из-за ! мы получим true только если будет в качестве значения число, что будет означать, что мы внизу по иерархии объекта.
     console.log(!isNaN(data["Овощи"]));
 
+    console.log(Object.keys(data["Овощи"]).length) // Получили:2
+
+    console.log(data["Овощи"]["огурцы"]); // Получили: 5
+    console.log(!isNaN(data["Овощи"]["огурцы"])); // Получили: true
+
     function createUl(objElement) {
         if (!Object.keys(objElement).length) {  // Если в объекте length = 0, то есть НЕТ ключей (!Есть ключи). В нашем случае length = 2, получаем false. 
           return // тогда мы выходим из функции ничего не возвращая так как при отсутствии ключей length = 0 и в условии получим true
