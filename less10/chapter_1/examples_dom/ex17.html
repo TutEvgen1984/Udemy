@@ -53,7 +53,7 @@
 
     function createUl(objElement) {
         n_func++
-        console.log(`Запуск №${n_func} функции createUl`);
+        console.log(`Запуск №${n_func} функции createUl`); // используем шаблонные литералы
         if (!Object.keys(objElement).length) {  // Если в объекте length = 0, то есть НЕТ ключей (!Есть ключи). В нашем случае length = 2, получаем false. 
           console.log(`Выход из функции createUl так как Object.keys(objElement).length = 0`);
           return // тогда мы выходим из функции ничего не возвращая так как при отсутствии ключей length = 0 и в условии получим true
@@ -67,7 +67,6 @@
             liElement.textContent = key + objElement[key]} // в строку списка в качестве текста вносим название ключа + значение ключа
           else {// то есть если проверка показала, что это НЕ число
           liElement.textContent = key} // в строку списка в качестве текста вносим только название ключа
-          // console.log(`Предстоит запуск рекурсии let childrenUL = createUl(objElement[key]). objElement[key] = ${objElement}`);
           let childrenUL = createUl(objElement[key]) // Это рекурсивная функция потому, что она вызывывается внутри себя. В качестве значения функции мы теперь передаем objElement[key] (вместо objElement который мы передавали раньше) - то есть мы уходим на 1 уровень глубже. И функция сделает с ним все то же самое для вложенного нашего объекта.  
           // То есть если в нашем объекте содержется не число, а например другой объект, то мы для него будем выполнять рекурсивный вызов функции. И так до тех пор, пока не встретится число, и это будет означать что мы напечатаем ключ с числом, которое с ним рядом установлено. И тем самым мы вывели какой-то вложенный ul.
           if (childrenUL) {  //  Если childrenUL существует (дочерний ul может и не создаться)
@@ -83,8 +82,8 @@
     function createTree(container, obj) { // container - это место на html-странице куда вставится дерево, obj - это объект на основе которого будет строиться дерево
       document.querySelector(container).append(createUl(obj))
     }
-       // выбрали дерево с помощью querySelector(container) место втсавки на html-странице
-       // append(createUl(obj) - и поместили методом append внутрь контейнера функцию createUl(obj), которая преаратиться потмо в return ulElement
+       // выбрали с помощью querySelector(container) место вставки на html-странице
+       // append( createUl(obj) ) - и поместили методом append внутрь контейнера функцию createUl(obj), которая превратится потом в return ulElement
 
        createTree('body', data) // Вызываем функцию createTree чтобы эта функция выполнилась
        // В качестве первой переменной передаём любой CSS-селектор, например body
