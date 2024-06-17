@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>10.4 - Домашнее задание - Календарь</title>
-</head>
-<body>
+    <style>
+        * {
+            font-family: 'Calibri';
+        }
     
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    
+        table {
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+    
+        caption {
+            padding: 10px 0;
+            background-color: #fff6ce;
+            border: 1px solid black;
+            border-bottom: none;
+        }
+    
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            font-size: 18px;
+        }
+    
+        th {
+            font-weight: bold;
+            background-color: #fff6ce;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <script>
+        // Функция для получения на выходе дни недели с Пн(1) до Вс(7) вместо JavaScript_овских дней с Вс(0) по Сб(6):
+        function humanGetDay(date) {
+            let day = date.getDay()
+            if (day == 0) day = 7
+            return day
+        }
+
+        function createCalendar(insertWhere, year, humanMonth) {
+            elem = document.querySelector(insertWhere)
+            let jsMonth = humanMonth - 1
+            let fullDate = new Date(year, jsMonth) // Получим в формате: Sun Sep 01 2024 00:00:00 GMT+0700 (GMT+07:00) 
+
+            // Код для создания таблицы:
+            let table = `
+            <table>
+                <caption>${humanMonth}.${year}</caption>
+                <tr>
+                <th>пн</th>
+                <th>вт</th>
+                <th>ср</th>
+                <th>чт</th>
+                <th>пт</th>
+                <th>сб</th>
+                <th>вс</th>
+                </tr>
+                <tr>
+            `
+            // Заполнение пустыми ячейками до дня №1:
+            for (let i = 1; i < humanGetDay(fullDate); i++) {
+                table += '<td></td>' 
+            }
+
+            // Заполнение таблицы числами: 
+            while (fullDate.getMonth() == jsMonth) { 
+                table += '<td>' + fullDate.getDate() + '</td>' 
+                if (humanGetDay(fullDate) == 7) { 
+                    table += '</tr><tr>' // Если Вс, то создаем новую строку
+                }
+                fullDate.setDate(fullDate.getDate() + 1)
+            }
+
+            // Заполняем пустыми ячейками остаток календаря:
+            if (humanGetDay(fullDate) != 1) { // Если текущий день не равен 1 (понедельнику) (то есть воскресенью на прошлом цикле):
+                for (let i = humanGetDay(fullDate); i <= 7; i++) { 
+                    table += '<td></td>' 
+                }
+            }
+
+            table += '</tr></table>' // Закрываем последния ряд и всю таблицу
+            elem.innerHTML = table
+
+        }
+
+        createCalendar('.container', 2024, 9) // 9 это август по человеческому
+        createCalendar('.container', 2024, 10) // 9 это август по человеческому
+
+    </script>
 </body>
+
 </html>
