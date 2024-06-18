@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10.4 - Домашнее задание - Календарь</title>
+    <title>10.4 - Домашнее задание - Календарь. Тютиков Е.В.</title>
     <style>
         * {
             font-family: 'Calibri';
@@ -28,8 +28,7 @@
             border-bottom: none;
         }
     
-        td,
-        th {
+        td,th {
             border: 1px solid black;
             padding: 8px;
             text-align: center;
@@ -47,6 +46,8 @@
     <div class="container"></div>
 
     <script>
+        // Необходимые функции:
+        
         // Функция для получения на выходе дни недели с Пн(1) до Вс(7) вместо JavaScript_овских дней с Вс(0) по Сб(6):
         function humanGetDay(date) {
             let day = date.getDay()
@@ -54,10 +55,11 @@
             return day
         }
 
-        function createCalendar(insertWhere, year, humanMonth) {
-            elem = document.querySelector(insertWhere)
+        function createOneMonthCalendar(insertWhere, year, humanMonth) {
             let jsMonth = humanMonth - 1
             let fullDate = new Date(year, jsMonth) // Получим в формате: Sun Sep 01 2024 00:00:00 GMT+0700 (GMT+07:00) 
+
+            let textMonth = ['Jan']
 
             // Код для создания таблицы:
             let table = `
@@ -96,12 +98,30 @@
             }
 
             table += '</tr></table>' // Закрываем последния ряд и всю таблицу
-            elem.innerHTML = table
+            insertWhere.innerHTML = table
 
         }
 
-        createCalendar('.container', 2024, 9) // 9 это август по человеческому
-        createCalendar('.container', 2024, 10) // 9 это август по человеческому
+        // Функция создания 12 пустых div для 12 месяцев:
+        function create12divMonth() {
+            for(let humanMonth = 1; humanMonth <=12 ; humanMonth++) {
+                let divMonth = document.createElement('div')
+                divMonth.className = `month${humanMonth}`
+                document.querySelector('.container').append(divMonth)
+            }
+        }
+
+        // Запуск выполнения кода:
+
+        // 1) Создадим 12 пустых div'ов
+        create12divMonth()
+
+        // 2) Заполнение 12 пустых div'ов месячными календарями:
+        for(let humanMonth = 1; humanMonth <=12 ; humanMonth++) {
+            let insertWhere = document.querySelector(`.month${humanMonth}`)
+            console.log(insertWhere);
+            createOneMonthCalendar(insertWhere, 2024, humanMonth)
+        }        
 
     </script>
 </body>
