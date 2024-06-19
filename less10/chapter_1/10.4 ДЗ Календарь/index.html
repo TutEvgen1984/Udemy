@@ -17,15 +17,17 @@
     
         table {
             border-collapse: collapse;
+            border-spacing: 0;
             margin-bottom: 10px;
             margin-right: 10px;
         }
     
         caption {
             padding: 10px 0;
-            background-color: #fff6ce;
+            background-color: darkblue;
             border: 1px solid black;
             border-bottom: none;
+            color: beige;
         }
     
         td,th {
@@ -39,6 +41,21 @@
             font-weight: bold;
             background-color: #fff6ce;
         }
+
+        /* Дополнительное оформление: */
+        
+        .today { /* Подсветка текущего дня */
+            border-radius: 50%;
+            background-color: blueviolet;
+            color: azure;
+            font-weight: bold;
+            
+        }
+
+        td:hover {
+            background: darkgray;
+            border-radius: 50%;
+        }
     </style>
 </head>
 
@@ -47,7 +64,7 @@
 
     <script>
         // Необходимые функции:
-        
+
         // Функция для получения на выходе дни недели с Пн(1) до Вс(7) вместо JavaScript_овских дней с Вс(0) по Сб(6):
         function humanGetDay(date) {
             let day = date.getDay()
@@ -59,12 +76,12 @@
             let jsMonth = humanMonth - 1
             let fullDate = new Date(year, jsMonth) // Получим в формате: Sun Sep 01 2024 00:00:00 GMT+0700 (GMT+07:00) 
 
-            let textMonth = ['Jan']
+            let textMonth = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь',  'Октябрь', 'Ноябрь', 'Декабрь']
 
             // Код для создания таблицы:
             let table = `
             <table>
-                <caption>${humanMonth}.${year}</caption>
+                <caption>${textMonth[jsMonth]}(${humanMonth}) ${year}</caption>
                 <tr>
                 <th>пн</th>
                 <th>вт</th>
@@ -82,9 +99,13 @@
             }
 
             // Заполнение таблицы числами: 
-            while (fullDate.getMonth() == jsMonth) { 
-                table += '<td>' + fullDate.getDate() + '</td>' 
-                if (humanGetDay(fullDate) == 7) { 
+
+            // Дата на данный момент:
+            let todayDate = new Date // Wed Jun 19 2024 12:51:58 GMT+0700 (GMT+07:00) каждый раз новая текущая
+
+            while (fullDate.getMonth() == jsMonth) {
+                    table += '<td>' + fullDate.getDate() + '</td>'                
+                    if (humanGetDay(fullDate) == 7) { 
                     table += '</tr><tr>' // Если Вс, то создаем новую строку
                 }
                 fullDate.setDate(fullDate.getDate() + 1)
@@ -111,6 +132,24 @@
             }
         }
 
+        // Функция подсветки текущего дня:
+        function highlightTodayDate() {
+            let todayDate = new Date // Сегодняшняя полная дата
+            let todayMonthJS = todayDate.getMonth() // Сегоднящий месяц JS
+            let todayMonthHuman = todayMonthJS+1 // Сегоднящий месяц человеческий 
+            let pickedTable = document.querySelector(`.month${todayMonthHuman} > table`) // Выбрали сегодняшнюю таблицу (подцепились к div'у содержащему класс текущего месяца > таблица)
+            // Проход по рядам и ячейкам всей таблицы, как только наткнёмся на текущий день, метим его ячейку классом today
+            for (let row of pickedTable.rows) {
+                for (let cell of row.cells) {
+                    if(cell.textContent == todayDate.getDate()) {
+                        cell.className = 'today'
+                    }
+                }
+            }
+        }
+
+        
+
         // Запуск выполнения кода:
 
         // 1) Создадим 12 пустых div'ов
@@ -119,9 +158,13 @@
         // 2) Заполнение 12 пустых div'ов месячными календарями:
         for(let humanMonth = 1; humanMonth <=12 ; humanMonth++) {
             let insertWhere = document.querySelector(`.month${humanMonth}`)
-            console.log(insertWhere);
             createOneMonthCalendar(insertWhere, 2024, humanMonth)
-        }        
+        }    
+        
+        // 3) Подсвечиваем текущий день:
+        highlightTodayDate()
+
+
 
     </script>
 </body>
