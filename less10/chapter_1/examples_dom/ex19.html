@@ -8,7 +8,7 @@
   <title>Пример 19 - Сортировка таблицы</title>
 </head>
 
-<table id="table">
+<table id="tableId">
   <tr>
     <th>Имя</th>
     <th>Возраст</th>
@@ -33,6 +33,61 @@
 
 <body>
   <script>
+    // Свойство rows
+    // Свойство rows хранит коллекцию строк tr. Может применяться как к таблице, так и к ее секциям tHead, tBodies, tFoot.
+    // https://code.mu/ru/javascript/manual/dom/rows/
+
+    let tableGrab = document.querySelector('table');
+
+    for (let row of tableGrab.rows) {
+      console.log(row);
+    }
+    // Получили:
+    // <tr>
+    //   <th>Имя</th>
+    //   <th>Возраст</th>
+    // </tr>
+    // 
+    // <tr>
+    //   <td>Саша</td>
+    //   <td>10</td>
+    // </tr>
+    // 
+    // и так далее
+
+    console.log('\n Перебор рядов и ячеек');
+    for (let row of tableGrab.rows) { // tableGrab.rows вычисляет сколько в таблице есть рядов вообще и даёт нам их коллекцию, а с помощью let row of мы в переменной row получаем присвоение рядов попеременно (обновляемое при каждом шаге) 
+      for (let cell of row.cells) { // row.cells вычисляет сколько в ряду есть ячеек вообще и даёт нам их коллекцию, а с помощью let cell of мы в переменной cell получаем присвоение ячеек попеременно (обновляемое при каждом шаге) 
+        console.log(cell); // Получили объекты раскрывающиеся, но раскрывается в виде непонятного объекта. 
+        console.log(cell.textContent) // Получаем: Имя, Возраст ...
+      }
+    }
+
+    let sortedRows = Array.from(tableId.rows) // Здесь Array - это конструктор массива аналогичный записи [].
+    .slice(1) // .slice(1) означает брать всё начиная с индекса 1. Это нужно чтобы убрать 
+    .sort((rowA, rowB) => {
+
+    }) 
+    
+    
+    
+    // Функция Array.from() создаёт новый массив на основе итерируемого или массивоподобного объекта.
+    // https://doka.guide/js/array-from/
+
+    
+
+    console.log(tableId.rows) // Получили: HTMLCollection(5) [tr, tr, tr, tr, tr] (раскрывающийся, но раскрывается в виде непонятного объекта)
+    // Писать надо в параметрах именно идентификатор tableId, а не тэг table
+
+    // Если написать:
+    // console.log(table.rows) // Получаем: Uncaught ReferenceError: table is not defined
+
+    console.log('\n');
+    console.log(sortedRows); // Получили: (4) [tr, tr, tr, tr] Prototype: Array(0) . Одного первого элемента tr нет потому что его обрезал метод slice
+    console.log('\n');
+
+
+
 
   </script>
 </body>
