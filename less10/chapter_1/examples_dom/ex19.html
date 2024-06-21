@@ -63,21 +63,20 @@
       }
     }
 
-    let sortedRows = Array.from(tableId.rows) // Здесь Array - это конструктор массива аналогичный записи [].
-    .slice(1) // .slice(1) означает брать всё начиная с индекса 1. Это нужно чтобы убрать 
+    let sortedRows = Array.from(tableId.rows) // Здесь Array - это конструктор массива аналогичный записи []. Написан в виде слова для того чтобы можно было написать его метод
+    .slice(1) // .slice(1) означает брать всё начиная с индекса 1. Это нужно чтобы убрать первый ряд заголовка <tr> <th>Имя</th> <th>Возраст</th> </tr> потому что его не нужно сортировать
     .sort((rowA, rowB) => {
 
     }) 
     
-    
-    
     // Функция Array.from() создаёт новый массив на основе итерируемого или массивоподобного объекта.
     // https://doka.guide/js/array-from/
 
-    
-
-    console.log(tableId.rows) // Получили: HTMLCollection(5) [tr, tr, tr, tr, tr] (раскрывающийся, но раскрывается в виде непонятного объекта)
+    console.log(tableId.rows)
     // Писать надо в параметрах именно идентификатор tableId, а не тэг table
+    
+    console.log(Array.from(tableId.rows)) // Получили: (5) [tr, tr, tr, tr, tr] Prototype: Array(0) . (раскрывающийся, но раскрывается в виде непонятного объекта)
+    
 
     // Если написать:
     // console.log(table.rows) // Получаем: Uncaught ReferenceError: table is not defined
