@@ -1,11 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>10.4 - Домашнее задание - Календарь. Тютиков Е.В.</title>
+    <style>
+        * {
+            font-family: 'Calibri';
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+
+        caption {
+            padding: 10px 0;
+            background-color: darkblue;
+            border: 1px solid black;
+            border-bottom: none;
+            color: beige;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        th {
+            font-weight: bold;
+            background-color: #fff6ce;
+        }
+
+        /* Дополнительное оформление: */
+
+        .today {
+            /* Подсветка текущего дня */
+            border-radius: 50%;
+            background-color: blueviolet;
+            color: azure;
+            font-weight: bold;
+
+        }
+
+        td:hover {
+            background: darkgray;
+            border-radius: 50%;
+        }
+
+        .weekend {
+            color: red;
+        }
+
+        .chooseYear {
+            margin: 0 auto;
+            max-width: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Смотри папку calendar (index.html) сделанную в github pages -->
+
+    <div class="container"></div>
+
+    <script>
+        // Важные переменные: 
+
+        let currYear = 2024 // Год необходимого календаря
+
+
+        // Необходимые функции:
+
+        // Функция для получения на выходе дни недели с Пн(1) до Вс(7) вместо JavaScript_овских дней с Вс(0) по Сб(6):
+        function humanGetDay(date) {
+            let day = date.getDay()
+            if (day == 0) day = 7
+            return day
+        }
+
+        function createOneMonthCalendar(insertWhere, currYear, humanMonth) {
+            let jsMonth = humanMonth - 1
+            let fullDate = new Date(currYear, jsMonth) // Получим в формате: Sun Sep 01 2024 00:00:00 GMT+0700 (GMT+07:00) 
+
+            let textMonth = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+
+            // Код для создания таблицы:
+            let table = `
+            <table>
+                <caption>${textMonth[jsMonth]}(${humanMonth}) ${currYear}</caption>
+                <tr>
+                <th>пн</th>
+                <th>вт</th>
+                <th>ср</th>
+                <th>чт</th>
+                <th>пт</th>
+                <th class="weekend">сб</th>
+                <th class="weekend">вс</th>
+                </tr>
+                <tr>
+            `
+            // Заполнение пустыми ячейками до дня №1:
+            for (let i = 1; i < humanGetDay(fullDate); i++) {
+                table += '<td></td>'
+            }
+
+            // Заполнение таблицы числами: 
+
+            // Дата на данный момент:
+            let todayDate = new Date // Wed Jun 19 2024 12:51:58 GMT+0700 (GMT+07:00) каждый раз новая текущая
+
+            while (fullDate.getMonth() == jsMonth) {
+                table += '<td>' + fullDate.getDate() + '</td>'
+                if (humanGetDay(fullDate) == 7) {
+                    table += '</tr><tr>' // Если Вс, то создаем новую строку
+                }
+                fullDate.setDate(fullDate.getDate() + 1)
+            }
+
+            // Заполняем пустыми ячейками остаток календаря:
+            if (humanGetDay(fullDate) != 1) { // Если текущий день не равен 1 (понедельнику) (то есть воскресенью на прошлом цикле):
+                for (let i = humanGetDay(fullDate); i <= 7; i++) {
+                    table += '<td></td>'
+                }
+            }
+
+            table += '</tr></table>' // Закрываем последния ряд и всю таблицу
+            insertWhere.innerHTML = table
+
+        }
+
+        // Функция создания 12 пустых div для 12 месяцев:
+        function create12divMonth() {
+            for (let humanMonth = 1; humanMonth <= 12; humanMonth++) {
+                let divMonth = document.createElement('div')
+                divMonth.className = `month${humanMonth}`
+                document.querySelector('.container').append(divMonth)
+            }
+        }
+
+        // Функция подсветки текущего дня:
+        function highlightTodayDate() {
+            let todayDate = new Date // Сегодняшняя полная дата
+            console.log('\nТекущая дата: ' + todayDate);
+            let todayYear = todayDate.getFullYear() // Сегодняшний год
+            if (todayYear !== currYear) { // Если текущий год не равен году рисуемого календаря, то написть в консоль и остановить функцию 
+                console.log(`Год ${currYear} рисуемого календаря НЕ совпадает с вашим текущим ${todayYear}. Текущее число НЕ подсвечено на календаре`);
+                return
+            }
+            let todayMonthJS = todayDate.getMonth() // Сегоднящий месяц JS
+            let todayMonthHuman = todayMonthJS + 1 // Сегоднящий месяц человеческий 
+            let pickedTable = document.querySelector(`.month${todayMonthHuman} > table`) // Выбрали сегодняшнюю таблицу (подцепились к div'у содержащему класс текущего месяца > таблица)
+            // Проход по рядам и ячейкам всей таблицы, как только наткнёмся на текущий день, метим его ячейку классом today
+            for (let row of pickedTable.rows) {
+                for (let cell of row.cells) {
+                    if (cell.textContent == todayDate.getDate()) {
+                        cell.className = 'today'
+                        console.log('Текущее число подсвечено на календаре');
+                    }
+                }
+            }
+        }
+
+
+        // Функция создания кнопок для выбора года
+        function createChooseYear() {
+
+            let chooseYear = document.createElement('div');
+            chooseYear.className = 'chooseYear';
+
+            let prev = document.createElement('button');
+            prev.id = 'prev';
+            prev.textContent = '◀';
+            chooseYear.append(prev);
+
+
+
+            let yearTitle = document.createElement('h1');
+            yearTitle.style.display = 'inline';
+            yearTitle.textContent = currYear;
+            chooseYear.append(yearTitle);
+
+            let next = document.createElement('button');
+            next.id = 'next';
+            next.textContent = '▶';
+            chooseYear.append(next);
+
+            document.querySelector('body').prepend(chooseYear);
+        }
+
+        // Итоговая функция вырисовывания на странице полного календаря на текущий год:
+        function createYearCalendar() {
+            // 1) Создадим 12 пустых div'ов
+            create12divMonth()
+
+            // 2) Заполнение 12 пустых div'ов месячными календарями:
+
+            for (let humanMonth = 1; humanMonth <= 12; humanMonth++) {
+                let insertWhere = document.querySelector(`.month${humanMonth}`)
+                createOneMonthCalendar(insertWhere, currYear, humanMonth)
+            }
+
+            // 3) Подсвечиваем текущий день:
+            highlightTodayDate()
+
+        }
+
+        // Запуск выполнения кода:  
+
+        // 1) Создадим кнопки выбора года
+        createChooseYear()
+
+        // 2) Нарисуем календарь на текущий год
+        createYearCalendar()
+
+        //  3) Активируем кнопки переключения года:
+
+        //  3.1) Предыдущий год
+        let prevButton = document.querySelector('#prev'); // Подцепились к кнопке
+        prevButton.addEventListener('click', function () { // Слушаем щелчок, при щелчке запускаем функцию
+            currYear--; // Уменьшили переменную выбранного года
+            document.querySelector('h1').textContent = currYear; // Перерисовываем год на кнопке на новый изменённый
+            document.querySelector('.container').innerHTML = ""; // Стираем старый календарь
+            createYearCalendar() // Рисуем новый календарь
+        });
+
+        //  3.2) Следующий год
+        let nextButton = document.querySelector('#next');
+        nextButton.addEventListener('click', function () {
+            currYear++;
+            document.querySelector('h1').textContent = currYear;
+            document.querySelector('.container').innerHTML = "";
+            createYearCalendar()
+        });
+
+
+    </script>
 </body>
+
 </html>
