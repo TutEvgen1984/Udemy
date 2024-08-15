@@ -38,7 +38,7 @@
     let tableGrab = document.querySelector('table');
 
     function sortTable(i) {
-      let tableRows = Array.from(tableGrab.rows);
+      let tableRows = Array.from(tableGrab.rows); // создали массив из всех строк таблицы
       tableRows = tableRows.slice(1)
       if (isNaN(tableRows[0].cells[i].innerHTML)) {// если нужно отсортировать строки
         tableRows = tableRows.sort((a, b) => a.innerHTML.localeCompare(b.innerHTML)) // сортирвка строк в лексикографическом проядке по возрастанию
@@ -48,13 +48,13 @@
       tableId.append(...tableRows)
     }
 
-    let text = document.createElement('p') // в этом элементе будет описано по какому столбцу отсортирована таблица
-    tableId.after(text) 
-    let ths = Array.from(document.querySelectorAll('th')); // список всех заголовков столбцов
+    let text = document.createElement('p') // в этом DOM-элементе будет описано по какому столбцу отсортирована таблица
+    tableId.after(text) // вставляем этот элемент хотя в нем пока ничего нет  
+    let ths = Array.from(document.querySelectorAll('th')); // переменная-массив, хранящая список всех заголовков столбцов
     for (let th of ths) { // проходим циклом по заголовкам из списка
-      th.style.cursor = 'pointer' // меняем стили у каждого заголовка
-      th.addEventListener('click', function() { // добавляем обработку нажатия на заголовок
-        sortTable(ths.indexOf(th)) // вызываем нашу функцию для заголовка на который нажали
+      th.style.cursor = 'pointer' // меняем стили у каждого заголовка на такой, что при наведении курсор мышки меняется на белую руку с указывающим пальцем
+      th.addEventListener('click', function() { // для каждого заголовка добавляем слушатель нажатия и прописываем функцию, которая сработает при щелчке
+        sortTable(ths.indexOf(th)) // при щелчке запустится функция sortTable у которой аргумент i = ths.indexOf(th) означающая пройтись по массиву ths, найти в нём текущий заголовок по тексту?  
         text.textContent = `Сортировка : ${th.innerHTML}` // под таблицей появляется текст с описанием сортировки
       })
     }
