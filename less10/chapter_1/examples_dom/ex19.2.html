@@ -39,22 +39,23 @@
 
     function sortTable(i) {
       let tableRows = Array.from(tableGrab.rows); // создали массив из всех строк таблицы
-      tableRows = tableRows.slice(1)
-      if (isNaN(tableRows[0].cells[i].innerHTML)) {// если нужно отсортировать строки
-        tableRows = tableRows.sort((a, b) => a.innerHTML.localeCompare(b.innerHTML)) // сортирвка строк в лексикографическом проядке по возрастанию
+      tableRows = tableRows.slice(1) // отрезали первый элемент массива
+      if (isNaN(tableRows[0].cells[i].innerHTML)) {// если первый элемент массива (первая строка) содержит ячейку с индексом i (соответствует столбцу по которому щелкнули) в которой содержимое (свойство innerHTML) является Не числом, то есть буквами, то делаем следующее
+        tableRows = tableRows.sort((a, b) => a.innerHTML.localeCompare(b.innerHTML)) // сортировка строк в лексикографическом порядке по возрастанию. https://purpleschool.ru/knowledge-base/article/strings-localecompare
       } else { // а если сортировать нужно числа
-        tableRows = tableRows.sort((rowA, rowB) => rowA.cells[i].innerHTML - rowB.cells[i].innerHTML) // сортируется как в примере в видео
+        tableRows = tableRows.sort((rowA, rowB) => rowA.cells[i].innerHTML - rowB.cells[i].innerHTML) // сортируется как в примере ex19.1
       }
       tableId.append(...tableRows)
     }
 
     let text = document.createElement('p') // в этом DOM-элементе будет описано по какому столбцу отсортирована таблица
-    tableId.after(text) // вставляем этот элемент хотя в нем пока ничего нет  
-    let ths = Array.from(document.querySelectorAll('th')); // переменная-массив, хранящая список всех заголовков столбцов
+    tableId.after(text) // вставляем этот элемент несмотя на то, что в нём пока ничего нет  
+    let ths = Array.from(document.querySelectorAll('th')); // переменная-массив, хранящая список всех заголовков столбцов найденных на всей странице
     for (let th of ths) { // проходим циклом по заголовкам из списка
+      console.log(th); // Получаем: <th style="cursor: pointer;">Имя</th> <th style="cursor: pointer;">Возраст</th>
       th.style.cursor = 'pointer' // меняем стили у каждого заголовка на такой, что при наведении курсор мышки меняется на белую руку с указывающим пальцем
       th.addEventListener('click', function() { // для каждого заголовка добавляем слушатель нажатия и прописываем функцию, которая сработает при щелчке
-        sortTable(ths.indexOf(th)) // при щелчке запустится функция sortTable у которой аргумент i = ths.indexOf(th) означающая пройтись по массиву ths, найти в нём текущий заголовок по тексту?  
+        sortTable(ths.indexOf(th)) // при щелчке запустится функция sortTable у которой аргумент i = ths.indexOf(th) означающая пройтись по массиву ths, найти в нём текущий заголовок сравнивая текст внутри элементов массива с текстом текущего заголовка, и как только они совпадут, вернуть число равное индексу соответствующее положению элемента в массиве 
         text.textContent = `Сортировка : ${th.innerHTML}` // под таблицей появляется текст с описанием сортировки
       })
     }
