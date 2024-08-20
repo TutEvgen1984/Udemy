@@ -4,16 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 21</title>
+  <title>Пример 21 - 10.7 Классы и метрики. classList</title>
 </head>
 <body>
 
   <div class="alert block">
-    <p>Сообщение</p>
+    <p>Пример 21 - 10.7 Классы и метрики. classList</p>
   </div>
 
   <script>
+    let div_element = document.querySelector('div') // подцепились к первому попавшемуся диву
+    div_element.className = "alert text block " // вручную по старинке добавили третий класс text в середину, при этом надо не забыть прописать уже существующие, иначе они сотрутся. На странице в body появился еще один дополнительный класс text
+    
+    // То есть свойство className позволяет нас установить весь класс в другое значение.
+    // Но есть более удобный способ управления классами:
+    // classList
+    // оно доступно нам для обхода в цикле как массив, поэтому мы можем использовать цикл for of
+    // то есть все нажи 3 класса доступны нам как элементы массива в свойстве classList
+    
+    for(let name of div_element.classList) {
+      console.log(name); // получили alert text block в консоли по отдельности. они в цикле хранятся в переменной name
+    }
 
+    div_element.classList.add('elem') 
+    // с помощью метода add (добавлять) добавили в классы ещё один класс elem, который теперь видно в body как 4-ый
+    
+    div_element.classList.remove('block') 
+    // с помощью метода remove (удалять) удалили из classList класс block, видно в body как отсутствующий
+
+    div_element.classList.toggle('block')
+    // с помощью метода toggle мы "переключили" класс block. Это значит, что если его изначально не было, он добавится, а если был, то исчезнет. Метод позволяет добавить/убрать класс в зависимости от того был он или не был.
+
+    console.log(div_element.classList.contains('block')); //  получили true
+    // метод contains позволяет узнать есть ли определённый класс в classList у определённого ht,l-элемента выдавая логические true/false  
+    
   </script>
 </body>
 </html>

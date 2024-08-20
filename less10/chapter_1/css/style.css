@@ -69,8 +69,10 @@ th {
 h4 {
   text-transform: uppercase;
 }
-#clock {
+#clock, #clock2 {
   font-size: 50px;
   font-family: monospace;
   font-weight: bold;
+  border: solid black;
+  width: fit-content; /* ограничили ширину div'a содержимым */
 }

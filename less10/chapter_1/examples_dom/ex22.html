@@ -9,11 +9,16 @@
 <body>
 
   <div class="alert">
-    <p>Сообщение</p>
+    <p>Пример 22</p>
   </div>
 
   <script>
-
+    let div_element = document.querySelector('div')
+    div_element.style.color = "purple" // с помощью свойства style и ключа color присвоили пупрурный цвет цвету шрифта
+    div_element.style.width = '300px' // уменьшили ширину до 300 пикселей вместо шириный всей страницы по умолчанию
+    div_element.style.backgroundColor = prompt('Цвет', "tomato") // "tomato" это цвет по умолчанию который будет уже написан в поле и останется только ОК нажать
+    // backgroundColor в JS пишется стилем CamelStyle, а не через дефис как было в CSS
   </script>
+
 </body>
 </html>
