@@ -30,7 +30,14 @@
       document.documentElement.clientHeight,
     )
     // documentElement - свойство только для чтения, которое возвращает элемент Element , который является коренным элементом документа document (en-US) (например элемент <html> для HTML документов).
-    console.log(maxScrollHeight); // получили 700 пикселей высоты, в то время как экран в отладке 747 ширина и 563 высота. экран как бы меньше чем надо и автоматически появилась полоса прокрутки справа
+    console.log(`document.body.scrollHeight = ${document.body.scrollHeight}`);
+    console.log(`document.body.offsetHeight = ${document.body.offsetHeight}`);
+    console.log(`document.body.clientHeight = ${document.body.clientHeight}`);
+    console.log(`document.documentElement.scrollHeight = ${document.documentElement.scrollHeight}`);
+    console.log(`document.documentElement.offsetHeight = ${document.documentElement.offsetHeight}`);
+    console.log(`document.documentElement.clientHeight = ${document.documentElement.clientHeight}`);
+    
+    console.log(`maxScrollHeight = ${maxScrollHeight}`); // получили 700 пикселей высоты, в то время как экран в отладке 747 ширина и 563 высота. экран как бы меньше чем надо и автоматически появилась полоса прокрутки справа
     // то значение, которое будет являться максимальным из этих 6, будет являться максимальной высотой прокручиваемой части, то есть с той прокруткой, которая была выполнена, и тот фрагмент который скрытый тут будет уже учитываться
     // Эти свойства иногда могут работать по разному, поэтому мы их все передаём в математическую функцию и берём из них максимальную, и в таком случае мы будем точно уверены что мы получили именно ту высоту, которая нам требуется     
     // Метод допотопный и так сложилось исторически на JS что не существует какого-то установленного способа (возможно потом придумают).
