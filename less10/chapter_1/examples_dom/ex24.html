@@ -11,14 +11,19 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut sed dolorum quisquam fugiat vel, iure, blanditiis consequatur soluta rem ipsum hic possimus debitis veniam sapiente atque reiciendis quos? Ipsum cupiditate iste impedit quis amet, tenetur error deleniti libero, quia dolore, eveniet eaque eius perspiciatis veniam perferendis corporis aperiam natus repudiandae laboriosam maiores quo vel itaque. Totam debitis repudiandae illo corporis, nobis ex velit asperiores explicabo necessitatibus voluptatem magnam dolores natus eligendi provident iure? Voluptate obcaecati cupiditate ipsa. Quis placeat eveniet vitae magnam modi illo, eligendi sed quos eaque laborum velit nisi, temporibus nulla exercitationem! Maiores impedit cum quos exercitationem velit voluptatibus iste repudiandae id ab, eum sapiente nostrum ipsum non molestias dolorem, rerum libero tempore? Sed, ipsum mollitia eveniet esse tenetur id aspernatur aliquam ducimus, obcaecati sunt at consectetur, officia nobis! Perspiciatis recusandae nostrum, praesentium alias ipsa magnam! Voluptatum debitis, quasi blanditiis facere, veritatis laborum a ullam voluptates nesciunt quam deleniti. Et voluptatibus, illum harum quidem hic possimus repudiandae temporibus id beatae eum adipisci asperiores, obcaecati iste velit, ea consectetur tenetur aperiam voluptas. Hic aliquid possimus provident architecto quae et fugiat, sit quibusdam ea corporis sequi iure tenetur itaque enim ullam maiores rerum quis ducimus harum quod. Aperiam voluptatibus consectetur perferendis soluta minus! Fugit nulla maxime ea qui laudantium autem explicabo tempore eligendi nemo corrupti rem ut fugiat vero, sint impedit vitae quos similique cupiditate ipsum quasi dolorem neque voluptates dicta! Sit placeat reiciendis deserunt praesentium unde molestiae ullam accusantium laboriosam at. Sapiente incidunt porro quisquam? Officia cupiditate soluta exercitationem id itaque consequuntur eos tempora eum sequi vel culpa nobis reprehenderit, harum unde, a quam praesentium dignissimos qui nam architecto corrupti deserunt voluptate? Unde atque accusamus numquam sit magnam officia nostrum, dignissimos amet quaerat necessitatibus facere, animi adipisci voluptatibus voluptate ex quisquam at voluptates reiciendis, asperiores aperiam nam aliquid. Culpa, quas id? Esse incidunt numquam quasi nostrum reprehenderit debitis maxime in assumenda aliquid repudiandae? Ea cumque exercitationem perferendis cupiditate, quaerat harum amet maiores aperiam modi eos rem odit blanditiis corrupti doloremque porro! Illum, quam, deserunt quas id doloremque esse inventore soluta veritatis velit officia aliquam saepe iure aut praesentium sit. Et quibusdam possimus impedit excepturi perspiciatis nulla nam. Placeat quis molestiae eaque quibusdam soluta debitis necessitatibus illum, tenetur aspernatur nam, maiores eos saepe nihil nisi consequatur sequi, quo repudiandae impedit voluptas ullam? Minus quae quaerat veniam ut ipsum sequi, dolorum facere illum. Perferendis amet et labore porro ut sunt cupiditate voluptatem ullam quasi nesciunt, voluptates exercitationem maiores asperiores est aperiam. Minima omnis hic, sed dicta quis laborum illo quisquam quibusdam nihil dolores aut ab, non veritatis nemo beatae iure excepturi animi vel voluptatum perspiciatis ducimus odio ratione, alias cumque! Soluta unde quis pariatur consequatur cum aut amet cupiditate minima, earum perspiciatis vel assumenda quibusdam enim quae necessitatibus quisquam officiis facere laudantium nobis? Et adipisci, tenetur ipsa ipsum excepturi laboriosam minima provident veritatis consequuntur autem hic error. Nemo, saepe voluptas? Aut rerum nihil sapiente minus, ipsa iure adipisci fuga, veritatis ut odio qui, fugiat quo! Quibusdam temporibus quisquam quod iste quo.
   </div>
   <script>
-    
+
+    // Всё о метриках https://learn.javascript.ru/metrics
+
     let elem = document.querySelector('div')
     // узнаем ширину и высоту окна, которая используется у нас для отображения (у клиента на телефоне например который открыл наш сайт)
+
+    // В исследовании элемента зададим размеры экрана: 1920х1080(ШхВ), при этом слова все влазиют и это примерно 1 четвертая часть от общего белого поля, остальное свободно
+    // Второй раз поставим размер iPhone 14 Pro Max с размерами: 430х932 (ШхВ) для того, чтобы текст не пмещался на экран и справа появилась полоса прокрутки  
     
-    console.log(document.documentElement.clientHeight); // получили 563 пикселя, эти значения будут менятсья в зависимости от телефона или монитора на котором просматривается сайт
+    console.log(document.documentElement.clientHeight); // получили 1080 пикселя / 932 пикс, эти значения будут менятсья в зависимости от телефона или монитора на котором просматривается сайт
     // такая конструкция используется для вычисления высоты
     
-    console.log(document.documentElement.clientWidth); // получили 356 пикселя. если окно расширить в Исследовании элемента сдвинув панель Консоль, то получим 747
+    console.log(document.documentElement.clientWidth); // получили 1920 пикселя / 430 пикс
 
     //  Вычислим максимальную высоту документа в пикселях с помощью допотопного метода:
     let maxScrollHeight = Math.max(
@@ -30,24 +35,44 @@
       document.documentElement.clientHeight,
     )
     // documentElement - свойство только для чтения, которое возвращает элемент Element , который является коренным элементом документа document (en-US) (например элемент <html> для HTML документов).
-    console.log(`document.body.scrollHeight = ${document.body.scrollHeight}`);
-    console.log(`document.body.offsetHeight = ${document.body.offsetHeight}`);
-    console.log(`document.body.clientHeight = ${document.body.clientHeight}`);
-    console.log(`document.documentElement.scrollHeight = ${document.documentElement.scrollHeight}`);
-    console.log(`document.documentElement.offsetHeight = ${document.documentElement.offsetHeight}`);
-    console.log(`document.documentElement.clientHeight = ${document.documentElement.clientHeight}`);
+    console.log(`document.body.scrollHeight = ${document.body.scrollHeight}`); // 271 / 1216
+    console.log(`document.body.offsetHeight = ${document.body.offsetHeight}`); // 271 / 1216
+    console.log(`document.body.clientHeight = ${document.body.clientHeight}`); // 271 / 1216
+    console.log(`document.documentElement.scrollHeight = ${document.documentElement.scrollHeight}`); // 1080 / 1232
+    console.log(`document.documentElement.offsetHeight = ${document.documentElement.offsetHeight}`); // 287 / 1232
+    console.log(`document.documentElement.clientHeight = ${document.documentElement.clientHeight}`); // 1080 / 932
     
-    console.log(`maxScrollHeight = ${maxScrollHeight}`); // получили 700 пикселей высоты, в то время как экран в отладке 747 ширина и 563 высота. экран как бы меньше чем надо и автоматически появилась полоса прокрутки справа
+    console.log(`maxScrollHeight = ${maxScrollHeight}`); // получили 1080 / 1232
     // то значение, которое будет являться максимальным из этих 6, будет являться максимальной высотой прокручиваемой части, то есть с той прокруткой, которая была выполнена, и тот фрагмент который скрытый тут будет уже учитываться
     // Эти свойства иногда могут работать по разному, поэтому мы их все передаём в математическую функцию и берём из них максимальную, и в таком случае мы будем точно уверены что мы получили именно ту высоту, которая нам требуется     
     // Метод допотопный и так сложилось исторически на JS что не существует какого-то установленного способа (возможно потом придумают).
-    // Но такую хитрость можно использовать чтобы получить полную высоту вместе с прокруткой если это потребуется 
+    // Но такую хитрость можно использовать чтобы получить полную высоту вместе с прокруткой если это потребуется
+    // Если все элементы выше в которых в конце стоит слово Height заменить на Width, то мы получим всё относящееся к ширине (всю ширину вместе с прокруткой)   
 
     let scrollHeight2 = document.documentElement.scrollHeight || document.body.scrollHeight;
-    console.log(); // получили maxScrollHeight
+    console.log(`scrollHeight2 = ${scrollHeight2}`); // получили 1080 / 1232
 
-    // чтобы получить текущую прокрутку сверху, можно использовать следующие способы 
-    console.log(window.pageYOffset); // получили 0 ?
+    // Прокрутка сверху:
+
+    // чтобы получить текущую прокрутку сверху, можно использовать следующие способы (чето они не работают)
+    console.log(`window.pageYOffset = ${window.pageYOffset}`); // получили 0 (такое получается когда полосы прокрутки вообще нету)
+    console.log(`window.pageXOffset = ${window.pageXOffset}`); // получили 0
+    
+    // --- 3 метода для прокрутки станицы (работает если имеются горизонтальная либо вертикальная полоса прокрутки):
+    
+    // 1) Прокрутка относительная scrollBy
+    // Прокрутим страницу на 100 пикселей вниз относительно её текущего положения:
+    // window.scrollBy(0,100) // это надо писать в консоли Исследования элемента, если писать в коде - то что-то дергается, но ничего не происходит
+    // Семантика: в скобках первое значение это x - смещение по горизонтали, второе значение y - смещение по вертикали
+
+    // 2) Прокрутка к заданным координатам scrollTo
+    // window.scrollTo(0,100) // писать в консоли
+    // Это мы переместились на 100 пикселей вниз из любого положения (даже если сами крутанули предварительно прокруту в самый низ)
+    // Здесь оно прокручивается не относительно текущего положения, а всегда в те координаты, которые мы указали
+
+    // 3) Прокрутка к заданному элементу scrollIntoView
+    // elem.scrollIntoView(true) // писать в консоли
+
 
 
   </script>
