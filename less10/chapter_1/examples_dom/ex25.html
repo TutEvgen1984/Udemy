@@ -17,9 +17,18 @@
     </tr>
   </table>
   
-  <script src="../js/const.js"></script>
+  <script src="../js/const.js"></script> <!-- ../ это чтобы выйти в директории назад -->
   <script>
-
+    // JOURNALS это константа находящаяся в const.js содержащая массив, в котором каждый элемент тоже массив
+    // Процдемся по константе по её элементам методом forEach
+    JOURNALS.forEach(function(item){ // параметр item это будет наш элемент
+      let row = document.createElement('tr')
+      row.innerHTML = `
+      <td>${item[0]}</td> /* это то, что у нас содержится в номере (число 1,2,3...) */
+      <td>${item[1]}</td> 
+      <td>${item[2]}</td>
+      `
+    })
   </script>
 </body>
 
