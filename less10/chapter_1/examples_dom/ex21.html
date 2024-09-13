@@ -14,30 +14,30 @@
 
   <script>
     let div_element = document.querySelector('div') // подцепились к первому попавшемуся диву
-    div_element.className = "alert text block " // вручную по старинке добавили третий класс text в середину, при этом надо не забыть прописать уже существующие, иначе они сотрутся. Наhtml-странице в body появился еще один дополнительный класс text
+    div_element.className = "alert text block " // вручную по старинке добавили третий класс text в середину, при этом надо не забыть прописать уже существующие, иначе они сотрутся. На html-странице в body появился еще один дополнительный класс text
     // То есть свойство className позволяет нам установить весь класс в другое значение.
-    
+
     // Но есть более удобный способ управления классами:
     // classList
     // оно доступно нам для обхода в цикле как массив, поэтому мы можем использовать цикл for of
     // то есть все наши 3 класса доступны нам как элементы массива в свойстве classList
-    
+
     for(let name of div_element.classList) {
       console.log(name); // получили alert text block в консоли по отдельности. они в цикле хранятся в переменной name
     }
 
-    div_element.classList.add('elem') 
+    div_element.classList.add('elem')
     // с помощью метода add (добавлять) добавили в классы ещё один класс elem, который теперь видно в body как 4-ый
-    
-    div_element.classList.remove('block') 
+
+    div_element.classList.remove('block')
     // с помощью метода remove (удалять) удалили из classList класс block, видно в body как отсутствующий
 
     div_element.classList.toggle('block')
     // с помощью метода toggle мы "переключили" класс block. Это значит, что если его изначально не было, он добавится, а если был, то исчезнет. Метод позволяет добавить/убрать класс в зависимости от того был он или не был.
 
     console.log(div_element.classList.contains('block')); //  получили true
-    // метод contains позволяет узнать есть ли определённый класс в classList у определённого ht,l-элемента выдавая логические true/false  
-    
+    // метод contains позволяет узнать есть ли определённый класс в classList у определённого html-элемента выдавая логические true/false
+
   </script>
 </body>
 </html>

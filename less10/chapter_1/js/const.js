@@ -29,7 +29,7 @@ const PHONE_NUMBER = {
   ]
 }
 
-// * Для урока ex27:
+// * Для уроков ex27,28:
 // Это собственная структура данных (https://htmlacademy.ru/blog/js/javascript-types
 const people = [
   {
