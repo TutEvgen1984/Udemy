@@ -28,18 +28,36 @@
   font-size: 18px;
   border-radius: 10px;
 }
-.timer-progresbar {
+.timer-progressbar {
   display: flex;
 }
-.timer-progresbar > div {
+.timer-progressbar > div {
   padding: 5px;
 }
-.timer-progressbar__fill {
+
+/* Стили автора:*/
+.timer-progresbar__fill {
   background-color: springgreen;
 }
-.timer-progressbar__empty {
+.timer-progresbar__empty {
   background-color: tomato;
 }
+
+
+/* Стили Махмад Арсакаев Чтоб по красоте было. */
+.arsakaev__fill {
+  background-color: springgreen;
+  height: 19px;
+  width: 0%;
+  display: none;
+}
+.arsakaev__empty {
+  background-color: tomato;
+  height: 19px;
+  width: 100%;
+  display: none;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
