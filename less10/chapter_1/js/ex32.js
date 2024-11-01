@@ -49,8 +49,8 @@
     console.log(`\n`);
 
     // Проход циклом for по ключам локального хранилища 3 способа:
-    
-    // 1) for let
+
+    // 1) for
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i) // key1, key2, key3
         console.log(`${key}: ${localStorage.getItem(key)}`);
@@ -63,7 +63,7 @@
 
     console.log(`\n`);
 
-    // 2) Проход циклом for in по ключам локального хранилища:
+    // 2) Проход циклом for in (цикл для массивов) по ключам локального хранилища:
     for(let key in localStorage) {
         console.log(key);
     }
@@ -83,8 +83,8 @@
     console.log(`\n`);
 
     for(let key in localStorage) {
-        if(!localStorage.hasOwnProperty(key)) { // Если он не принадлежит конкретно этому прототипу. Если это у нас не ключи локального хранилища, а какие-то его методы и свойства (length, getItem)
-        continue} // пропустить итерацию цикла
+        if(!localStorage.hasOwnProperty(key)) { // Если текущий ключ не является собственным свойством, то есть является встроенным методом length, getItem и т.д., который нам не нужен
+        continue} // то пропустить итерацию цикла. Пропустит такие ключи, как "setItem", "getItem" и так далее
         console.log(key);
     }
     // key2
@@ -94,7 +94,7 @@
 
     console.log(`\n`);
 
-    // 3) Цикл for of:
+    // 3) Цикл for of (для объекта):
     for(let key of Object.keys(localStorage)) { // Проходимся с помощью метода Object.keys() по ключам. В этом случае мы не получим лишние ключевые слова, а получим только интересующие нас ключи
         console.log(key);
     }
