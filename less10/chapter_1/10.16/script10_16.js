@@ -34,7 +34,7 @@ console.log(568..toString(2)); // 1000111000
 let animal = {
     eats: true,
     walk() {
-      console.log("Animal walk");
+      console.log("Animal walk"); // Animal walk
     }
   };
 
@@ -78,6 +78,42 @@ for (const value_variable of iterable) {
 // * Вопрос №4/16:
 
 // Вопрос: Как создать класс, который наследуется от другого класса?
-// Ответ: 
+// Ответ: class Dog extends Animal { }
 
 // Статья: https://learn.javascript.ru/class-inheritance
+
+class Animal { // создали класс Animal
+  constructor(name) { // конструктор в класс
+    this.speed = 0;
+    this.name = name;
+  }
+  run(speed) { // придуманный метод в классе
+    this.speed = speed;
+    console.log(`${this.name} бежит со скоростью ${this.speed}.`);
+  }
+  stop() { // ещё придуманный метод в классе
+    this.speed = 0;
+    console.log(`${this.name} стоит неподвижно.`)
+  }
+}
+
+let cat = new Animal("Кот") // создали переменную cat в виде объекта на основе класса Animal с помощью конструкции new Animal, в скобках пишем имя желаемого животного
+cat.run(5) // Кот бежит со скоростью 5.
+cat.stop() // Кот стоит неподвижно.
+
+class Dog extends Animal { // создали класс Dog, который наследуется от класса Animal
+  hide() { // написали дополнительный метод для класса Dog, тем самым расширив класс Dog в сравнении с Animal
+    console.log(`${this.name} прячется!`)
+  }
+}
+
+let dog = new Dog ("Бим") // создали переменную dog в виде объекта на основе класса Dog с помощью конструкции new Dog, в скобках пишем имя желаемого животного
+
+dog.run(5) // Бим бежит со скоростью 5.
+dog.stop() // Бим стоит неподвижно.
+dog.hide() // Бим прячется!
+
+
+
+
+
