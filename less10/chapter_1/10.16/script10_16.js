@@ -80,7 +80,8 @@ for (const value_variable of iterable) {
 // Вопрос: Как создать класс, который наследуется от другого класса?
 // Ответ: class Dog extends Animal { }
 
-// Статья: https://learn.javascript.ru/class-inheritance
+// Статья про Наследование классов: https://learn.javascript.ru/class-inheritance
+// Статья про Классы: https://learn.javascript.ru/class
 
 class Animal { // создали класс Animal
   constructor(name) { // конструктор в класс
