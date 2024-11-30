@@ -1,4 +1,4 @@
-// далее сделаем скрывающуюся и открывающуюся строку при нажатии на кнопку
+// Далее сделаем скрывающуюся и открывающуюся строку при нажатии на кнопку
 document.querySelector('.btn').onclick = function () {
     document.querySelector('p').hidden = !document.querySelector('p').hidden
     // исчезает / появляется абзац

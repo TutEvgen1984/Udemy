@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 7 - Удаление элементов</title>
+  <title>11.2 Скрыть/показать | Пример 7 - Удаление элементов</title>
 </head>
 
 <body>
@@ -13,6 +13,15 @@
   <div class="item">
     <div class="item-title">
       <h3>Петр Иванович</h3>
+      <!-- Сюда добавим крестик:
+        item.querySelector('.item-title').insertAdjacentHTML("beforeend", '<button class="close">&times;</button>')
+       за счёт CSS
+       .item-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;}
+        получим разнесённый заголовок h3 и кнопку Х по краям
+          -->
     </div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
   </div>
@@ -20,6 +29,9 @@
   <div class="item">
     <div class="item-title">
       <h3>Кирил Сергеевич</h3>
+      <!-- Сюда добавим крестик
+       <button class="close">&times;</button>
+       -->
     </div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
   </div>
@@ -27,6 +39,9 @@
   <div class="item">
     <div class="item-title">
       <h3>Андрей Петрович</h3>
+      <!-- Сюда добавим крестик
+       <button class="close">&times;</button>
+       -->
     </div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae aspernatur minima eos, fuga molestiae delectus.</p>
   </div>
