@@ -2,31 +2,46 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Эта сторка нужна чтобы страница правильно оторажалась на мобильных устройствах-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Эта строка нужна чтобы страница правильно отображалась на мобильных устройствах-->
     <title>Урок 1.1</title>
-    
+
     <!-- Урок 1.5. решение задания -->
-    
+
     <link rel="stylesheet" href="css/style.css"> <!--Элемент link устанавливает связь с внешним документом вроде файла со стилями или со шрифтами. Элемент <link> (от англ. link — связь, соединение) обычно размещается внутри контейнера <head> и не создаёт ссылку, в отличие от элемента <a>. href - путь к связываемому файлу. rel (relation - отношение, соотношение) - определяет отношения между текущим документом и файлом, на который делается ссылка.Это необходимо, чтобы браузер знал, как использовать подключаемый документ. stylesheet - Определяет, что подключаемый файл хранит таблицу стилей (CSS).-->
     <link rel="stylesheet" href="css/css2/main.css">
 </head>
 <body>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus itaque voluptatibus velit quod quaerat ratione?</p> 
+    <!--
+    * 1.1 Введение
+    * Вопрос: Какие технологии мы будем изучать в первых трех модулях?
+    * Ответ:
+    * V HTML (правильно)
+    * V CSS (правильно)
+    * - JavaScript (неправильный ответ)
+      -->
+
+    <!-- Студент:
+    ! При создании сайта через "!+tab" visual code добавляет строку <meta http-equiv="X-UA-Compatible" content="IE=edge">.
+    Можете объяснить, как её понимать?
+    Исмаил Усеинов:
+    Это мета информация для старого браузера Edge и Internet Explorer. Нужна для браузеров чтобы они корректно обрабатывали код. Но доля пользователей с такими браузерами очень мала. Даже новый Edge на движке Chromium уже используют больше людей и там нет таких проблем как раньше и эта строка уже не нужна. Но на всякий случай она автоматом добавляется чтобы если когда то на сайт зайдет кто то со старого браузера там хоть что то да работало. -->
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus itaque voluptatibus velit quod quaerat ratione?</p>
     <img src="img/main/logo.png" alt="логотип" width="300"> <!-- width="300" говорит браузеру чтобы он сжал/растянул изображение до 300 пикселей сохранив при этом исходные пропорции -->
     <script src="js/lib.js"></script> <!-- Какой-то скрипт в пустом файле в рамках обучения создавать тэг скрипта -->
-    <script src="js/scripts/main.js"></script>  <!-- скрипт помещенный в дополнительную папку и имеющий другое навание файла -->
-       
-    <!-- Конец решеня задания -->
+    <script src="js/scripts/main.js"></script>  <!-- скрипт помещенный в дополнительную папку и имеющий другое название файла -->
+
+    <!-- Конец решения задания -->
     <p id="p1">Идентификатор id p1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi quas nulla impedit recusandae quidem et repudiandae! Corporis perferendis voluptatibus fugiat nesciunt excepturi, impedit quaerat dolores earum, dolor laudantium illo officiis.</p>
-    
+
     <p><h1 id="h1keyboard">Важные сочетания клавиш Visual Studio Code:</h1></p>
-    
+
     <div class="keyboard">
     <ol>
         <li><b>Закомментировать выделенный текст:</b> <kbd>ALT+SHIFT+A</kbd>.</li>
         <li><b>Закомментировать/раскоментить текущую строку на которой установлен курсор:</b> <kbd>CTRL+/</kbd>(рядом с правым шифтом).</li>
         <li><b>Создать несколько курсоров:</b> <kbd>ALT+Shift</kbd> (зажать) на клаве и щелкнуть и тянуть ЛК мышки вверх/вниз. В результате создаются несколько курсоров в нескольких строках чтобы редактировать текст одновременно вертикальным блоком. В добавок так можно вставить из буфера обмена слова в несколько строк одновременно.
-        Зажать <kbd>ALT</kbd> и щелкнуть ЛК мышки в любое место и курсоров станет несколкьо - и можно писать в нескольких </li>        
+        Зажать <kbd>ALT</kbd> и щелкнуть ЛК мышки в любое место и курсоров станет несколько - и можно писать в нескольких </li>
         <li><b>Копирование строки кода VS Code:</b> <kbd>ALT+SHIFT+&darr;</kbd> нажать находясь в VS Code на строке кода, в результате текущая строка кода скопируется вниз.</li>
         <li><b>Копирование строк списка (для li):</b> <kbd>ALT+SHIFT+&darr;</kbd>. Кодируя список находясь строке li нажать сочетание, в результате внизу появится дополнительная строка и туда скопируется исходная строка (это работает если в строке был набран простой текст без всяких хитрений и переносов, ещё лучше когда в строке вообще ничего не набрано)</li>
         <li><b>Перенос по словам в Studio Code:</b> <kbd>ALT + Z</kbd>. <br>
@@ -34,8 +49,8 @@
         <li><b>lorem ipsum (текст-рыба)</b>: набрать <kbd>Lorem</kbd> и нажать <kbd>ENTER</kbd> - в результате сгененрируется текст на латыни (по умолчанию текст из 30 слов).<br>
         Если набрать lorem5 и затем интер - сгененрируется текст из 5 слов.</li>
         <li><b>Показать доступные варианты кода:</b> <kbd>CTRL+Space</kbd>.</li>
-        <li><b>Автозаполнение кода</b>: <kbd>ENTER</kbd>, либо <kbd>TAB</kbd>, либо ЛКМ. Набрать любой тег, например p, и нажать клавиши - в результате Studio Code поставит все нужные скобки и закрет тег.<br>
-        Например набираем script, видим 3 варианта, нажимаем стрелку низ 2 раза, нажимаем интер либо таб, получаем головый код скрипта <code>&lt;script src=""&gt;&lt;/script&gt;</code>.
+        <li><b>Автозаполнение кода</b>: <kbd>ENTER</kbd>, либо <kbd>TAB</kbd>, либо ЛКМ. Набрать любой тег, например p, и нажать клавиши - в результате Studio Code поставит все нужные скобки и закроет тег.<br>
+        Например набираем script, видим 3 варианта, нажимаем стрелку низ 2 раза, нажимаем интер либо таб, получаем готовый код скрипта <code>&lt;script src=""&gt;&lt;/script&gt;</code>.
     </li>
     </ol>
     </div>
@@ -50,7 +65,7 @@
             Описание: Language pack extension for Russian <br>
             Версия: 1.82.2023090609 <br>
             Издатель: Microsoft <br>
-            Это - русский язык для Visual Studio Code. <br> </p> 
+            Это - русский язык для Visual Studio Code. <br> </p>
         </li>
         <li>
             Имя: Material Icon Theme <br>
@@ -75,7 +90,7 @@
             Издатель: Joshua Azemoh <br>
             Темная тема для Studio Code которую рекомендует Исмаил Усеинов. Затем выбрать <br>
         </li>
-       
+
          <li>
             Имя: Git Graph <br>
             Идентификатор: mhutchie.git-graph <br>
@@ -85,7 +100,7 @@
             Это чтобы визуально было видно GIT. <br>
         </li>
         <li>
-            <span> <!-- Выделил аоследнюю строку списка отдельно для закрашивания позади текста (пометил цветным маркером текст) -->
+            <span> <!-- Выделил последнюю строку списка отдельно для закрашивания позади текста (пометил цветным маркером текст) -->
             Имя: HTMLHint <br>
             Идентификатор: HTMLHint.vscode-htmlhint <br>
             Описание: VS Code integration for HTMLHint - A Static Code Analysis Tool for HTML <br>
@@ -116,12 +131,12 @@
     <div title>
     <p>Div с title окрашен сначала стилем для общего элемента div, а затем стилем css "div[title]", в итоге покрашен последним. Это потому что в CSS покраска по стилям идёт сверху вниз по порядку.</p>
     </div>
-    
+
     <div title="text1">
     <p>Div с title text1 окрашен сначала стилем css "div[title text1]", а затем стилем css "div[title]", в итоге покрашен последним.</p>
     </div>
 
-    <div class="bgimg"> 
+    <div class="bgimg">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, quaerat veritatis aperiam praesentium aliquam, molestiae nam velit necessitatibus fugiat qui id reiciendis provident maiores ducimus totam. Illum pariatur quibusdam sequi.</p>
     </div>
 
