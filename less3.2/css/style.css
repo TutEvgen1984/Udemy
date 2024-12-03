@@ -4,8 +4,8 @@
 }
 
 .box {
-    background: rgb(2,0,36); /* Если в каком-то браузере не будет работать градиент, то вместо него будет монолитный цвет bacground */
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(107,61,0,1) 100%); /* этот backgrounc перекрашивает предыдущий фон */
+    background: rgb(2,0,36); /* Если в каком-то браузере не будет работать градиент, то вместо него будет монолитный цвет background */
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(107,61,0,1) 100%); /* этот background перекрашивает предыдущий фон */
     /* https://cssgradient.io/ */
 }
 
@@ -21,17 +21,18 @@ border: 2px solid red;
     justify-content: space-around;
     align-items: center;
     border: 1px solid pink;
-    
 }
 
 .item {
-    text-align: center;    
+    text-align: center;
 }
+
 .number {
     padding-top: 15px;
     color: white;
     font-size: 50pt;
 }
+
 .text {
     color: rgb(207, 119, 55);
     font-size: 20pt;
@@ -39,6 +40,7 @@ border: 2px solid red;
     margin-bottom: 25px;
     text-transform: uppercase;
 }
+
 .line {
     width: 30px;
     height: 3px;
@@ -47,6 +49,6 @@ border: 2px solid red;
 }
 
 i.fa {
-    font-size: 50pt; /* с помощью размера шрифта изменяем размер иконок потому что эта иконка как бы шрифтовая, это как будто шрифт с изобраением не буквы, а изображения */
+    font-size: 50pt; /* с помощью размера шрифта изменяем размер иконок потому что эта иконка как бы шрифтовая, это как будто шрифт с изображением не буквы, а изображения */
     color: #be741e;
 }
