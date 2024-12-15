@@ -25,13 +25,22 @@ table.onclick = function (e) { // на всю таблицу вешаем оди
                     return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML
                     // таким образом в случае типа number в переменную compare  поместили функцию сортировки числового типа данных
                 }
-                break;
+                console.log("🚀 ~ sortTable ~ compare:", compare)
+                // ƒ (rowA, rowB) {
+                //     return rowA.cells[colNum].innerHTML - rowB.cells[colNum].innerHTML
+
+                break; // не забываем в свитч добавлять break 
+
             case 'string':
                 compare = function (rowA, rowB) {
                     return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1
                     //  строковые символы мы не можем выбрать, поэтому мы их сравниваем с помощью знака >,  и если этот символ будет больше, то мы возвращаем 1, а если меньше, то -1
                     // в консоли: "в" > "а" получаем true
                 }
+                console.log("🚀 ~ sortTable ~ compare:", compare)
+                // ƒ (rowA, rowB) {
+                //    return rowA.cells[colNum].innerHTML > rowB.cells[colNum].innerHTML ? 1 : -1
+
                 break;
         }
         // результатом switch будет не сортировка, а созданная переменная compare, в которую записан текстовый код функции сортировки (либо для чисел либо для строк)
