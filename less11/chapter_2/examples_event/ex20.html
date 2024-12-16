@@ -10,15 +10,19 @@
 
 <body>
   <a class="menu_link" href="/index.html" onclick="return false">На главную</a>
+  <!-- return false приводит к тому, что при щелчке переход по ссылке не срабатывает -->
+
   <a class="menu_link" href="/index.html" onclick="event.preventDefault()">На главную</a>
+  <!-- event - это объект события, preventDefault() - метод предотвращающий работу элемента по умолчанию -->
+
   <a class="menu_link" href="/index.html" id="link">На главную</a>
+  <!-- сделаем это отдельно в скрипте с помощью id="link" -->
+
 
   <p>Lorem ipsum dolor sit amet.</p>
   <button class="menu_link" id="elem">Кнопка</button>
 
-  <script>
-    
-  </script>
+  <script src="../js/ex20.js"></script>
 </body>
 
 </html>
