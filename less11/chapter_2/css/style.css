@@ -143,6 +143,7 @@ li {
   height: 10px;
   background-color: #eee;
   border-radius: 5px;
+  margin-bottom: 50px;
 }
 .slider__btn {
   cursor: pointer;
