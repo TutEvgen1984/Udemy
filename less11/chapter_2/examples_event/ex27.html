@@ -15,7 +15,36 @@
     <div class="slider__btn"></div>
   </div>
 
-  <!-- Стандартный ползунок: -->
+  <!--
+  .slider {
+  width: 300px;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  margin-bottom: 50px;
+
+  У этого слайдера позиция не задана, что означает что его position: static, элемент отпозиционирован статически, то есть никак, устанавливается позиция стандартно относительно документа.
+  }
+
+  .slider__btn {
+  cursor: pointer;
+  background-color: dodgerblue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: relative;
+  left: 0px;
+  top: -5px;
+
+  У этого кружочка (изначально квадратика до скругления углов) Относительное позиционирование, которое сдвигает элемент относительно его обычного положения.
+  top – сдвиг от «обычной» верхней границы.
+  top: -5px; означает, что элемент сдвинут относительно его изначального положения (как его расставляет браузер во время открытия страницы) от верха на расстояние -5px.
+  }
+
+  Статья: https://learn.javascript.ru/position
+  -->
+
+  <!-- Стандартный ползунок input: -->
   <input type="range" max="20" min="0" step="5">
 
   <div id="clientXY" style="color: white; ">0 : 0</div>
