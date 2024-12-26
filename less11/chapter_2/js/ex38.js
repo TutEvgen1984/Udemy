@@ -71,16 +71,16 @@ let range3 = new Range();
 
 // Каждый описанный метод представлен в следующем объекте methods, состоящем из 6 методов, перечисленных через запятую:
 let methods = {
-  // deleteContents() удалить содержимое диапазона из документа
+  // deleteContents() удаляет содержимое диапазона из документа
   deleteContents() {
     range3.deleteContents()
   },
   extractContents() {
     let content = range3.extractContents();
-    // метод extractContents() для диапазона range3 удаляет содержимое диапазона из документа и возвращает как DocumentFragment, и присвоить возвращенное в переменную content
+    // метод extractContents() удаляет содержимое диапазона из документа и возвращает как DocumentFragment, присвоив возвращенное в переменную content мы сохраняем вырезанное
     result3.innerHTML = ""; // стираем содержимое абзаца html <p id="result3"></p>
     result3.append("Извлечено: ", content); // пишем в абзац <p id="result3">Извлечено: значение переменной content</p>
-    // В итоге в <p id="p3"></p> внутри стало всё пусто, но при этом то что удалилось, то появилось ниже внутри <p id="result3"></p>
+    // В итоге в <p id="p3"></p> внутри стало всё пусто, но при этом то, что удалилось, появилось ниже внутри <p id="result3"></p>
   },
   cloneContents() {
     let content = range3.cloneContents();
@@ -88,26 +88,29 @@ let methods = {
 
     result3.innerHTML = "";
     result3.append("Клонировано: ", content);
-    // В итоге добавилась 4-ая строка
+    // В итоге добавилась 4-ая строка, при этом изначальное содержимое осталось
   },
   insertNode() {
     // insertNode(node) вставить node в документ в начале диапазона
-    let newNode = document.createElement('u');
+    let newNode = document.createElement('u'); // создали элемент с тегом u (нижнее подчеркивание текста)
     newNode.innerHTML = "НОВЫЙ УЗЕЛ";
     range3.insertNode(newNode);
+    // Получили: НОВЫЙ УЗЕЛТекст3: курсивный текст3 и жирный текст3
   },
   surroundContents() {
     // surroundContents(node) обернуть node вокруг содержимого диапазона
     let newNode = document.createElement('u');
     try {
       range3.surroundContents(newNode);
+      // ПОлучили: элемент <p>, внутри которого новый узел <u> оборачивает содержимое, и получаем весь текст который был, только он становится подчеркнутым 
     } catch (e) { alert(e) }
   },
   resetExample() {
-    p3.innerHTML = `Текст: <i>курсивный текст</i> и <b>жирный текст</b>`;
+    // Сбросим все выделения, перепишем заново <p3>, сотрем всё внутри result3:
+    p3.innerHTML = `Текст3: <i>курсивный текст3</i> и <b>жирный текст3</b>`;
     result3.innerHTML = "";
-    //range.setStart(p.firstChild, 2);
-    //range.setEnd(p.querySelector('b').firstChild, 3);
+    //range3.setStart(p3.firstChild, 2);
+    //range3.setEnd(p3.querySelector('b').firstChild, 3);
     range3.setStart(p3, 0);
     range3.setEnd(p3, 4);
     window.getSelection().removeAllRanges();
@@ -119,4 +122,4 @@ let methods = {
 for (let method in methods) {
   document.write(`<div><button onclick="methods.${method}()">${method}</button></div>`)
 }
-methods.resetExample();
+methods.resetExample(); // однократное выполнение сброса <p3> на случай если мы его повредили
