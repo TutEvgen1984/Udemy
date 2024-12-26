@@ -65,27 +65,30 @@ document.getSelection().addRange(range2);
 
 // lesson2 ()
 
-// Далее идет Урок 3, при попытке изолировать который в нём появляется ошибка при нажатии любой кнопки 
+// Далее идет Урок 3, при попытке изолировать который в нём появляется ошибка при выполнении кода при нажатии любой кнопки
 
 let range3 = new Range();
 
-// Каждый описанный метод представлен здесь:
+// Каждый описанный метод представлен в следующем объекте methods, состоящем из 6 методов, перечисленных через запятую:
 let methods = {
   // deleteContents() удалить содержимое диапазона из документа
   deleteContents() {
     range3.deleteContents()
   },
   extractContents() {
-    // extractContents() удалить содержимое диапазона из документа и вернуть как DocumentFragment
     let content = range3.extractContents();
-    result3.innerHTML = "";
-    result3.append("Извлечено: ", content);
+    // метод extractContents() для диапазона range3 удаляет содержимое диапазона из документа и возвращает как DocumentFragment, и присвоить возвращенное в переменную content
+    result3.innerHTML = ""; // стираем содержимое абзаца html <p id="result3"></p>
+    result3.append("Извлечено: ", content); // пишем в абзац <p id="result3">Извлечено: значение переменной content</p>
+    // В итоге в <p id="p3"></p> внутри стало всё пусто, но при этом то что удалилось, то появилось ниже внутри <p id="result3"></p>
   },
   cloneContents() {
-    // cloneContents() клонировать содержимое диапазона и вернуть как DocumentFragment
     let content = range3.cloneContents();
+    // cloneContents() клонировать содержимое диапазона и вернуть как DocumentFragment
+
     result3.innerHTML = "";
     result3.append("Клонировано: ", content);
+    // В итоге добавилась 4-ая строка
   },
   insertNode() {
     // insertNode(node) вставить node в документ в начале диапазона
