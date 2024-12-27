@@ -194,3 +194,8 @@ h1 {
   display: flex;
   align-items: center;
 }
+
+/*#p {
+  user-select: none;
+  /~ теперь текст в абзаце невозможно выделить мышкой ~/
+}*/
