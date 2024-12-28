@@ -12,7 +12,6 @@
   transition: 0.5s;
   border: none;
   outline: none;
-  
 }
 .menu_link:hover, .btn:hover, button:hover, input[type="button"]:hover {
   opacity: 0.8;
