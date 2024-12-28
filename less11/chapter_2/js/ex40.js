@@ -37,13 +37,18 @@ function calculate () {
     // initial (начальная сумма) * (1 + interest(математические проценты) * year (количество лет вклада) ) )
     let result = Math.round(initial * (1 + interest * year));
 
-    // первый оранжевый столбец это 100% то есть столько сколько было? имеющий заданный размер height:100px
+    // Далее нужно вывести результат в виде цветного столбца, для этого рассчитаем высоту столбца
+    // первый оранжевый столбец это 100% то есть столько сколько было, имеющий заданный размер height:100px
     // второй столбец надо найти, он помечен id="height-after" и начальная высота height:0.
-    // Выведем результат в виде цветного столбца, для этого рассчитаем высоту столбца
     let newHeight = result / form.money.value * 100 + 'px';
 
+    // для зеленого <div></td> выставим новую высоту (изначально была равна 0)
     document.getElementById('height-after').style.height = newHeight;
+
+    // в <th id="money-before"></th> (изначально пустое) вставляем значение из <input name="money">
     document.getElementById('money-before').innerHTML = form.money.value;
+
+    // в <th id="money-after"></th> (изначально пустое) вставляем рассчитанное значение
     document.getElementById('money-after').innerHTML = result;
 }
 // эту функцию нужно вызвать один раз для первоначального расчёта
