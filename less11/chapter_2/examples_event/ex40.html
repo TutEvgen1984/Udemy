@@ -4,8 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css" id="theme">
   <title>Пример 40 - Депозитный калькулятор</title>
+  <link rel="stylesheet" href="../css/style.css" id="theme">
+  <style>
+  .bordered,
+  .bordered tr,
+  .bordered td,
+  .bordered th
+  {border: 1px solid red !important};
+  </style>
 </head>
 
 <body id="dark">
@@ -13,7 +20,7 @@
 
   <div class="d-flex">
     <form name="calculator">
-      <table>
+      <table class="bordered">
         <tr>
           <td>Первоначальный депозит</td>
           <td>
@@ -44,7 +51,7 @@
       </table>
     </form>
 
-    <table id="diagram">
+    <table id="diagram" class="bordered">
       <tr>
         <th>Было</th>
         <th>Станет</th>
