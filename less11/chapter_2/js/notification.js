@@ -169,7 +169,12 @@ setInterval(() => {
     }
 }, 1000);
 
+(function() {
 
-
+    var message = "Привет";
+  
+    alert(message); // Привет
+  
+  })();
 
 
