@@ -1,19 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 4 - CSS @keyframes</title>
+  <title>Пример 4 - CSS @keyframes и animation</title>
 </head>
+
 <body>
 
   <img src="../img/1.jpg" class="imgKeyframes" width="50">
+  <!-- width="50" это чтобы квадратик был поменьше чем оригинальный размер (200х200) -->
+  <!--
+  CSS:
 
-  
-  <script>
-    
-  </script>
+  @keyframes move {
+  from {
+    left: 0px
+    }
+  to {
+    left: 150px;
+    }
+  }
+  @keyframes - (англ. ключевые кадры) это в CSS аналог функций в JS
+  move - это название функции @keyframes
+
+  .imgKeyframes {
+    animation: move 3s infinite alternate;
+    position: absolute;
+  }
+
+  animation - настройка анимации;
+
+  move - названии функции CSS @keyframes;
+
+  3s - время анимации (смены позиции от 0 до 150);
+
+  infinite означает что анимация будет бесконечной в цикле,  если убрать, то будет всего одно движение и кубик вернётся в исходное положение;
+
+  alternate говорит о том что анимация будет в обратном направлении,  если его убрать, то доходя до права стороны кубик будет исчезать и появляться резко слева;
+
+  в результате без какого либо кода JS у нас только с помощью CSS сразу после запуска страницы начинает двигаться квадрат циклично;
+
+  -->
+
+  <script></script>
 </body>
+
 </html>

@@ -240,15 +240,16 @@ h1 {
   align-items: center;
 }
 
-/* Аниация */
+/* Анимация */
 .animated {
   transition-property: background-color;
   transition-duration: 3s;
+
 }
 .move {
   position: relative;
   width: 320px;
-  height: 100px;
+  height: 150px;
   color: #eee;
   left: 0;
   cursor: pointer;

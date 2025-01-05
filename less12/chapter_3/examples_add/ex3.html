@@ -13,8 +13,33 @@
   <img class="img-animate" src="../img/1.jpg" width="100">
   <br>
   Текст после картинки
-  <script>
 
+  <!-- }
+  .img-animate {
+    transition-property: opacity;
+    transition-duration: 2s;
+  } -->
+    
+  <script>
+    document.querySelector('.img-animate').onclick = function () {
+      this.style.opacity = 0;
+    }
+    // В результате картинка при нажатии плавно исчезает за 2 секунды
+    // Но при этом display не устанавливается в положение none, а это значит что картинку становится хоть и не видно, но место она свое продолжает занимать как будто она там есть.
+    // Элемент просто имеет прозрачность 0, но он продолжать занимать свою высоту.
+
+    // Далее нам нужно скрыть элемент после того, как завершится анимация opacity
+
+    document.querySelector('.img-animate').addEventListener('transitionend', function (e) { // событие transitionend срабатывает в тот момент когда завершается какая-то анимация
+      console.log(e.propertyName); // opacity имя свойства transition, которое изменилось
+      console.log(e.elapsedTime); // 2 время, которое заняла анимация без учета transitionDelay
+      if (!e.propertyName == 'opacity') return; // если это другая какая-то анимация, а не opacity, то выходим из функции и дальнейший код не выполняем
+
+      // если это все же propertyName == 'opacity', то делаем элемент скрытым из разметки:
+      e.target.hidden = true;
+      // свойство hidden=true устанавливает display в значение none
+      // теперь после завершения анимации происходит скачок и элемент "удаляется" освобождая место и текст прыгает в вверх
+    })
   </script>
 </body>
 

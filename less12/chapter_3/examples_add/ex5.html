@@ -5,14 +5,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
-  <title>Пример 5 - JavaScipt анимации</title>
+  <title>Пример 5 - JavaScript анимации</title>
 </head>
 <body>
-  
+
   <img src="../img/1.jpg" width="100" id="img" style="position: relative;">
 
   <script>
-    
+    img.onclick = function () {
+      // запомним время начало анимации:
+      let start = Date.now(); // время сразу после нажатия на изображение
+      let timer = setInterval ( function () {
+        // нужно рассчитать сколько прошло времени с начала анимации:
+        let timePassed = Date.now() - start;
+
+        img.style.left = timePassed / 5 + 'px';
+        // img переместится на количество пикселей в 5 раз меньше чем у нас прошло времени
+
+        if (timePassed > 2000) clearInterval(timer);
+        // когда у нас получится прошло 2000 мс / 5 = 400 px - на столько переместиться img в конце алгоритма
+
+      }, 20) // 20 ms это очень часто для того чтобы анимация была плавной
+    }
   </script>
 </body>
 </html>
