@@ -19,7 +19,7 @@
     transition-property: opacity;
     transition-duration: 2s;
   } -->
-    
+
   <script>
     document.querySelector('.img-animate').onclick = function () {
       this.style.opacity = 0;
@@ -30,16 +30,18 @@
 
     // Далее нам нужно скрыть элемент после того, как завершится анимация opacity
 
-    document.querySelector('.img-animate').addEventListener('transitionend', function (e) { // событие transitionend срабатывает в тот момент когда завершается какая-то анимация
+    document.querySelector('.img-animate').addEventListener('transitionend', function (e) { // событие transitionend срабатывает в тот момент, когда завершается какая-то анимация
       console.log(e.propertyName); // opacity имя свойства transition, которое изменилось
       console.log(e.elapsedTime); // 2 время, которое заняла анимация без учета transitionDelay
       if (!e.propertyName == 'opacity') return; // если это другая какая-то анимация, а не opacity, то выходим из функции и дальнейший код не выполняем
+      // e.propertyName !== 'opacity' - более понятная запись, работающая так же.
 
       // если это все же propertyName == 'opacity', то делаем элемент скрытым из разметки:
       e.target.hidden = true;
       // свойство hidden=true устанавливает display в значение none
-      // теперь после завершения анимации происходит скачок и элемент "удаляется" освобождая место и текст прыгает в вверх
+      // теперь после завершения анимации происходит скачок и элемент "удаляется" освобождая место и текст прыгает вверх
     })
+
   </script>
 </body>
 

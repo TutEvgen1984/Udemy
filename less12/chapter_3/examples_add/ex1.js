@@ -7,9 +7,10 @@ function openFile(input) { // в качестве параметра input у н
     let file = input.files[0]
     // через input можно выбрать несколько файлов. input.files - это псевдомассив выбранных файлов. Поэтому мы здесь с помощью [0] берём из этого массива файл под нулевым индексом
     // теперь переменная file является объектом и мы можем из неё извлекать различные свойства
-    console.log(file.name); // ex1.txt
 
-    console.log(file.lastModified); // 1735972322957
+    console.log("file.name:", file.name) // ex1.txt
+
+    console.log("file.lastModified:", file.lastModified + " (TimeStamp)") // 1735972322957
     // это timestamp для даты последнего изменения этого файла
 
     // создадим отдельную переменную на основе класса FileReader
@@ -20,7 +21,8 @@ function openFile(input) { // в качестве параметра input у н
 
     // теперь сделаем обработку события для reader
     reader.onload = function () { // событие onload возникает когда файл полностью загружен
-        console.log(reader.result);
+        console.log("reader.result:")
+        console.log(reader.result)
         // Получили содержимое файла:
         // Строка 1
         // Строка 2
@@ -32,6 +34,8 @@ function openFile(input) { // в качестве параметра input у н
         console.log(reader.error);
     }
 }
+
+
 
 // Написал такую простенькую функцию, которая подсчитывает количество букв 'a' в файле и по их количеству меняет имя файла, если больше 25 букв, то 'Big.расширение', если меньше 25 букв - 'small.расширение'
 

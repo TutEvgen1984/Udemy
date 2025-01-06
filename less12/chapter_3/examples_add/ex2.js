@@ -1,6 +1,6 @@
 // 12.2 Анимация на JS и CSS
 
-// при ЛКМ на тексте  создадим событие по изменению  цвета фона
+// при ЛКМ на тексте создадим событие по изменению цвета фона
 document.querySelector('.animated').onclick = function () {
     this.style.backgroundColor = 'tomato';
     // здесь в JS мы установили только другой цвет при щелчке, но так как в CSS  прописано:
@@ -8,10 +8,10 @@ document.querySelector('.animated').onclick = function () {
         transition-property: background-color;
         transition-duration: 3s;
      }  */
-    // то  получаем не резкое изменение цвета,а планок в течении 3 сек
+    // то получаем не резкое изменение цвета, а плавное в течении 3 сек
   }
 
-/* в transition-property (свойство перехода) записываются свойства, которые нужно анимировать, здесь могут быть любые CSS свойства,  анимировать можно не все свойства, но большинство из них.
+/* в transition-property (свойство перехода) записываются свойства, которые нужно анимировать, здесь могут быть любые CSS свойства, анимировать можно не все свойства, но большинство из них.
 transition-property: all - означает анимировать всё.
 
 transition-duration - длительность перехода - определяет сколько времени займёт анимация, время должно быть задано в формате css то есть в s и ms.
@@ -28,12 +28,12 @@ transition-delay: -2s;
 transition-property — указываем свойство, которое хотим плавно изменить;
 transition-duration — длительность перехода;
 transition-timing-function — функция, описывающая скорость изменения свойства;
-transition-delay — задержка перед началом изменения.
+transition-delay — задержка перед началом перехода.
 
 статья: https://doka.guide/css/transition/
 */
 
-// кнопка Анимация передвинет все объекты слева в положение 450px (начальное значение 0)
+// кнопка "Анимация" передвинет все объекты слева в положение 450px (начальное значение 0)
 document.querySelectorAll('button')[0].onclick = function () { // выбрали 1-ю кнопку
     document.querySelector('.move0').style.left = '450px'; // двигаем координату положения "Лево" в положение 450px
     document.querySelector('.move1').style.left = '450px';
@@ -42,7 +42,7 @@ document.querySelectorAll('button')[0].onclick = function () { // выбрали
     document.querySelector('.move4').style.left = '450px';
 }
 
-// кнопка Сбросить передвинет все объекты справа налево в положение 0px
+// кнопка "Сбросить" передвинет все объекты справа налево в положение 0px
 document.querySelectorAll('button')[1].onclick = function () { // выбрали вторую кнопку
     document.querySelector('.move0').style.left = '0px'; // двигаем координату положения "Лево" в положение 0px
     document.querySelector('.move1').style.left = '0px';
