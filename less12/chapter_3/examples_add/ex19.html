@@ -12,7 +12,22 @@
 <body>
 
   <script>
-    
+    // Флаг y
+    // Статья: https://learn.javascript.ru/regexp-sticky
+    // Флаг y позволяет произвести поиск на определённой позиции в исходной строке.
+
+    let str = 'let varName';
+    let regexp = /\w+/y;
+    // регулярное выражение проверяет любое количество символов, но здесь указано флаг y
+
+    // теперь благодаря флагу y мы можем установить lastIndex, с которого мы будем выполнять проверку
+    regexp.lastIndex = 3; // 3й индекс в нашей стороне это пробел, с него начнется поиск
+    console.log(regexp.exec(str)); // null
+
+    regexp.lastIndex = 4; // 4й индекс в нашей стороне это v, с него начнется поиск
+    console.log(regexp.exec(str));
+    // ['varName', index: 4, input: 'let varName', groups: undefined]
+
   </script>
 </body>
 
