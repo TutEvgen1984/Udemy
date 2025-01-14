@@ -28,6 +28,20 @@
     console.log(regexp.exec(str));
     // ['varName', index: 4, input: 'let varName', groups: undefined]
 
+    // Вопрос:
+    // Напишите регулярное выражение для поиска HTML тегов.
+    // В первом шаге этого урока есть шпаргалка по регулярным выражениям, там вы можете найти ответ.
+    // Ответ:
+    let regForHtml = new RegExp("(\<(/?[^\>]+)\>)");
+    console.log(`<h1 class="title">Hello, world!</h1>`.match(regForHtml));
+    // (3) ['<h1 class="title">', '<h1 class="title">', 'h1 class="title"', index: 0, input: '<h1 class="title">Hello, world!</h1>', groups: undefined]
+    // Как расшифровать это - непонятно.
+
+    // Без непонятных круглых скобок по краям:
+    let regForHtml2 = new RegExp("\<(/?[^\>]+)\>");
+    console.log(`<h1 class="title">Hello, world!</h1>`.match(regForHtml2));
+    // (2) ['<h1 class="title">', 'h1 class="title"', index: 0, input: '<h1 class="title">Hello, world!</h1>', groups: undefined]
+
   </script>
 </body>
 

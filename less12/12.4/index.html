@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.4 list.js: Поиск и сортировка</title>
+</head>
+
+<body>
+    <h1>Example 1: Using existing list</h1>
+    <div id="hacker-list">
+
+        <input class="search" />
+        <span class="sort" data-sort="name">Sort by name</span>
+        <span class="sort" data-sort="city">Sort by city</span>
+
+        <ul class="list">
+            <li>
+                <h3 class="name">Jonny</h3>
+                <p class="city">Stockholm</p>
+            </li>
+            <li>
+                <h3 class="name">Jonas</h3>
+                <p class="city">Berlin</p>
+            </li>
+        </ul>
+    </div>
+    <hr>
+
+    <script>
+        // 12.4 list.js: Поиск и сортировка
+        // Сайт: https://listjs.com/
+
+    </script>
+
+    <script src="list.js"></script>
+
+    <script>
+        var options = {
+            valueNames: ['name', 'city']
+        };
+
+        var hackerList = new List('hacker-list', options);
+    </script>
+
+</body>
+
+</html>
