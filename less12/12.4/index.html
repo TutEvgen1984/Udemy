@@ -5,44 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>12.4 list.js: Поиск и сортировка</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Example 1: Using existing list</h1>
-    <div id="hacker-list">
 
-        <input class="search" />
-        <span class="sort" data-sort="name">Sort by name</span>
-        <span class="sort" data-sort="city">Sort by city</span>
+    <div class="cards">
 
-        <ul class="list">
-            <li>
-                <h3 class="name">Jonny</h3>
-                <p class="city">Stockholm</p>
-            </li>
-            <li>
-                <h3 class="name">Jonas</h3>
-                <p class="city">Berlin</p>
-            </li>
-        </ul>
+        <div class="card">
+            <h3>12.4 list.js: Поиск и сортировка</h3>
+            <a href="http:////listjs.com/" class="goToPage">Сайт</a>
+        </div>
+
+        <div class="card">
+            <p>1. Применить List.js к существующему HTML</p>
+            <a href="page01.html" class="goToPage">Стр.1</a>
+        </div>
+
+        <div class="card">
+            <p>2. Применить List.js к существующему HTML, а затем добавить элементы</p>
+            <a href="page02.html" class="goToPage">Стр.2</a>
+        </div>
+
+        <div class="card">
+            <p>3. Составить List.js создайте список с нуля</p>
+            <a href="page03.html" class="goToPage">Стр.3</a>
+        </div>
+
+        <div class="card">
+            <p>4. Добавлять, получать, удалять</p>
+            <p>применена библиотека JQuery</p>
+            <a href="page04.html" class="goToPage">Стр.4</a>
+        </div>
+
+        <div class="card">
+            <p>5. Атрибуты данных + пользовательские</p>
+            <a href="page05.html" class="goToPage">Стр.5</a>
+        </div>
+
     </div>
-    <hr>
-
-    <script>
-        // 12.4 list.js: Поиск и сортировка
-        // Сайт: https://listjs.com/
-
-    </script>
-
-    <script src="list.js"></script>
-
-    <script>
-        var options = {
-            valueNames: ['name', 'city']
-        };
-
-        var hackerList = new List('hacker-list', options);
-    </script>
 
 </body>
 

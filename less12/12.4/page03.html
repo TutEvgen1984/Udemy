@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Составить List.js создайте список с нуля</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="list.js" defer></script>
+</head>
+
+<body>
+    <div class="card">
+        <p>3. Составить List.js создайте список с нуля</p>
+    </div>
+    <hr>
+
+    <div id="users">
+
+        <input class="search" placeholder="Search" />
+        <button class="sort" data-sort="name">
+            Sort
+        </button>
+
+        <ul class="list"></ul>
+
+    </div>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <script>
+        var options = {
+            valueNames: ['name', 'born'],
+            // Так как нет элементов в списке, то этот элемент будет использован как шаблон, который можно менять:
+            /* item: '<li><h3 class="name"></h3><p class="born"></p></li>'*/
+            item: '<li class="listItem"><h6 class="name"></h3><p class="born"></p></li>'
+            /* добавили свой класс class="listItem" */
+
+            /* чтобы убрать маркеры пришлось подцепиться к существующему классу list, созданному внутри библиотеки:
+            .list { list-style: none; } */
+        };
+
+        var values = [
+            {
+                name: 'Jonny Strömberg',
+                born: 1986
+            },
+            {
+                name: 'Jonas Arnklint',
+                born: 1985
+            },
+            {
+                name: 'Martina Elm',
+                born: 1986
+            }
+        ];
+
+        var userList = new List('users', options, values);
+
+        userList.add({
+            name: 'Gustaf Lindqvist',
+            born: 1983
+        });
+
+    </script>
+
+</body>
+
+</html>

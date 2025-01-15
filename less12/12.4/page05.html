@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Атрибуты данных + пользовательские</title>
+    <link rel="stylesheet" href="style05.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <p>5. Атрибуты данных + пользовательские. Используйте атрибуты данных и другие пользовательские атрибуты в качестве ключей</p>
+    </div>
+    <hr>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+    <div id="users">
+        <input class="search" placeholder="Search" />
+        <button class="sort" data-sort="name">
+            Sort by name
+        </button>
+        <ul class="list">
+            <li data-id="1">
+                <a href="https://twitter.com/javve" class="link name">Jonny Stromberg</a>
+                <p class="born timestamp" data-timestamp="12345">1986</p>
+                <img class="image" src="буба01.jpg">
+            </li>
+            <li data-id="2">
+                <a href="https://twitter.com/arnklint" class="link name">Jonas Arnklint</a>
+                <p class="born timestamp" data-timestamp="23456">1985</p>
+                <img class="image" src="буба02.jpg">
+            </li>
+            <li data-id="3">
+                <a href="https://twitter.com/martinaelm" class="link name">Martina Elm</a>
+                <p class="born timestamp" data-timestamp="34567">1986</p>
+                <img class="image" src="буба01.jpg">
+            </li>
+            <li data-id="4">
+                <a href="https://twitter.com/GLindqvist" class="link name">Gustaf Lindqvist</a>
+                <p class="born timestamp" data-timestamp="45678">1983</p>
+                <img class="image" src="буба02.jpg">
+            </li>
+        </ul>
+    </div>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <script>
+        var options = {
+            valueNames: [
+                'name',
+                'born',
+                { data: ['id'] },
+                { attr: 'src', name: 'image' },
+                { attr: 'href', name: 'link' },
+                { attr: 'data-timestamp', name: 'timestamp' }
+            ]
+        };
+        var userList = new List('users', options);
+        userList.add({ name: 'Leia', born: '1954', image: 'буба01.jpg', id: 5, timestamp: '67893' });
+    </script>
+</body>
+
+</html>

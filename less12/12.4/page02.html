@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Применить List.js к существующему HTML, а затем добавить элементы</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="list.js" defer></script>
+</head>
+
+<body>
+    <div class="card">
+        <p>2. Применить List.js к существующему HTML, а затем добавить элементы</p>
+    </div>
+    <hr>
+
+    <div id="users">
+
+        <input class="search" placeholder="Search" />
+        <button class="sort" data-sort="name">
+            Sort by name
+        </button>
+
+        <ul class="list">
+            <!-- This, the first element in the list, will be used as template for new items. -->
+            <li>
+                <h3 class="name">Jonny Stromberg (оригинальный html)</h3>
+                <p class="born">1986</p>
+            </li>
+        </ul>
+
+    </div>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <script>
+        var options = {
+            valueNames: ['name', 'born']
+        };
+
+        // Следующие элементы будут добавлены в лист на стадии инициализации списка (смотри ниже)
+        var values = [
+            {
+                name: 'Jonas Arnklint (при инициализации)',
+                born: 1985
+            },
+            {
+                name: 'Martina Elm (при инициализации)',
+                born: 1986
+            },
+            {
+                name: 'Евгений Тют (при инициализации)',
+                born: 1984
+            },
+        ];
+
+        // инициализация списка
+        var userList = new List('users', options, values);
+
+        // Можно добавлять элементы после того, как список был инициализирован
+        userList.add( // используем метод add у переменной userList
+            {
+            // в качестве нового элемента добавляем безымянный объект с 2-мя свойствами:
+            name: 'Gustaf Lindqvist (добавили после инициализации)',
+            born: 1983
+        });
+    </script>
+</body>
+
+</html>
