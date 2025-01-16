@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> <!-- свой css -->
+    <link rel="stylesheet" href="sweetalert2.css"> <!-- подключили css библиотеки -->
+
+
+</head>
+
+<body>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <script src="sweetalert2.all.js"></script> <!-- подключили js библиотеки -->
+
+    <script>
+        // alert работает как прежде
+        alert("You clicked the button!");
+
+        // пишем скрипт, который запустится сам сразу после загрузки страницы
+        Swal.fire("SweetAlert2 is working!");
+
+        /* то есть теперь подключив эту библиотеку вместо использования стандартного alert, нам необходимо будет писать Swal.fire().
+        Это мы у объекта Swal запустили метод fire(). тот объект и этот метод описаны в библиотеке sweetalert2
+        Так же в этой библиотеке есть аналог prompt */
+
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
+        /* параметры передаются с точки зрения JS в виде объекта Swal, у которого запускается метод fire, у которого в качестве параметров передаются текстовые свойства со значениями, которые при необходимости можно менять */
+
+    </script>
+</body>
+
+</html>
