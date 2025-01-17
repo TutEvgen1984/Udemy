@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Применение FLOATING UI</title>
+    <link rel="stylesheet" href="style.css"> <!-- свой css -->
+    <link rel="stylesheet" href="styles02.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <button id="button">My reference element</button>
+    <div id="tooltip">My floating element</div>
+
+    <!-- Подключение библиотеки -->
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.12"></script>
+
+    <script>
+        import { computePosition } from '@floating-ui/dom';
+
+        const button = document.querySelector('#button');
+        const tooltip = document.querySelector('#tooltip');
+
+        computePosition(button, tooltip).then(({ x, y }) => {
+            Object.assign(tooltip.style, {
+                left: `${x}px`,
+                top: `${y}px`,
+            });
+        });
+    </script>
+
+</body>
+
+</html>

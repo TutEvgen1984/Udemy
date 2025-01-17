@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Применение FLOATING UI</title>
+    <link rel="stylesheet" href="style.css"> <!-- свой css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <div id="app">
+        <div id="reference"></div>
+        <div id="floating">Tooltip</div>
+    </div>
+
+    <!-- Подключение библиотеки -->
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.12"></script>
+
+    <script>
+        import { computePosition } from "@floating-ui/dom";
+
+        const reference = document.getElementById("reference");
+        const floating = document.getElementById("floating");
+
+        computePosition(reference, floating, {
+            // Try changing this to a different side.
+            placement: "top"
+        }).then(({ x, y }) => {
+            Object.assign(floating.style, {
+                top: `${y}px`,
+                left: `${x}px`
+            });
+        });</script>
+
+</body>
+
+</html>
