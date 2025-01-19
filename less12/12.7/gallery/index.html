@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="baguetteBox.min.css">
+  <script src="baguetteBox.min.js" async></script>
+</head>
+<body>
+  <div class="gallery">
+    <a href="img/1.jpg" data-caption="Image caption">
+      <img src="img/thumbnails/1.jpg" alt="First image">
+    </a>
+    <a href="img/2.jpg">
+      <img src="img/thumbnails/2.jpg" alt="Second image">
+    </a>
+  </div>
+  <script>
+    // https://github.com/feimosi/baguetteBox.js
+    // https://feimosi.github.io/baguetteBox.js/
+    window.addEventListener('load', function() {
+      baguetteBox.run('.gallery');
+    });
+  </script>
+</body>
+</html>
