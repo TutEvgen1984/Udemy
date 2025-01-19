@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. FadeIn animation baguetteBoxThree</title>
+    <link rel="stylesheet" href="style.css"> <!-- свой css -->
+    <link rel="stylesheet" href="baguetteBox.css"> <!-- подключаем css библиотеки предварительно скачав её -->
+</head>
+
+<body>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <h1>3. FadeIn animation baguetteBoxThree</h1>
+
+    <div class="gallery">
+        <a href="img/Alyx01_1920x1080.jpg" data-caption="Alyx01 Image caption">
+            <img src="img/thumbnails/Alyx01_thumb_1920x1080.jpg" alt="First image">
+        </a>
+        <a href="img/Alyx02_1920x1080.jpg">
+            <img src="img/thumbnails/Alyx02_thumb_1920x1080.jpg" alt="Second image">
+        </a>
+
+    </div>
+
+    <script src="baguetteBox.js"></script> <!-- подключили js библиотеки предварительно скачав её -->
+
+    <script>
+        /* инициализация скрипта */
+        baguetteBox.run('.gallery');
+
+        /* Дополнительный код для затухания */
+        baguetteBox.run('.baguetteBoxThree', {
+        animation: 'fadeIn',
+        noScrollbars: true
+});
+    </script>
+
+</body>
+
+</html>
