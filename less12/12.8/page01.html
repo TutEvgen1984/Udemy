@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.8 lightgallery.js: Галерея изображений</title>
+    <!-- contains lightGallery and all plugin styles instead of separate stylesheets -->
+    <link type="text/css" rel="stylesheet" href="lightGallery-master/dist/css/lightgallery-bundle.css" />
+    <link rel="stylesheet" href="style.css"> <!-- свой css -->
+</head>
+<body>
+    <div class="card">
+        <h3>12.8 lightgallery.js: Галерея изображений</h3>
+        <a href="https://www.lightgalleryjs.com/" class="goToPage">Сайт</a>
+    </div>
+
+    <div id="lightgallery">
+        <a href="img/Alyx01_1920x1080.jpg" data-lg-size="1600-2400">
+            <img alt="Alyx01" src="img/thumbnails/Alyx01_thumb_1920x1080.jpg" />
+        </a>
+        <a href="img/Alyx02_1024.jpg" data-lg-size="1024-800">
+            <img alt="Alyx02" src="img/thumbnails/Alyx02_thumb_1024.jpg" />
+        </a>
+    </div>
+
+    <!-- Then include lightgallery.umd.js into your document. If you want to include any lightgallery plugin you can include it after lightgallery.umd.js. -->
+    <script src="lightGallery-master/dist/lightgallery.umd.js"></script>
+
+    <!-- lightgallery plugins -->
+    <script src="lightGallery-master/dist/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+    <script src="lightGallery-master/dist/plugins/zoom/lg-zoom.umd.js"></script>
+
+    <!-- Initialize lightGallery -->
+
+    <script type="text/javascript">
+        lightGallery(document.getElementById('lightgallery'), {
+            plugins: [lgZoom, lgThumbnail],
+            speed: 500,
+            /* licenseKey: 'your_license_key'
+            ... other settings */
+        });
+    </script>
+
+</body>
+</html>

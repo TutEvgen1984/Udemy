@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.9 flatpickr.js: Календарь</title>
+    <link rel="stylesheet" href="style.css"> <!-- свой css -->
+    <!-- подключение внешнего css библиотеки через /cdn : -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+Usage
+</head>
+<body>
+        <h3>12.9 flatpickr.js: Календарь. С помощью библиотеки flatpickr.js можно очень быстро и просто создать календарь у себя на сайте и настроить для него различные фильтры и ограничения.</h3>
+        <a href="https://flatpickr.js.org" class="goToPage">Сайт</a>
+
+    <p>flatpickr without any config.</p>
+    <input type="text" class="dateBasic" style="margin-bottom: 15px;">
+    <hr>
+
+    <!-- Рекомендуемая структура html: -->
+    <div class="flatpickr"> <!-- класс flatpickr, именно к нему нужно подключать flatpickr(".flatpickr", {});-->
+        <input type="text" placeholder="Select Date.." data-input> <!-- input is mandatory -->
+
+        <!-- ниже должно быть 2 иконки, но почему то их не видно, скорее всего тут нужен фреймворк bootstrap -->
+        <a class="input-button" title="toggle" data-toggle>
+            <i class="icon-calendar"></i>
+        </a>
+
+        <a class="input-button" title="clear" data-clear>
+            <i class="icon-close"></i>
+        </a>
+    </div>
+
+
+    <!-- Подключение библиотеки: -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+    // синтаксис верен для работы с библиотекой flatpickr
+    // flatpickr('css selector', {parametrs})
+
+    // create flatpickr instance (создаем экземпляр flatpickr на поле <input type="text" class="dateBasic">)
+    flatpickr(".dateBasic", {});
+
+    // создаем экземпляр flatpickr на <div class="flatpickr">
+    flatpickr(".flatpickr", {wrap: true});
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
