@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Применение библиотеки</title>
+    <link rel="stylesheet" href="style.css"> <!-- свой css -->
+</head>
+
+<body>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <form style="margin-top: 20px;">
+        <input class="basic" type="text" name="input-phone0" />
+        <input class="input-phone" type="text" name="input-phone1" />
+        <input type="date" name="dateBasic1" id="dateBasic2">
+        <input type="date" name="date1" id="date2" class="date3">
+    </form>
+
+    <script src="cleave.min.js"></script> <!-- подключили js библиотеки предварительно скачав её -->
+    <script src="cleave-phone.ru.js"></script> <!-- подключили js библиотеки для телефонов региона ru -->
+
+
+    <script>
+        /* Инициализация библиотеки для поля с телефоном*/
+        var cleave = new Cleave('.input-phone', {
+            phone: true,
+            phoneRegionCode: '{ru}',
+        })
+
+        var cleave = new Cleave('.basic', {
+            date: true,
+            delimiter: '-',
+            datePattern: ['Y', 'm', 'd']
+        });
+
+    </script>
+
+</body>
+
+</html>
