@@ -13,10 +13,25 @@
     <a href="index.html" class="goToPage">На главную страницу</a>
 
     <form style="margin-top: 20px;">
-        <input class="basic" type="text" name="input-phone0" />
-        <input class="input-phone" type="text" name="input-phone1" />
-        <input type="date" name="dateBasic1" id="dateBasic2">
-        <input type="date" name="date1" id="date2" class="date3">
+        <!-- поле №1 - текстовое без подключения к библиотеке: -->
+        <label> input type="text" - поле №1 - текстовое без подключения к библиотеке:
+            <input type="text" name="input0" placeholder="обычное текстовое поле"/></label>
+        <!-- если ввести +71111111, то получаем обычные цифры как будто просто текст ввели без какого либо форматирования -->
+
+        <!-- поле №2 - текстовое + библиотека тип phone-->
+        <label style="margin-top: 20px"> <b>Phone number formatting</b> <br>
+            input type="text" - поле №2 - new Cleave
+            phone: true, phoneRegionCode: 'ru':
+            <input type="text" class="input-phone11" name="input-phone12" id="input-phone13" placeholder="+7-923-406-65-82"/></label>
+        <!-- если ввести +71111111, то библиотека не дает вводить номер дальше +7 11 так как видимо это неправильный номер и на номера делается какая то проверка. если ввести +79231501735 то получаем отформатированный номер +7 923 150 17 35. причем дальше вводить цифры не получается так как видимо есть ограничение на количество цифр -->
+
+        <!-- поле №3 - текстовое + библиотека тип date-->
+        <label style="margin-top: 20px"> <b>Date formatting</b> <br>
+            input type="text" - поле №3 - new Cleave date:
+            true, delimiter: '-', datePattern: ['Y', 'm', 'd']:
+            <input type="text" class="input-date21" name="input-date22" id="input-date23" placeholder="2025-11-25"/></label>
+        <!-- если ввести 20250120 то получаем отформатированную дату 2025-01-20-->
+
     </form>
 
     <script src="cleave.min.js"></script> <!-- подключили js библиотеки предварительно скачав её -->
@@ -24,17 +39,23 @@
 
 
     <script>
-        /* Инициализация библиотеки для поля с телефоном*/
-        var cleave = new Cleave('.input-phone', {
+        /* подключение библиотеки делаем опираясь на классы */
+
+        /* подключение библиотеки 2-му полю с телефоном */
+        var cleave = new Cleave('.input-phone11', {
             phone: true,
-            phoneRegionCode: '{ru}',
+            phoneRegionCode: 'ru',
+            /* prefix: '+7', */
         })
 
-        var cleave = new Cleave('.basic', {
+        /* подключение библиотеки 3-му полю с датой */
+        var cleave = new Cleave('.input-date21', {
             date: true,
             delimiter: '-',
             datePattern: ['Y', 'm', 'd']
         });
+
+
 
     </script>
 

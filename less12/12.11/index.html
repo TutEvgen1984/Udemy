@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.11 mixItUp3.js: Фильтрация элементов</title>
+    <link rel="stylesheet" href="style.css"> <!-- свой css -->
+    <style>
+        .container {
+            display: flex;
+            width: 960px;
+            flex-wrap: wrap;
+        }
+
+        .mix {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .category-a {
+            background-color: tomato;
+        }
+
+        .category-b {
+            background-color: green;
+        }
+
+        .category-c {
+            background-color: cornflowerblue;
+        }
+
+        .category-d {
+            background-color: indigo;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cards">
+
+        <div class="card">
+            <h3>12.11 mixItUp3.js: Фильтрация элементов. С помощью библиотеки mixItUp3.js можно настроить сортировку и
+                фильтрацию любых элементов у себя на сайте, это может быть каталог товаров или список фильмов все
+                зависит только от ваших задач. </h3>
+            <a href="https://github.com/patrickkunka/mixitup" class="goToPage" target="_blank"> Сайт</a>
+        </div>
+
+    </div>
+
+    <!-- 8 цветных квадратов div, которые будем фильтровать -->
+    <!-- По умолчанию MixItUp будет запрашивать у контейнера элементы, соответствующие селектору '.mix'.  -->
+    <div class="container">
+        <div class="mix category-a" data-order="1">1 a</div>
+        <div class="mix category-b" data-order="2">2 b</div>
+        <div class="mix category-b category-c" data-order="3">3 b c</div>
+        <div class="mix category-a category-d" data-order="4">4 a d</div>
+        <div class="mix category-b category-d" data-order="5">5 b d</div>
+        <div class="mix category-c category-d" data-order="6">6 c d</div>
+        <div class="mix category-a category-c" data-order="7">7 a c</div>
+        <div class="mix category-a category-b" data-order="8">8 a b</div>
+    </div>
+
+    <!-- Filter Controls -->
+    <!-- Кнопки фильтрующие div по классам: -->
+    <button type="button" data-filter="all">Все</button>
+    <button type="button" data-filter=".category-a">Только a</button>
+    <!-- эта кнопка будет показывать только те элементы, у которых есть класс category-a -->
+    <button type="button" data-filter=".category-b">Только b</button>
+    <button type="button" data-filter=".category-c">Только c</button>
+    <button type="button" data-filter=".category-d">Только d</button>
+    <button type="button" data-filter="none">Ничего</button>
+
+    <!-- Sort Controls -->
+    <!-- Кнопки сортирующие div'ы по содержанию в атрибутах data-sort у этих div'ов: -->
+    <button type="button" data-sort="order:asc">По возрастанию</button> <!-- asc = Ascending - По возрастанию -->
+    <button type="button" data-sort="order:descending">По убыванию</button>
+    <button type="button" data-sort="random">Случайно</button>
+
+    <!-- подключаем JS библиотеки -->
+    <script src="mixitup-3/dist/mixitup.js"></script>
+
+    <script>
+
+        /* Инициализируем библиотеку применительно к родительскому div'у с классом container. Можно изменить название этого класса и применить к новому названию класса */
+        var mixer = mixitup('.container', { /* в переменную привязали блок div который фильтруем */
+            animation: { /* опция скорости анимации, не обязательная, можно её удалить и скорость будет по умолчанию */
+                duration: 500 /* Длительность анимации. Чем ниже число, тем быстрее анимация */
+            }
+        });
+
+        /* Фильтрация из кода: */
+        /* вызовем метод filter у переменной-объекта mixer */
+           // mixer.filter('.category-a');
+        /* теперь при обновлении страницы будет 1 раз срабатывать этот код и первоначально будет видно не все элементы, а только те, у которых есть класс category-a */
+
+
+
+    </script>
+
+
+</body>
+
+</html>

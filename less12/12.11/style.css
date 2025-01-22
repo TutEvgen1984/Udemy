@@ -9,6 +9,7 @@ body {
 .cards {
     display: inline-block;
     width: fit-content;
+    margin-bottom: 20px;
 
 }
 
