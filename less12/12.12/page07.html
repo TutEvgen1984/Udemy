@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 7</title>
+
+    <!-- Swiper CSS Styles/Size -->
+    <link rel="stylesheet" href="swiper-bundle.css"> <!-- css библиотеки -->
+    <style>
+        /* In addition to Swiper's CSS styles, we may need to add some custom styles to set Swiper size: */
+         .swiper {
+            width: 640px;
+            /*height: 480px;*/
+            border: 4px solid green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <div style="border: 2px solid; margin: 20px;">
+        <h1 style="text-align: center;">7. Горизонтальный слайдер spaceBetween и slidesPerView</h1>
+    </div>
+
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper содержит все слайды, которые у нас будут отображаться -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <p>Слайд 1</p>
+                <img src="img/Alyx01_1920x1080.jpg" alt="" width="640" height="480">
+            </div>
+            <div class="swiper-slide">
+                <p>Слайд 2</p>
+                <img src="img/kr1.jpg" alt="" >
+            </div>
+            <div class="swiper-slide">
+                <p>Слайд 3</p>
+                <img src="img/Alyx02_1024.jpg" alt="" width="640" height="480">
+            </div>
+            <div class="swiper-slide">
+                <p>Слайд 4</p>
+                <img src="img/HellRoadVR.1920x1080.jpg" alt="" width="640" height="480">
+            </div>
+
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+
+    <script src="swiper-bundle.js"></script> <!-- JS библиотеки -->
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+
+            spaceBetween: 30, /* теперь между слайдами будет небольшой зазор, его можно увидеть если тянуть за слайды мышкой */
+
+            slidesPerView: 2,
+
+            // If we need pagination
+            // чтобы удалить пагинацию нужно удалить этот код в JS, а так же в HTML коде выше
+            pagination: {
+                el: '.swiper-pagination', /* el это сокращенно от element */
+                type: 'fraction',
+                /* 'progressbar' | 'bullets' | 'fraction' | 'custom' */
+
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
+</body>
+
+</html>
