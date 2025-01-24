@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 10</title>
+
+    <!-- Swiper CSS Styles/Size -->
+    <link rel="stylesheet" href="swiper-bundle.css"> <!-- css библиотеки -->
+    <style>
+        /* In addition to Swiper's CSS styles, we may need to add some custom styles to set Swiper size: */
+        .swiper-h {
+            width: 100%;
+            height: 100%;
+            border: 4px solid green;
+        }
+
+        .swiper-v {
+            width: 400px;
+            height: 200px;
+            border: 4px solid green;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <div style="border: 2px solid; margin: 20px;">
+        <h1 style="text-align: center;">10. Слайдер в слайдере + grabCursor </h1>
+    </div>
+
+    <!-- Slider main container -->
+    <div class="swiper swiper-h">
+        <!-- Additional required wrapper содержит все слайды, которые у нас будут отображаться -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <p>Горизонтальный слайд 1</p>
+                <img src="img/Alyx01_1920x1080.jpg" alt="" width="640" height="480">
+            </div>
+            <div class="swiper-slide">
+                <p>Слайд 2</p>
+                <img src="img/WarRobots.1920x1080.jpg" alt="" width="640" height="480">
+                <!-- Внутри горизонтального слайдера вставляем вертикальный слайдер -->
+                <div class="swiper swiper-v">
+                    <p>
+                        Вертикальный слайд<br>
+                        Несколько дней назад на необитаемой планете Боннасис, система Процион, при загадочных обстоятельствах пропали два наших исследователя, изучавших местную фауну. Неожиданно связь с ними оборвалась, и мы можем только теряться в догадках, что с ними произошло. Греф, мы предлагаем вам отправиться в место их последней стоянки и выяснить, живы ли они. Если нет, то ваша задача - найти диск, на котором ученые фиксировали свои наблюдения. Если вы привезете его нам к 28 Февраля 3025, ваш гонорар составит 10000 cr, и как добросовестный исследователь, вы получите признание научной общественности нашей планеты.
+
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <p>Слайд 3</p>
+                <img src="img/Alyx02_1024.jpg" alt="" width="640" height="480">
+            </div>
+            <div class="swiper-slide">
+                <p>Слайд 4</p>
+                <img src="img/HellRoadVR.1920x1080.jpg" alt="" width="640" height="480">
+            </div>
+
+            ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+
+    <script src="swiper-bundle.js"></script> <!-- JS библиотеки -->
+
+    <script>
+        const swiperH = new Swiper('.swiper-h', {
+            // Optional parameters
+            /* centeredSlides: true, */ /* теперь текущий слайд будет всегда в центре */
+            slidesPerView: 3, /* 3 слайда на экране */
+            slidesPerGroup: 3, /* перелистывание группой по 3 слайдера */
+            loopFillGroupWithBlank: true, /*  при перелистывании группы если вместо 3-х слайдов есть 1, то вместо недостающих 2-ъ будет 2 пустых места */
+            grabCursor: true, /* появляется рука для ручного листания слайдов */
+            loop: true,
+
+
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: true,
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            pagination: {
+                el: '.swiper-pagination', /* el это сокращенно от element */
+                type: 'fraction',
+                /* 'progressbar' | 'bullets' | 'fraction' | 'custom' */
+            },
+
+            mousewheel: true,
+
+        });
+
+        /* для вертикального слайда (не работает почему-то) */
+        const swiperV = new Swiper('.swiper-v', {
+            direction: 'vertical',
+            mousewheel: true,
+            freeMode: true,
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: true,
+            },
+
+        });
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

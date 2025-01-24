@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример 13</title>
+
+    <!-- Swiper CSS Styles/Size -->
+    <link rel="stylesheet" href="swiper-bundle.css"> <!-- css библиотеки -->
+    <style>
+        /* In addition to Swiper's CSS styles, we may need to add some custom styles to set Swiper size: */
+        .swiper {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a href="index.html" class="goToPage">На главную страницу</a>
+
+    <div style="border: 2px solid; margin: 20px;">
+        <h1 style="text-align: center;">13. flip. Переброс, сальто (англ.) </h1>
+    </div>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!-- wrap slide content with transform element -->
+             <!-- далее необходим дополнительный div с классом swiper-slide-transform для того, чтобы работали сложные эффекты трансформации -->
+            <div class="swiper-slide-transform">
+                <img src="img/Alyx01_1920x1080.jpg" alt="" width="640" height="480">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!-- wrap slide content with transform element -->
+            <div class="swiper-slide-transform">
+                <img src="img/Alyx02_1024.jpg" alt="" width="640" height="480">
+            </div>
+          </div>
+          ...
+        </div>
+      </div>
+
+
+
+    <script src="swiper-bundle.js"></script> <!-- JS библиотеки -->
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+           effect: 'flip',
+         });
+    </script>
+
+
+</body>
+
+</html>
