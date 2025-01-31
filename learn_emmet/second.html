@@ -88,7 +88,7 @@
      <!-- loremru50 -->
       Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Продолжил послушавшись пор там великий бросил, грустный пустился единственное приставка мир заглавных! Подпоясал оксмокс агентство свое большой всемогущая раз снова мир, языкового, которой своих путь пор всеми рукопись вопроса родного залетают себя свою, моей его жаренные однажды заголовок. Текстов, одна?
 
-      <!-- Создать определенное количество одинаковых тегов (знак *) -->
+      <!-- Создать определенное количество одинаковых тегов (знак умножить *) -->
       <!-- ul>li*4 = ul>li+li+li+li-->
        <ul>
         <li></li>
@@ -103,9 +103,148 @@
         <li><a href=""></a><a href=""></a></li>
        </ul>
 
-       ul
+       <!-- ul>li*5>a -->
+        <!-- ul в котором 5 li, в каждом из которых есть a -->
+       <ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+       </ul>
+       <!-- такая конструкция часто используется при создании меню на сайте -->
 
+       <!-- при использовании знака * можно использовать знак $ для авто-нумерации классов -->
+       <!-- ul>li.item*5 -->
+       <ul>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+       </ul>
 
+       <!-- ul>li.item$*5 -->
+       <ul>
+        <li class="item1"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+        <li class="item4"></li>
+        <li class="item5"></li>
+       </ul>
+
+       <!-- ul>li.item_$*5 -->
+       <ul>
+        <li class="item_1"></li>
+        <li class="item_2"></li>
+        <li class="item_3"></li>
+        <li class="item_4"></li>
+        <li class="item_5"></li>
+       </ul>
+
+       <!-- ul>li.item$@-*5 -->
+       <ul>
+        <li class="item5"></li>
+        <li class="item4"></li>
+        <li class="item3"></li>
+        <li class="item2"></li>
+        <li class="item1"></li>
+       </ul>
+
+       <!-- ul>li.item$$$*5 -->
+       <ul>
+        <li class="item001"></li>
+        <li class="item002"></li>
+        <li class="item003"></li>
+        <li class="item004"></li>
+        <li class="item005"></li>
+       </ul>
+
+       <!-- Группировка -->
+       <!-- Группировка делается с помощью круглых скобок. Она выглядит намного понятнее чем выходы на уровни выше ^ -->
+       <!-- div>(header>ul>li*2>a)+footer>p -->
+       <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+        <footer>
+            <p></p>
+        </footer>
+       </div>
+
+       <!-- (div>header>ul>li*2>a)+footer>p (результат такой же как в примере выше)-->
+       <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+       </div>
+       <footer>
+        <p></p>
+       </footer>
+
+       <!-- div+div>p>span+em+bq -->
+       <div></div>
+       <div>
+        <p>
+            <span></span><em></em>
+            <blockquote></blockquote>
+        </p>
+       </div>
+
+       <!-- div+div>(p>span+em)+bq -->
+        <!-- теперь bq встал рядом с p -->
+       <div></div>
+       <div>
+        <p><span></span><em></em></p>
+        <blockquote></blockquote>
+       </div>
+
+       <!-- div>(header>ul>li*2>a)+footer>p -->
+       <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+        <footer>
+            <p></p>
+        </footer>
+       </div>
+
+       <!-- (div>dl>(dt+dd)*3)+footer>p -->
+       <div>
+        <dl>
+          <dt></dt>
+          <dd></dd>
+          <dt></dt>
+          <dd></dd>
+          <dt></dt>
+          <dd></dd>
+        </dl>
+      </div>
+      <footer>
+        <p></p>
+      </footer>
+
+      <!-- Классы и идентификаторы создаются так: -->
+      <!-- #header -->
+      <div id="header"></div>
+
+      <!-- .title -->
+      <div class="title"></div>
+
+      <!-- form#search.wide -->
+      <form action="" id="search" class="wide"></form>
+
+      <!-- p.class1.class2.class3 -->
+      <p class="class1 class2 class3"></p>
 
 
 </body>
