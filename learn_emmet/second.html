@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- * Вложенные элементы > -->
+
+    <!-- nav>ul>li -->
+    <nav>
+        <ul>
+            <li></li>
+        </ul>
+    </nav>
+
+    <!-- div>p -->
+    <div>
+        <p></p>
+    </div>
+
+
+    <!-- * Соседние элементы + -->
+
+    <!-- Соседние элементы создаются так: -->
+    <!-- div+p+bq -->
+    <!-- эта аббревиатура сгенерирует следующий HTML код: -->
+
+    <div></div>
+    <p></p>
+    <blockquote></blockquote>
+
+    <!-- nav>ul>li+li -->
+    <nav>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+    </nav>
+
+
+    <!-- * Выход на уровни выше -->
+    <!-- div+div>p>span+em^bq -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+        <blockquote></blockquote>
+        <!-- ^bq вышел на 1 уровень выше из p и встал с ним рядом -->
+    </div>
+
+    <!-- div+div>p>span+em^^bq -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+    </div>
+    <blockquote></blockquote>
+    <!-- ^^bq вышел на 2 уровня выше из p и div встал с ним рядом  -->
+
+    <!-- a+ul>li -->
+    <a href=""></a>
+    <ul>
+        <li></li>
+    </ul>
+
+    <!-- div>p>h2+span^b -->
+    <div>
+        <p>
+            <h2></h2>
+            <span></span>
+        </p>
+        <b></b>
+    </div>
+
+    <!-- * Текст-рыба Lorem -->
+    <!-- lorem -->
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus debitis similique autem sapiente expedita fugit nulla aliquid tenetur dolor obcaecati culpa quia accusamus maiores voluptatum ea, pariatur ipsum perspiciatis quas?
+
+    <!-- Lorem50 создаст 50 слов -->
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti veniam quam ullam ad inventore doloribus rem blanditiis fuga doloremque? Vel quibusdam recusandae velit qui doloremque sint veniam optio, est saepe iste nobis molestiae dolorem repellendus quia tempore, architecto neque necessitatibus debitis perspiciatis sapiente unde culpa. Nam alias impedit doloremque magnam.
+
+    <!-- loremru для генерации текста на русском языке-->
+     Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Приставка он пунктуация моей дороге большой меня сих! Которой назад себя выйти снова? Которой дороге сбить над своих на берегу пояс?
+
+     <!-- loremru50 -->
+      Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Продолжил послушавшись пор там великий бросил, грустный пустился единственное приставка мир заглавных! Подпоясал оксмокс агентство свое большой всемогущая раз снова мир, языкового, которой своих путь пор всеми рукопись вопроса родного залетают себя свою, моей его жаренные однажды заголовок. Текстов, одна?
+
+      <!-- Создать определенное количество одинаковых тегов (знак *) -->
+      <!-- ul>li*4 = ul>li+li+li+li-->
+       <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+       </ul>
+
+       <!-- ul>li>a*2 -->
+        <!-- один тег li в котором 2 тега а -->
+       <ul>
+        <li><a href=""></a><a href=""></a></li>
+       </ul>
+
+       ul
+
+
+
+
+</body>
+
+</html>
