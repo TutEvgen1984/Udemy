@@ -4,9 +4,528 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 <body>
     <a href="https://emmet.io/download/">Официальный сайт Emmet</a>
+    <a href="https://docs.emmet.io/cheat-sheet/">Сжатая шпаргалка</a> <!-- тут её также можно скачать в формате pdf. -->
+
+    <!-- 1. Введение -->
+
+    <!-- * Вложенные элементы > -->
+
+    <!-- nav>ul>li -->
+    <nav>
+        <ul>
+            <li></li>
+        </ul>
+    </nav>
+
+    <!-- div>p -->
+    <div>
+        <p></p>
+    </div>
+
+
+    <!-- * Соседние элементы + -->
+
+    <!-- Соседние элементы создаются так: -->
+    <!-- div+p+bq -->
+    <!-- эта аббревиатура сгенерирует следующий HTML код: -->
+
+    <div></div>
+    <p></p>
+    <blockquote></blockquote>
+
+    <!-- nav>ul>li+li -->
+    <nav>
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+    </nav>
+
+
+    <!-- * Выход на уровни выше -->
+    <!-- div+div>p>span+em^bq -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+        <blockquote></blockquote>
+        <!-- ^bq вышел на 1 уровень выше из p и встал с ним рядом -->
+    </div>
+
+    <!-- div+div>p>span+em^^bq -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+    </div>
+    <blockquote></blockquote>
+    <!-- ^^bq вышел на 2 уровня выше из p и div встал с ним рядом  -->
+
+    <!-- a+ul>li -->
+    <a href=""></a>
+    <ul>
+        <li></li>
+    </ul>
+
+    <!-- div>p>h2+span^b -->
+    <div>
+        <p>
+        <h2></h2>
+        <span></span>
+        </p>
+        <b></b>
+    </div>
+
+    <!-- * Текст-рыба Lorem -->
+    <!-- lorem -->
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus debitis similique autem sapiente expedita fugit
+    nulla aliquid tenetur dolor obcaecati culpa quia accusamus maiores voluptatum ea, pariatur ipsum perspiciatis quas?
+
+    <!-- Lorem50 создаст 50 слов -->
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti veniam quam ullam ad inventore doloribus rem
+    blanditiis fuga doloremque? Vel quibusdam recusandae velit qui doloremque sint veniam optio, est saepe iste nobis
+    molestiae dolorem repellendus quia tempore, architecto neque necessitatibus debitis perspiciatis sapiente unde
+    culpa. Nam alias impedit doloremque magnam.
+
+    <!-- loremru для генерации текста на русском языке-->
+    Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Приставка он пунктуация моей
+    дороге большой меня сих! Которой назад себя выйти снова? Которой дороге сбить над своих на берегу пояс?
+
+    <!-- loremru50 -->
+    Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Продолжил послушавшись пор там
+    великий бросил, грустный пустился единственное приставка мир заглавных! Подпоясал оксмокс агентство свое большой
+    всемогущая раз снова мир, языкового, которой своих путь пор всеми рукопись вопроса родного залетают себя свою, моей
+    его жаренные однажды заголовок. Текстов, одна?
+
+    <!-- Создать определенное количество одинаковых тегов (знак умножить *) -->
+    <!-- ul>li*4 = ul>li+li+li+li-->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <!-- ul>li>a*2 -->
+    <!-- один тег li в котором 2 тега а -->
+    <ul>
+        <li><a href=""></a><a href=""></a></li>
+    </ul>
+
+    <!-- ul>li*5>a -->
+    <!-- ul в котором 5 li, в каждом из которых есть a -->
+    <ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+    <!-- такая конструкция часто используется при создании меню на сайте -->
+
+    <!-- при использовании знака * можно использовать знак $ для авто-нумерации классов -->
+    <!-- ul>li.item*5 -->
+    <ul>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+    </ul>
+
+    <!-- ul>li.item$*5 -->
+    <ul>
+        <li class="item1"></li>
+        <li class="item2"></li>
+        <li class="item3"></li>
+        <li class="item4"></li>
+        <li class="item5"></li>
+    </ul>
+
+    <!-- ul>li.item_$*5 -->
+    <ul>
+        <li class="item_1"></li>
+        <li class="item_2"></li>
+        <li class="item_3"></li>
+        <li class="item_4"></li>
+        <li class="item_5"></li>
+    </ul>
+
+    <!-- ul>li.item$@-*5 -->
+    <ul>
+        <li class="item5"></li>
+        <li class="item4"></li>
+        <li class="item3"></li>
+        <li class="item2"></li>
+        <li class="item1"></li>
+    </ul>
+
+    <!-- ul>li.item$$$*5 -->
+    <ul>
+        <li class="item001"></li>
+        <li class="item002"></li>
+        <li class="item003"></li>
+        <li class="item004"></li>
+        <li class="item005"></li>
+    </ul>
+
+    <!-- Группировка -->
+    <!-- Группировка делается с помощью круглых скобок. Она выглядит намного понятнее чем выходы на уровни выше ^ -->
+    <!-- div>(header>ul>li*2>a)+footer>p -->
+    <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+
+    <!-- (div>header>ul>li*2>a)+footer>p (результат такой же как в примере выше)-->
+    <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+
+    <!-- div+div>p>span+em+bq -->
+    <div></div>
+    <div>
+        <p>
+            <span></span><em></em>
+        <blockquote></blockquote>
+        </p>
+    </div>
+
+    <!-- div+div>(p>span+em)+bq -->
+    <!-- теперь bq встал рядом с p -->
+    <div></div>
+    <div>
+        <p><span></span><em></em></p>
+        <blockquote></blockquote>
+    </div>
+
+    <!-- div>(header>ul>li*2>a)+footer>p -->
+    <div>
+        <header>
+            <ul>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </header>
+        <footer>
+            <p></p>
+        </footer>
+    </div>
+
+    <!-- (div>dl>(dt+dd)*3)+footer>p -->
+    <div>
+        <dl>
+            <dt></dt>
+            <dd></dd>
+            <dt></dt>
+            <dd></dd>
+            <dt></dt>
+            <dd></dd>
+        </dl>
+    </div>
+    <footer>
+        <p></p>
+    </footer>
+
+    <!-- Классы и идентификаторы создаются так: -->
+    <!-- #header без указания тега создает div с идентификатором (по умолчанию создается именно div) -->
+    <div id="header"></div>
+
+    <!-- a#myLink создает тег a с идентификатором -->
+    <a href="" id="myLink"></a>
+
+    <!-- .title создает div с классом-->
+    <div class="title"></div>
+
+    <!-- form#search.wide -->
+    <form action="" id="search" class="wide"></form>
+
+    <!-- p.class1.class2.class3 пишем тег, затем слитно через точку  несколько классов -->
+    <p class="class1 class2 class3"></p>
+
+    <!-- Произвольные атрибуты создаются с помощью квадратных скобок []: -->
+
+    <!-- p[title="Hello world"] -->
+    <p title="Hello world"></p>
+
+    <!-- td[rowspan=2 colspan=3 title] несколько атрибутов пишутся через пробел -->
+    <td rowspan="2" colspan="3" title=""></td>
+
+    <!-- [a='value1' b="value2"] -->
+    <div a="value1" b="value2"></div>
+
+    <!-- если значение атрибута написано слитно (состоит из одного слова), кавычки можно не писать: -->
+    <!-- [a=value1 b=value2] -->
+    <div a="value1" b="value2"></div>
+    <!-- если атрибут имеет пробел, и состоит из нескольких слов, то надо писать в кавычках -->
+
+    <!-- [data-toggle="value sorted" b='value2'] -->
+    <div data-toggle="value sorted" b="value2"></div>
+
+    <!-- кавычки нужны, если в значении атрибута предполагается пробел.  -->
+    <!-- [a=hello]отработает хорошо,  -->
+    <!-- а вот [a=hello world] даст результат: -->
+    <div a="hello" world=""></div>
+
+    <!-- Чтобы указать текст нужно заключить его в фигурные скобки {} -->
+
+    <!-- a{Click me} -->
+    <a href="">Click me</a>
+
+    <!-- p{Click }a{here}{ to continue} -->
+    <p>Click </p>
+    <a href="">here</a> to continue
+
+    <!-- p{Click }+a{here}+{ to continue} -->
+    <!-- использование + ничем не отличается результатом от варианта без плюса -->
+    <p>Click </p>
+    <a href="">here</a> to continue
+
+    <!-- использование знака > для указания вложенности -->
+    <!-- p>{Click }+a{here}+{ to continue} -->
+    <p>Click <a href="">here</a> to continue</p>
+
+    <!-- без плюса тоже работает -->
+    <!-- p>{Click}>a{here}{to continue} -->
+    <p>Click<a href="">here</a>to continue</p>
+
+    <!-- p{Click }+a{here}+div{ to continue} -->
+    <p>Click </p>
+    <a href="">here</a>
+    <div> to continue</div>
+
+    <!-- h$[title=item$]{Lorem}*3 -->
+    <h1 title="item1">Lorem</h1>
+    <h2 title="item2">Lorem</h2>
+    <h3 title="item3">Lorem</h3>
+    <!-- При этом лорем внутри не развернулся так как он не разворачивается автоматически, чтобы его развернуть нужно курсор поставить в конец лорем, и нажать Ctrl+пробел  -->
+
+    <!-- Чтобы не делать мультикурсор и не разворачивать отдельно lorem: -->
+    <!-- (h$[title=item$]>loremru5)*3 -->
+    <h1 title="item1">Далеко-далеко за словесными горами в стране.</h1>
+    <h2 title="item2">Дал языком вопроса языкового назад?</h2>
+    <h3 title="item3">На берегу буквенных они букв алфавит!</h3>
+
+    <!-- ul>li{Main}+li{About us} -->
+    <ul>
+        <li>Main</li>
+        <li>About us</li>
+    </ul>
+
+    <!-- Названия тегов можно не указывать при создании класса. В таком случае тег создастся максимально подходящий в определенной ситуации: -->
+    <!-- .class получаем div так как он используется чаще всего -->
+    <div class="class"></div>
+
+    <!-- em>.class  внутри em создастся span с классом так как просто голый span внутри не может быть, к тому же em строчный, и у него внутри создается строчный тег -->
+    <em><span class="class"></span></em>
+
+    <!-- div>.class внутри div создастся еще один div так как изначальный div это блочный тег -->
+    <div>
+        <div class="class"></div>
+    </div>
+
+    <!-- ul>.class -->
+    <ul>
+        <li class="class"></li>
+    </ul>
+
+    <!-- table>.row>.col -->
+    <table>
+        <tr class="row">
+            <td class="col"></td>
+        </tr>
+    </table>
+
+    <!-- ОСздание меню -->
+    <!-- ul>.home+.contacts+.about+.buy -->
+    <ul>
+        <li class="home"></li>
+        <li class="contacts"></li>
+        <li class="about"></li>
+        <li class="buy"></li>
+    </ul>
+
+    <!-- .container>.row>.col-sm-12 -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"></div>
+        </div>
+    </div>
+
+    <!-- p>.accent-color{Text }+{accent} -->
+    <p><span class="accent-color">Text </span>accent</p>
+
+    <!-- 2. Emmet для HTML -->
+
+    <!-- пред-установки появляющиеся в устрашающем меню после набора a, который можно выбрать клавиатурой -->
+    <!-- a:link -->
+    <a href="http://"></a>
+
+    <!-- a:mail -->
+     <a href="mailto:"></a>
+
+    <!-- a:tel -->
+    <a href="tel:+"></a>
+
+    <!-- audio -->
+    <audio src=""></audio>
+
+    <br>
+
+    <hr>
+
+    <abbr title=""></abbr>
+
+    <!-- ftr.footer>.container>.footer__flex>p.text-p.footer_copyright{&copy; 2019 Строительная компания}+p.text-p.footer__brand{Разработано лучшей студией} -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__flex">
+                <p class="text-p footer_copyright">&copy; 2019 Строительная компания</p>
+                <p class="text-p footer__brand">Разработано лучшей студией</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="page">
+        <section class="content">
+            <h1>Заголовок документа</h1>
+            <p>Далеко-далеко за словесными горами в стране.</p>
+        </section>
+    </div>
+
+    <div>
+        <h1>Далеко-далеко за словесными горами в стране.</h1>
+    </div>
+
+    главная
+    о нас
+    услуги
+    контакты
+
+    <!-- * указывается для обертки каждой строки в отдельный тег -->
+    <!-- выделить, ctrl+w (emmet wrap) > li* -->
+    <li>главная</li>
+    <li>о нас</li>
+    <li>услуги</li>
+    <li>контакты</li>
+
+    <!-- выделить, ctrl+w (emmet wrap)
+     ul>li*>a -->
+    <ul>
+        <li>
+            <a href="">главная</a>
+        </li>
+        <li>
+            <a href="">о нас</a>
+        </li>
+        <li>
+            <a href="">услуги</a>
+        </li>
+        <li>
+            <a href="">контакты</a>
+        </li>
+    </ul>
+
+    <!-- выделить, ctrl+w (emmet wrap)
+     ul>li>a* -->
+    <ul>
+        <li>
+            <a href="">главная</a>
+            <a href="">о нас</a>
+            <a href="">услуги</a>
+            <a href="">контакты</a>
+        </li>
+    </ul>
+
+    <!-- Необходимо удалить ручную нумерацию из скопированного из интернета текста -->
+    1. Главная
+    2. О нас
+    3. Услуги
+    4. Контакты
+
+    <!-- ctrl+w
+     a*|t (|t = trim это фильтр, который позволяет автоматически удалить маркеры из списков) -->
+    <a href="">Главная</a>
+    <a href="">О нас</a>
+    <a href="">Услуги</a>
+    <a href="">Контакты</a>
+
+    <!-- ctrl+w
+     ul>li*>a|t -->
+    <ul>
+        <li>
+            <a href="">Главная</a>
+        </li>
+        <li>
+            <a href="">О нас</a>
+        </li>
+        <li>
+            <a href="">Услуги</a>
+        </li>
+        <li>
+            <a href="">Контакты</a>
+        </li>
+    </ul>
+
+    <!-- специальный символ $# - это сам текст для повторного использования -->
+    <!-- ctrl+w
+     ul>li[title=$#]*>{$#}+img[alt=$#] -->
+    <ul>
+        <li title="главная">
+            главная
+            <img src="#" alt="главная">
+        </li>
+        <li title="о нас">
+            о нас
+            <img src="#" alt="о нас">
+        </li>
+        <li title="услуги">
+            услуги
+            <img src="#" alt="услуги">
+        </li>
+        <li title="контакты">
+            контакты
+            <img src="#" alt="контакты">
+        </li>
+    </ul>
+
+    Главная
+    Сервисы
+    Контакты
+
+    <!-- Wrap with Abbreviation
+     ul>li*>a:tel -->
+    <ul>
+        <li>
+            <a href="tel:+">Главная</a>
+        </li>
+        <li>
+            <a href="tel:+">Сервисы</a>
+        </li>
+        <li>
+            <a href="tel:+">Контакты</a>
+        </li>
+    </ul>
+
+
 
 </body>
 </html>
+
