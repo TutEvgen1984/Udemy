@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Triodion&display=swap" rel="stylesheet">
 
 </head>
 <body>
+
     <a href="https://emmet.io/download/">Официальный сайт Emmet</a>
     <a href="https://docs.emmet.io/cheat-sheet/">Сжатая шпаргалка</a> <!-- тут её также можно скачать в формате pdf. -->
 
@@ -523,6 +527,69 @@
             <a href="tel:+">Контакты</a>
         </li>
     </ul>
+
+    <!-- source:media -->
+    <source media="(min-width: )" srcset="">
+
+    <!-- iframe -->
+    <iframe src="#" frameborder="0"></iframe>
+
+    <!-- form:get -->
+    <form action="" method="get"></form>
+
+    <!-- input:text -->
+    <input type="text" name="" id="">
+
+    <!-- input:radio -->
+    <input type="radio" name="" id="">
+
+    <!-- select:disabled -->
+    <select name="" id="" disabled="disabled"></select>
+
+    <!-- option -->
+    <option value=""></option>
+
+    <!-- button:submit -->
+    <button type="submit"></button>
+
+    <!-- fieldset:disabled -->
+    <fieldset disabled="disabled"></fieldset>
+
+    <!-- Emmet Update Image Size создает у атрибуты у тега img согласно оригинальным размерам -->
+    <img src="img/Alyx01_thumb_1920x1080.jpg" alt="" width="250" height="141">
+
+    <!-- В CSS работает так же, но курсор надо поставить на путь к изображению -->
+    <style>
+        .block {
+            background-image: url(img/Alyx01_thumb_1920x1080.jpg);
+            width: 250px;
+            height: 141px;
+        }
+    </style>
+
+    <!-- F1 emmet : Evaluate math expression Вычислить арифметическое выражение -->
+    10*6-21
+    39
+
+    <style>
+        body {
+            padding: 9px;
+            /* ставим курсор на 8, затем F1 emmet Increment by 1, и значение увеличится с 8 до 9 *
+            Increment/Decrement Number = Увеличить или уменьшить число */
+        }
+
+        div {
+            -webkit-transform: rotate(10deg);
+            /* изменили 50deg на 10deg f1 emmet Reflect CSS Value (Изменить все свойства с префиксами)
+            в результате во всех остальных значениях ниже изменится с 50deg на 10deg (на то, где у нас был выставлен курсор) */
+            -moz-transform: rotate(10deg);
+            -ms-transform: rotate(10deg);
+            -o-transform: rotate(10deg);
+            transform: rotate(10deg);
+        }
+    </style>
+
+    <a href="http://docs.emmet.io/actions/">Доступные команды плагина Emmet</a>
 
 
 
