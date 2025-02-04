@@ -88,4 +88,20 @@ div {
     min-width: 200px; /* miw200 */
     min-height: 200px; /* mih200 */
 
+    font: 1em sans-serif; /* f */
+    font-weight: normal; /* fw */
+    font-weight: normal; /* fw:n */
+    font-weight: bold; /* fwb */
+    font-weight: bolder; /* fw:br */
+    font-weight: 400; /* fw400 */
+    font-style: italic; /* fs */
+    font-variant: normal; /* fv */
+    font-size: 25px; /* fz25 */
+    font-family: serif; /* ff */
+    font-family: cursive; /* ff:c */
+    font-family: monospace; /* ff:m */
+    font-effect: none;; /* fef */
+    font-smoothing: antialiased; /* fsm */
+    font-stretch: normal; /* fst */
+
 }
