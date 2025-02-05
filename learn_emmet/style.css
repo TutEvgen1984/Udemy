@@ -192,6 +192,19 @@ div {
 
   }
 
+  align-content: start; /* ac */
+  animation: none; /* an */
+  align-self: ; /* as */
+  flex: ; /* fx */
+  justify-self: start; /* js */
+  justify-content: start; /* jc */
+  orientation: landscape; /* ori */
+  transform: ; /* trf */
+  -webkit-animation: ; /* -w префикс w для браузеров хром и сафари */
+  -o-animation: ; /* -o префикс о для браузеров опера */
+  -moz-animation: ; /* -m префикс m для браузеров мозилла */
+
+
 
 
 }
