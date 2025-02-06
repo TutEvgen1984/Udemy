@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Triodion&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
     <a href="https://emmet.io/download/">Официальный сайт Emmet</a>
@@ -383,7 +385,7 @@
     <a href="http://"></a>
 
     <!-- a:mail -->
-     <a href="mailto:"></a>
+    <a href="mailto:"></a>
 
     <!-- a:tel -->
     <a href="tel:+"></a>
@@ -612,9 +614,34 @@
         </div>
     </div>
 
+    <!--
+    если кому интересно я долго искал  и нашел как сделать так чтобы атрибут class всегда стоял первым у любых тегов,даже у ссылок и т.д. Для этого в настройках json вставьте следующий код :
+
+        "emmet.preferences": {
+            "output.reverseAttributes": true
+          },
+    -->
+
+    <!-- hdr.header>h1.header__title+p.header__text -->
+    <header class="header">
+        <h1 class="header__title"></h1>
+        <p class="header__text"></p>
+    </header>
+
+    <!-- (.about__item>.about__year+p)*2 -->
+    <div class="about__item">
+        <div class="about__year"></div>
+        <p></p>
+    </div>
+    <div class="about__item">
+        <div class="about__year"></div>
+        <p></p>
+    </div>
+
+
 
 
 
 </body>
-</html>
 
+</html>

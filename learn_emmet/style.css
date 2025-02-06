@@ -206,6 +206,10 @@ div {
 
   /* 3.4 Фильтры, работа с БЭМ, Настройки Emmet и VS Code */
 
+  color: #fff; /* c#f */
+  font-weight: 400; /* fw400 */
 
+  font-size: 26px; /* fz26 */
+  line-height: 15px; /* lh15px */
 
 }
