@@ -54,6 +54,7 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
+/* копируем классы из списка ниже */
 .icon-glass:before { content: '\e800'; } /* '' */
 .icon-music:before { content: '\e801'; } /* '' */
 .icon-search:before { content: '\e802'; } /* '' */

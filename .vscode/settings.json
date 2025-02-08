@@ -4,5 +4,8 @@
         "textMateRules": []
     },
     "js-auto-backticks.enableRevert": true,
-    "js-auto-backticks.preferredStandardQuotes": "auto"
+    "js-auto-backticks.preferredStandardQuotes": "auto",
+    "cSpell.words": [
+        "flaticon"
+    ]
 }
