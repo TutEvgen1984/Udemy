@@ -1,0 +1,28 @@
+.grid-container {
+    display: grid;
+    height: 500px;
+    /* Будет создано 3 колонки */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid-template-columns: 150px auto 40%; */
+    /* Будет создано 3 ряда */
+    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-rows: 250px 10vw 15rem; */
+}
+
+.grid-container {
+    border: 2px solid red;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 150px;
+}
+
+.grid-container > div:nth-child(odd) {
+    background: #666;
+    border: 2px solid blue;
+}
+
+.grid-container > div:nth-child(even) {
+    background: antiquewhite;
+    border: 2px solid brown;
+}

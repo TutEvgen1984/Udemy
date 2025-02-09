@@ -1,0 +1,36 @@
+.htooltip span { /* Внешний вид нашего тултипа */
+	visibility: hidden; /* Первоначально прячем */
+	opacity: 0; /* Делаем его прозрачным */
+	position: absolute;
+	margin-left: 2px;
+	margin-top: -75px;
+
+	background-color: rgba(0,0,0, 0.8);
+	border-radius: 15px 15px 15px 0px;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	color: #fff;
+	padding: 10px 10px 10px 40px;
+	text-decoration: none;
+	width: 350px;
+	z-index: 10;
+}
+
+.htooltip span img { /* Изображение для примера */
+	visibility: hidden; /* Первоначально прячем */
+	opacity: 0;
+	position: absolute;
+	margin: -40px 0 0 -100px;
+	border: 0 none;
+	float: left; /* обтекание картинки слева (что-то не работает) */
+	z-index: -1;
+}
+
+.htooltip:hover span { /* По hover отображаем тултип */
+    opacity: 1;
+    visibility: visible;
+}
+
+.htooltip:hover span img { /* Показываем изображение */
+	opacity: 1;
+	visibility: visible;
+}

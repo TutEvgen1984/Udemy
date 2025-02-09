@@ -1,0 +1,31 @@
+/* Текст на котором должна появиться подсказка: */
+.tooltip {
+	border-bottom: 1px dotted #0077AA;
+	cursor: help;
+}
+
+.tooltip::after {
+	opacity: 0; /* Наша подсказка есть, но она изначально прозрачен... */
+
+	position: absolute;
+    /* Элемент позиционируется относительно ближайшего позиционированного предка. То есть браузер идёт вверх по дереву элементов и ищет ближайшего опорного родителя. И затем располагает наш элемент относительно этого родителя. */
+
+	margin-top: -24px;
+    /* смещение подсказки вверх */
+    /* это смещение хитро работает благодаря position: absolute; */
+
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 8px 8px 8px 0px;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	content: attr(data-tooltip); /* Главная часть кода, определяющая содержимое всплывающей подсказки */
+	padding: 3px 7px;
+	visibility: hidden; /* ...и скрыт. */
+	transition: all 0.4s ease-in-out; /* Добавить плавности по вкусу */
+}
+
+.tooltip:hover::after {
+	opacity: 1; /* Показываем его */
+	visibility: visible;
+}
+

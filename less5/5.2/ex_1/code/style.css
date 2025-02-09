@@ -10,14 +10,25 @@ ul {
 [mytitle] {
   cursor: pointer;
 }
-[mytitle]:after {
-  content: '';
-  transition: 0.1s;
+[mytitle]:after { /* [mytitle]:after означает, что content написанный ниже появится справа (after) от элемента, у которого есть атрибут mytitle */
+  content: ''; /* первоначально content содержит ничего */
+  transition: 0.1s; /* переход 0.1s написана в основе псевдоэлемента after */
 }
-[mytitle]:hover:after {
+[mytitle]:hover:after { /* при наведении на элемент содержащий атрибут mytitle */
   width: 550px;
-  content: attr(mytitle);
+
+  /* display: block; */
+  /* если поставить display: block то подсказка появляется снизу так как она является блочной и занимает всю строку */
+  /* убрав display: block  контент становится строчным по умолчанию и появляется справа */
+
+  content: attr(mytitle); /* content получает наполнение атрибута mytitle */
+  /* attr() — это CSS-функция, которая умеет получать значение любого атрибута элемента, а потом использовать это значение прямо в стилях. */
+  /* https://doka.guide/css/attr/ */
+
   background-color: #e9a333;
   padding: 10px;
-  z-index: 100;
+  z-index: 100; /* z-index ставим побольше чтобы подсказка была поверх остальных элементов */
 }
+
+/* вариант с всплывающими подсказками через tooltip*/
+/* https://habr.com/ru/articles/132283/ */
