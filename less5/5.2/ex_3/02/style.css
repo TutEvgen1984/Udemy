@@ -1,0 +1,29 @@
+.grid-container {
+    display: grid; /* задается родительскому элементу */
+    /* свойство задающее шаблон столбцов */
+    /* Будет создано 4 столбца по 20% пикселей каждый */
+    grid-template-columns: 20% 20% 20% 20%; /* последние 20% свободны */
+
+    /*  строки не заданы, поэтому  высота строк определяется  высотой содержимого */
+}
+
+/*  оформление контейнера grid и всего содержимого в нем: */
+.grid-container {
+    border: 2px solid red;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 150px;
+}
+
+/*  четные ячейки красим в бежевый цвет */
+.grid-container > div:nth-child(even) {
+    background: antiquewhite;
+    border: 2px solid brown;
+}
+
+/* нечетные ячейки красим в серый цвет */
+.grid-container > div:nth-child(odd) {
+    background: #666;
+    border: 2px solid blue;
+}

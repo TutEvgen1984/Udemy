@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Css: фракции fr (части) auto-fill + auto-fit</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>auto-fill</h1>
+    <div class="grid-container grid_fill">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <p>grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));</p>
+    <p>auto-fill - повторяет ряд/колонку пока есть место в контейнере. Хотя бы одно повторение будет всегда. </p>
+    <p>repeat(auto-fit, minmax(100px, 1fr)) означает повторить по 1 фракции столько раз сколько нужно для того чтоб вместились все элементы, при этом каждая фракция не может стать меньше 100px, но при нехватке в строке места элементы переходят на следующую строку</p>
+    <p>вёрстка адаптивная</p>
+
+    <hr>
+
+    <h1>auto-fit</h1>
+    <div class="grid-container grid_fit">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <p>grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));</p>
+    <p>auto-fit - то же самое, но после размещения элементов оставшиеся пустыми ряд/колонка сжимаются и исчезают, в результате контейнер всегда будет выглядеть заполненным.</p>
+
+    <p>вёрстка адаптивная</p>
+
+
+
+</body>
+</html>
