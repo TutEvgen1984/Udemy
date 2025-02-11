@@ -1,0 +1,54 @@
+.grid-container {
+    display: grid; /* задается родительскому элементу */
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.item1 {
+    /* объединение ячеек: */
+    grid-column-start: 1;
+    grid-column-end: 4;
+    /* мы сделали первую ячейку с 1 до 4 места */
+}
+
+.item3 {
+    /* объединение ячеек: */
+    grid-column-start: 1;
+    grid-column-end: -1;
+    /* мы сделали первую ячейку с 1 до самого последнего места */
+}
+
+.item4 {
+    /* объединение ячеек: */
+    grid-column-start: 1;
+    grid-column-end: span 2; /* охватить 2 ячейки */
+    /* мы сделали первую ячейку с 1 по 2-ю */
+}
+
+.item5 {
+    /* объединение ячеек: */
+    grid-column-start: 3;
+    grid-column-end: 5;
+    /* мы сделали первую ячейку с 1 по 2-ю */
+}
+
+/* оформление контейнера grid и всего содержимого в нем: */
+.grid-container {
+    border: 2px solid red;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 100px;
+}
+
+/* четные ячейки красим в бежевый цвет */
+.grid-container > div:nth-child(even) {
+    background: antiquewhite;
+    border: 2px solid brown;
+}
+
+/* нечетные ячейки красим в серый цвет */
+.grid-container > div:nth-child(odd) {
+    background: #666;
+    border: 2px solid blue;
+}

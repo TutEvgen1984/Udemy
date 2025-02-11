@@ -1,0 +1,40 @@
+.grid-container {
+    display: grid; /* задается родительскому элементу */
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.item1 {
+    /* сокращенное grid-column вместо 2-х свойств grid-column-start: 1;
+    grid-column-end: 4;*/
+
+    grid-column: 1 / 4; /* от 1-й линии до 4-ой */
+}
+
+.item4 {
+    /* сокращенное grid-column вместо 2-х свойств grid-column-start: 2;
+    grid-column-end: span 3; охватить 3 ячейки */
+
+    grid-column: 2 / span 3; /* от 2-й линии охватить 3 ячейки */
+}
+
+/* оформление контейнера grid и всего содержимого в нем: */
+.grid-container {
+    border: 2px solid red;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 100px;
+}
+
+/* четные ячейки красим в бежевый цвет */
+.grid-container > div:nth-child(even) {
+    background: antiquewhite;
+    border: 2px solid brown;
+}
+
+/* нечетные ячейки красим в серый цвет */
+.grid-container > div:nth-child(odd) {
+    background: #666;
+    border: 2px solid blue;
+}
