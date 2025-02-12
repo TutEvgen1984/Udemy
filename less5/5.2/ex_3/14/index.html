@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-auto-rows/columns</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h2>НЕТ grid-auto-columns</h2>
+    <p>Элементы 5 и 9 выставлены автоматически движком и имеют ширину содержимого</p>
+    <div class="grid-container grid1">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+    <p>grid-template-columns: 1fr 1fr 1fr;</p>
+    <p>.item1 {
+        grid-column: 1 / span 4;
+        /* 1-ый элемент занимает столбцы с 1 по 4 (внимание, у нас первоначально создано всего 3fr) */
+    }</p>
+
+    <hr>
+
+    <h2>grid-auto-columns: 1fr;</h2>
+    <p>Элементы 5 и 9 имеют ширину 1fr</p>
+    <div class="grid-container grid2">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+</body>
+
+</html>

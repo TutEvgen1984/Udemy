@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>grid-column объединение по столбцам</title>
+    <title>grid-auto-flow</title>
     <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
+
+    <h2>grid-auto-flow: column</h2>
+    <p>Теперь элементы 1, 2, 3 располагаются не слева направо, а сверху вниз</p>
+
     <div class="grid-container">
-        <div class="grid-item item1">1 (grid-column: 1 / 4;)</div>
+        <div class="grid-item item1">1</div>
         <div class="grid-item item2">2</div>
         <div class="grid-item item3">3</div>
-        <div class="grid-item item4">4 (grid-column: 2 / span 3);</div>
+        <div class="grid-item item4">4</div>
         <div class="grid-item item5">5</div>
         <div class="grid-item item6">6</div>
         <div class="grid-item item7">7</div>
@@ -19,14 +25,7 @@
         <div class="grid-item item9">9</div>
     </div>
 
-<pre>
-    CSS:
-        .item1 {
-            /* сокращенное grid-column вместо 2-х свойств grid-column-start: 1;
-            grid-column-end: 4;*/
-            grid-column: 1 / 4;
-        }
-</pre>
 
-</body>
+  </body>
+
 </html>

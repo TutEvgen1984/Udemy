@@ -1,0 +1,39 @@
+.grid-container {
+    display: grid; /* задается родительскому элементу */
+
+    grid-template-columns: 1fr 1fr 1fr; /* 3 столбца */
+    gap: 10px; /* между ячейками 10px */
+    grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+
+    grid-auto-flow: column; /* авто-размещение элементов теперь по столбцам (по умолчанию оно работает по строкам, то есть grid-auto-flow: row) */
+    /* Если у вас есть элементы, которые вы явно не позиционируете в сетке, запускается алгоритм авто размещения, чтобы их автоматически разместить. Это свойство контролирует то, как алгоритм авто-размещения работает.  */
+
+}
+
+/* оформление контейнера grid и всего содержимого в нем: */
+.grid-container {
+    border: 2px solid red;
+    text-align: center;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.grid-item {
+    align-items: center;
+}
+
+/* четные ячейки красим в бежевый цвет */
+.grid-container > div:nth-child(even) {
+    background: antiquewhite;
+    border: 2px solid brown;
+}
+
+/* нечетные ячейки красим в серый цвет */
+.grid-container > div:nth-child(odd) {
+    background: #666;
+    border: 2px solid blue;
+}
+
+hr {
+    margin: 40px;
+}

@@ -1,0 +1,49 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: 150px 350px 40px;
+
+    /* ниже можно сказать графическое представление нашей сетки: */
+    grid-template-areas:
+    "header header header header"
+    "main main main sidebar"
+    "footer footer footer sidebar";
+    gap: 10px;
+
+}
+
+/* расположение */
+.item-a {grid-area: header;}
+.item-b {grid-area: main;}
+.item-c {grid-area: sidebar}
+.item-d {grid-area: footer}
+
+/* создадим медиа для мобильных устройств с шириной экрана от 0 до 500px */
+@media screen and (max-width: 500px) { /* при размере экрана до 500px изменяем расположение шаблона зон */
+    .container {
+        /* изменим ширину рядов: */
+        grid-template-rows: 150px 150px 300px 50px;
+
+        /* изменим расположение зон графической сетки */
+        grid-template-areas:
+        "header header header header"
+        "sidebar sidebar sidebar sidebar"
+        "main main main main"
+        "footer footer footer footer";
+    }
+}
+
+/* оформление */
+.item {
+    color: aliceblue;
+    border: 2px solid red;
+    text-shadow: 5px 5px 5px black;
+    text-align: center;
+    align-content: center;
+
+}
+
+.item-a {background-color: rgb(143, 102, 53);}
+.item-b {background-color: rgb(64, 131, 131);}
+.item-c {background-color: rgb(89, 111, 68);}
+.item-d {background-color: brown;}

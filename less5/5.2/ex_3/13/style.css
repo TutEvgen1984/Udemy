@@ -2,30 +2,29 @@
     display: grid; /* задается родительскому элементу */
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 100px);
+
 }
 
-.item1 {
-    /* сокращенное grid-column вместо 2-х свойств grid-column-start: 1;
-    grid-column-end: 4;*/
-
-    grid-column: 1 / 4; /* от 1-й линии до 4-ой */
-    /* первое число это начальная линия, через слэш указывается конечная линия */
+.item2 {
+    /* 1-ый элемент занимает с 1 по 3 линию ряда, при этом необходимо указать начало колонки grid-column-start: 2 иначе этот элемент перескакивает по столбцам влево на первое место */
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    align-content: center;
 }
 
 .item4 {
-    /* сокращенное grid-column вместо 2-х свойств grid-column-start: 2;
-    grid-column-end: span 3; охватить 3 ячейки */
-
-    grid-column: 2 / span 3; /* от 2-й линии охватить 3 ячейки */
+    grid-row: 1 / 4;
+    grid-column-start: 4;
+    align-content: center;
 }
 
 /* оформление контейнера grid и всего содержимого в нем: */
 .grid-container {
     border: 2px solid red;
-    font-size: 25px;
     text-align: center;
     font-weight: 900;
-    line-height: 100px;
 }
 
 /* четные ячейки красим в бежевый цвет */
