@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>выравнивание</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <p>По умолчанию .grid-container1 {align-items: stretch;}</p>
+    <p>Ячейки растягиваются</p>
+    <div class="grid-container container1">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <p>.grid-container2 {align-items: center;}</p>
+    <p>Выравнивание по вертикали по центру, при этом высота внутреннего div'а (внутренного элемента) равна высоте контента</p>
+    <div class="grid-container container2">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <p>.grid-container3 {align-items: center; justify-items: start;}</p>
+    <p>justify-items выравнивает по горизонтали</p>
+    <p>justify-items: start означает выровнять по горизонтали слева, при этом ширина элемента равна ширине контента. По умолчанию значение stretch</p>
+    <div class="grid-container container3">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <p>.container4 {place-items: center;}</p>
+    <p>place-items это шорткат: выровняли одновременно и по вертикали и по горизонтали. По умолчанию stretch</p>
+    <div class="grid-container container4">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <p>.container5 {place-items: center start;}</p>
+    <p>По вертикали center, по горизонтали start</p>
+
+    <div class="grid-container container5">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+
+  </body>
+
+</html>

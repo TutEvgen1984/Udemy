@@ -9,6 +9,7 @@
     "main main main sidebar"
     "footer footer footer sidebar";
     gap: 10px;
+    font-size: 25px;
 
 }
 
@@ -17,6 +18,7 @@
 .item-b {grid-area: main;}
 .item-c {grid-area: sidebar}
 .item-d {grid-area: footer}
+/* свойство grid-area даёт название элементу чтобы можно было ссылаться на него с помощью шаблона созданного через свойство grid-template-areas */
 
 /* создадим медиа для мобильных устройств с шириной экрана от 0 до 500px */
 @media screen and (max-width: 500px) { /* при размере экрана до 500px изменяем расположение шаблона зон */

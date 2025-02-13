@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-content + justify-content</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <pre>
+        .container1 {
+            grid-template-columns: 1fr 1fr 1fr; /* 3 столбца */
+            grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+            align-content: center; /* не работает из-за  grid-template-columns: 1fr 1fr 1fr; */
+        }
+    </pre>
+    <div class="grid-container container1">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <pre>
+        .container2 {
+            height: 50vh;/* 50% от высоты экрана */
+            grid-template-columns: 100px 100px 100px; /* 3 столбца */
+            grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+            align-content: center; /* выравнивание всего контента по вертикали */
+            justify-content: end; /* выравнивание всего контента по горизонтали */
+        }
+    </pre>
+    <div class="grid-container container2">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <pre>
+        .container3 {
+            height: 50vh;/* 50% от высоты экрана */
+            grid-template-columns: 100px 100px 100px; /* 3 столбца */
+            grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+            align-content: start; /* выравнивание всего контента по вертикали */
+            justify-content: space-around; /* выравнивание всего контента по горизонтали */
+        }
+    </pre>
+
+    <div class="grid-container container3">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <h2>align-content: space-evenly</h2>
+    <h2>justify-content: space-evenly</h2>
+
+    <div class="grid-container container4">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <h2>place-content: space-between</h2>
+    <div class="grid-container container5">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+    <hr>
+
+    <h2>place-content: space-between center</h2>
+    <div class="grid-container container6">
+        <div class="grid-item item1">1</div>
+        <div class="grid-item item2">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item item4">4</div>
+        <div class="grid-item item5">5</div>
+        <div class="grid-item item6">6</div>
+        <div class="grid-item item7">7</div>
+        <div class="grid-item item8">8</div>
+        <div class="grid-item item9">9</div>
+    </div>
+
+</body>
+
+</html>

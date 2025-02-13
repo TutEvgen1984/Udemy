@@ -1,0 +1,80 @@
+.grid-container {
+    display: grid; /* задается родительскому элементу */
+}
+
+.container1 {
+    grid-template-columns: 1fr 1fr 1fr; /* 3 столбца */
+    grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+    align-content: center; /* не работает из-за  grid-template-columns: 1fr 1fr 1fr; */
+}
+
+.container2 {
+    height: 50vh;/* 50% от высоты экрана */
+    grid-template-columns: 100px 100px 100px; /* 3 столбца */
+    grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+    align-content: center; /* выравнивание всего контента по вертикали */
+    justify-content: end; /* выравнивание всего контента по горизонтали */
+}
+
+.container3 {
+    height: 50vh;/* 50% от высоты экрана */
+    grid-template-columns: 100px 100px 100px; /* 3 столбца */
+    grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+    align-content: start; /* выравнивание всего контента по вертикали */
+    justify-content: space-around; /* выравнивание всего контента по горизонтали */
+}
+
+.container4 {
+    height: 60vh;/* 50% от высоты экрана */
+    grid-template-columns: 100px 100px 100px; /* 3 столбца */
+    grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+    align-content: space-evenly; /* выравнивание всего контента по вертикали */
+    justify-content: space-evenly; /* выравнивание всего контента по горизонтали */
+}
+
+.container4 {
+    height: 60vh;/* 50% от высоты экрана */
+    grid-template-columns: 100px 100px 100px; /* 3 столбца */
+    grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+    align-content: space-evenly; /* выравнивание всего контента по вертикали */
+    justify-content: space-evenly; /* выравнивание всего контента по горизонтали */
+}
+
+.container5 {
+    height: 60vh;/* 50% от высоты экрана */
+    grid-template-columns: 100px 100px 100px; /* 3 столбца */
+    grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+    place-content: space-between;
+}
+
+.container6 {
+    height: 60vh;/* 50% от высоты экрана */
+    grid-template-columns: 100px 100px 100px; /* 3 столбца */
+    grid-template-rows: 100px 100px 100px; /* 3 ряда по 100px */
+    place-content: space-between center;
+    /* первое значение - это по вертикали */
+    /* второе значение */
+}
+
+/* оформление контейнера grid и всего содержимого в нем: */
+.grid-container {
+    border: 2px solid red;
+    font-weight: 900;
+}
+
+
+/* четные ячейки красим в бежевый цвет */
+.grid-container > div:nth-child(even) {
+    background: antiquewhite;
+    border: 2px solid brown;
+}
+
+/* нечетные ячейки красим в серый цвет */
+.grid-container > div:nth-child(odd) {
+    background: #b92222;
+    border: 2px solid blue;
+}
+
+hr {
+    margin: 40px;
+}

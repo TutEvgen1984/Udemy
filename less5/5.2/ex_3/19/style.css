@@ -1,0 +1,47 @@
+.grid-container {
+    display: grid;
+    /* задается родительскому элементу */
+    grid-template-columns: 200px 200px 200px;
+    /* 3 столбца */
+    grid-template-rows: 200px 200px 200px;
+    /* 3 ряда по 100px */
+    height: 70vh;
+    font-size: 18px;
+}
+
+.item1 {
+    justify-self: center;
+}
+
+.item2 {
+    align-self: center;
+}
+
+.item3 {
+    justify-self: center;
+    align-self: center;
+}
+
+.item4 {
+    justify-self: end;
+    align-self: end;
+}
+
+.item5 {
+    place-self: start end;
+}
+
+/* оформление контейнера grid и всего содержимого в нем: */
+.grid-container {
+    border: 2px solid red;
+    font-weight: 900;
+}
+
+.grid-container>div {
+    background: antiquewhite;
+    border: 2px solid brown;
+}
+
+hr {
+    margin: 40px;
+}
