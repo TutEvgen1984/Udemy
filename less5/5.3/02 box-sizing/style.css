@@ -1,0 +1,29 @@
+
+body {
+    font-size: 45px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin: 15px;
+    font-family: sans-serif;
+}
+
+div {
+    color: #fff;
+}
+
+.box-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    /*box-sizing: content-box; /~ при уменьшении ширины окна box3 перескакивает на строку ниже так как ширина задана 33%, но если добавить еще и padding и border, то уже получится 36%*3=109%, ширины не хватает и срабатывает flex-wrap: wrap; ~/*/
+    box-sizing: border-box;
+    border: 5px solid black;
+    padding: 5px;
+    width: 33%;
+    height: 250px;
+    background-color: rgb(187, 70, 70);
+}
