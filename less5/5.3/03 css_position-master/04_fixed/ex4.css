@@ -1,0 +1,44 @@
+body, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu {
+  position: fixed;
+  /* left и right в данном случае работают одновременно */
+  /* Это используется для того чтобы растянуть элемент */
+  right: 0; /* сначала меню правой стороной прижимается вправо к экрану */
+  left: 0; /* затем влево растягивается до самого начала */
+  top: 0;
+}
+
+.p_menu {
+  background-color: #be7c7c;
+  padding: 15px;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  background-color: #be7c7c;
+  padding: 15px;
+}
+.menu li {
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+.menu li:last-child {
+  margin-right: 0;
+}
+.content {
+  padding-top: 80px;
+  height: 200vh;
+}

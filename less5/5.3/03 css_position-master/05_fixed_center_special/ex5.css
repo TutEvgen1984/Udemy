@@ -1,0 +1,62 @@
+body, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu {
+  /*position: absolute; /~ в результате при скроллинге страницы вниз элемент исчезает ~/*/
+
+  position: fixed;
+  /* в результате меню остается всегда в фиксированном положении относительно окна и при прокрутке страницы вниз остается всегда на экране поверх других элементов перекрывая их */
+
+  top: 0;
+
+  /* обычный margin 0 auto тот не сработает */
+  /* Второй хитрый способ отцентрировать по центру: */
+  width: 400px;
+
+  /* сначала сдвигаем слева направо на 50%, в результате блок становится своим левым краем по центру страницы */
+  left: 50%;
+
+  transform: translateX(-50%);
+  /* затем возвращаем назад на -50%, но сдвиг уже происходит относительно центра блока, в результате блок становится ровно посередине страницы своим центром */
+  /* это работает и для position fixed и для absolute */
+  /* этот способ центрирования нужно запомнить, иначе если у нас используется какая-то ширина и position fixed/absolute, то мы не сможем его отцентрировать */
+
+  /* здесь можно еще и по вертикали так же сцентрировать
+  top: 50%;
+  transform: translateY(-50%);
+   */
+}
+
+.p_menu {
+  background-color: #be7c7c;
+  padding: 15px;
+}
+
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  background-color: #be7c7c;
+  padding: 15px;
+}
+.menu li {
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+.menu li:last-child {
+  margin-right: 0;
+}
+.content {
+  padding-top: 180px;
+  height: 200vh;
+}

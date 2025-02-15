@@ -1,0 +1,51 @@
+body, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  height: 150px;
+  background-color: #384874;
+}
+
+.menu {
+  position: sticky;
+  /* вначале элемент будет находиться в своем нормальном потоке */
+  /* но когда мы до него прокручиваем страницу, он начинает прилипать к верхней части окна и как будто становится в position fixed */
+
+  top: 15px; /* когда у нас останется 15 пикселей от края, то этот элемент будет зафиксирован и останется с этим отступом. Если нужно чтобы отступа не было, нужно указать top: 0 */
+  /* обязательно нужно указать иначе не будет работать прилипание так как надо */
+}
+
+.p_menu {
+  background-color: #be7c7c;
+  padding: 15px;
+}
+
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  background-color: #be7c7c;
+  padding: 15px;
+}
+.menu li {
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 15px;
+}
+.menu li:last-child {
+  margin-right: 0;
+}
+.content {
+  /* padding-top: 180px; */
+  /* теперь этот отступ не нужен */
+  height: 200vh;
+}

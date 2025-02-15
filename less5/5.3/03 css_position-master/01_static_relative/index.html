@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Position</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layer1">
+    layer1 <br>
+    position: relative <br>
+    Относительное позиционирование относительно родителя, после которого начинают работать left, top... <br>
+    Родитель (parent) в данном случае это body <br>
+    left: 50px; сдвиг слева от своей исходной позиции относительно body
+
+
+    <div class="layer2">
+      layer2 <br>
+      position: static (позиционирование по умолчанию)
+      <img src="1.jpg">
+    </div>
+  </div>
+
+  <div class="layer3">
+    layer3 <br>
+    position: static
+    <div class="layer4">
+      layer4 <br>
+      position: relative - это относительное позиционирование относительно родителя <br>
+      left: 15px - сдвиг слева от своей исходной позиции относительно layer3
+      <img src="1.jpg">
+    </div>
+  </div>
+
+  <div class="layer5">
+    layer5 <br>
+    position: static
+    <div class="layer6">
+      layer6 <br>
+      position: absolute - это абсолютная позиция относительно всего документа. Элемент выпал из потока и находится на слое выше остальных и может перекрывать их<br>
+      <mark>Связка Div1 static, Div2 absolute работает именно так.</mark>
+      right: 15px - смещение на 15px от правой стороны документа <br>
+  bottom: 15px - смещение на 15px от нижней стороны документа (от дна)
+      <img src="1.jpg">
+    </div>
+  </div>
+
+</body>
+</html>

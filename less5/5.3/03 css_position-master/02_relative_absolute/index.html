@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Position</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>При связке relative + absolute второй позиционируется НЕ относительно окна, а относительно родительского элемента. Такая связка используется в 80% случаев</h2>
+  <div class="layer1">
+    layer1 <br>
+    position: relative
+
+    <div class="layer2">
+      layer2 <br>
+      <mark>position: absolute</mark> - абсолютное позиционирование относительно layer1. Именно так оно работает в связке когда div1 relative, а div2 absolute<br>
+      bottom: 15px <br>
+      right: 15px
+      <img src="1.jpg">
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* position: static это позиционирование по умолчанию */
+
+.layer1 {
+  position: relative;
+  /* Относительное позиционирование, после которого начинают работать left, top... */
+
+  left: 50px; /* сдвиг слева от своей исходной позиции */
+  /*right: 50px; /~ сдвиг справа от своей исходной позиции ~/*/
+
+  background: #ddd;
+  height: 200px;
+  border: 3px solid blue;
+
+}
+.layer2 {
+  position: static;
+  border: 3px solid red;
+
+}
+
+.layer3 { /* div содержащий layer4 */
+  position: static;
+  background: #ddd;
+  height: 200px;
+  border: 3px solid blue;
+  margin-top: 30px;
+
+}
+.layer4 {
+  position: relative;
+  left: 15px; /* смещение слева относительно layer3 */
+  border: 3px solid red;
+
+}
+
+.layer5 { /* div содержащий layer4 */
+  position: static;
+  background: #ddd;
+  height: 200px;
+  border: 3px solid blue;
+  margin-top: 30px;
+
+}
+.layer6 {
+  position: absolute;
+  right: 15px; /* смещение на 15px от правой стороны документа */
+  bottom: 15px; /* смещение на 15px от нижней стороны документа (от дна) */
+  border: 3px solid red;
+}

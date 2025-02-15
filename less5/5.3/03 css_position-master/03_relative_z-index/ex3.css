@@ -1,0 +1,24 @@
+.parent {
+  background-color: #5faff5;
+  padding: 10px;
+  height: 200vh; /* 200% высоты viewport'а, из-за чего у нас появилась полоса прокрутки */
+}
+.child {
+  padding: 10px;
+}
+.child-one {
+  background-color: #3ed277;
+  position: relative;
+  z-index: 0;
+  left: 15px;
+  top: 15px;
+}
+.child-two {
+  background-color: #dc9f3c;
+  position: relative; /* relative устанавливаем лишь для того, чтобы z-index заработал, а не для того чтобы двигать элемент */
+  z-index: 1; /* z-index работает в любом другом position кроме static */
+  margin-left: 30px;
+}
+.child-three {
+  background-color: #b14aaa;
+}

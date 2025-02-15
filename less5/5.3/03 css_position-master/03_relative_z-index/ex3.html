@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example 3</title>
+  <link rel="stylesheet" href="ex3.css">
+</head>
+<body>
+
+  <div class="parent">
+    Parent
+    <div class="child-one child">One. <mark>position: relative; left: 15px; top: 15px; z-index: 2;</mark> В результате он вышел за границы своего родителя вправо, что очень плохо. По этому отдельно position: relative используется крайне редко. top: 15px дало сдвиг сверху на 15px - в итоге элемент наехал на нижний. В данном случае лучше для сдвига использовать margin (смотри ниже). Если бы мы вместо top: 15px использовали бы margin, то всё сдвинулось бы вниз вместе с элементом ниже без перекрывания</div>
+    <div class="child-two child">Two. position: relative; margin-left: 30px; z-index: 1; Левая часть как будто отодвинулась на 30px. При этом правая часть не вылезла из родителя</div>
+    <div class="child-three child">Three</div>
+  </div>
+
+  <p>z-index отвечает за расположение элемента в пространстве по оси z (перпендикулярно монитору). Элементы ближе или дальше и могут накладываться друг поверх друга</p>
+  <p>Чем выше число z-index, тем выше оно чем другие элементы с меньшим индексом и перекрывает их</p>
+  <p>При отсутствии свойства z-index работает правило: чем ниже элемент в коде (код идет сверху вниз), тем этот элемент располагается выше предыдущих. Если нас не устраивает то, как браузер расположил элементы и нам нужно изменить порядок наложения, тогда и используем position relative + z-index</p>
+
+</body>
+</html>
