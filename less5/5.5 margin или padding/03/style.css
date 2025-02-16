@@ -1,0 +1,67 @@
+* { /* нормализация */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #bda6a6;
+    width: 900px;
+}
+
+.flex {
+    display: flex;
+}
+.item {
+    background-color: #90b0ca;
+    width: 200px;
+
+    margin-right: 15px;
+
+    margin-bottom: 15px;
+
+}
+
+/* в горизонтальной разметке обнуляем отступ справа у последнего блока */
+.item:last-child {
+    margin-right: 0;
+}
+
+.list {
+    background-color: #90b0ca;
+    width: fit-content;
+}
+
+/* Способ №1: */
+/* .mb15 {
+    margin-bottom: 15px;
+}
+
+.mb15:last-child {
+    margin-bottom: 0;
+} */
+
+/* Способ №2: */
+/* есть второй хитрый способ установки margin с исключением последнего отступа: */
+
+.mb15 + .mb15 { /* для соседних элементов */
+    margin-top: 15px;
+}
+/* в результате у последнего элемента нет отступа снизу, а у первого нет отступа сверху */
+
+.menu {
+    background-color: #bda6a6;
+    display: inline-flex;
+    list-style: none;
+}
+
+.menu li {
+    padding: 10px;
+    margin-right: 15px;
+    background-color: #90b0ca;
+}
+
+/* в горизонтальной разметке обнулим отступ у последней ссылки: */
+.menu li:last-child {
+    margin-right: 0;
+}
+/* теперь последний элемент li не толкает изображение справа от себя */

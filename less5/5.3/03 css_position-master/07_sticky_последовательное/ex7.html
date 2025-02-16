@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07. Последовательное прилипание без дополнительных div</title>
+  <link rel="stylesheet" href="ex7.css">
+</head>
+<body>
+
+  <div class="parent">
+    Parent (родитель)
+    <h2>Последовательное прилипание без дополнительных div</h2>
+    <p>Если убрать дополнительные обертки div, то получается некрасивое прилипание - следующий блок sticky наезжает на предыдущий и просто перекрывает его поверх, сначала наполовину, потом полностью</p>
+    <p>.child {<br>
+      padding: 10px;<br>
+      position: sticky;<br>
+      top: 0;}</p>
+    <!-- <div> -->
+      <div class="child-one child">One</div>
+      <ul>
+        <li>По изучению воздействия </li>
+        <li>Все, что нам нужно,</li>
+        <li>это здоровый человек для эксперимента.</li>
+      </ul>
+    <!-- </div> -->
+    <!-- <div> -->
+      <div class="child-two child">Two</div>
+      <ul>
+        <li>По изучению воздействия </li>
+        <li>Все, что нам нужно,</li>
+        <li>это здоровый человек для эксперимента.</li>
+      </ul>
+    <!-- </div> -->
+    <!-- <div> -->
+      <div class="child-three child">Three</div>
+      <ul>
+        <li>По изучению воздействия </li>
+        <li>Все, что нам нужно,</li>
+        <li>это здоровый человек для эксперимента.</li>
+      </ul>
+    <!-- </div> -->
+  </div>
+
+</body>
+</html>

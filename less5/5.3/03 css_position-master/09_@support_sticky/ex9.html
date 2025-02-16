@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@support</title>
+  <link rel="stylesheet" href="ex9.css">
+</head>
+<body>
+
+  <div class="parent">
+    Parent
+    <div>
+      <div class="child-one child">One</div>
+      <ul>
+        <li>По изучению воздействия </li>
+        <li>Все, что нам нужно,</li>
+        <li>это здоровый человек для эксперимента.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="child-two child">Two</div>
+      <ul>
+        <li>По изучению воздействия </li>
+        <li>Все, что нам нужно,</li>
+        <li>это здоровый человек для эксперимента.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="child-three child">Three</div>
+      <ul>
+        <li>По изучению воздействия </li>
+        <li>Все, что нам нужно,</li>
+        <li>это здоровый человек для эксперимента.</li>
+      </ul>
+    </div>
+
+    <pre>CSS:
+      @supports (position: sticky) {
+         .child {
+           position: sticky;
+           top: 0;
+         }
+       }
+    </pre>
+     <p> этот @supports означает, что если браузер пользователя поддерживает "position: sticky", то выполняется код "position: sticky; top: 0;". А если не поддерживает, то не выполняется и  страница остается без прилипающих div'ов. Они будут просто идти друг за другом</p>
+
+  </div>
+
+
+
+</body>
+</html>

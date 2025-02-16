@@ -1,0 +1,48 @@
+/** {
+  margin: 0;
+  /~ обнуляем поля если хотим чтобы прилипание происходило не за 10px заранее, а впритык ~/
+}*/
+
+.parent {
+  background-color: #5faff5;
+  padding: 10px;
+  position: relative;
+  height: 200vh;
+}
+
+.child {
+  padding: 10px;
+
+  /* ниже строки кода для "position: sticky" нужны для разных браузеров потому что он особенный, и не все браузеры его поддерживают по умолчанию. для этих отдельных браузеров оно будет работать как обычный "position: sticky" */
+
+  /* с префиксом -webkit- для браузеров safari старых версий и для Google chrome */
+  position: -webkit-sticky;
+
+  /* с префиксом -moz- для браузеров mozilla */
+  position: -moz-sticky;
+
+  /* с префиксом -ms- для старых браузеров microsoft (internet explorer и старый edge который еще не перешел на движок chromium) */
+  position: -ms-sticky;
+
+  /* с префиксом -o- для браузеров opera */
+  position: -o-sticky;
+
+  position: sticky;
+  top: 0;
+  /* просто position: sticky нужно писать в самом низу после свойств с префиксами - чтобы браузеры, которые не поддерживают его по умолчанию первым делом исполняли предназначенное для них свойство */
+  /* то есть даже если браузер (какой-нибудь internet explorer) не поддерживает "position: sticky;", то этот префикс ( например position: -ms-sticky;) заменит этому "internet explorer"-у простой "position: sticky;" и эта функция на нем (в ie) заработает, браузер просто поймет это свойство */
+  /* для всех остальных методов позиционирования static | relative | absolute | fixed свойства с префиксами не требуются так как они поддерживаются браузером по умолчанию */
+
+}
+
+.child-one {
+  background-color: #3ed277;
+}
+
+.child-two {
+  background-color: #dc9f3c;
+}
+
+.child-three {
+  background-color: #b14aaa;
+}
