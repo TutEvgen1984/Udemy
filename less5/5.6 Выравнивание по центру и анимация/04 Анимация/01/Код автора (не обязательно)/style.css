@@ -1,0 +1,20 @@
+.main {
+    height: 500px;
+    background-image: url(background.jpg);
+    background-repeat: repeat-x;
+    animation: slide 10s linear infinite;
+}
+
+@keyframes slide {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}

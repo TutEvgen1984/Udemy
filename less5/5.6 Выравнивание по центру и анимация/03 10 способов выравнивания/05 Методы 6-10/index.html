@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Методы 6 - 10. Grid</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Метод 6.</h2>
+    <h2>display: grid; <br> justify-content: center; <br> align-items: center;</h2>
+    <pre>CSS:
+        .parent1 {
+            display: grid; /* ранее мы аналогично делали с flex */
+            justify-content: center; /* по горизонтали */
+            align-items: center; /* по вертикали */
+        }
+    </pre>
+    <div class="parent parent1">
+        <div class="child child1"></div>
+    </div>
+
+    <hr>
+
+    <h2>Метод 7.</h2>
+    <h2>display: grid; <br>place-items: center;</h2>
+    <pre>CSS:
+        .parent2 {
+            display: grid; /* ранее мы аналогично делали с flex */
+
+            place-items: center; /* это шорткат, который одним свойством сразу по 2-м направлениям центрирует */
+
+            /* это то же самое, что эти 2 свойства которые были выше */
+            /* justify-content: center; */ /* по горизонтали */
+            /* align-items: center; */ /* по вертикали */
+            /* если нам нужно только по горизонтали или только по вертикали, то следует использовать их отдельно соответственно */
+            /* здесь дочерний элемент никак не задействован */
+        }
+    </pre>
+    <div class="parent parent2">
+        <div class="child child2"></div>
+    </div>
+
+    <h2>Метод 8.</h2>
+    <h2>display: grid; <br>justify-self: center; <br> align-self: center; </h2>
+    <pre>CSS:
+        .parent3 {
+            display: grid;
+        }
+
+        .child3 {
+            justify-self: center; /* выравнивание по горизонтали */
+            align-self: center; /* выравнивание по вертикали */
+        }
+    </pre>
+    <div class="parent parent3">
+        <div class="child child3"></div>
+    </div>
+
+    <h2>Метод 9.</h2>
+    <h2>display: grid; <br>place-self: center;</h2>
+    <pre>CSS:
+        .parent4 {
+            display: grid;
+        }
+
+        .child4 {
+            place-self: center;
+            /* это шорткат, который одним свойством сразу по 2-м направлениям центрирует */
+
+            /* это то же самое, что эти 2 свойства которые были выше */
+            /* justify-self: center; */ /* выравнивание по горизонтали */
+            /* align-self: center; */ /* выравнивание по вертикали */
+        }
+    </pre>
+    <div class="parent parent4">
+        <div class="child child4"></div>
+    </div>
+
+    <h2>Метод 10.</h2>
+    <h2>display: grid; <br>margin: auto;</h2>
+    <pre>CSS:
+        .parent5 {
+            display: grid;
+        }
+
+        .child5 {
+            margin: auto;
+            /* выравнивает одновременно внешние отступы относительно 4-х направлений */
+        }
+    </pre>
+    <div class="parent parent5">
+        <div class="child child5"></div>
+    </div>
+
+</body>
+</html>
