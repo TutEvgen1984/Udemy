@@ -1,0 +1,56 @@
+/* Общие стили */
+
+hr {
+    margin: 40px 0;
+}
+
+.parent {
+    width: 300px;
+    height: 300px;
+    background-color: #222;
+    margin-bottom: 10px;
+}
+
+.child {
+    background-color: orange;
+    width: 100px;
+    height: 100px;
+    font-size: 35px;
+}
+
+/* Метод 2 */
+
+.parent1 {
+    position: relative;
+}
+
+.child1 {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* после этого мы ничего не видим */
+
+    /* Но если добавим */
+    margin: auto;
+    /* то элемент выровнялся по центру */
+}
+
+/* Метод 3 */
+
+.parent2 {
+    position: relative;
+}
+
+.child2 {
+    position: absolute;
+
+    inset: 0;
+    /* это то же самое что установить top,left,right,bottom = 0 */
+    /* https://doka.guide/css/inset/ */
+
+    margin: auto;
+
+}

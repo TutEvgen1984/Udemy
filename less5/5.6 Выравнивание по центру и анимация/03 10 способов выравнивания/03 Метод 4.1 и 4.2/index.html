@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод 4</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Метод 4.1. Выравнивание только с помощью родителя</h2>
+    <h2>display: flex; <br> justify-content: center; <br> align-items: center;</h2>
+    <pre>
+        .parent1 {
+            display: flex;
+
+            /* Выравнивание по горизонтали: */
+            justify-content: center;
+
+            /* Выравнивание по вертикали: */
+            align-items: center;
+        }
+    </pre>
+    <div class="parent parent1">
+        <div class="child child1"></div>
+    </div>
+
+    <hr>
+
+    <h2>Метод 4.2. </h2>
+    <h2>display: flex; <br> justify-content: center; <br> align-self: center;</h2>
+    <pre>
+        .parent2 {
+            display: flex;
+
+            /* Выравнивание по горизонтали: */
+            justify-content: center;
+        }
+
+        .child2 {
+            align-self: center;
+        }
+    </pre>
+    <div class="parent parent2">
+        <div class="child child2"></div>
+    </div>
+</body>
+</html>

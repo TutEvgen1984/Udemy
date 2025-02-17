@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод 2</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h2>10 способов выравнивания элемента по вертикали и горизонтали</h2>
+
+    <h2>Метод 1</h2>
+    <pre>
+        CSS:
+        .parent1 {
+            position: relative;
+        }
+        .child1 {
+            position: absolute;
+
+            /* Смещение верхнего края на 50% вниз - 50% от высоты родителя */
+            top: 50%;
+
+            /* Смещение левого края на 50% вправо - 50% от ширины родителя */
+            left: 50%;
+
+            /* В результате левый верхний угол центрируемого оранжевого квадрата оказался точно посередине родительского квадрата */
+
+            transform: translate(-50%, -50%);
+            /* -50% по горизонтали и -50% по вертикали */
+            /*  отличии от top и left translate двигает элемент не относительно левого верхнего края, а относительно его центра */
+            /*  в результате мы вернули его обратно на -50% относительно своего размера влево и вверх  благодаря отрицательным значениям -50% */
+
+        }
+    </pre>
+    <div class="parent parent1">
+        <div class="child child1"></div>
+    </div>
+
+    <p>***</p>
+    <h4>Выравнивание только по горизонтали:</h4>
+    <pre>
+        .parent2 {
+            position: relative;
+        }
+
+        .child2 {
+            position: absolute;
+
+            left: 50%;
+
+            transform: translate(-50%, 0);
+
+        }
+    </pre>
+    <div class="parent parent2">
+        <div class="child child2"></div>
+    </div>
+
+
+</body>
+</html>

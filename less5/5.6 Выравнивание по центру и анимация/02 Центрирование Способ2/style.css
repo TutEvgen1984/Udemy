@@ -1,0 +1,69 @@
+
+/* Способ 2. text-align: center */
+.container1 {
+    /* центрирование div'а */
+    margin: 0 auto;
+
+    /* центрирование картинки в div'е как текста, так как она является строчным элементом изначально */
+    text-align: center;
+
+    background-color: tomato;
+    width: 500px;
+}
+
+hr {
+    margin: 40px 0;
+}
+
+/* Способ 3. display flex + justify-content center */
+.container2 {
+    /* делаем контейнер флексом */
+    display: flex;
+
+    /* text-align: center; */
+    /* центрирование текстом теперь не работает так как это теперь флекс-блок */
+
+    /*Для флекс-блоков выравнивание теперь работает другим свойством justify-content */
+    justify-content: center;
+
+    background-color: tomato;
+    width: 500px;
+
+    /* центрирование div'а */
+    margin: 0 auto;
+
+}
+
+/* такой же контейнер как и выше, но внутри 2 изображения вместо 1 */
+.container3 {
+    display: flex;
+
+    justify-content: center;
+
+    background-color: tomato;
+    width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+.container4 {
+    display: flex;
+
+    /* Направление flex делаем колонкой */
+    flex-direction: column;
+
+    /* justify-content теперь перестает работать */
+    /* justify-content: center; */
+
+    background-color: tomato;
+    width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+/* Изображению указываем свойство самовыравнивания: */
+.img4 {
+    align-self: center;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выравнивание по центру. Способ №2,3</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Способ 2. text-align: center</h1>
+    <pre>CSS:
+        .container1 {
+            /* центрирование div'а */
+            margin: 0 auto;
+
+            /* центрирование картинки в div'е как текста, так как она является строчным элементом изначально */
+            text-align: center;
+
+            background-color: tomato;
+            width: 500px;
+        }
+    </pre>
+    <div class="container1">
+        <img src="Alyx01_1024x576.jpg" alt="" width="400">
+    </div>
+    <p>Но внизу остался небольшой зазор так как img строчный. Высота картинки не равна высоте блока</p>
+
+    <hr>
+
+    <h1>Способ 3. display flex + justify-content center</h1>
+    <pre>
+        .container2 {
+            /* делаем контейнер флексом */
+            display: flex;
+
+            /* text-align: center; */
+            /* центрирование текстом теперь не работает так как это теперь флекс-блок */
+
+            /*Для флекс-блоков выравнивание теперь работает другим свойством justify-content */
+            justify-content: center;
+
+            background-color: tomato;
+            width: 500px;
+
+            /* центрирование div'а */
+            margin: 0 auto;
+
+        }
+    </pre>
+    <div class="container2">
+        <img src="Alyx01_1024x576.jpg" alt="" width="400">
+    </div>
+    <p> В данном случае зазора нет в отличии от предыдущего способа. Высота картинки равна высоте блока</p>
+
+    <p><b>Как выровнять содержимое строчного элемента по центру?</b> </p>
+    <p><b>Ответ: text-align: center;</b></p>
+
+    <p>************************</p>
+
+    <p>2 изображения вместо 1;</p>
+    <div class="container3">
+        <img src="Alyx01_1024x576.jpg" alt="" width="400">
+        <img src="Alyx01_1024x576.jpg" alt="" width="400">
+    </div>
+    <p>Но есть особенность - 2 изображения ищущие друг за другом будут в одну сторону, а не друг под другом как в блочной модели</p>
+
+    <p>Чтобы это изменить делаем следующее</p>
+    <pre>CSS:
+        .container4 {
+            display: flex;
+
+            /* Направление flex делаем колонкой */
+            flex-direction: column;
+
+            /* justify-content теперь перестает работать */
+            /* justify-content: center; */
+
+            background-color: tomato;
+            width: 1000px;
+
+            margin: 0 auto;
+
+        }
+
+        /* Изображению указываем свойство самовыравнивания: */
+        .img4 {
+            align-self: center;
+        }
+
+    </pre>
+    <div class="container4">
+        <img class="img4" src="Alyx01_1024x576.jpg" alt="" width="400">
+        <img class="img4" src="Alyx01_1024x576.jpg" alt="" width="400">
+    </div>
+    <p>Теперь изображения не растягиваются и идут как в блочной верстке друг под другом, но при этом выравниваются по горизонтали. Этот метод не стоит применять когда  работают первые 2 способа</p>
+
+    <p><b>Как исправить баг, при котором изображение искажается при работе с Flexbox?</b></p>
+    <p><b>Ответ: align-self: center;</b></p>
+
+
+
+
+
+</body>
+</html>

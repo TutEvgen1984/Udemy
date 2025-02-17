@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод 2 и 3</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h2>Метод 2. top0+bottom0+left0+right0 + margin:auto</h2>
+    <pre>
+        .parent1 {
+            position: relative;
+        }
+
+        .child1 {
+            position: absolute;
+
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /* после этого мы ничего не видим */
+
+            /* Но если добавим */
+            margin: auto;
+            /* то элемент выровнялся по центру */
+        }
+    </pre>
+    <div class="parent parent1">
+        <div class="child child1"></div>
+    </div>
+
+    <hr>
+
+    <h2>Метод 3. inset: 0; margin: auto;</h2>
+    <pre>
+        .parent2 {
+            position: relative;
+        }
+
+        .child2 {
+            position: absolute;
+
+            inset: 0;
+            /* это то же самое что установить top,left,right,bottom = 0 */
+            /* https://doka.guide/css/inset/ */
+
+            margin: auto;
+
+        }
+    </pre>
+    <div class="parent parent2">
+        <div class="child child2"></div>
+    </div>
+
+
+
+</body>
+</html>
