@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Метод 2</title>
+    <title>Метод 1</title>
+
+    <!-- Наш css: -->
     <link href="style.css" rel="stylesheet">
+
+    <!-- CSS библиотеки highlight.js, тема оформления a11y-dark  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/a11y-dark.css">
+
+
 </head>
+
 <body>
     <h2>10 способов выравнивания элемента по вертикали и горизонтали</h2>
     <a href="https://github.com/morphIsmail/center_div_10_ways">Код автора на gitHub</a>
 
+    <div class="flex">
     <h2>Метод 1</h2>
-    <pre>
-        CSS:
+
+    <!-- Код CSS обернутый специально для библиотеки highlight.js в <pre><code class="language-html">...</code></pre>  -->
+    <pre><code class="language-css">
         .parent1 {
             position: relative;
         }
@@ -32,15 +43,17 @@
             /*  отличии от top и left translate двигает элемент не относительно левого верхнего края, а относительно его центра */
             /*  в результате мы вернули его обратно на -50% относительно своего размера влево и вверх  благодаря отрицательным значениям -50% */
 
-        }
-    </pre>
+        }</code></pre>
+
     <div class="parent parent1">
         <div class="child child1"></div>
     </div>
 
+    </div>
+
     <p>***</p>
     <h4>Выравнивание только по горизонтали:</h4>
-    <pre>
+    <pre><code class="language-css">
         .parent2 {
             position: relative;
         }
@@ -53,11 +66,16 @@
             transform: translate(-50%, 0);
 
         }
-    </pre>
+    </code></pre>
     <div class="parent parent2">
         <div class="child child2"></div>
     </div>
 
+    <!-- script библиотеки highlight.js (без неё подсветка работать не будет) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
+    <!-- запуск скрипта библиотеки, если не запустить подсветка работать не будет -->
+    <script>hljs.highlightAll();</script>
 </body>
+
 </html>

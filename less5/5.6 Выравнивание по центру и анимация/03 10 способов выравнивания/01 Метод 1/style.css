@@ -13,6 +13,10 @@
     font-size: 35px;
 }
 
+.flex {
+    display: grid;
+}
+
 /* Метод 1 */
 
 .parent1 {
