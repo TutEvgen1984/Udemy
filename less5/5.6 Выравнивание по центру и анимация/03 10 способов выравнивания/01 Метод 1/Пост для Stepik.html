@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Метод 1</title>
+
+    <!-- CSS библиотеки highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.css">
+    <!-- в конце "/monokai.css" означает тему оформления monokai, можно на сайте можно другую выбрать -->
+
+    <!-- Дополнительный код для того, чтобы текст внутри блока кода highlight.js переносился на новую строку при выходе за границы блока -->
+    <style>
+    pre, code {white-space: pre-wrap ;}
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Код CSS написанный на html-странице, который нам нужно подсветить. Его специально оборачиваем в конструкцию, это нужно для указания места работы библиотеки highlight.js  -->
+    <pre><code class="language-css"> <!-- спец-конструкция -->
+        .parent1 {position: relative} <!-- код -->
+    </code></pre> <!-- спец-конструкция -->
+
+    <!-- внешний файл библиотеки highlight.js (без неё подсветка работать не будет) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- запуск скрипта библиотеки, если не запустить подсветка работать не будет -->
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
