@@ -7,6 +7,7 @@
 .container {
     background-color: #eee;
     border: 3px solid tomato;
+    font-family: Arial, 'Times New Roman', Helvetica, sans-serif;
 }
 
 .elem {
@@ -62,8 +63,17 @@
 /* Иван обнаружил, что цвет ссылок меняется, когда они являются посещёнными. Какой CSS-код необходимо задать, чтобы цвет посещённых и не посещённых ссылок был одним и тем же? */
 
 /* Ответ: */
-a:link, a:visited{color: black};
+/* a:link, a:visited{color: black}; */
 /* Псевдокласс :link используется для оформления ссылок, которые пользователь ещё никогда не открывал (в рамках текущего домена). */
 /* https://doka.guide/css/link/ */
 /* Псевдокласс :visited добавляется ссылкам, по которым уже переходил пользователь. */
 /* https://doka.guide/css/visited/ */
+
+a:hover {
+    color: rgba(243, 245, 39, 50%);
+}
+
+/* Как размыть изображение? */
+/* img {
+    filter: blur(0.8px);
+} */
