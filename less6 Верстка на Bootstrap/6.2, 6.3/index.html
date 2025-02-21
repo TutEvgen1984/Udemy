@@ -25,7 +25,8 @@
                     <h1 class="text-center text-white">
                         Видео курс по вёрстке для начинающих HTML \& CSS
                     </h1>
-                    <div class="itd_play"> <!-- кнопка play -->
+                    <div class="itd_play" data-bs-toggle="modal" data-bs-target="#myModal"> <!-- кнопка play -->
+                        <!-- у кнопки для вызова модального окна нужно скопировать из модального блока и вставить 2 атрибута data-bs-toggle="modal" data-bs-target="#myModal" -->
                         <div class="itd_triangle"></div> <!-- треугольник внутри кнопки play -->
                     </div>
                     <a class="btn btn-itd btn-lg text-uppercase" href="#footer">Заказать</a>
@@ -37,10 +38,34 @@
         </div>
     </header>
 
+    <!-- 6.3 Сетка 3 на 3 и иконки -->
+    <section class="about">
+        <div class="container">
+
+        </div>
+    </section>
+
 
     <footer id="footer">
         footer
     </footer>
+
+    <!-- https://getbootstrap.su/docs/5.3/components/modal/ -->
+    <!-- Модальное окно -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Заголовок модального окна</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body"> <!-- вставляем ниже в тело div'а код из под видео -->
+            <iframe width="480" height="270" src="https://dzen.ru/embed/veh9eP6UIsxM?from_block=partner&from=zen&mute=0&autoplay=0&tv=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

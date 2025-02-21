@@ -40,7 +40,7 @@ background-size: contain;
     justify-content: center;
     align-items: center;
 
-    cursor: pointer;
+    cursor: pointer; /* это чтобы при наведении оно выглядело как кнопка */
     margin: 30px auto; /* 30px сверху и снизу, auto по бокам выравнивает по центру */
     transition: all 0.2s;
 }
@@ -50,12 +50,29 @@ background-size: contain;
 }
 
 .itd_triangle {
+    margin-right: -3px;
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 10px 0 10px 20px;
     border-color: transparent transparent transparent var(--bs-white);
     /* 3 раза прозрачный цвет, а в 4-ый раз --bs-white это бутстрап переменная, которая является просто белым цветом  */
+    /* Я покажу как создать треугольник на CSS с помощью...
+    https://dzen.ru/shorts/66ceff49b4db9e1ad475437e
+    https://morphismail.github.io/myInstruments/*/
+}
 
+/* Кнопка Заказать */
+.btn-itd {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 8px 30px;
+    color: var(--bs-white);
+    background-color: var(--color2);
+}
 
+.btn-itd:hover {
+    color: var(--bs-white);
+    background-color: var(--color1);
 }
