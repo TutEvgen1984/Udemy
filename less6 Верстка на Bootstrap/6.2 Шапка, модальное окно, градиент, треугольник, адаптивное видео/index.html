@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видеокурс по верстке</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> <!-- иконка нашего сайта -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css bootstrap -->
+    <link rel="stylesheet" href="css/fontello.css"> <!-- css для иконок на странице -->
+    <link href="css/style.css" rel="stylesheet"> <!-- наш css -->
+</head>
+<body>
+    <header> <!-- шапка сайта -->
+        <!-- класс container обязателен, это написано в https://getbootstrap.su/docs/5.3/layout/grid/ -->
+        <div class="container">
+            <div class="row">
+                <!-- нам нужна шапка шириной в 1 колонку, для этого пишем класс col-12 -->
+                <!-- col-12 означает, что мы займем нашим div'ов 12 колонок, на которые разделен bootstrap -->
+                <div class="col-12">
+                    <!-- специальные классы для текста -->
+                    <!-- https://getbootstrap.su/docs/5.3/utilities/text/  -->
+                    <!-- https://getbootstrap.su/docs/5.3/content/typography/ -->
+                    <!-- https://getbootstrap.su/docs/5.3/utilities/colors/ -->
+                    <h1 class="text-center text-white">
+                        Видео курс по вёрстке для начинающих HTML \& CSS
+                    </h1>
+                    <div class="itd_play"> <!-- кнопка play -->
+                        <div class="itd_triangle"></div> <!-- треугольник внутри кнопки play -->
+                    </div>
+                    <a class="btn btn-itd btn-lg text-uppercase" href="#footer">Заказать</a>
+                    <!-- btn, btn-lg и text-uppercase - это бутстрап-классы. btn-itd собственный класс для своего css -->
+                    <!-- https://getbootstrap.su/docs/5.3/components/buttons/ -->
+                    <!-- При щелчке на Заказать происходит плавная прокрутка до <footer id="footer"> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <footer id="footer">
+        footer
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
