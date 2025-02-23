@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> <!-- иконка нашего сайта -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css bootstrap -->
+    <link rel="stylesheet" href="css/fontello.css"> <!-- css для иконок на странице -->
+    <link href="css/style.css" rel="stylesheet"> наш css
+</head>
+
+<body>
+    <!-- Сайт по которому мы верстаем: https://morphismail.github.io/video_course_basic -->
+
+    <header> <!-- шапка сайта -->
+        <!-- класс container обязателен, это написано в https://getbootstrap.su/docs/5.3/layout/grid/ -->
+        <div class="container">
+            <div class="row">
+                <!-- нам нужна шапка шириной в 1 колонку, для этого пишем класс col-12 -->
+                <!-- col-12 означает, что мы займем нашим div'ов 12 колонок, на которые разделен bootstrap -->
+                <div class="col-12">
+                    <!-- специальные классы для текста -->
+                    <!-- https://getbootstrap.su/docs/5.3/utilities/text/  -->
+                    <!-- https://getbootstrap.su/docs/5.3/content/typography/ -->
+                    <!-- https://getbootstrap.su/docs/5.3/utilities/colors/ -->
+                    <h1 class="text-center text-white">
+                        Видео курс по вёрстке для начинающих HTML \& CSS
+                    </h1>
+                    <div class="itd_play" data-bs-toggle="modal" data-bs-target="#myModal"> <!-- кнопка play -->
+                        <!-- у кнопки для вызова модального окна нужно скопировать из модального блока и вставить 2 атрибута data-bs-toggle="modal" data-bs-target="#myModal" -->
+                        <!-- класс itd означает сокращение от itdoctor, это нужно только для того, чтобы создать уникальный класс не пересекающийся с бутстрап-классами -->
+                        <div class="itd_triangle"></div> <!-- треугольник внутри кнопки play -->
+                    </div>
+                    <a class="btn btn text-uppercase btn-itd" href="#footer">Заказать</a>
+                    <!-- https://getbootstrap.su/docs/5.3/components/buttons/ -->
+                    <!-- btn - базовый bootstrap-класс для кнопки, кнопку не видно, но невидимый контур есть -->
+                    <!-- btn-lg - bootstrap-класс определяющий размер кнопки. btn-lg - большая кнопка, btn-sm маленькая -->
+                    <!-- text-uppercase - bootstrap-класс для текста в верхнем регистре -->
+                    <!-- btn-itd btn-itd собственный класс для своего css -->
+                    <!-- При щелчке на Заказать происходит плавная прокрутка  вниз до <footer id="footer"> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 6.3 Сетка 3 на 3 и иконки. Создаем раздел "О курсе" -->
+    <section class="about">
+        <div class="container">
+
+            <!-- Блок "О курсе" -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center text-uppercase color1 mb-5">О курсе</h2>
+                    <!-- в бутстрапе mb-5=margin-bottom размер 6 = $spacer*3 ($spacer=1rem) короче стандартный margin-bottom*3 -->
+                </div>
+            </div>
+
+            <!-- Блок с иконками: -->
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <!-- col-xl-4 означает следующее. https://getbootstrap.su/docs/5.3/layout/grid/ .
+                     col- префикс класса отвечающего за выделение колонок. xl это для экранов ≥1200px. -4 означает div займет 4 колонки из 12. То есть мы задали что при экранах ≥1200px нащ div будет занимать 4 колонки, получается что так как колонок там 12, то в один ряд встанет только 3 div'а -->
+
+                    <!-- col-md-6: при размере экрана ≥768px у нас div будет занимать 6 столбцов из 12 -->
+
+                    <!-- col-sm-12: на экранах ≥576px будет занимать 12 из 12 -->
+
+                    <!-- div обертывающий иконку, который нужно в css сделать в форме круга -->
+                    <div class="itd_circle">
+                        <!-- иконка1: -->
+                        <i class="icon-list-numbered"></i>
+                        <!-- создали тег i с классом icon-list-numbered, класс взяли из fontello.css -->
+                    </div>
+
+                    <h5 class="text-center">Структурированный материал</h5>
+
+                    <!-- Линия подчеркивания под элементом -->
+                    <div class="line"></div>
+
+                </div>
+
+                <!-- Иконка 2 -->
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="itd_circle">
+                        <i class="icon-rouble"></i>
+                    </div>
+                    <h5 class="text-center">Символическая цена</h5>
+                    <div class="line"></div>
+                </div>
+
+                <!-- Иконка 3 -->
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="itd_circle">
+                        <i class="icon-chart-bar"></i>
+                    </div>
+                    <h5 class="text-center">Пожизненный доступ</h5>
+                    <div class="line"></div>
+                </div>
+
+                <!-- Иконка 4 -->
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="itd_circle">
+                        <i class="icon-code"></i>
+                    </div>
+                    <h5 class="text-center">Практические задания</h5>
+                    <div class="line"></div>
+                </div>
+
+                <!-- Иконка 5 -->
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="itd_circle">
+                        <i class="icon-file-video"></i>
+                    </div>
+                    <h5 class="text-center">35 видео уроков (5 часов)</h5>
+                    <div class="line"></div>
+                </div>
+
+                <!-- Иконка 6 -->
+                <div class="col-xl-4 col-md-6 col-sm-12">
+                    <div class="itd_circle">
+                        <i class="icon-mobile"></i>
+                    </div>
+                    <h5 class="text-center">Просмотр со смартфона</h5>
+                    <div class="line"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="forwhom">
+        <div class="container"> <!-- bootstrap ограничитель ширины -->
+
+            <div class="row"> <!-- bootstrap ряд, содержащий 1 блок текста -->
+                <div class="col-12">
+                    <h2 class="text-center text-uppercase color2 mb-5">Курс для тех, кто</h2>
+                </div>
+            </div>
+
+            <div class="row mb-5"> <!-- Ряд, содержащий 4 блока текста -->
+
+                <!-- блок с текстом -->
+                <div class="col-md-6 col-sm-12"> <!-- на средних экранах займет 6 столбцов, на мелких 12 -->
+                    <h5 class="text-center">Хочет научиться создавать сайты своими силами</h5>
+                </div>
+
+                <!-- блок с текстом -->
+                <div class="col-md-6 col-sm-12">
+                    <h5 class="text-center">Учится современным инструментам разработки</h5>
+                </div>
+
+                <!-- блок с текстом -->
+                <div class="col-md-6 col-sm-12">
+                    <h5 class="text-center">Еще не знает язык HTML и CSS, но хочет выучить</h5>
+                </div>
+
+                <!-- блок с текстом -->
+                <div class="col-md-6 col-sm-12">
+                    <h5 class="text-center">Хочет стать крутым мастером и зарабатывать деньги</h5>
+                </div>
+            </div>
+
+            <!-- Кнопка Заказать: -->
+            <div class="row">
+                <div class="col-12">
+                    <a href="#footer" class="btn btn-lg text-uppercase btn-itd">Заказать</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Секция программа курса -->
+    <section class="shedule">
+        <div class="container">
+
+            <!-- Раздел заголовка -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center text-uppercase color1 mb-3">Программа курса</h2>
+                </div>
+            </div>
+
+            <!-- Раздел аккордеонов -->
+            <div class="row">
+
+                <!-- Аккордеон 1 из 3 -->
+                <div class="col-md4 col-sm-12">
+                    <h4 class="text-center fw-bold mb-3 mt-3">Модуль 1<br>(HTML)</h4>
+                    <!-- text-center - bootstrap текст по центру; fw-bold - bootstrap жирный текст; mb-3 - bootstrap отступ снизу 3-его размера; mt-3 - bootstrap отступ сверху -->
+
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                    Элемент аккордеона #1
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                    demonstrate the <code>.accordion-flush</code> class. This is the first item's
+                                    accordion body.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                    Элемент аккордеона #2
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                    demonstrate the <code>.accordion-flush</code> class. This is the second item's
+                                    accordion body. Let's imagine this being filled with some actual content.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                    aria-controls="flush-collapseThree">
+                                    Элемент аккордеона #3
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                                    demonstrate the <code>.accordion-flush</code> class. This is the third item's
+                                    accordion body. Nothing more exciting happening here in terms of content, but just
+                                    filling up the space to make it look, at least at first glance, a bit more
+                                    representative of how this would look in a real-world application.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer id="footer">
+        footer
+    </footer>
+
+    <!-- https://getbootstrap.su/docs/5.3/components/modal/ -->
+    <!-- Модальное окно делаем ниже футера, оно отдельное и появляется на другом слое только при нажатии на кнопку -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Заголовок модального окна</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body"> <!-- вставляем ниже в тело div'а код из под видео -->
+                    <iframe width="480" height="270"
+                        src="https://dzen.ru/embed/veh9eP6UIsxM?from_block=partner&from=zen&mute=0&autoplay=0&tv=0"
+                        allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media"
+                        data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
