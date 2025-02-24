@@ -187,8 +187,8 @@
             <!-- Раздел аккордеонов -->
             <div class="row">
 
-                <!-- Аккордеон 1 из 3 -->
-                <div class="col-md4 col-sm-12">
+                <!-- Аккордеон-столбец 1 из 3 -->
+                <div class="col-md-4 col-sm-12">
                     <h4 class="text-center fw-bold mb-3 mt-3">Модуль 1<br>(HTML)</h4>
                     <!-- text-center - bootstrap текст по центру; fw-bold - bootstrap жирный текст; mb-3 - bootstrap отступ снизу 3-его размера; mt-3 - bootstrap отступ сверху -->
 
@@ -198,7 +198,7 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
 
-                                <!-- Для того, чтобы элемент изначально был развернутым, у accordion-button collapsed убираем collapsed -->
+                                <!-- Для того, чтобы элемент изначально был развернутым, у button class="accordion-button collapsed" убираем collapsed -->
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
@@ -209,7 +209,9 @@
                             <!-- вдобавок в class="accordion-collapse collapse" добавляем класс show -->
                             <div id="flush-collapseOne" class="accordion-collapse collapse show"
                                 data-bs-parent="#accordion1">
-                                <div class="accordion-body">Краткий обзор того, что мы будем изучать в данном видео курсе.</div>
+
+                                <!-- Добавляем bootstrap-класс fst-italic для того, чтобы текст стал курсивным -->
+                                <div class="accordion-body fst-italic">Краткий обзор того, что мы будем изучать в данном видео курсе.</div>
                             </div>
                         </div>
 
@@ -224,7 +226,7 @@
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                 data-bs-parent="#accordion1">
-                                <div class="accordion-body">В этом уроке мы установим браузер Google Chrome и редактор кода VS Code.</div>
+                                <div class="accordion-body fst-italic">В этом уроке мы установим браузер Google Chrome и редактор кода VS Code.</div>
                             </div>
                         </div>
 
@@ -239,14 +241,185 @@
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
                                 data-bs-parent="#accordion1">
-                                <div class="accordion-body">Рассмотрим функции редактора VS Code и узнаем как с ним работать.</div>
+                                <div class="accordion-body fst-italic">Рассмотрим функции редактора VS Code и узнаем как с ним работать.</div>
+                            </div>
+                        </div>
+
+                        <!-- Элемент аккордеона #4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse1.4" aria-expanded="false"
+                                    aria-controls="flush-collapse1.4">
+                                    Как задавать путь к файлу
+                                </button>
+                            </h2>
+                            <div id="flush-collapse1.4" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion1">
+                                <div class="accordion-body fst-italic">Научимся правильно указывать путь к файлам изображений и другим страницам сайта.</div>
                             </div>
                         </div>
 
                     </div>
 
                 </div>
+                <!-- Конец аккордеона 1 из 3 -->
 
+                <!-- Аккордеон-столбец 2 из 3 -->
+                <div class="col-md-4 col-sm-12">
+                    <h4 class="text-center fw-bold mb-3 mt-3">Модуль 2<br>(CSS)</h4>
+                    <!-- text-center - bootstrap текст по центру; fw-bold - bootstrap жирный текст; mb-3 - bootstrap отступ снизу 3-его размера; mt-3 - bootstrap отступ сверху -->
+
+                    <div class="accordion accordion-flush" id="accordion2">
+
+                        <!-- Элемент аккордеона #1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+
+                                <!-- Для того, чтобы элемент изначально был развернутым, у button class="accordion-button collapsed" убираем collapsed -->
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse2.1" aria-expanded="false"
+                                    aria-controls="flush-collapse2.1">
+                                    CSS селекторы
+                                </button>
+                            </h2>
+
+                            <!-- вдобавок в class="accordion-collapse collapse" добавляем класс show -->
+                            <div id="flush-collapse2.1" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordion2">
+
+                                <!-- Добавляем bootstrap-класс fst-italic для того, чтобы текст стал курсивным -->
+                                <div class="accordion-body fst-italic">Рассмотрим основные CSS селекторы, узнаем что это такое и зачем они нужны.</div>
+                            </div>
+                        </div>
+
+                        <!-- Элемент аккордеона #2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse2.2" aria-expanded="false"
+                                    aria-controls="flush-collapse2.2">
+                                    Работа с изображениями
+                                </button>
+                            </h2>
+                            <div id="flush-collapse2.2" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion2">
+                                <div class="accordion-body fst-italic">Научимся работать с изображениями на языке CSS.</div>
+                            </div>
+                        </div>
+
+                        <!-- Элемент аккордеона #3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse2.3" aria-expanded="false"
+                                    aria-controls="flush-collapse2.3">
+                                    Границы
+                                </button>
+                            </h2>
+                            <div id="flush-collapse2.3" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion2">
+                                <div class="accordion-body fst-italic">В этом уроке мы научимся создавать границы вокруг любого элемента на сайте и стилизовать их.</div>
+                            </div>
+                        </div>
+
+                        <!-- Элемент аккордеона #4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse2.4" aria-expanded="false"
+                                    aria-controls="flush-collapse2.4">
+                                    Размеры элементов
+                                </button>
+                            </h2>
+                            <div id="flush-collapse2.4" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion2">
+                                <div class="accordion-body fst-italic">Разберемся, как изменять размеры элементов на странице с помощью CSS.</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Конец аккордеона 2 из 3 -->
+
+                 <!-- Аккордеон-столбец 3 из 3 -->
+                 <div class="col-md-4 col-sm-12">
+                    <h4 class="text-center fw-bold mb-3 mt-3">Модуль 3<br>(Практика)</h4>
+                    <!-- text-center - bootstrap текст по центру; fw-bold - bootstrap жирный текст; mb-3 - bootstrap отступ снизу 3-его размера; mt-3 - bootstrap отступ сверху -->
+
+                    <div class="accordion accordion-flush" id="accordion3">
+
+                        <!-- Элемент аккордеона #1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+
+                                <!-- Для того, чтобы элемент изначально был развернутым, у button class="accordion-button collapsed" убираем collapsed -->
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse3.1" aria-expanded="false"
+                                    aria-controls="flush-collapse3.1">
+                                    Верстка меню сайта
+                                </button>
+                            </h2>
+
+                            <!-- вдобавок в class="accordion-collapse collapse" добавляем класс show -->
+                            <div id="flush-collapse3.1" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordion3">
+
+                                <!-- Добавляем bootstrap-класс fst-italic для того, чтобы текст стал курсивным -->
+                                <div class="accordion-body fst-italic">Урок, в котором мы будем верстать фрагмент современного сайта, используя все полученные ранее знания.</div>
+                            </div>
+                        </div>
+
+                        <!-- Элемент аккордеона #2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse3.2" aria-expanded="false"
+                                    aria-controls="flush-collapse3.2">
+                                    Домашнее задание
+                                </button>
+                            </h2>
+                            <div id="flush-collapse3.2" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion3">
+                                <div class="accordion-body fst-italic">Домашнее задание для закрепления изученного материала в предыдущем уроке.</div>
+                            </div>
+                        </div>
+
+                        <!-- Элемент аккордеона #3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse3.3" aria-expanded="false"
+                                    aria-controls="flush-collapse3.3">
+                                    Верстка фрагмента сайта
+                                </button>
+                            </h2>
+                            <div id="flush-collapse3.3" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion3">
+                                <div class="accordion-body fst-italic">Урок, в котором мы будем верстать фрагмент современного сайта, используя все полученные ранее знания.</div>
+                            </div>
+                        </div>
+
+                        <!-- Элемент аккордеона #4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapse3.4" aria-expanded="false"
+                                    aria-controls="flush-collapse3.4">
+                                    Домашнее задание
+                                </button>
+                            </h2>
+                            <div id="flush-collapse3.4" class="accordion-collapse collapse"
+                                data-bs-parent="#accordion3">
+                                <div class="accordion-body fst-italic">Домашнее задание для закрепления изученного материала в предыдущем уроке.</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Конец аккордеона 3 из 3 -->
 
             </div>
 
