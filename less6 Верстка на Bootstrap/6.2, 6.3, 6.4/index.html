@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"> <!-- иконка нашего сайта -->
-    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- css bootstrap -->
     <link rel="stylesheet" href="css/fontello.css"> <!-- css для иконок на странице -->
     <link href="css/style.css" rel="stylesheet"> наш css
 </head>
@@ -27,7 +27,7 @@
                     <!-- https://getbootstrap.su/docs/5.3/content/typography/ -->
                     <!-- https://getbootstrap.su/docs/5.3/utilities/colors/ -->
                     <h1 class="text-center text-white">
-                        Видео курс по вёрстке для начинающих HTML \& CSS
+                        Видео курс по вёрстке для начинающих HTML и CSS
                     </h1>
                     <div class="itd_play" data-bs-toggle="modal" data-bs-target="#myModal"> <!-- кнопка play -->
                         <!-- у кнопки для вызова модального окна нужно скопировать из модального блока и вставить 2 атрибута data-bs-toggle="modal" data-bs-target="#myModal" -->
@@ -192,54 +192,57 @@
                     <h4 class="text-center fw-bold mb-3 mt-3">Модуль 1<br>(HTML)</h4>
                     <!-- text-center - bootstrap текст по центру; fw-bold - bootstrap жирный текст; mb-3 - bootstrap отступ снизу 3-его размера; mt-3 - bootstrap отступ сверху -->
 
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion accordion-flush" id="accordion1">
+
+                        <!-- Элемент аккордеона #1 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+
+                                <!-- Для того, чтобы элемент изначально был развернутым, у accordion-button collapsed убираем collapsed -->
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
-                                    Элемент аккордеона #1
+                                    Введение
                                 </button>
                             </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the first item's
-                                    accordion body.</div>
+
+                            <!-- вдобавок в class="accordion-collapse collapse" добавляем класс show -->
+                            <div id="flush-collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordion1">
+                                <div class="accordion-body">Краткий обзор того, что мы будем изучать в данном видео курсе.</div>
                             </div>
                         </div>
+
+                        <!-- Элемент аккордеона #2 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                     aria-controls="flush-collapseTwo">
-                                    Элемент аккордеона #2
+                                    Установка браузера и редактора кода
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the second item's
-                                    accordion body. Let's imagine this being filled with some actual content.</div>
+                                data-bs-parent="#accordion1">
+                                <div class="accordion-body">В этом уроке мы установим браузер Google Chrome и редактор кода VS Code.</div>
                             </div>
                         </div>
+
+                        <!-- Элемент аккордеона #3 -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
                                     aria-controls="flush-collapseThree">
-                                    Элемент аккордеона #3
+                                    Обзор функций редактора
                                 </button>
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to
-                                    demonstrate the <code>.accordion-flush</code> class. This is the third item's
-                                    accordion body. Nothing more exciting happening here in terms of content, but just
-                                    filling up the space to make it look, at least at first glance, a bit more
-                                    representative of how this would look in a real-world application.</div>
+                                data-bs-parent="#accordion1">
+                                <div class="accordion-body">Рассмотрим функции редактора VS Code и узнаем как с ним работать.</div>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
