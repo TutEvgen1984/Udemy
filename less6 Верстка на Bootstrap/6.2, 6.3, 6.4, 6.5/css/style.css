@@ -171,3 +171,18 @@ footer {
     ПС: записать в этот css класс 'color: white' не работает.
     */
 }
+
+/* Об авторе */
+.author {
+    padding-bottom: 0; /* убираем лишний отступ снизу */
+}
+
+.itd_img {
+    max-width: 260px;
+}
+
+/* Отзывы о курсе */
+.circle_img {
+    border: 3px solid var(--color1);
+    border-radius: 50%;
+}
