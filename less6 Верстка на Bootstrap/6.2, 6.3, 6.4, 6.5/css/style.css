@@ -104,7 +104,8 @@ footer {
 
 /* О курсе */
 .about,
-.shedule {
+.shedule,
+.rewiews {
     /* светло-серый цвет фона */
     background-color: #eee;
 }
@@ -178,10 +179,4 @@ footer {
 
 .itd_img {
     max-width: 260px;
-}
-
-/* Отзывы о курсе */
-.circle_img {
-    border: 3px solid var(--color1);
-    border-radius: 50%;
 }

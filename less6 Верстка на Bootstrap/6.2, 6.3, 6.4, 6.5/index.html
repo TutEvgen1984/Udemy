@@ -15,8 +15,10 @@
 <body>
     <!-- Сайт по которому мы верстаем: https://morphismail.github.io/video_course_basic -->
 
-    <!-- 6.2 Шапка, модальное окно, градиент, треугольник, адаптивное видео -->
-    <header> <!-- Шапка сайта -->
+    <!-- #region 6.2 Шапка, модальное окно, градиент, треугольник, адаптивное видео -->
+
+    <!-- #region Шапка сайта -->
+    <header>
         <!-- класс container обязателен, это написано в https://getbootstrap.su/docs/5.3/layout/grid/ -->
         <div class="container">
             <div class="row">
@@ -28,7 +30,7 @@
                     <!-- https://getbootstrap.su/docs/5.3/content/typography/ -->
                     <!-- https://getbootstrap.su/docs/5.3/utilities/colors/ -->
                     <h1 class="text-center text-white">
-                        Видео курс по вёрстке для начинающих HTML и CSS
+                        Видео курс по вёрстке для начинающих HTML &amp; CSS
                     </h1>
                     <div class="itd_play" data-bs-toggle="modal" data-bs-target="#myModal"> <!-- кнопка play -->
                         <!-- у кнопки для вызова модального окна нужно скопировать из модального блока и вставить 2 атрибута data-bs-toggle="modal" data-bs-target="#myModal" -->
@@ -46,21 +48,52 @@
             </div>
         </div>
     </header>
+    <!-- #endregion -->
 
-    <!-- 6.3 Сетка 3 на 3 и иконки. Раздел "О курсе" -->
+    <!-- #region Модальное окно -->
+
+    <!-- https://getbootstrap.su/docs/5.3/components/modal/ -->
+    <!-- Модальное окно делаем ниже футера, оно отдельное и появляется на другом слое только при нажатии на кнопку -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Заголовок модального окна</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body"> <!-- вставляем ниже в тело div'а код из под видео -->
+                    <iframe width="480" height="270"
+                        src="https://dzen.ru/embed/veh9eP6UIsxM?from_block=partner&from=zen&mute=0&autoplay=0&tv=0"
+                        allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media"
+                        data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- #endregion Модальное окно -->
+
+    <!-- #endregion 6.2 Шапка, модальное окно, градиент, треугольник, адаптивное видео -->
+
+    <!-- #region 6.3 "О курсе". Сетка 3 на 3 и иконки -->
     <section class="about">
         <div class="container">
 
-            <!-- Блок "О курсе" -->
+            <!-- #region Заголовок -->
             <div class="row">
                 <div class="col-12">
                     <h2 class="text-center text-uppercase color1 mb-5">О курсе</h2>
                     <!-- в бутстрапе mb-5=margin-bottom размер 6 = $spacer*3 ($spacer=1rem) короче стандартный margin-bottom*3 -->
                 </div>
             </div>
+            <!-- #endregion Заголовок -->
 
-            <!-- Блок с иконками: -->
+
+            <!-- #region Блок с иконками -->
             <div class="row">
+
+
+                <!-- #region Иконка 1 -->
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <!-- col-xl-4 означает следующее. https://getbootstrap.su/docs/5.3/layout/grid/ .
                      col- префикс класса отвечающего за выделение колонок. xl это для экранов ≥1200px. -4 означает div займет 4 колонки из 12. То есть мы задали что при экранах ≥1200px нащ div будет занимать 4 колонки, получается что так как колонок там 12, то в один ряд встанет только 3 div'а -->
@@ -82,8 +115,9 @@
                     <div class="line bg1"></div>
 
                 </div>
+                <!-- #endregion -->
 
-                <!-- Иконка 2 -->
+                <!-- #region Иконка 2 -->
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <div class="itd_circle">
                         <i class="icon-rouble"></i>
@@ -91,8 +125,9 @@
                     <h5 class="text-center">Символическая цена</h5>
                     <div class="line bg1"></div>
                 </div>
+                <!-- #endregion -->
 
-                <!-- Иконка 3 -->
+                <!-- #region Иконка 3 -->
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <div class="itd_circle">
                         <i class="icon-chart-bar"></i>
@@ -100,8 +135,9 @@
                     <h5 class="text-center">Пожизненный доступ</h5>
                     <div class="line bg1"></div>
                 </div>
+                <!-- #endregion -->
 
-                <!-- Иконка 4 -->
+                <!-- #region Иконка 4  -->
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <div class="itd_circle">
                         <i class="icon-code"></i>
@@ -109,8 +145,9 @@
                     <h5 class="text-center">Практические задания</h5>
                     <div class="line bg1"></div>
                 </div>
+                <!-- #endregion -->
 
-                <!-- Иконка 5 -->
+                <!-- #region Иконка 5 -->
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <div class="itd_circle">
                         <i class="icon-file-video"></i>
@@ -118,6 +155,7 @@
                     <h5 class="text-center">35 видео уроков (5 часов)</h5>
                     <div class="line bg1"></div>
                 </div>
+                <!-- #endregion -->
 
                 <!-- Иконка 6 -->
                 <div class="col-xl-4 col-md-6 col-sm-12">
@@ -129,10 +167,13 @@
                 </div>
 
             </div>
+            <!-- #endregion Блок с иконками -->
+
         </div>
     </section>
+    <!-- #endregion -->
 
-    <!-- 6.4 Сетка 2 на 2. Раздел "Курс для тех, кто" -->
+    <!-- #region 6.4 "Курс для тех, кто". Сетка 2 на 2 -->
     <section class="forwhom">
         <div class="container"> <!-- bootstrap ограничитель ширины -->
 
@@ -174,8 +215,9 @@
 
         </div>
     </section>
+    <!-- #endregion -->
 
-    <!-- 6.5 Аккордеон. Секция "Программа курса" -->
+    <!-- #region 6.5 "Программа курса". Аккордеон -->
     <section class="shedule">
         <div class="container">
 
@@ -433,16 +475,20 @@
                     </div>
 
                 </div>
-                <!-- Конец аккордеона 3 из 3 -->
+                <!-- Конец Аккордеон-столбец 3 из 3 -->
 
             </div>
 
         </div>
 
     </section>
+    <!-- #endregion "Программа курса". Аккордеон -->
 
-    <!-- 6.6 Адаптивные изображения. Пропускаем -->
-    <!-- 6.7 Практика + ДЗ. Секция "Об авторе" -->
+    <!-- #region 6.6 Адаптивные изображения. (Пропускаем) -->
+    <!-- Нет кода -->
+    <!-- #endregion -->
+
+    <!-- #region 6.7 "Об авторе". Практика + ДЗ -->
     <section class="author">
 
         <div class="container">
@@ -487,8 +533,9 @@
             </div>
         </div>
     </section>
+    <!-- #endregion -->
 
-    <!-- 6.7 ДЗ. Секция "Отзывы" -->
+    <!-- #region 6.7 "Отзывы". ДЗ  -->
     <section class="rewiews">
         <div class="container">
 
@@ -499,13 +546,17 @@
                 </div>
             </div>
 
-
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div>
-                        <img src="img/people.jpg" class="circle_img mx-auto d-block" alt="Фото Кристина Трибой">
-                        <!-- circle_img - свой класс для того, чтобы сделать картинку круглой и добавить цветную границу -->
-                        <!-- mx-auto - bootstrap класс для горизонтального центрирования содержимого блока по оси x -->
+                        <img src="img/people.jpg" class="rounded-circle mx-auto d-block border border-5 border-success"
+                            alt="Фото Кристина Трибой">
+
+                        <!-- rounded-circle - bootstrap класс позволяет сделать изображение круглым -->
+                        <!-- border - bootstrap класс добавляет границу к элементу по всему периметру https://getbootstrap.su/docs/5.3/utilities/borders/ -->
+                        <!-- border-5 bootstrap класс определяет ширину границы -->
+                        <!-- border-success - bootstrap класс отвечающий за цвет границы (в данном случае зеленый) -->
+                        <!-- mx-auto - bootstrap класс для горизонтального центрирования содержимого блока margin по оси x. margin: 0 auto -->
                         <!-- d-block - bootstrap класс display: block -->
                     </div>
 
@@ -527,31 +578,26 @@
 
         </div>
     </section>
+    <!-- #endregion -->
+
+    <!-- #region 6.8 Форма сбора средств -->
+    <section class="buy">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center text-uppercase color2 mb-5">Курс по HTML &amp; CSS</h2>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- #endregion -->
 
 
     <footer id="footer">
         footer
     </footer>
-
-    <!-- https://getbootstrap.su/docs/5.3/components/modal/ -->
-    <!-- Модальное окно делаем ниже футера, оно отдельное и появляется на другом слое только при нажатии на кнопку -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Заголовок модального окна</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                </div>
-                <div class="modal-body"> <!-- вставляем ниже в тело div'а код из под видео -->
-                    <iframe width="480" height="270"
-                        src="https://dzen.ru/embed/veh9eP6UIsxM?from_block=partner&from=zen&mute=0&autoplay=0&tv=0"
-                        allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media"
-                        data-testid="embed-iframe" frameborder="0" scrolling="no" allowfullscreen></iframe>
-                </div>
-
-            </div>
-        </div>
-    </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
