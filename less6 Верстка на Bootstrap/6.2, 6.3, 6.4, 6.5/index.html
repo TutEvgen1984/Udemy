@@ -14,6 +14,7 @@
 
 <body>
     <!-- Сайт по которому мы верстаем: https://morphismail.github.io/video_course_basic -->
+    <!-- Чтобы увидеть код нажимаем Ctrl+U на странице автора. Яндекс-браузер > Средства разработки > Windows > Ctrl + U > Просмотреть код страницы. F12 Открыть или закрыть инструменты разработчика -->
 
     <!-- #region 6.2 Шапка, модальное окно, градиент, треугольник, адаптивное видео -->
 
@@ -88,7 +89,6 @@
             </div>
             <!-- #endregion Заголовок -->
 
-
             <!-- #region Блок с иконками -->
             <div class="row">
 
@@ -157,7 +157,8 @@
                 </div>
                 <!-- #endregion -->
 
-                <!-- Иконка 6 -->
+
+                <!-- #region Иконка 6 -->
                 <div class="col-xl-4 col-md-6 col-sm-12">
                     <div class="itd_circle">
                         <i class="icon-mobile"></i>
@@ -165,6 +166,7 @@
                     <h5 class="text-center">Просмотр со смартфона</h5>
                     <div class="line bg1"></div>
                 </div>
+                <!-- #endregion -->
 
             </div>
             <!-- #endregion Блок с иконками -->
@@ -584,20 +586,73 @@
     <section class="buy">
 
         <div class="container">
+
+            <!-- Заголовок -->
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center text-uppercase color2 mb-5">Курс по HTML &amp; CSS</h2>
+                    <h2 class="text-center text-uppercase color1 mb-5">Купить</h2>
                 </div>
             </div>
+
+            <!-- Картинка + блок текста + кнопка -->
+            <div class="row align-items-center justify-content-center">
+
+                <!-- Левая половина ряда (6 колонок) занимает изображение -->
+                <div class="col-lg-6 col-sm-12">
+                    <img class="img-fluid mx-auto d-block" src="img/preview.png" alt="Изображение Курс по верстке">
+                </div>
+
+                <!-- Левая половина ряда (6 колонок): абзац + список + кнопка -->
+                <div class="col-lg-6 col-sm-12">
+                    <p>
+                        Обучающий курс по изучению языка гипертекстовой разметки HTML и каскадных таблиц стилей CSS от
+                        автора образовательного канала ITDoctor. Это практический видеокурс: в каждой главе
+                        теоретический материал будет закрепляться множеством наглядных примеров кода.
+                    </p>
+                    <ul>
+                        <li>35 практических уроков</li>
+                        <li>Продолжительность 5 часов</li>
+                        <li>Готовые примеры кода</li>
+                        <li>Никаких ограничений по времени</li>
+                        <li>7 домашних заданий</li>
+                    </ul>
+                    <a href="https://stepik.org/z/101175" class="btn btn-itd btn-lg text-uppercase"
+                        target="_blank">Купить</a>
+                </div>
+
+            </div>
+
         </div>
 
     </section>
     <!-- #endregion -->
 
-
+    <!-- #region 6.9 Создание футера -->
     <footer id="footer">
-        footer
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <a class="btn btn-outline-light rounded-circle" target="_blank"
+                        href="https://www.youtube.com/c/ITDoctor"><i class="icon-youtube-play"></i></a>
+                    <!-- btn-outline-light - bootstrap класс придающий вид кнопки без фона только граница закругленная https://getbootstrap.su/docs/5.3/components/buttons/ -->
+                    <!-- icon-youtube-play - иконка ютуба, берем из css fontello -->
+                    <a class="btn btn-outline-light" target="_blank"
+                        href="mailto:ismail_2016@mail.ru?subject=Вопрос по курсу html+css&amp;body=Здравствуйте, ITDoctor,"><i
+                            class="icon-mail-alt"></i></a>
+                    <a class="btn btn-outline-light" target="_blank" href="https://t.me/itdoctorstudio"><i
+                            class="icon-paper-plane"></i></a>
+                    <a class="btn btn-outline-light" target="_blank" href="https://vk.com/itdoctorstudio"><i
+                            class="icon-vkontakte"></i></a>
+                    <a class="btn btn-outline-light" target="_blank" href="https://instagram.com/ismail_asanovich/"><i
+                            class="icon-instagram"></i></a>
+                    <a class="btn btn-outline-light" target="_blank" href="https://github.com/morphIsmail"><i
+                            class="icon-github-circled"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- #endregion -->
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>
