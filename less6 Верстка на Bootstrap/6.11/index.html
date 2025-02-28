@@ -11,8 +11,10 @@
 <body>
     <h1>Bootstrap icons</h1>
 
-    <!-- #region Способ подключения №1. HTML svg -->
+    <!-- #region Способ №1. Embedded. HTML svg -->
 
+    <!-- На странице https://icons.getbootstrap.com/ этот метод называется Embedded -->
+    <!-- Embedded переводится как встроенный  -->
     <!-- Простое копирование у выбранной иконки HTML кода с тегом svg  -->
     <!-- Иконка 1 -->
     <!-- https://icons.getbootstrap.com/icons/chevron-down/ -->
@@ -32,9 +34,11 @@
                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
         </svg>
     </div>
+
     <!-- #endregion -->
 
-    <!-- #region Способ №2. npm -->
+    <!-- #region Способ №2. Sprite. npm -->
+    <!-- На странице https://icons.getbootstrap.com/ этот метод называется Sprite -->
     <!-- Необходимо установить пакетный менеджер npm вместе с node.js
     https://nodejs.org/en
     выбираем терминал Bash и пишем команду
@@ -72,7 +76,6 @@
     в которой есть папка bootstrap-icons
     перемещаем её в нашу папку 6.11
     -->
-    <!-- #endregion -->
 
     <!-- Теперь иконки ссылаются на файл bootstrap-icons.svg который надо скопировать рядом с index.html - это для того чтобы путь к иконкам был короче -->
     <!-- этот файл содержит все иконки в svg-формате в одном файле -->
@@ -90,17 +93,23 @@
     <svg class="bi" width="32" height="32" fill="currentColor">
         <use xlink:href="bootstrap-icons.svg#whatsapp" />
     </svg>
+    <!-- #endregion -->
 
-    <!-- #region Способ №3. img -->
+    <!-- #region Способ №3. External image -->
     <!-- alt="..." on <img> element -->
     <img src="node_modules/bootstrap-icons/icons/tools.svg" alt="Bootstrap" ...>
+    <!-- Каждая иконка находится в отдельном файле с расширением .svg -->
+    <!-- удобство в том, что не нужно качать все 1000 иконок -->
     <!-- но здесь есть неудобство - мы не можем поменять цвет. Его придется менять через костыли - через фильтр. Этот способ не приветствуется -->
     <!-- #endregion -->
 
-    <!-- #region Способ №4. Иконочный шрифт i -->
+    <!-- #region Способ №4. Icon font i -->
 
     <!-- Через link подключаем bootstrap-icons.css -->
     <!-- После подключения этого css мы можем использовать тег i со специальным классом -->
+    <i class="bi-alarm"></i>
+    <i class="bi-whatsapp" style="font-size: 2rem; color: cornflowerblue;"></i>
+    <!-- Особенность - в названии класса впереди всегда должно быть "bi-" -->
 
     <!-- #endregion -->
 
