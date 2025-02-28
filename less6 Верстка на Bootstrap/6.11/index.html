@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека иконок Bootstrap Icons</title>
+    <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Bootstrap icons</h1>
+
+    <!-- #region Способ подключения №1. HTML svg -->
+
+    <!-- Простое копирование у выбранной иконки HTML кода с тегом svg  -->
+    <!-- Иконка 1 -->
+    <!-- https://icons.getbootstrap.com/icons/chevron-down/ -->
+    <!-- Код копируем из "Copy HTML". Стандартная иконка стандартного цвета и размера -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+    </svg>
+    <!-- fill="currentColor" - означает цвет по умолчанию который установлен для текста из CSS стилей. fill="blue" покрасит значок в синий цвет -->
+
+    <!-- Иконка 2, такая же как выше, но белого цвета -->
+    <div style="background-color: blueviolet; width: fit-content; padding: 40px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="white" class="bi bi-chevron-down"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+        </svg>
+    </div>
+    <!-- #endregion -->
+
+    <!-- #region Способ №2. npm -->
+    <!-- Необходимо установить пакетный менеджер npm вместе с node.js
+    https://nodejs.org/en
+    выбираем терминал Bash и пишем команду
+    $ npm --v
+    в результате показало 10.9.2
+
+    Далее неправильные действия
+        Видим вверху терминала:
+        tutev@TutEvgen84Work MINGW64 ~/source/repos/TutEvgen1984/Udemy (main)
+        это текущая папка, если начать установку npm пакетов, то они все будут устанавливаться в корень в папку UDEMY.
+        нам нужно изменить папку, для этого пишем выполняем в терминале BASH команду DIR.
+        Видим список папок, в котором есть "less6\ Верстка\ на\ Bootstrap"
+        Выполняем команду
+        cd less6\ Верстка\ на\ Bootstrap
+
+        Затем команда
+        dir
+
+        Видим еще список папок.
+        Выполняем команду
+        cd 6.11
+
+        В итоге теперь видим вверху терминала
+        tutev@TutEvgen84Work MINGW64 ~/source/repos/TutEvgen1984/Udemy/less6 Верстка на Bootstrap/6.11 (main)
+    Конец неправильных действий
+
+    Затем копируем сайта иконок команду и выполняем в терминале:
+    $npm i bootstrap-icons
+
+    Получили в терминале:
+    added 1 package in 4s
+
+    Установил обновленный пакет npm
+    появилась в папке Udemy новая папка node_modules весом 2,72 Мб
+    в которой есть папка bootstrap-icons
+    перемещаем её в нашу папку 6.11
+    -->
+    <!-- #endregion -->
+
+    <!-- Теперь иконки ссылаются на файл bootstrap-icons.svg который надо скопировать рядом с index.html - это для того чтобы путь к иконкам был короче -->
+    <!-- этот файл содержит все иконки в svg-формате в одном файле -->
+    <svg class="bi" width="32" height="32" fill="currentColor">
+        <use xlink:href="bootstrap-icons.svg#heart-fill" />
+    </svg>
+    <svg class="bi" width="32" height="32" fill="currentColor">
+        <use xlink:href="bootstrap-icons.svg#toggles" />
+    </svg>
+    <svg class="bi" width="32" height="32" fill="currentColor">
+        <use xlink:href="bootstrap-icons.svg#shop" />
+    </svg>
+    <!-- в конце видим #shop - это текстовое название иконки -->
+    <!-- заходим на сайт, ищем иконку которую нам нужно и подставляем её название в конец. В данном случае shop меняем на whatsapp-->
+    <svg class="bi" width="32" height="32" fill="currentColor">
+        <use xlink:href="bootstrap-icons.svg#whatsapp" />
+    </svg>
+
+    <!-- #region Способ №3. img -->
+    <!-- alt="..." on <img> element -->
+    <img src="node_modules/bootstrap-icons/icons/tools.svg" alt="Bootstrap" ...>
+    <!-- но здесь есть неудобство - мы не можем поменять цвет. Его придется менять через костыли - через фильтр. Этот способ не приветствуется -->
+    <!-- #endregion -->
+
+    <!-- #region Способ №4. Иконочный шрифт i -->
+
+    <!-- Через link подключаем bootstrap-icons.css -->
+    <!-- После подключения этого css мы можем использовать тег i со специальным классом -->
+
+    <!-- #endregion -->
+
+</body>
+
+</html>
