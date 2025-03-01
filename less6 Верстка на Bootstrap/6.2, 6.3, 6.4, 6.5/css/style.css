@@ -158,7 +158,7 @@ footer {
 /* Для Bootstrap  v5.3.3 */
 /* Класс отвечающий за иконку-галочку */
 .accordion-button:not(.collapsed)::after {
-    filter: invert(100%);
+    /* filter: invert(100%); */
     /*
     invert() Инвертирует цвета изображения, как бы выворачивает их, превращая в противоположные. В результате получается что-то вроде негатива. Можно указать процент инверсии от 0% до 100%. При 100% цвета на картинке полностью инвертированы. Отрицательные значения или значения больше 100% не допускаются.
 
@@ -169,6 +169,31 @@ footer {
     ПС: записать в этот css класс 'color: white' не работает.
     */
 }
+
+/* [data-bs-theme=dark] .accordion-button::after {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236ea8fe'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236ea8fe'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+} */
+
+/* Для Bootstrap  v5.3.3 чтобы изменить цвет галочки правее аккордеона нужно: */
+/* Свой style.css */
+/* Класс отвечающий за иконку-галочку */
+.accordion-button::after {
+    /* Галочка кнопки аккордеона, на который НЕ нажали, и который имеет белый background */
+    /* Галочка имеет цвет fill='%236ea8fe' */
+    /* %23 - это равняется решетке #, а число дальше 6ea8fe - синий цвет в формате HEX */
+    /* То есть fill='%236ea8fe' по бутстраповски равно fill='#6ea8fe' по HEX'овски */
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236ea8fe'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    /* Оставляем этот цвет как есть - синий */
+
+    /* Галочка кнопки аккордеона, на который уже нажали, и который имеет наш новый вишневый background */
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    /* fill='%236ea8fe' заменили на fill='%23fff' */
+    /* Белый цвет имеет HEX-кодировку #fff */
+     /* fill='%23fff' по бутстраповски равно fill='#fff' по HEX'овски */
+    /* Постскриптум: если в иконку написать по HEX'овский цвет fill='#fff', то он не работает */
+}
+
 
 /* Об авторе */
 .author {
