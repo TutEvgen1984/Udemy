@@ -24,6 +24,20 @@
 } */
 /* #endregion */
 
-.header {
-    font-size: 35px;
-}
+/* #region 01. header */
+
+.header {}
+
+.header__title {}
+
+.logo {}
+
+.burger {}
+
+.burger__line {}
+
+.h1 {}
+
+.h4 {}
+
+/* #endregion */
