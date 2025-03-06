@@ -102,15 +102,16 @@ body {
 
 .container {
   max-width: 1110px;
-  background-color: bisque;
   margin: 0 auto;
 }
 
 
 .header__title {
-  display: flex;
-
-
+  display: flex; /* 2 иконки в линию */
+  justify-content: space-between; /* горизонтально иконки по краям */
+  align-items: flex-end; /* вертикально иконки выравниваются по низу */
+  padding-top: 20px; /* Отступ от иконок сверху */
+  margin-bottom: 112px; /* внешний отступ вниз до текста */
 }
 
 .logo {
