@@ -1,4 +1,70 @@
-/* #region 01. Шрифты с сайта google fonts */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --accent-color: #F7654A;
+  --dark-color: #404149;
+  --gray-color: #999;
+  --white-color: #FFF;
+  --background-color: #E5E5E5;
+}
+
+body {
+  margin: 0;
+
+  /* так как в основном у нас используется шрифт Oswald, и только в некоторых местах Open Sans, то мы ко всему body применяем Oswald чтобы везде не применять одну и туже строку и все остальные унаследовали стили отсюда */
+  font-family: 'Oswald', sans-serif;
+
+  /* толщина 400 будет использоваться как нормальная по умолчанию, а если будет встречаться толстое начертание или тонкое, то установим отдельно */
+  font-weight: 400;
+}
+
+
+/* #region Стили для текста */
+.text-h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: medium;
+  /* fw500 */
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.text-h3 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: medium;
+  /* fw500 */
+  font-size: 24px;
+}
+
+.text-h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: medium;
+  /* fw500 */
+  font-size: 21px;
+}
+
+.text-p {
+  font-family: "Open Sans";
+  font-size: 16px;
+}
+
+.text-p-reviews {
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* #endregion */
+
+
+/* #region Шрифты с сайта google fonts */
 /* Open Sans: CSS class for a variable style
 // <weight>: Use a value from 300 to 800
 // <uniquifier>: Use a unique and descriptive class name
@@ -24,15 +90,38 @@
 } */
 /* #endregion */
 
-/* #region 01. header */
 
-.header {}
+/* #region header */
 
-.header__title {}
+.header {
+  min-height: 740px;
+  background-image: url(../img/first-screen-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; /* https://doka.guide/css/background-size/ */
+}
 
-.logo {}
+.container {
+  max-width: 1110px;
+  background-color: bisque;
+  margin: 0 auto;
+}
 
-.burger {}
+
+.header__title {
+  display: flex;
+
+
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.burger {
+  width: 50px;
+  height: 50px;
+}
 
 .burger__line {}
 
