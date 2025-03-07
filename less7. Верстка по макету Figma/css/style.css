@@ -8,6 +8,11 @@ html {
   box-sizing: inherit;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --accent-color: #F7654A;
   --dark-color: #404149;
@@ -24,6 +29,9 @@ body {
 
   /* толщина 400 будет использоваться как нормальная по умолчанию, а если будет встречаться толстое начертание или тонкое, то установим отдельно */
   font-weight: 400;
+
+  height: 300vh;
+  /* необходимо для принудительного наличия полосы прокрутки, потом удалить */
 }
 
 
@@ -97,7 +105,8 @@ body {
   min-height: 740px;
   background-image: url(../img/first-screen-bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover; /* https://doka.guide/css/background-size/ */
+  background-size: cover;
+  /* https://doka.guide/css/background-size/ */
 }
 
 .container {
@@ -107,27 +116,107 @@ body {
 
 
 .header__title {
-  display: flex; /* 2 иконки в линию */
-  justify-content: space-between; /* горизонтально иконки по краям */
-  align-items: flex-end; /* вертикально иконки выравниваются по низу */
-  padding-top: 20px; /* Отступ от иконок сверху */
-  margin-bottom: 112px; /* внешний отступ вниз до текста */
+  display: flex;
+  /* 2 иконки в линию */
+  justify-content: space-between;
+  /* горизонтально иконки по краям */
+  align-items: flex-end;
+  /* вертикально иконки выравниваются по низу */
+  padding-top: 20px;
+  /* Отступ от иконок сверху */
+  margin-bottom: 112px;
+  /* внешний отступ от иконок вниз до текста */
 }
 
+/* Логотип svg в виде 2 капли */
 .logo {
   width: 60px;
   height: 60px;
 }
 
+/*  */
 .burger {
   width: 50px;
   height: 50px;
+  cursor: pointer;
+  background-color: var(--accent-color);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.burger__line {}
+.burger__line {
+  display: block;
+  width: 21px;
+  height: 3px;
+  background-color: #fff;
+  /* Белый цвет */
+  margin-bottom: 4px;
+}
 
-.h1 {}
+.burger__line:last-child {
+  margin-bottom: 0;
+}
 
-.h4 {}
+.h1 {
+  font-weight: 500;
+  /* 500 = medium */
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 95px;
+  max-width: 734px;
+  margin: 0 auto 17px;
+  color: var(--white-color);
+}
+
+.h4 {
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 734px;
+  color: var(--white-color);
+  margin: 0 auto;
+}
 
 /* #endregion */
+
+.about {
+  min-height: 1080px;
+
+  /* Для того, чтобы можно было наш блок задвинуть выше поверх предыдущего блока */
+  position: relative;
+}
+
+.info {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F7F7F7;
+  max-width: 1110px;
+  width: 100%;
+  min-height: 300px;
+  padding: 57px 130px;
+}
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+.about__grid-item {
+  text-align: center;
+  width: 190px;
+}
+.about__h4 {
+}
+.about__h5 {
+}
+.about__p {
+}
