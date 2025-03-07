@@ -8,7 +8,13 @@ html {
   box-sizing: inherit;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   padding: 0;
   margin: 0;
 }
@@ -192,6 +198,7 @@ body {
   position: relative;
 }
 
+/* #region numbers */
 .info {
   position: absolute;
   top: -150px;
@@ -203,6 +210,7 @@ body {
   min-height: 300px;
   padding: 57px 130px;
 }
+
 .about__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -210,13 +218,54 @@ body {
   align-items: center;
   justify-items: center;
 }
+
 .about__grid-item {
   text-align: center;
   width: 190px;
 }
+
 .about__h4 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 72px;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 5px;
 }
+
 .about__h5 {
+  color: #000;
+  font-size: 36px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
 }
+
 .about__p {
+  color: var(--gray-color);
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
 }
+
+@media screen and (width <= 1280px) {
+  .about__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width <= 768px) {
+  .info {
+    position: relative;
+    /* чтобы не было каких то непредвиденных проблем в дальнейшем с позиционированием. так как absolute выбивается из патока. Об этом я рассказывал в уроке 12,3 */
+  }
+
+  .about__grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+/* #endregion */
