@@ -68,6 +68,7 @@ body {
   font-weight: medium;
   /* fw500 */
   font-size: 21px;
+  letter-spacing: 0.02em;
 }
 
 .text-p {
@@ -202,11 +203,16 @@ body {
 
   /* Для того, чтобы можно было наш блок задвинуть выше поверх предыдущего блока */
   position: relative;
+
+  padding-top: 250px;
+  /* секция header и текущая about соприкасаются на стыке. Чтобы этот стык оставить склеенным, но отодвинуть наши картинки, создали внутренний зеленый отступ в about'е в 250px. В результате отодвинулись именно картинки региона project, а сдвига региона numbers не произошло так как в регионе numbers .info {position: absolute} */
 }
 
 /* #region numbers */
 .info {
   position: absolute;
+  /* Элемент позиционируется относительно ближайшего позиционированного предка. То есть браузер идёт вверх по дереву элементов и ищет ближайшего опорного родителя.
+  https://doka.guide/css/position/ */
   top: -150px;
   left: 50%;
   transform: translateX(-50%);
@@ -255,14 +261,14 @@ body {
   font-weight: 500;
 }
 
-@media screen and (width <= 1280px) {
+@media screen and (width <=1280px) {
   .about__grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <=768px) {
   .info {
     position: relative;
     /* чтобы не было каких то непредвиденных проблем в дальнейшем с позиционированием. так как absolute выбивается из патока. Об этом я рассказывал в уроке 12,3 */
@@ -274,4 +280,198 @@ body {
   }
 }
 
-/* #endregion */
+/* #endregion numbers */
+
+/* #region project */
+
+/* Наши самые большие проекты */
+.project-h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* div для карточек */
+.about__flex {
+  display: flex;
+  gap: 30px;
+}
+
+/* карточка */
+.about__flex-item {
+  max-width: 350px;
+}
+
+/* 01. Картинка стадиона */
+.project-img {
+  margin-bottom: 45px;
+}
+
+/* 02. Прямоугольник */
+.rectangle {
+  width: 55px;
+  height: 6px;
+  background-color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+/* Газпром Арена */
+.project-h3 {
+  color: var(--dark-color);
+  margin-bottom: 13px;
+}
+
+/* Много текста */
+.project-p {
+  color: var(--gray-color);
+}
+
+@media screen and (width <=1280px) {
+
+  /* при уменьшении разрешения до 800 пикселей текст
+<h2 class="text-h2 project-h2">Наши самые большие проекты</h2>
+исчезает так как его начинают перекрывать.
+нам нужно сдвинуть этот текст ниже, а для этого установим увеличенный padding  */
+  .about {
+    padding: 450px 15px 110px 15px;
+    /* было padding-top: 250px; смотреть выше*/
+  }
+}
+
+@media screen and (width <=768px) {
+  .about__flex {
+    flex-direction: column;
+    align-items: center;
+    /* из-за того, что направление теперь column, то align-items теперь выравнивает не по вертикали как обычно мы привыкли, по по горизонтали */
+  }
+
+  .about {
+    /* уменьшим padding'и так как от @media<=1280px они остаются огромными и не подходят здесь  */
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+
+}
+
+/* #endregion project */
+
+/* #region request */
+
+.request {
+  background-color: var(--accent-color);
+  padding-top: 30px;
+  padding-bottom: 37px;
+}
+
+.request__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* горизонтальное выравнивание */
+}
+
+.request__flex-left {
+  color: var(--white-color);
+}
+
+.request__flex-right {}
+
+/* Самые умные проекты */
+.request__h4 {
+  font-weight: 700;
+  font-size: 48px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+
+}
+
+.request__h5 {
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+
+.request__btn {
+  margin-top: 20px;
+  border: none;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  padding: 14px 30px;
+}
+
+.request_icon {
+  margin-right: 15px;
+}
+
+@media screen and (width <=1280px) {
+  .request {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+
+@media screen and (width <=768px) {
+  .request__flex {
+    flex-wrap: wrap;
+  }
+
+}
+
+/* #endregion Request */
+
+/* #region Services */
+.services {
+  padding: 150px 0;
+}
+
+.section__h2, .services__h4 {
+  color: #000;
+  text-align: center;
+}
+
+.section__h2 {
+  margin-bottom: 55px;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2. 1fr);
+  gap: 30px;
+  justify-items: center;
+}
+
+.services__grid-item {
+  padding: 59px 0;
+  background-color: #F7F7F7;
+  width: 350px;
+}
+
+.services__h4 {
+  margin: 0 auto; /* выравнивание в своей ячейке */
+  max-width: 180px;
+  text-transform: uppercase;
+}
+
+.services_icon {
+  margin: 0 auto 23px; /* выравнивание в своей ячейке */
+
+}
+
+/* .text-h2 {}
+
+
+
+.text-h4 {} */
+
+
+/* #endregion Services */
