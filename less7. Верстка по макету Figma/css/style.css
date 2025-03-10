@@ -186,6 +186,15 @@ body {
   color: var(--white-color);
 }
 
+@media screen and (width <=380px) {
+  .h1 {
+    font-size: 46px;
+    /* 64 -> 46 */
+    line-height: 64px;
+    /* 95 -> 64 */
+  }
+}
+
 .h4 {
   font-weight: 400;
   font-size: 18px;
@@ -195,6 +204,8 @@ body {
   color: var(--white-color);
   margin: 0 auto;
 }
+
+@media screen and (width <=380px) {}
 
 /* #endregion */
 
@@ -272,6 +283,8 @@ body {
   .info {
     position: relative;
     /* чтобы не было каких то непредвиденных проблем в дальнейшем с позиционированием. так как absolute выбивается из патока. Об этом я рассказывал в уроке 12,3 */
+    padding: 30px 0;
+    /* [adding 130 слева и справа слишком большой, уменьшили его сл 130 до 0, и вертикальные с 57 до 0*/
   }
 
   .about__grid {
@@ -373,7 +386,7 @@ body {
   color: var(--white-color);
 }
 
-.request__flex-right {}
+/* .request__flex-right {} */
 
 /* Самые умные проекты */
 .request__h4 {
@@ -433,7 +446,8 @@ body {
   padding: 150px 0;
 }
 
-.section__h2, .services__h4 {
+.section__h2,
+.services__h4 {
   color: #000;
   text-align: center;
 }
@@ -457,21 +471,53 @@ body {
 }
 
 .services__h4 {
-  margin: 0 auto; /* выравнивание в своей ячейке */
+  margin: 0 auto;
+  /* выравнивание в своей ячейке */
   max-width: 180px;
   text-transform: uppercase;
 }
 
 .services_icon {
-  margin: 0 auto 23px; /* выравнивание в своей ячейке */
+  margin: 0 auto 21px;
+  /* выравнивание в своей ячейке */
 
 }
 
-/* .text-h2 {}
+@media screen and (width <=1280px) {
+  .services {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
 
+  .services__grid-item {
+    width: 100%;
+  }
 
-.text-h4 {} */
+}
 
+@media screen and (width <=768px) {
+  .services__grid {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+}
 
 /* #endregion Services */
+
+/* #region Portfolio */
+
+.portfolio {}
+
+.portfolio__grid {}
+
+.portfolio_grid-item {}
+
+.portfolio__img {}
+
+/* #endregion */
