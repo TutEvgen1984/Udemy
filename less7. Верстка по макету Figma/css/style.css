@@ -512,12 +512,32 @@ body {
 
 /* #region Portfolio */
 
-.portfolio {}
+/* .portfolio {} */
 
-.portfolio__grid {}
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center; /* если этого не написать, то при уменьшении ширины экрана картинки уедут влево */
+  gap: 0; /* на всякий случай */
+}
 
-.portfolio_grid-item {}
+/* .portfolio_grid-item {} */
 
-.portfolio__img {}
+.portfolio__img {
+  /* width: 100%; */
+  /*  */
+}
+
+@media screen and (width <=1280px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width <=768px) {
+  .portfolio__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 /* #endregion */
