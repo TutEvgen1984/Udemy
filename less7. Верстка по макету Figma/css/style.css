@@ -22,7 +22,7 @@ p {
 img {
   display: block;
   max-width: 100%;
-  /* когда экран уменьшим так что изображение перестанет влазить, изображение тоде начнет уменьшаться и полоса прокрутки не появится */
+  /* когда экран уменьшим так что изображение перестанет влазить, изображение тоже начнет уменьшаться и полоса прокрутки не появится */
 }
 
 :root {
@@ -512,21 +512,27 @@ body {
 
 /* #region Portfolio */
 
-/* .portfolio {} */
+.portfolio {
+  /* При увеличении ширины экрана больше 1920 сделаем так чтобы ширина секции не увеличивалась больше 1920px и была отцентрирована */
+  max-width: 1920px;
+  margin: 0 auto;
+}
 
 .portfolio__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-items: center; /* если этого не написать, то при уменьшении ширины экрана картинки уедут влево */
-  gap: 0; /* на всякий случай */
+  justify-items: center;
+  /* если этого не написать, то при уменьшении ширины экрана картинки уедут влево */
+  gap: 0;
+  /* на всякий случай */
 }
 
 /* .portfolio_grid-item {} */
 
-.portfolio__img {
-  /* width: 100%; */
-  /*  */
-}
+/* .portfolio__img {
+  width: 100%;
+
+} */
 
 @media screen and (width <=1280px) {
   .portfolio__grid {
@@ -538,6 +544,126 @@ body {
   .portfolio__grid {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+/* #endregion */
+
+/* #region Question */
+.question {
+  padding-top: 150px;
+  padding-bottom: 110px;
+}
+
+/* нам необходимо оформить .section__h2, благодаря форме записи ниже мы оформим .section__h2 находящуюся только внутри .question. .section__h2 в других секциях выше оформленный ранее не будет поврежден */
+.question .section__h2 {
+  margin-bottom: 50px;
+}
+
+/* .question .section__h2 через пробел означает .section__h2 внутри .question с любой степенью вложенности */
+
+/* .question_items {} */
+
+/* .question_item {} */
+
+.question_h3 {
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 23px;
+}
+
+.question_h3.close {
+  margin-bottom: 31px;
+}
+
+.question_p {
+  margin-bottom: 40px;
+  color: var(--gray-color);
+  max-width: 730px;
+}
+
+/* Для тех разделов аккордеона, которые открыты: */
+/* .question_h3.open слитно означает искать элемент имеющий два этих класса одновременно */
+.question_h3.open::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url(../img/arrow-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 14px;
+  transform: rotate(-90deg);
+}
+
+/* Для тех разделов аккордеона, которые закрыты: */
+.question_h3.close::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url(../img/arrow-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 15px;
+}
+
+.question_h3.close+.question_p {
+  display: none;
+}
+
+/* Выбрать элемент имеющий класс ".question_p" находящийся РЯДОМ на одном уровне с элементом имеющим класс ".question_h3.close", полсе этого скрыть только .question_p (НЕ оба, а только один) */
+
+@media screen and (width <=1280px) {
+  .question {
+    padding: 150px 15px 110px;
+  }
+}
+
+/* #endregion Question */
+
+/* #region Partners */
+.partners {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: var(--dark-color);
+}
+
+.partners__h2 {
+  color: var(--white-color);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.partners__flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.partners__item {
+  margin-right: 40px;
+  margin-bottom: 20px;
+  max-width: 170px;
+}
+
+/* для каждого 5-го элемента: */
+.partners__item:nth-child(5n) {
+  margin-right: 0;
+}
+
+@media screen and (width <=1280px) {
+  .partners__flex {
+    justify-content: center;
+  }
+  .partners__item {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .partners__item:nth-child(5n) {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
 }
 
 /* #endregion */
