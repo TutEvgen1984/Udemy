@@ -611,7 +611,7 @@ body {
   display: none;
 }
 
-/* Выбрать элемент имеющий класс ".question_p" находящийся РЯДОМ на одном уровне с элементом имеющим класс ".question_h3.close", полсе этого скрыть только .question_p (НЕ оба, а только один) */
+/* Выбрать элемент имеющий класс ".question_p" находящийся РЯДОМ на одном уровне с элементом имеющим класс ".question_h3.close", после этого скрыть только .question_p (НЕ оба, а только один) */
 
 @media screen and (width <=1280px) {
   .question {
@@ -705,11 +705,109 @@ body {
 
 /* .text-p-reviews {}
 
-.text-h4 {} */
+  .text-h4 {} */
 
 .reviews_author-accent {
   color: var(--accent-color);
 }
+
+@media screen and (width <=1280px) {
+
+  .reviews {
+    padding: 100px 15px;
+  }
+
+  .reviews__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (width <=768px) {
+  .reviews__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* #endregion */
+
+/* #region Contacts */
+
+.contacts {
+  padding: 100px 0 150px;
+}
+
+.contacts__h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contacts__grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.contacts__item {
+  max-width: 255px;
+  text-align: center;
+}
+
+.contacts__icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 13px;
+}
+
+.contacts__h3 {
+  text-transform: uppercase;
+}
+
+.contacts__h3-gray {
+  color: var(--gray-color);
+  margin-bottom: 18px;
+}
+
+.contacts__h3-accent {
+  color: var(--accent-color);
+}
+
+@media screen and (width <=1280px) {
+
+  .contacts__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contacts__item {
+    max-width: 100%;
+  }
+}
+
+@media screen and (width <=768px) {
+
+  .contacts__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+/* #endregion */
+
+
+/* #region Footer */
+
+.footer {
+  padding: 30px 0;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}
+
+.footer__flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .footer__copyright {}
+
+.footer__brand {} */
 
 @media screen and (width <=1280px) {
 
