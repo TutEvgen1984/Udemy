@@ -1,0 +1,36 @@
+:root {
+  --accent: rgba(247, 101, 74, 1);
+  --dark: rgba(64, 65, 73, 1);
+  --gray: rgba(153, 153, 153, 1);
+  --white: rgba(255, 255, 255, 1);
+  --h-2-font-family: "Oswald", Helvetica;
+  --h-2-font-weight: 500;
+  --h-2-font-size: 36px;
+  --h-2-letter-spacing: 0px;
+  --h-2-line-height: normal;
+  --h-2-font-style: normal;
+  --h-3-font-family: "Oswald", Helvetica;
+  --h-3-font-weight: 500;
+  --h-3-font-size: 24px;
+  --h-3-letter-spacing: 0px;
+  --h-3-line-height: normal;
+  --h-3-font-style: normal;
+  --p-font-family: "Open Sans", Helvetica;
+  --p-font-weight: 400;
+  --p-font-size: 16px;
+  --p-letter-spacing: 0px;
+  --p-line-height: normal;
+  --p-font-style: normal;
+  --h-4-font-family: "Oswald", Helvetica;
+  --h-4-font-weight: 500;
+  --h-4-font-size: 21px;
+  --h-4-letter-spacing: 0.42px;
+  --h-4-line-height: normal;
+  --h-4-font-style: normal;
+  --p-reviews-font-family: "Open Sans", Helvetica;
+  --p-reviews-font-weight: 400;
+  --p-reviews-font-size: 14px;
+  --p-reviews-letter-spacing: 0px;
+  --p-reviews-line-height: 21px;
+  --p-reviews-font-style: normal;
+}

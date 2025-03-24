@@ -186,6 +186,13 @@ body {
   color: var(--white-color);
 }
 
+@media screen and (width <=1280px) {
+  .header__title {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 @media screen and (width <=380px) {
   .h1 {
     font-size: 46px;
@@ -204,8 +211,6 @@ body {
   color: var(--white-color);
   margin: 0 auto;
 }
-
-@media screen and (width <=380px) {}
 
 /* #endregion */
 
@@ -571,9 +576,9 @@ body {
   margin-bottom: 23px;
 }
 
-.question_h3.close {
+/* .question_h3.close {
   margin-bottom: 31px;
-}
+} */
 
 .question_p {
   margin-bottom: 40px;
@@ -581,9 +586,11 @@ body {
   max-width: 730px;
 }
 
+/* https://doka.guide/html/details/ */
+
 /* Для тех разделов аккордеона, которые открыты: */
 /* .question_h3.open слитно означает искать элемент имеющий два этих класса одновременно */
-.question_h3.open::before {
+/*.question_h3.open::before {
   content: "";
   display: inline-block;
   width: 15px;
@@ -595,7 +602,7 @@ body {
   transform: rotate(-90deg);
 }
 
-/* Для тех разделов аккордеона, которые закрыты: */
+/~ Для тех разделов аккордеона, которые закрыты: ~/
 .question_h3.close::before {
   content: "";
   display: inline-block;
@@ -609,7 +616,7 @@ body {
 
 .question_h3.close+.question_p {
   display: none;
-}
+}*/
 
 /* Выбрать элемент имеющий класс ".question_p" находящийся РЯДОМ на одном уровне с элементом имеющим класс ".question_h3.close", после этого скрыть только .question_p (НЕ оба, а только один) */
 
@@ -776,6 +783,7 @@ body {
   .contacts__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .contacts__item {
     max-width: 100%;
   }
@@ -809,12 +817,17 @@ body {
 
 .footer__brand {} */
 
-@media screen and (width <=1280px) {
 
+@media screen and (width <=1280px) {
+  .footer {
+    padding: 30px 15px;
+  }
 }
 
 @media screen and (width <=768px) {
-
+  .footer__flex {
+    flex-direction: column;
+  }
 }
 
 /* #endregion */
