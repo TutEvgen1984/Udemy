@@ -769,6 +769,11 @@ body {
   text-transform: uppercase;
 }
 
+.contacts__h3 a {
+  text-decoration: none; /* убрали подчеркивание */
+  color: inherit; /* убрали синий цвет */
+}
+
 .contacts__h3-gray {
   color: var(--gray-color);
   margin-bottom: 18px;
