@@ -20,7 +20,9 @@
     <!--Import materialize.css-->
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+    <!-- Закомментируем подключение materialize.css так как мы из него все наобходимое перекопировали к себе в style.css -->
+    <!-- <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" /> -->
     <!-- #endregion -->
 
     <link rel="stylesheet" href="css/style.css">
@@ -28,11 +30,11 @@
 </head>
 
 <body>
-    <!-- #region Sidenav -->
+    <!-- #region Sidenav (materializecss) -->
     <nav> <!-- navbar content here  --> </nav>
 
     <ul id="slide-out" class="sidenav">
-        <li>
+        <!--<li> <!~~ этот раздел нам не нужен ~~>
             <div class="user-view">
                 <div class="background">
                     <img src="images/office.jpg">
@@ -41,28 +43,40 @@
                 <a href="#name"><span class="white-text name">John Doe</span></a>
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
-        </li>
-        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-        <li><a href="#!">Second Link</a></li>
+        </li>-->
+        <li><a href="#!"><i class="material-icons">home</i>Главная</a></li>
+        <li><a href="#!"><i class="material-icons">people</i>О нас</a></li>
+        <li><a href="#!"><i class="material-icons">grade</i>Услуги</a></li>
+        <li><a href="#!"><i class="material-icons">phone</i>Контакты</a></li>
+
+        <!-- Линия-разделитель -->
         <li>
             <div class="divider"></div>
         </li>
+
+        <!-- Кнопка закрыть -->
+        <li><a class="sidenav-close" href="#!"><i class="material-icons">close</i>Закрыть</a></li>
+
+        <!--<!~~ Нижние 2 элемента тоже не нужны ~~>
         <li><a class="subheader">Subheader</a></li>
-        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>-->
+
     </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    <!-- #endregion -->
+    <!--<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <!~~ кнопка меню библиотеки materializecss. Берём отсюда data-target="slide-out" class="sidenav-trigger" и перемещаем в нашу кнопку меню ~~>-->
+
+    <!-- #endregion Sidenav -->
 
     <!-- #region Шапка -->
     <header class="header">
         <div class="container">
             <div class="header__title"> <!-- блок, в котором в одну линию размещены лого и бургер -->
                 <img class="logo" src="img/logo.svg" alt="Logo">
-                <button class="burger"> <!-- кнопка-меню бургер -->
+                <a class="burger sidenav-trigger" data-target="slide-out"> <!-- кнопка-меню бургер -->
                     <span class="burger__line"></span> <!-- 3 линии бургера -->
                     <span class="burger__line"></span>
                     <span class="burger__line"></span>
-                </button>
+                </a>
             </div>
             <h1 class="h1">Реализуем крупнейшие проекты в России</h1>
             <h4 class="h4">стадионы, газопроводы, мосты, дамбы</h4>
@@ -159,6 +173,8 @@
     <!-- #endregion О нас -->
 
     <!-- #region Request -->
+
+    <!-- #region section request -->
     <section class="request">
         <div class="container">
             <div class="request__flex">
@@ -167,15 +183,35 @@
                     <h5 class="request__h5">Реализуем самые смелые решения в России!</h5>
                 </div>
                 <div class="request__flex-right">
-                    <button class="request__btn">
+                    <a class="request__btn modal-trigger" href="#modal1">
                         <img class="request_icon" src="img/envelop.svg" alt="envelop">
                         Ваш запрос
-                    </button>
+                    </a>
 
                 </div>
             </div>
         </div>
     </section>
+    <!-- #endregion -->
+
+    <!-- #region Modals (materializecss) -->
+
+    <!-- https://materializecss.com/modals.html#! -->
+    <!-- Modal Trigger -->
+    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+    <!-- #endregion -->
+
     <!-- #endregion Request -->
 
     <!-- #region Services -->
