@@ -17,3 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var instances_modal = M.Modal.init(modal);
 });
 /* #endregion */
+
+/* #region Инициализация Portfolio (8 картинок) */
+var gallery = document.querySelectorAll('.materialboxed');
+var instances_gallery = M.Materialbox.init(gallery);
+/* #endregion */
