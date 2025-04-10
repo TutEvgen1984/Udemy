@@ -14,6 +14,7 @@ html {
 
 body {
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* #endregion Сброс */
@@ -35,7 +36,6 @@ body {
 }
 
 .header_title {
-    font-family: 'Montserrat', sans-serif;
     font-size: 56px;
     font-weight: 600;
     margin-bottom: 37px;
@@ -43,22 +43,145 @@ body {
 }
 
 .header_text {
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5em;
     margin-bottom: 45px;
     max-width: 437px;
-    /* letter-spacing: 1px; */
 }
 
 .header_button {
     width: 194px;
     height: 60px;
     font-family: 'Montserrat', sans-serif;
+    /* Для кнопок шрифт не наследуется */
     font-size: 16px;
     font-weight: 400;
     border: none;
 }
 
 /* #endregion Header */
+
+/* #region Block */
+/* Этот раздел как бы общий, поэтому он не в сераисах и не в team */
+.block {
+    text-align: center;
+    margin-bottom: 118px;
+}
+
+.block_title {
+    font-weight: 600; /* Это SemiBold */
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3.3px;
+    margin-bottom: 25px;
+}
+
+.block_text {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #9CA3AF;
+    max-width: 465px;
+    margin: 0 auto;
+}
+
+/* #endregion Block */
+
+/* #region Services */
+.services {
+    padding: 118px 0 166px;
+}
+
+.services_items {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    max-width: 888px;
+    margin: 0 auto;
+}
+
+.item {
+    max-width: 280px;
+    height: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.services_items_img {
+    align-self: center; /* если этоно не написать, иконки будут огромными */
+    /* https://dzen.ru/video/watch/625c15063e50e11d4b7fe5e4 */
+}
+
+.services_items_title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #9CA3AF;
+}
+
+/* #endregion Services */
+
+/* #region Team */
+
+.team {
+
+}
+.team_items {
+    display: flex;
+    justify-content: space-between;
+    max-width: 880px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.team_item {
+    display: flex;
+
+}
+.team_img {
+    align-self: center;
+    margin-right: 8px;
+}
+.team_block {
+    /* нужен только для группировки. Можно было этому диву даже клас не присваивать */
+}
+.team_title {
+}
+.team_text {
+}
+
+/* #endregion Team */
+
+/* #region Media */
+@media screen and (width <=768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .services_items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services_items_title {
+        /*font-size: 16px; /~ был 16 ~/*/
+        font-size: 14px;
+    }
+
+    .header_button {
+        /*width: 194px; /~ был 194 ~/*/
+        /*font-size: 16px; /~ был 16 ~/*/
+        font-size: 14px;
+    }
+}
+
+@media screen and (width <=400px) {
+    .header_title {
+        font-size: 36px;
+    }
+}
+
+/* #endregion */
