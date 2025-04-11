@@ -63,7 +63,7 @@ body {
 /* #endregion Header */
 
 /* #region Block */
-/* Этот раздел как бы общий, поэтому он не в сераисах и не в team */
+/* Этот раздел как бы общий, поэтому он не в сервисах и не в team */
 .services .block {
     text-align: center;
     margin-bottom: 118px;
@@ -112,7 +112,7 @@ body {
 }
 
 .services_items_img {
-    align-self: center; /* если этоно не написать, иконки будут огромными */
+    align-self: center; /* если это не написать, иконки будут огромными */
     /* https://dzen.ru/video/watch/625c15063e50e11d4b7fe5e4 */
 }
 
@@ -143,7 +143,7 @@ body {
     display: flex;
     padding: 20px;
     background-color: #fff;
-    width: 260px;
+    max-width: 260px;
     height: 76px;
     border-radius: 11px;
     align-items: center;
@@ -155,9 +155,9 @@ body {
     margin-right: 8px;
 }
 
-.team_block {
-    /* нужен только для группировки. Можно было этому диву даже клас не присваивать */
-}
+/*.team_block {
+    /~ нужен только для группировки. Можно было этому диву даже класс не присваивать ~/
+}*/
 
 .team_title {
     font-size: 12px;
@@ -169,11 +169,25 @@ body {
     margin-top: 0;
     font-size: 11px;
     color: #9CA3AF;
+    font-style: italic;
 }
 
 /* #endregion Team */
 
 /* #region Media */
+@media screen and (width <=1366px) {
+    .team .container {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (width <=1024px) {
+    .team_items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media screen and (width <=768px) {
     .container {
         padding: 0 15px;
@@ -182,7 +196,6 @@ body {
     .services_items {
         flex-direction: column;
         align-items: center;
-        font-style: italic;
     }
 
     .services_items_title {
