@@ -1,0 +1,24 @@
+/* #region Сброс минимум (минимальный) */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+/* #endregion Сброс минимум (минимальный) */
+
+:root {
+    --accent-1: #00868a;
+    --accent-2: #4fbfa5;
+    --white: #fff;
+    --font-family: "Arial", sans-serif;
+}
+
