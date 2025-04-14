@@ -1,3 +1,13 @@
+/* #region Переменные */
+:root {
+    --accent-1: #00868a;
+    --accent-2: #4fbfa5;
+    --white: #fff;
+    --font-family: "Arial", sans-serif;
+}
+
+/* #endregion */
+
 /* #region Сброс минимум (минимальный) */
 html {
     box-sizing: border-box;
@@ -15,10 +25,74 @@ body {
 
 /* #endregion Сброс минимум (минимальный) */
 
-:root {
-    --accent-1: #00868a;
-    --accent-2: #4fbfa5;
-    --white: #fff;
-    --font-family: "Arial", sans-serif;
+/* #region Сайт */
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 60px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 150%;
+    text-align: center;
+    color: var(--accent-1);
 }
 
+.container {
+    max-width: 1344px;
+    width: 100%;
+    padding: 0 24px;
+    margin: 0 auto;
+}
+
+/* Общий див содержащий container и все остальное  */
+.cadrs {
+    padding: 162px 0;
+    min-height: 800px;
+}
+
+/* Общий див содержащий 4 карточки */
+.cards_inner {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Каждая карточка */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 306px;
+    width: 100%;
+    height: 344px;
+}
+
+/* div class="top" отвечает за div с картинкой установленной в качестве бэкграунда, и в котором еще есть кнопка Ксометология */
+.top {
+    padding: 30px;
+
+    height: 100%;
+    /* Если "height: 100%" не написать, то высота дива будет такая чтобы только вместилась кнопка Косметология + padding 30px с 4-х сторон.*/
+    /* Если изнутри div.top убрать кнопку косметология и еще и убрать padding вообще, то высота div'а будет 0 так как внутри нет контента, хотя вродеб бы в качестве бэкграунда стоит картинка 306pxх230px. Дело в том что по умолчанию высота бэкграунда не учитывается у дива вообще. А когда напишем height: 100%; высота становится высотой равной максимальной высоте который позволяет родительский div, при этом высота бэкграунда все так же не учитывается вообще */
+    /* Есть подозрение, что по аналогичной причине автор курса везде пишет на первый взгляд непонятный width: 100% даже после того, как перед этим вроде бы явно задал max-width. Например .container {max-width: 1344px; width: 100%;} */
+}
+
+.top a {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--white);
+    background-color: var(--accent-2);
+    padding: 10px 15px;
+    transition: 0.5s ease;
+}
+
+.top a:hover {
+    background-color: var(--accent-1);
+}
+
+.bottom {}
+
+/* #endregion */
