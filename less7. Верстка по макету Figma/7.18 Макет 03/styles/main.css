@@ -70,7 +70,7 @@ h1 {
 
 /* div class="top" отвечает за div с картинкой установленной в качестве бэкграунда, и в котором еще есть кнопка Ксометология */
 .top {
-    padding: 30px;
+    padding: 40px 30px;
 
     height: 100%;
     /* Если "height: 100%" не написать, то высота дива будет такая чтобы только вместилась кнопка Косметология + padding 30px с 4-х сторон.*/
@@ -93,6 +93,68 @@ h1 {
     background-color: var(--accent-1);
 }
 
-.bottom {}
+.bottom {
+    height: 114px;
+    padding: 30px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background-color: var(--accent-1);
+}
 
-/* #endregion */
+.bottom h4 {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--white);
+}
+
+.bottom a {
+    transition: 0.5s ease;
+}
+
+.bottom a:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (width <= 1366px) {
+    .cards_inner {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+}
+
+@media screen and (width <= 768px) {
+    .cards_inner {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (width <= 540px) {
+    h1 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (width <= 400px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .bottom h4 {
+        font-size: 12px;
+    }
+
+    .cadrs {
+        /* padding: 162px 0; */
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+}
+
+
+/* #endregion Сайт */
