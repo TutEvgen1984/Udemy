@@ -137,11 +137,15 @@ body {
   color: rgb(94, 128, 255);
 }
 
+/* <p>89%</p> и <p>3123</p>.
+ .stats-inner p:nth-child(1), как ни странно, считается тег img */
 .stats-inner p:nth-child(2) {
   font-size: 48px;
   margin-bottom: 20px;
 }
 
+/* <p>Customers who have increased their productivity</p>
+и <p>Users who have used our application</p> */
 .stats-inner p:nth-child(3) {
   font-size: 18px;
   font-weight: 500;
@@ -150,6 +154,7 @@ body {
 }
 
 .stats-left p:nth-child(3) {
+  /* чтобы текст в левой части придать вправо выставляем margin auto справа так как text-align: right на него почемуто не подействовал */
   margin: 0 0 0 auto;
 }
 
@@ -231,7 +236,7 @@ body {
   .blog-gallery {
     margin-right: 0;
     margin-bottom: 67px;
-    justify-content: start
+    justify-content: start;
   }
 }
 
