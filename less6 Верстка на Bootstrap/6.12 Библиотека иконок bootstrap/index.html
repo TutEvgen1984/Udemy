@@ -10,6 +10,7 @@
     <style>
         /* Подключение внешнего CSS через CDN из стилей для Способа 4 */
         @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+        /* работает так же как link, только из css */
 
         /* Это импорт css онлайн */
         /* Стилизация иконок имеющих класс "bi" */
@@ -25,12 +26,13 @@
 
     <!-- #region Способ №1. Embedded. HTML svg -->
 
-    <!-- На странице https://icons.getbootstrap.com/ этот метод называется Embedded -->
+    <!-- На странице https://icons.getbootstrap.com/ этот метод называется Embedded (от англ. Встроенный) -->
     <!-- Embedded переводится как встроенный  -->
     <!-- Простое копирование у выбранной иконки HTML кода с тегом svg  -->
     <!-- Иконка 1 -->
     <!-- https://icons.getbootstrap.com/icons/chevron-down/ -->
-    <!-- Код копируем из "Copy HTML". Стандартная иконка стандартного цвета и размера -->
+    <!-- Код копируем из "Copy HTML". -->
+    <!-- Стандартная иконка стандартного цвета и размера. Её сейчас на на странице белом фоне плохо видно -->
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down"
         viewBox="0 0 16 16">
         <path fill-rule="evenodd"
@@ -38,7 +40,7 @@
     </svg>
     <!-- fill="currentColor" - означает цвет по умолчанию который установлен для текста из CSS стилей. fill="blue" покрасит значок в синий цвет -->
 
-    <!-- Иконка 2, такая же как выше, но белого цвета -->
+    <!-- Иконка 2 внутри div с отступами(паддингом) 40 пикселей сине-фиолетового цвета, такая же как выше, но белого цвета -->
     <div style="background-color: blueviolet; width: fit-content; padding: 40px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="white" class="bi bi-chevron-down"
             viewBox="0 0 16 16">
@@ -47,7 +49,7 @@
         </svg>
     </div>
 
-    <!-- #endregion -->
+    <!-- #endregion Способ №1. Embedded -->
 
     <!-- #region Способ №2. Sprite. npm -->
     <!-- На странице https://icons.getbootstrap.com/ этот метод называется Sprite -->
@@ -84,19 +86,26 @@
     added 1 package in 4s
 
     Установил обновленный пакет npm
-    появилась в папке Udemy новая папка node_modules весом 2,72 Мб
+    появилась в папке "Udemy" новая папка node_modules весом 2,72 Мб
     в которой есть папка bootstrap-icons
     перемещаем её в нашу папку 6.11
     -->
 
     <!-- Теперь иконки ссылаются на файл bootstrap-icons.svg который надо скопировать рядом с index.html - это для того чтобы путь к иконкам был короче -->
     <!-- этот файл содержит все иконки в svg-формате в одном файле -->
+
+    <!-- иконка сердце -->
     <svg class="bi" width="32" height="32" fill="currentColor">
         <use xlink:href="bootstrap-icons.svg#heart-fill" />
     </svg>
+    <!-- <use xlink:href="bootstrap-icons.svg#heart-fill" /> означает подключиться к bootstrap-icons.svg лежащий рядом с index.html -->
+
+    <!-- иконка переключатели -->
     <svg class="bi" width="32" height="32" fill="currentColor">
         <use xlink:href="bootstrap-icons.svg#toggles" />
     </svg>
+
+    <!-- иконка магазин -->
     <svg class="bi" width="32" height="32" fill="currentColor">
         <use xlink:href="bootstrap-icons.svg#shop" />
     </svg>
@@ -105,7 +114,7 @@
     <svg class="bi" width="32" height="32" fill="currentColor">
         <use xlink:href="bootstrap-icons.svg#whatsapp" />
     </svg>
-    <!-- #endregion -->
+    <!-- #endregion Способ №2. Sprite. npm -->
 
     <!-- #region Способ №3. External image -->
     <!-- Метод встроенных изображений -->
@@ -114,7 +123,7 @@
     <!-- Каждая иконка находится в отдельном файле с расширением .svg -->
     <!-- удобство в том, что не нужно качать все 1000 иконок -->
     <!-- но здесь есть неудобство - мы не можем поменять цвет. Его придется менять через костыли - через фильтр. Этот способ не приветствуется -->
-    <!-- #endregion -->
+    <!-- #endregion Способ №3. External image -->
 
     <!-- #region Способ №4. Icon font i -->
 
@@ -128,11 +137,7 @@
     <!-- Еще один способ - использование import, который нужно использовать в CSS:
          @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css") -->
 
-    <!-- #endregion -->
-
-
-
-
+    <!-- #endregion Способ №4. Icon font i -->
 </body>
 
 </html>
