@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
+<!-- <html lang="en" data-bs-theme="dark"> -->
+
+</html>
 <!-- сделали терму сайта тёмной с помощью bootstrap -->
 
 <head>
@@ -66,6 +69,84 @@
             </div>
         </div>
     </div>
+
+    <img class="mt-5 img-fluid img-thumbnail mx-auto d-block" src="img/t2.jpg" alt="">
+    <!-- mt-5 - margin top 5 -->
+    <!-- img-fluid – делает изображение адаптивным (масштабируется по размеру родителя) это применяет max-width: 100%; и height: auto; к изображению, чтобы оно масштабировалось с шириной родителя-->
+    <!-- img-thumbnail - создает вокруг изображения рамку в 1 пиксель закругленную -->
+    <!-- d-block - display block просто делает изображение блочным -->
+    <!-- mx-auto (центрирование, если изображение в блоке с .d-block). -->
+
+    <!-- 6.19 Контент/таблицы -->
+    <!-- .table – базовый класс для стилизации таблиц в Bootstrap. -->
+    <!-- .table-striped – добавляет чередование цветов строк (зебру). -->
+    <!-- .table-hover – подсвечивает строку при наведении курсора. -->
+    <!-- .table-responsive – делает таблицу адаптивной на мобильных устройствах. -->
+    <table class="table mt-5 table-striped table-hover table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Фамилия</th>
+                <th scope="col">Обращение</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>John</td>
+                <td>Doe</td>
+                <td>@social</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!-- Темную таблицу с полосатыми строками -->
+    <!-- Без внешних границ -->
+    <!-- С подсветкой при наведении -->
+    <table class="table table-dark table-striped table-hover table-borderless mt-5">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Фамилия</th>
+                <th scope="col">Обращение</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>John</td>
+                <td>Doe</td>
+                <td>@social</td>
+            </tr>
+        </tbody>
+    </table>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
