@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рецепт x2</title>
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="img/favicon/site.webmanifest" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <!-- Заголовок и краткое описание -->
+  <h2>Увеличить или уменьшить ингредиенты в рецепте</h2>
+  <p>Онлайн калькулятор поможет увеличить или уменьшить количество ингредиентов в рецепте.</p>
+  
+  <!-- Инструкция -->
+  <details>
+    <summary>Инструкция</summary>
+    <ul>
+      <li>Заполните название, количество и единицу измерения для ингредиента, нажмите кнопку "Добавить". Если количество не заполнять или установить равным нулю, то получится значение - по вкусу.</li>
+      <li>Если нужно удалить ингредиент, то нажмите на значок удаления ингредиента, который добавили ранее.</li>
+      <li>Выберите уменьшить или увеличить количество ингредиентов и введите во сколько раз. Нажмите кнопку "Вычислить", чтобы получить новый рецепт.</li>
+      <li>Введите название рецепта нажав на заголовок с соответствующим текстом.</li>
+      <li>Можно сделать скриншот готового результата или скопировть в буфер обмена.</li>
+    </ul>
+  </details>
+
+  <!-- Настройки приложения -->
+  <h3>Настройки</h3>
+  <button id="decrease_fs_btn">-</button>
+  <button id="increase_fs_btn">+</button>
+  <button id="change_theme_btn">Тема</button>
+
+  <!-- Добавить ингредиенты -->
+  <h3>Ингредиенты</h3>
+  <input id="item_name" type="text" placeholder="Название" >
+  <input id="item_count" type="number" placeholder="Кол-во" >
+  <select id="item_type">
+    <option value="г.">г.</option>
+    <option value="кг.">кг.</option>
+    <option value="мл.">мл.</option>
+    <option value="л.">л.</option>
+    <option value="ч. л.">ч. л.</option>
+    <option value="ст. л.">ст. л.</option>
+    <option value="шт.">шт.</option>
+  </select>
+  <button id="add_btn">Добавить</button>    
+  <div id="original_recipe"></div>
+
+  <!-- Изменить рецепт -->
+  <h3>Изменить рецепт</h3>
+  <select id="how_many_times_to_change">
+    <option value="1">Уменьшить во сколько раз</option>
+    <option value="2">Увеличить во сколько раз</option>
+  </select>
+  <input id="how_many_times" type="number" placeholder="4" value="4">
+  <button id="calculate_btn">Вычислить</button>
+  
+  <!-- Измененный рецепт -->
+  <div id="modified_recipe">
+    <h3 id="recipe_name">Нажмите, чтобы ввести название рецепта</h3>
+    <div id="modified_recipe_body"></div>
+  </div>
+  <button id="copy_btn">Копировать</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
