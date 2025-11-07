@@ -47,11 +47,12 @@ const elements = {
   // Управление шрифтом
   decreaseFontBtn: document.getElementById('decrease_fs_btn'),
   increaseFontBtn: document.getElementById('increase_fs_btn'),
-  
+
   // Управление темой
   themeToggle: document.getElementById('change_theme_btn'),
   htmlElement: document.documentElement,
-  
+  // Document.documentElement — свойство объекта document в JavaScript, которое возвращает корневой элемент документа. В HTML-документах это, например, элемент <html>
+
   // Управление рецептами
   recipeName: document.getElementById('recipe_name'),
   addBtn: document.getElementById('add_btn'),
@@ -60,7 +61,7 @@ const elements = {
   modifiedRecipeBody: document.getElementById('modified_recipe_body'),
   calculateBtn: document.getElementById('calculate_btn'),
   copyBtn: document.getElementById('copy_btn'),
-  
+
   // Поля ввода
   itemName: document.getElementById('item_name'),
   itemCount: document.getElementById('item_count'),
@@ -80,6 +81,7 @@ let state = {
  * Управление шрифтом
  */
 function changeFontSize(direction) {
+  // переменной 'текущий цвет' присваиваем преобразованное в целое число значение размера шрифта у текущей html станицы:
   const currentSize = parseInt(window.getComputedStyle(document.body).fontSize);
   let newSize = currentSize;
 
@@ -89,6 +91,7 @@ function changeFontSize(direction) {
     newSize = currentSize + CONFIG.fontSize.step;
   }
 
+  //  если переменные новый размер и текущий размер отличаются, то текущий заменяем новым
   if (newSize !== currentSize) {
     document.body.style.fontSize = `${newSize}px`;
   }
@@ -101,10 +104,18 @@ function initializeTheme() {
   const savedTheme = localStorage.getItem(CONFIG.theme.dark.storageKey);
   const isDarkTheme = savedTheme === CONFIG.theme.dark.theme;
   setTheme(isDarkTheme ? CONFIG.theme.dark : CONFIG.theme.light);
+  // в функцию setTheme отправится либо 'dark' либо 'light'
 }
 
 function setTheme(theme) {
   elements.htmlElement.setAttribute('data-bs-theme', theme.theme);
+  // theme.theme здесь первая theme это ?
+  console.log("🚀 ~ setTheme ~ theme.theme:", theme.theme);
+  // 🚀 ~ setTheme ~ theme.theme: light
+
+  console.log("🚀 ~ setTheme ~ theme:", theme);
+  // ~ setTheme ~ theme: {theme: 'light', icon: 'темная', storageKey: 'theme'}
+
   elements.themeToggle.innerHTML = theme.icon;
   localStorage.setItem(theme.storageKey, theme.theme);
 }
@@ -142,7 +153,7 @@ function renderRecipeList(container, recipeList, action, modifier, isNew = false
              <i class="bi bi-trash-fill" data-name="${item.name}"></i>
            </button>
          </div>`;
-    
+
     containerElement.appendChild(div);
   });
 }
@@ -190,10 +201,10 @@ function updateRecipeName() {
 function calculateRecipe() {
   elements.modifiedRecipe.style.display = 'block';
   elements.modifiedRecipeBody.innerHTML = '';
-  
+
   const ratioType = +elements.ratioType.value;
   const ratio = +elements.ratioValue.value;
-  
+
   if (!ratio) {
     alert("Введите число кроме нуля");
     return;
