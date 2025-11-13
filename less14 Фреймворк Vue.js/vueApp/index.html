@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- иконка для сайта 16x16 px -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- сброс оформления -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- подключение иконок -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Моя раса в Star Craft 2</title>
+</head>
+
+<body>
+
+    <div class="main">
+
+        <!-- главный экран -->
+        <div class="app">
+
+            <div class="app__header">
+                <img src="img/logo.png" alt="" class="app__logo">
+            </div>
+
+            <div class="app__body">
+
+                <!--  кнопка 1 -->
+                <buttom class="app__btn">
+                    <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                    <div class="app__btn-text">Начать</div>
+                </buttom>
+
+                <!--  кнопка 2 -->
+                <buttom class="app__btn">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                    <div class="app__btn-text">Достижения</div>
+                </buttom>
+
+                <!--  кнопка 3 -->
+                <buttom class="app__btn">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <div class="app__btn-text">Автор</div>
+                </buttom>
+
+                <!--  кнопка 4 -->
+                <buttom class="app__btn btn__sound">
+                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                    <div class="app__btn-text">Звук</div>
+                </buttom>
+            </div>
+        </div>
+
+    </div>
+
+    <!--  подключение Фреймворка vue -->
+    <script src="js/vue.js"></script>
+
+    <!-- подключение файла с константами -->
+    <script src="js/const.js"></script>
+</body>
+
+</html>
