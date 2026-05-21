@@ -1,6 +1,6 @@
 // Пример 41 - Генератор тени
 
-function generateCss () {
+function generateCss() {
     // подцепимся к <input type="checkbox" id="inset" checked>
     // нас интересует наличие или отсутствие установленного свойства checked (true/false)
     let inset = document.getElementById('inset').checked;
@@ -22,12 +22,12 @@ function generateCss () {
 
     // разобьем наш цвет на 3 отдельных компонента:
     // из переменной color уберём # и возьмём первые 2 значения и переведём в 10-ную систему счисления
-    let red = parseInt(color.slice(1,3), 16); // 0
+    let red = parseInt(color.slice(1, 3), 16); // 0
     // ', 16' означает основание в 16-ной системе счисления
 
-    let green = parseInt(color.slice(3,5), 16); // 0
+    let green = parseInt(color.slice(3, 5), 16); // 0
 
-    let blue = parseInt(color.slice(5,7), 16); // 0
+    let blue = parseInt(color.slice(5, 7), 16); // 0
 
     // прозрачность:
     let opacity = document.getElementById('opacity').value;
@@ -48,13 +48,15 @@ function generateCss () {
     result.style.boxShadow = str;
 }
 
+// #region f
 // ко всем элементам input привяжем обработчик
 for (let item of document.querySelectorAll('input')) {
     item.addEventListener('input', generateCss)
 }
+// #endregion f
 
 // один раз вызовем функцию для первоначального стартового расчёта значений:
-generateCss ();
+generateCss();
 // если этого не сделать, то после обновления страницы в поле результата будет пусто до тех пор пока не поменяем любой ползунок
 
 // Ссылки на генераторы:

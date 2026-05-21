@@ -1,0 +1,506 @@
+[
+  {
+    "id": "aaronccasanova.format-grid-areas",
+    "name": "Format Grid Areas",
+    "description": "An opinionated css grid-template-areas formatter.",
+    "version": "0.1.0",
+    "publisher": "aaronccasanova",
+    "state": false
+  },
+  {
+    "id": "adam-bender.commit-message-editor",
+    "name": "Commit Message Editor",
+    "description": "Edit commit messages in a convenient way.",
+    "version": "0.25.0",
+    "publisher": "adam-bender",
+    "state": false
+  },
+  {
+    "id": "adpyke.codesnap",
+    "name": "CodeSnap",
+    "description": "📷 Take beautiful screenshots of your code",
+    "version": "1.3.4",
+    "publisher": "adpyke",
+    "state": false
+  },
+  {
+    "id": "adpyke.js-unicode-preview",
+    "name": "JS Unicode Preview",
+    "description": "Show previews for unicode escape sequences",
+    "version": "1.1.4",
+    "publisher": "adpyke",
+    "state": true
+  },
+  {
+    "id": "akamud.vscode-javascript-snippet-pack",
+    "name": "JavaScript Snippet Pack ",
+    "description": "A snippet pack to make you more productive working with JavaScript",
+    "version": "0.1.6",
+    "publisher": "akamud",
+    "state": false
+  },
+  {
+    "id": "alexcvzz.vscode-sqlite",
+    "name": "SQLite",
+    "description": "Explore and query SQLite databases.",
+    "version": "0.14.1",
+    "publisher": "alexcvzz",
+    "state": true
+  },
+  {
+    "id": "AlyThobani.region-helper",
+    "name": "Region Helper",
+    "description": "Keyboard navigation, interactive tree views, fuzzy search, diagnostics, and other useful tools for code regions.",
+    "version": "1.6.2",
+    "publisher": "AlyThobani",
+    "state": true
+  },
+  {
+    "id": "anteprimorac.html-end-tag-labels",
+    "name": "HTML End Tag Labels",
+    "description": "Labels HTML end tags in VSCode",
+    "version": "1.0.0",
+    "publisher": "anteprimorac",
+    "state": true
+  },
+  {
+    "id": "Atishay-Jain.All-Autocomplete",
+    "name": "All Autocomplete",
+    "description": "Create autocomplete items from open files in VSCode.",
+    "version": "0.0.26",
+    "publisher": "Atishay-Jain",
+    "state": true
+  },
+  {
+    "id": "awwsky.regionmarker",
+    "name": "Region Marker",
+    "description": "Simple extensions for better regions visibility.",
+    "version": "0.3.6",
+    "publisher": "awwsky",
+    "state": true
+  },
+  {
+    "id": "BhargavDetroja.export-your-extensions",
+    "name": "Export Your Extensions",
+    "description": "Selectively export and import VS Code extensions with an intuitive interface. Choose exactly which extensions to backup or restore using interactive webviews.",
+    "version": "2.0.0",
+    "publisher": "BhargavDetroja",
+    "state": true
+  },
+  {
+    "id": "bierner.markdown-preview-github-styles",
+    "name": "Markdown Preview Github Styling",
+    "description": "Changes VS Code's built-in markdown preview to match Github's style",
+    "version": "2.2.0",
+    "publisher": "bierner",
+    "state": true
+  },
+  {
+    "id": "bmewburn.vscode-intelephense-client",
+    "name": "PHP Intelephense",
+    "description": "PHP code intelligence for Visual Studio Code",
+    "version": "1.18.3",
+    "publisher": "bmewburn",
+    "state": true
+  },
+  {
+    "id": "bradgashler.htmltagwrap",
+    "name": "bradgashler.htmltagwrap",
+    "description": "Wraps selected code with HTML tags",
+    "version": "1.0.0",
+    "publisher": "bradgashler",
+    "state": false
+  },
+  {
+    "id": "BriteSnow.vscode-toggle-quotes",
+    "name": "Toggle Quotes",
+    "description": "Toggle cycle \" -> ' -> `",
+    "version": "0.3.6",
+    "publisher": "BriteSnow",
+    "state": false
+  },
+  {
+    "id": "chamboug.js-auto-backticks",
+    "name": "Javascript Auto Backticks",
+    "description": "Automatically converts single or double quotes to backticks when needed.",
+    "version": "1.2.0",
+    "publisher": "chamboug",
+    "state": false
+  },
+  {
+    "id": "chriskirknielsen.visubezier",
+    "name": "VisuBezier (CSS Easing Preview)",
+    "description": "Provides a preview when hovering CSS easing functions in VS Code.",
+    "version": "1.6.1",
+    "publisher": "chriskirknielsen",
+    "state": true
+  },
+  {
+    "id": "dbaeumer.vscode-eslint",
+    "name": "ESLint",
+    "description": "Integrates ESLint JavaScript into VS Code.",
+    "version": "3.0.20",
+    "publisher": "dbaeumer",
+    "state": true
+  },
+  {
+    "id": "DEVSENSE.intelli-php-vscode",
+    "name": "IntelliPHP - AI Autocomplete for PHP",
+    "description": "AI-assisted development for PHP.",
+    "version": "0.12.17700",
+    "publisher": "DEVSENSE",
+    "state": true
+  },
+  {
+    "id": "DonnellyDevelopment.style-scout",
+    "name": "Style Scout",
+    "description": "Scout and navigate between CSS selectors and HTML elements with bidirectional Go to Definition and smart split editor workflows",
+    "version": "1.0.0",
+    "publisher": "DonnellyDevelopment",
+    "state": false
+  },
+  {
+    "id": "dzhavat.css-flexbox-cheatsheet",
+    "name": "CSS Flexbox Cheatsheet",
+    "description": "Open a flexbox cheatsheet directly in VS Code.",
+    "version": "3.3.4",
+    "publisher": "dzhavat",
+    "state": false
+  },
+  {
+    "id": "Efrice.function-comment",
+    "name": "Function Comment",
+    "description": "generate function comment anywhere",
+    "version": "0.0.4",
+    "publisher": "Efrice",
+    "state": false
+  },
+  {
+    "id": "ElenaExpositoo.flex-grid-cheatsheet",
+    "name": "Flexbox and Gridbox CheatSheet",
+    "description": "",
+    "version": "0.8.0",
+    "publisher": "ElenaExpositoo",
+    "state": true
+  },
+  {
+    "id": "eliostruyf.vscode-hide-comments",
+    "name": "Hide Comments",
+    "description": "VSCode extension for people that do not like to see comments in the code. It allows you to hide/show comments in the code.",
+    "version": "1.10.0",
+    "publisher": "eliostruyf",
+    "state": true
+  },
+  {
+    "id": "Gabrielgod1.indent-rainbow-blocks",
+    "name": "indent-rainbow-blocks",
+    "description": "Enhance your code readability with 'indent-rainbow-blocks'. Dive into your nested structures with ease and visualize your code's structure at a glance.",
+    "version": "0.0.3",
+    "publisher": "Gabrielgod1",
+    "state": true
+  },
+  {
+    "id": "hediet.vscode-drawio",
+    "name": "Draw.io Integration",
+    "description": "This unofficial extension integrates Draw.io into VS Code.",
+    "version": "1.9.0",
+    "publisher": "hediet",
+    "state": false
+  },
+  {
+    "id": "HookyQR.minify",
+    "name": "Minify",
+    "description": "Minify for VS Code.\nMinify with command, and (optionally) re-minify on save.",
+    "version": "0.4.3",
+    "publisher": "HookyQR",
+    "state": true
+  },
+  {
+    "id": "HTMLHint.vscode-htmlhint",
+    "name": "HTMLHint",
+    "description": "VS Code integration for HTMLHint - A Static Code Analysis Tool for HTML",
+    "version": "1.16.0",
+    "publisher": "HTMLHint",
+    "state": false
+  },
+  {
+    "id": "jamesohortle.unicodehover",
+    "name": "UnicodeHover",
+    "description": "Hover over Unicode escapes to see a glyph of the character.",
+    "version": "0.3.0",
+    "publisher": "jamesohortle",
+    "state": false
+  },
+  {
+    "id": "jomeinaster.bracket-peek",
+    "name": "Bracket Peek",
+    "description": "Preview the opening line of code matching the inspected closing bracket",
+    "version": "1.4.4",
+    "publisher": "jomeinaster",
+    "state": true
+  },
+  {
+    "id": "kenhowardpdx.vscode-gist",
+    "name": "Gist",
+    "description": "Create, open and edit Gists",
+    "version": "3.0.3",
+    "publisher": "kenhowardpdx",
+    "state": true
+  },
+  {
+    "id": "kisstkondoros.vscode-gutter-preview",
+    "name": "Image preview",
+    "description": "Shows image preview in the gutter and on hover",
+    "version": "0.32.2",
+    "publisher": "kisstkondoros",
+    "state": true
+  },
+  {
+    "id": "maptz.regionfolder",
+    "name": "#region folding for VS Code",
+    "description": "Provides folding for text wrapped with #region comments in VS Code.",
+    "version": "1.0.22",
+    "publisher": "maptz",
+    "state": true
+  },
+  {
+    "id": "mguellsegarra.highlight-on-copy",
+    "name": "Highlight on Copy",
+    "description": "Briefly flash and highlight selected copied text",
+    "version": "1.1.6",
+    "publisher": "mguellsegarra",
+    "state": true
+  },
+  {
+    "id": "mhutchie.git-graph",
+    "name": "Git Graph",
+    "description": "View a Git Graph of your repository, and perform Git actions from the graph.",
+    "version": "1.30.0",
+    "publisher": "mhutchie",
+    "state": true
+  },
+  {
+    "id": "MS-CEINTL.vscode-language-pack-ru",
+    "name": "Russian Language Pack for Visual Studio Code",
+    "description": "Language pack extension for Russian",
+    "version": "1.118.2026052020",
+    "publisher": "MS-CEINTL",
+    "state": false
+  },
+  {
+    "id": "ms-dotnettools.csdevkit",
+    "name": "C# Dev Kit",
+    "description": "Official C# extension from Microsoft",
+    "version": "3.20.197",
+    "publisher": "ms-dotnettools",
+    "state": false
+  },
+  {
+    "id": "ms-dotnettools.csharp",
+    "name": "C#",
+    "description": "Base language support for C#",
+    "version": "2.120.3",
+    "publisher": "ms-dotnettools",
+    "state": false
+  },
+  {
+    "id": "ms-dotnettools.vscode-dotnet-runtime",
+    "name": ".NET Install Tool",
+    "description": "This extension installs and manages different versions of the .NET SDK and Runtime.",
+    "version": "3.0.0",
+    "publisher": "ms-dotnettools",
+    "state": true
+  },
+  {
+    "id": "MULU-github.jsflowchart",
+    "name": "MULU-github.jsflowchart",
+    "description": "JS Flowchart in Real-time",
+    "version": "0.1.6",
+    "publisher": "MULU-github",
+    "state": false
+  },
+  {
+    "id": "naumovs.color-highlight",
+    "name": "Color Highlight",
+    "description": "Highlight web colors in your editor",
+    "version": "2.8.0",
+    "publisher": "naumovs",
+    "state": true
+  },
+  {
+    "id": "neptunedesign.vs-html-to-css",
+    "name": "VS HTML to CSS",
+    "description": "Generate CSS classes from HTML structure",
+    "version": "1.0.0",
+    "publisher": "neptunedesign",
+    "state": false
+  },
+  {
+    "id": "nickdodd79.gulptasks",
+    "name": "Gulp Tasks",
+    "description": "A gulp task visualization and execution extension for Visual Studio Code",
+    "version": "1.3.1",
+    "publisher": "nickdodd79",
+    "state": true
+  },
+  {
+    "id": "nicollasr.vscode-streamdeck",
+    "name": "Stream Deck for Visual Studio Code",
+    "description": "Enables Stream Deck integration with Visual Studio Code.",
+    "version": "4.1.6",
+    "publisher": "nicollasr",
+    "state": true
+  },
+  {
+    "id": "oderwat.indent-rainbow",
+    "name": "oderwat.indent-rainbow",
+    "description": "Makes indentation easier to read",
+    "version": "8.3.1",
+    "publisher": "oderwat",
+    "state": true
+  },
+  {
+    "id": "philsinatra.nested-comments",
+    "name": "Nested Comments",
+    "description": "This is a VSCode extension for toggling nested comments.",
+    "version": "4.1.4",
+    "publisher": "philsinatra",
+    "state": false
+  },
+  {
+    "id": "PKief.material-icon-theme",
+    "name": "Material Icon Theme",
+    "description": "Material Design Icons for Visual Studio Code",
+    "version": "5.31.0",
+    "publisher": "PKief",
+    "state": true
+  },
+  {
+    "id": "pranaygp.vscode-css-peek",
+    "name": "CSS Peek",
+    "description": "Allow peeking to css ID and class strings as definitions from html files to respective CSS. Allows peek and goto definition.",
+    "version": "4.4.3",
+    "publisher": "pranaygp",
+    "state": true
+  },
+  {
+    "id": "pucelle.vscode-css-navigation",
+    "name": "CSS Navigation",
+    "description": "Provides CSS Completion, Finding Definition, Finding References, Diagnostic, Hover, Workspace Symbols services for HTML, JS, TS, JSX, Vue and more languages across whole workspace",
+    "version": "2.12.5",
+    "publisher": "pucelle",
+    "state": true
+  },
+  {
+    "id": "ritwickdey.LiveServer",
+    "name": "Live Server",
+    "description": "Launch a development local Server with live reload feature for static & dynamic pages",
+    "version": "5.7.9",
+    "publisher": "ritwickdey",
+    "state": true
+  },
+  {
+    "id": "solnurkarim.html-to-css-autocompletion",
+    "name": "HTML to CSS autocompletion",
+    "description": "Provides completion suggestions for classes and ids from markup documents to stylesheets.",
+    "version": "1.1.2",
+    "publisher": "solnurkarim",
+    "state": false
+  },
+  {
+    "id": "streetsidesoftware.code-spell-checker",
+    "name": "Code Spell Checker",
+    "description": "Spelling checker for source code",
+    "version": "4.5.6",
+    "publisher": "streetsidesoftware",
+    "state": true
+  },
+  {
+    "id": "streetsidesoftware.code-spell-checker-russian",
+    "name": "Russian - Code Spell Checker",
+    "description": "Russian dictionary extension for VS Code.",
+    "version": "2.2.4",
+    "publisher": "streetsidesoftware",
+    "state": true
+  },
+  {
+    "id": "tomoki1207.pdf",
+    "name": "vscode-pdf",
+    "description": "Display pdf file in VSCode.",
+    "version": "1.2.2",
+    "publisher": "tomoki1207",
+    "state": false
+  },
+  {
+    "id": "twxs.cmake",
+    "name": "CMake",
+    "description": "CMake langage support for Visual Studio Code",
+    "version": "0.0.17",
+    "publisher": "twxs",
+    "state": false
+  },
+  {
+    "id": "usernamehw.errorlens",
+    "name": "Error Lens",
+    "description": "Improve highlighting of errors, warnings and other language diagnostics.",
+    "version": "3.28.0",
+    "publisher": "usernamehw",
+    "state": true
+  },
+  {
+    "id": "visualprogrammingx.SourceCodeVisualizer",
+    "name": "Source Code Visualizer",
+    "description": "Visualize the calling structure of source code in a class diagram-like fashion",
+    "version": "0.1.9",
+    "publisher": "visualprogrammingx",
+    "state": true
+  },
+  {
+    "id": "vsls-contrib.gistfs",
+    "name": "GistPad",
+    "description": "Manage your code snippets and developer notes using GitHub Gists and repositories.",
+    "version": "0.9.6",
+    "publisher": "vsls-contrib",
+    "state": true
+  },
+  {
+    "id": "xdebug.php-debug",
+    "name": "PHP Debug",
+    "description": "Debug support for PHP with Xdebug",
+    "version": "1.40.1",
+    "publisher": "xdebug",
+    "state": false
+  },
+  {
+    "id": "ybaumes.highlight-trailing-white-spaces",
+    "name": "Highlight Trailing White Spaces",
+    "description": "This extension highlight trailing white spaces in red.",
+    "version": "0.0.2",
+    "publisher": "ybaumes",
+    "state": true
+  },
+  {
+    "id": "yzhang.markdown-all-in-one",
+    "name": "Markdown All in One",
+    "description": "All you need to write Markdown (keyboard shortcuts, table of contents, auto preview and more)",
+    "version": "3.6.3",
+    "publisher": "yzhang",
+    "state": true
+  },
+  {
+    "id": "Zignd.html-css-class-completion",
+    "name": "IntelliSense for CSS class names in HTML",
+    "description": "CSS class name completion for the HTML class attribute based on the definitions found in your workspace.",
+    "version": "1.20.0",
+    "publisher": "Zignd",
+    "state": true
+  },
+  {
+    "id": "zitup.classnametocss",
+    "name": "className Completion in CSS",
+    "description": "css/less/scss className IntelliSense from html/jsx/tsx",
+    "version": "0.0.7",
+    "publisher": "zitup",
+    "state": false
+  }
+]
